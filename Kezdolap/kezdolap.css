@@ -50,9 +50,52 @@ background: -webkit-linear-gradient(to right,#4C0001, #070000,  #070000);
 background: linear-gradient(to right,#4C0001, #070000,  #070000);
 }
 
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.joinform {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+}
 
+.join_btn {
+  text-decoration: none;
+  border: 1px solid rgb(199, 39, 39);
+  position: relative;
+  overflow: hidden;
+}
 
+.join_btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(199, 39, 39, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.join_btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+  120deg,
+  transparent,
+  rgba(199, 39, 39, 0.4),
+  transparent
+  );
+  transition: all 650ms;
+}
+
+.join_btn:hover:before {
+  left: 100%;
+}
      
      
      
