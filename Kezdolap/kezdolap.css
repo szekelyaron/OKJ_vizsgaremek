@@ -1,3 +1,15 @@
+@font-face{
+  font-family: Excelate;
+  src: url(font/excelate.ttf);
+}
+
+.font{
+  font-size: 50px;
+  padding: 1rem;
+  font-family: 'Excelate';
+  text-align: center;
+}
+
 html,
 body,
 header,
@@ -97,6 +109,8 @@ background: linear-gradient(to right,#4C0001, #070000,  #070000);
 .join_btn:hover:before {
   left: 100%;
 }
+
+
      
      
      
