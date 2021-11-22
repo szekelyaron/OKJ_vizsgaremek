@@ -1,0 +1,108 @@
+body {
+    background-image: url(img/pexels-photo-248747.jpeg);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+    background-color: #e7e5e5;
+    width: 400px;
+    height: 400px;
+    margin: 12em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 0px 6px 0px rgb(233, 233, 233);
+}
+
+.sign {
+    padding-top: 50px;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.un {
+width: 76%;
+color: rgb(0, 0, 0);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(0, 0, 0, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(63, 61, 61, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: black;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(206, 205, 205, 0.12);
+    color: black;
+    padding-top: 15px;
+}
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: black;
+    text-decoration: none
+}
+
+.submit:hover
+{
+background-image:none;
+background-color:rgb(124, 124, 124);
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
