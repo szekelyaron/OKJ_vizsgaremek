@@ -85,7 +85,7 @@ background: linear-gradient(to right,#4C0001, #070000,  #070000);
 }
 
 .join_btn:hover {
-  box-shadow: 1px 1px 25px 10px rgba(199, 39, 39, 0.4);
+  box-shadow: 1px 1px 25px 6px rgba(199, 39, 39, 0.4);
   text-decoration: none;
   color: white;
 }
@@ -109,9 +109,3 @@ background: linear-gradient(to right,#4C0001, #070000,  #070000);
 .join_btn:hover:before {
   left: 100%;
 }
-
-
-     
-     
-     
-   
