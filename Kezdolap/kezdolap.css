@@ -109,3 +109,10 @@ background: linear-gradient(to right,#4C0001, #070000,  #070000);
 .join_btn:hover:before {
   left: 100%;
 }
+.background{
+  background-image: url('img/hatter2.jpeg'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed;
+}
