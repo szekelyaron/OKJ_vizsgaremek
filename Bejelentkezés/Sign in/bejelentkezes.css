@@ -1,6 +1,7 @@
 body {
     background-image: url(img/pexels-photo-248747.jpeg);
     font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
 }
 
 .main {
@@ -106,3 +107,27 @@ background-color:rgb(124, 124, 124);
 input:focus::placeholder {
     color: transparent;
   }
+
+@media (max-width: 600px) {
+    .main{
+      height: 100%;
+      width: 100%;
+      margin-top: 50%;
+      margin-bottom: 50%;
+      border-radius: 0;
+      box-shadow: none;
+      padding-bottom: 10px;
+    }
+    .un{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .pass{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .sign{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
