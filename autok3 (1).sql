@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Okt 26. 14:36
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.12
+-- Létrehozás ideje: 2021. Nov 24. 13:58
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `autólekérdezés1`
+-- Adatbázis: `autok3`
 --
 
 -- --------------------------------------------------------
@@ -35,6 +36,22 @@ CREATE TABLE `autó` (
   `Típushiba` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `autó`
+--
+
+INSERT INTO `autó` (`AID`, `Gyártó`, `Típus`, `Megbízhatóság`, `Típushiba`) VALUES
+(1, 'Honda', 'Civic', 10, 'Ismeretlen'),
+(2, 'Volkswagen', 'Golf IV', 9, 'Korrózió'),
+(3, 'Volkswagen', 'Passat', 7, 'Főtengely csapágy'),
+(4, 'Ford', 'Focus', 5, 'Hengerfej'),
+(5, 'Opel', 'Corsa', 6, 'Futómű'),
+(6, 'Mazda', '6', 8, 'EGR szelep'),
+(14, 'Seat', 'Leon', 9, 'Ismeretlen'),
+(21, 'Volkswagen', 'Arteon', 5, 'Led fényszóró meghibásodása'),
+(23, 'Volkswagen', 'Beatle', 2, 'Csúnya'),
+(24, 'Audi', 'A6', 7, 'Ismeretlen');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +65,17 @@ CREATE TABLE `felhasználó` (
   `Email` varchar(40) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `felhasználó`
+--
+
+INSERT INTO `felhasználó` (`FID`, `Felhasználónév`, `Jelszó`, `Email`) VALUES
+(1, 'Pusoma Gergő', 'eztkinemtalalod', 'pusomagergo@gmail.com'),
+(2, 'AutóNepper', '1234567890', 'neppervagyok@gmail.com'),
+(3, 'TigerHero', '123', 'aronvok@gmail.com'),
+(4, 'Dromarci', 'Virág4ever', 'takacsmarci@gmail.com'),
+(5, 'DaweDie', 'TaKa', 'dawedie@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -59,7 +87,8 @@ CREATE TABLE `gumiabroncs` (
   `Gyártó` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
   `Évszak` set('Nyári','Téli','Négyévszakos','') COLLATE utf8_hungarian_ci NOT NULL,
   `Kategória` decimal(2,0) NOT NULL,
-  `Ár` int(6) NOT NULL
+  `Ár` int(6) NOT NULL,
+  `Info_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -82,6 +111,14 @@ CREATE TABLE `info` (
   `Autó_AID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `info`
+--
+
+INSERT INTO `info` (`IID`, `Rendszám`, `Alvázszám`, `Futott km`, `Évjárat`, `Állapot`, `VezetettSzervK`, `Okmányok`, `Műszaki érv`, `Gumiabroncs`, `Autó_AID`) VALUES
+(1, 'RPL-916', 'FZfrrg248467', 35000, 2019, 'Újszerű', 1, 'Érvényes magyar okmányokkal', '2022-09-10', 'Téli', 1),
+(2, 'SGA-030', 'FZfrefs4748467', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10', 'Nyári', 14);
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +138,8 @@ CREATE TABLE `kosár` (
 -- A tábla indexei `autó`
 --
 ALTER TABLE `autó`
-  ADD PRIMARY KEY (`AID`);
+  ADD PRIMARY KEY (`AID`),
+  ADD UNIQUE KEY `Típus` (`Típus`);
 
 --
 -- A tábla indexei `felhasználó`
@@ -113,13 +151,22 @@ ALTER TABLE `felhasználó`
 -- A tábla indexei `gumiabroncs`
 --
 ALTER TABLE `gumiabroncs`
-  ADD PRIMARY KEY (`GID`);
+  ADD PRIMARY KEY (`GID`),
+  ADD UNIQUE KEY `Info_ID` (`Info_ID`);
 
 --
 -- A tábla indexei `info`
 --
 ALTER TABLE `info`
-  ADD PRIMARY KEY (`IID`);
+  ADD PRIMARY KEY (`IID`),
+  ADD UNIQUE KEY `Autó_AID` (`Autó_AID`);
+
+--
+-- A tábla indexei `kosár`
+--
+ALTER TABLE `kosár`
+  ADD UNIQUE KEY `Felhasznalo_fid` (`Felhasznalo_fid`),
+  ADD UNIQUE KEY `Gumiabroncs_gid` (`Gumiabroncs_gid`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
@@ -129,13 +176,13 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT a táblához `autó`
 --
 ALTER TABLE `autó`
-  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT a táblához `felhasználó`
 --
 ALTER TABLE `felhasználó`
-  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `gumiabroncs`
@@ -147,7 +194,30 @@ ALTER TABLE `gumiabroncs`
 -- AUTO_INCREMENT a táblához `info`
 --
 ALTER TABLE `info`
-  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `gumiabroncs`
+--
+ALTER TABLE `gumiabroncs`
+  ADD CONSTRAINT `Gumiabroncs_Info` FOREIGN KEY (`Info_ID`) REFERENCES `info` (`IID`) ON DELETE NO ACTION,
+  ADD CONSTRAINT `Gumiabroncs_Kosár` FOREIGN KEY (`GID`) REFERENCES `kosár` (`Gumiabroncs_gid`) ON DELETE NO ACTION;
+
+--
+-- Megkötések a táblához `info`
+--
+ALTER TABLE `info`
+  ADD CONSTRAINT `Autó_Info` FOREIGN KEY (`Autó_AID`) REFERENCES `autó` (`AID`) ON DELETE NO ACTION;
+
+--
+-- Megkötések a táblához `kosár`
+--
+ALTER TABLE `kosár`
+  ADD CONSTRAINT `Felhasználó_Kosár` FOREIGN KEY (`Felhasznalo_fid`) REFERENCES `felhasználó` (`FID`) ON DELETE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
