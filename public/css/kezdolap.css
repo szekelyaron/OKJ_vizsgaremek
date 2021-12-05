@@ -138,6 +138,7 @@ background: linear-gradient(to right,#4C0001, #070000,  #070000);
     opacity: 0.7;
     color: red;
     text-decoration: none;
+    border-style: dashed;
 }
 .socialmedia{
   padding: 50px;
