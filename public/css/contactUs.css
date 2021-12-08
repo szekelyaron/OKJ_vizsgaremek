@@ -88,7 +88,12 @@ h1{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    resize: none;
   }
+  .form__field_text::-webkit-scrollbar{
+    display: none;
+  }
+
   .form__field_text::placeholder {
     color: transparent;
   }
