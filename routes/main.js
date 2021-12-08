@@ -12,4 +12,10 @@ router.get('/bejelentkezes', mainController.getBejelentkezes);
 
 router.get('/regisztracio', mainController.getRegisztracio);
 
+router.get('/fooldal', mainController.getFooldal);
+
+router.get('/sugo', mainController.getSugo);
+
+router.get('/contactus', mainController.getContactus);
+
 module.exports = router;
