@@ -1,6 +1,19 @@
 <%- include('includes/header.ejs') %>
+<link rel="stylesheet" href="/css/contactUs.css">
+<link rel="stylesheet" href="/css/kezdolap.css">
 </head>
 <body>
-    <h1>email conatct</h1>
+    <h1>Contact Us</h1>
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+        <label for="name" class="form__label">Name</label>
+    </div>
+
+    <div class="form__group_text field_text">
+        <textarea type="input" class="form__field_text" placeholder="Name" name="name" id='name' required  rows="10"></textarea>
+        <label for="name" class="form__label_text">Text</label>
+    </div>
+    <a href="/" class="join_btn joinform">Send</a>
+    
 </body>
 </html>

@@ -1,0 +1,139 @@
+h1{
+    color: white;
+}
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 50px;
+    width: 50%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, red, #610000);
+    border-image-slice: 1;
+  }
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #c21616;
+    font-weight: 700;
+  }
+  
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    background-color: black;
+  }
+
+  
+  .form__group_text {
+    position: relative;
+    padding: 20px 0 0;
+    margin-top: 100px;
+    width: 80%;
+  }
+  
+  .form__field_text {
+    font-family: inherit;
+    width: 100%;
+    height: 300px;
+    border: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field_text::placeholder {
+    color: transparent;
+  }
+  .form__field_text:placeholder-shown ~ .form__label_text {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 25px;
+    left: 5px;
+  }
+  
+  .form__label_text {
+    margin: 10 0 0 0;
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .form__field_text:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, red, #610000);
+    border-image-slice: 1;
+  }
+  .form__field_text:focus ~ .form__label_text {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #c21616;
+    font-weight: 700;
+    left: 5px;
+  }
+  
+  .form__field_text:required, .form__field_text:invalid {
+    box-shadow: none;
+  }
+  .join_btn {
+    margin-top: 50px;
+    border: 1px solid white !important;
+  }
+  .join_btn:hover {
+    box-shadow: none !important;
+  }
