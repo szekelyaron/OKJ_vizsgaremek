@@ -1,6 +1,8 @@
 h1{
     color: white;
     padding: 5vh;
+    font-size: 60px;
+    font-weight: bold;
 }
 .form__group {
     position: relative;
@@ -113,6 +115,7 @@ h1{
     transition: 0.2s;
     font-size: 1rem;
     color: white;
+    left: 5px;
   }
   
   .form__field_text:focus {

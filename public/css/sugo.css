@@ -5,6 +5,9 @@ h1{
     text-align: center;
     color: white;
     padding: 5vh;
+    font-size: 60px;
+    font-weight: bold;
+
 }
 .box{
     border-color: white;
