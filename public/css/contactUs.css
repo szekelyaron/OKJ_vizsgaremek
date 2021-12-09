@@ -3,6 +3,7 @@ h1{
     padding: 5vh;
     font-size: 60px;
     font-weight: bold;
+    text-align: center;
 }
 .form__group {
     position: relative;
