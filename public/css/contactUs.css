@@ -142,4 +142,5 @@ h1{
   }
   .join_btn:hover {
     box-shadow: none !important;
+    color: red !important;
   }
