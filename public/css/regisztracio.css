@@ -71,7 +71,7 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 .submit {
-  cursor: pointer;
+    cursor: pointer;
     border-radius: 5em;
     color: #fff;
     background: black;

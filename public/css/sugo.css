@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    color: white;
+    padding: 5vh;
+}
+.box{
+    border-color: white;
+    margin-top: 10vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+.div1 {
+    display: inline-block;
+}
+
+.div2 {
+    display: inline-block;
+}
+.div3 {
+    display: inline-block;
+}
+.wrapper{
+    align-items: center;
+    display: flex;
+
+}
