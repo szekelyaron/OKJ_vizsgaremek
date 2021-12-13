@@ -1,0 +1,11 @@
+.nav-bk{
+     
+    background: #070000;    
+    background: -webkit-linear-gradient(to right,#4C0001, #070000,  #070000);   
+    background: linear-gradient(to right,#4C0001, #070000,  #070000);
+    }
+    
+.navbar-brand img{
+    max-width: 80px;
+}
+    
