@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/css/kezdolap.css">
 </head>
 <body>
+    <%- include('includes/navbar.ejs') %>
     <h1>Contact Us</h1>
     <div class="form__group field">
         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
@@ -16,4 +17,4 @@
     <a href="/" class="join_btn joinform">Send</a>
     
 </body>
-</html>
+<%- include('includes/footer.ejs') %>

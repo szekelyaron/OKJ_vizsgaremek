@@ -5,15 +5,16 @@ body{
 }
 h1{
     text-align: center;
-    color: white;
-    padding: 5vh;
-    font-size: 60px;
+    color: black;
+    padding: 15vh;
+    font-size: 70px;
     font-weight: bold;
+    -webkit-text-stroke: 3px white;
 
 }
 .box{
     border-color: white;
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-left: 3vw;
     margin-right: 3vw;
 }
