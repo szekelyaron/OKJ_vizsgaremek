@@ -7,18 +7,51 @@
 <body>
   <div class="main">
     <p class="sign" align="center">Registrate</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="un " type="text" align="center" placeholder="First name">
-      <input class="un " type="text" align="center" placeholder="Second name">
-      <input class="un " type="text" align="center" placeholder="E-mail address">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <input class="pass" type="password" align="center" placeholder="Password again">
-      <p align="center"><a class="submit" >Registrate</a></p>
-      <p class="forgot" align="center">Already have an account?<a href="/bejelentkezes"><u>Log In</u></a>
+
+    <% if (errorCode != '') {%>
+      <p class="text-danger">
+          <% for (let error of errorCode) { %>
+              <% if (error.param == 'felhasznalonev') { %>
+                  <%= error.msg %>
+                      <br>
+                      <% } %>
+                          <% } %>
+                              Email
+                              <br>
+                              <% for (let error of errorCode) { %>
+                                  <% if (error.param == 'email') { %>
+                                      <%= error.msg %>
+                                          <br>
+                                          <% } %>
+                                              <% } %>
+                                                  Password
+                                                  <br>
+                                                  <% for (let error of errorCode) { %>
+                                                      <% if (error.param == 'jelszo') { %>
+                                                          <%= error.msg %>
+                                                              <br>
+                                                              <% } %>
+                                                                  <% } %>
+                                                                      <% for (let error of errorCode) { %>
+                                                                          <% if (error.param == 'password_again') { %>
+                                                                              Confirmation
+                                                                              <br>
+                                                                              <%= error.msg %>
+                                                                                  <br>
+                                                                                  <% } %>
+                                                                                      <% } %>
+                                                                                          <% } %>
+
+      <form class="form1" method="post" action="/regisztracio">
+      <input class="un " type="text" align="center" name="felhasznalonev" id="felhasznalonev" placeholder="Username">
+      <input class="un " type="text" align="center" name="email" id="email" placeholder="E-mail address">
+      <input class="pass" type="password" align="center" name="jelszo" id="jelszo" placeholder="Password">
+      <input class="pass" type="password" align="center" name="password_again" id="password_again" placeholder="Password again">
+      <p align="center"><a class="submit" ><button type="submit">Registrate</button></a></p>
+      <p class="forgot" align="center">Already have an account? <a href="/bejelentkezes"><u>Log In</u></a>
       </p>
             
-                
+    </form>            
     </div>
      
 </body>
