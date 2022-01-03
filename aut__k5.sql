@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Dec 01. 09:25
+-- Létrehozás ideje: 2022. Jan 03. 09:55
 -- Kiszolgáló verziója: 10.4.21-MariaDB
 -- PHP verzió: 8.0.10
 
@@ -62,7 +62,7 @@ INSERT INTO `autó` (`AID`, `Gyártó`, `Típus`, `Megbízhatóság`, `Típushib
 CREATE TABLE `felhasználó` (
   `FID` int(11) NOT NULL,
   `Felhasználónév` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `Jelszó` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
+  `Jelszó` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `Email` varchar(40) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
