@@ -97,14 +97,14 @@ const login = require('../models/users/login.js');
 exports.postLogin = (req, res, next) => {
     if(req.session.user != null)
     {
-        res.redirect('./dashboard/index');
+        res.redirect('/fooldal');
     }
     else{
     login.loginUser(req, res, function(err, data) {
         if (err) {
           res.json({ 'error': true, 'message': 'Error logged in' });
         } else {
-            res.redirect('./dashboard/index');
+            res.redirect('/fooldal');
         }
       });
     }
