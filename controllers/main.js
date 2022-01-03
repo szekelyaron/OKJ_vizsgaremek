@@ -2,6 +2,7 @@ exports.getIndex = (req, res, next) => {
     res.render('kezdolap', {
         pageTitle: 'CarScope',
         path: '/',
+        user: req.session.user,
     });
 };
 
@@ -55,13 +56,7 @@ exports.checkUserLogon = (req,res,next) => {
     }
 };
 
-exports.getIndex = (req, res, next) => {
-    res.render('fooldal', {
-        pageTitle: 'CarScope',
-        path: '/',
-        user: req.session.user,
-    });
-};
+
 
 exports.checkLogin = (req, res, next) => {
     if(req.session.user != null)
