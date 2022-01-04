@@ -19,3 +19,7 @@ h1{
     margin-right: 3vw;
     margin-bottom: 3vw;
 }
+.box:hover{
+  transition: 0.2s;
+  box-shadow: 0 0 30px white;
+}
