@@ -1,3 +1,7 @@
+@font-face{
+    font-family: Angel;
+    src: url(../font/Angels.ttf);
+  }
 body{
     background-color: black;
     overflow-x: hidden;
@@ -5,12 +9,10 @@ body{
 }
 h1{
     text-align: center;
-    color: black;
     padding: 15vh;
     font-size: 70px;
-    font-weight: bold;
-    -webkit-text-stroke: 3px white;
-
+    font-family: Angel;
+    color: white;
 }
 .box{
     border-color: white;

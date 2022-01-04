@@ -1,3 +1,7 @@
+@font-face{
+    font-family: Angel;
+    src: url(../font/Angels.ttf);
+}
 .nav-bk{
      
     background: #070000;    
@@ -6,10 +10,10 @@
     }
     
 .navbar-brand img{
-    max-width: 80px;
+    max-width: 90px;
 }
 .navbar{
-    font-weight: bold ;
-    font-size: 17px;
+    font-size: 22px;
+    font-family: Angel;
 }
     
