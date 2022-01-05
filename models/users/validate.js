@@ -17,7 +17,7 @@ exports.form = [
   .not().matches(/^$|\s+/).withMessage('Nem tartalmazhat szóközt'),
   // confirm password
   body('password_again').custom((value, { req }) => {
-       if (value !== req.body.jelszo) {
+       if (value !== req.body.jelszo || value == null || value == "") {
              throw new Error('A két jelszó nem megeggyező');
         }
         return true;

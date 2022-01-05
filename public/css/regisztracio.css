@@ -130,5 +130,9 @@ input:focus::placeholder {
     .sign{
         margin-left: 10vw;
         margin-right: 10vw;
-    }
+    }  
+}
+.error_message{
+    color: red;
+    margin-left: 12%;
 }
