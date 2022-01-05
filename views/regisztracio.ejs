@@ -6,10 +6,10 @@
 
 <body>
   <div class="main">
-    <p class="sign" align="center">Registrate</p>
+    <p class="sign" align="center">Regisztráció</p>
 
       <form class="form1" method="post" action="/regisztracio">
-      <input class="un " type="text" align="center" name="felhasznalonev" id="felhasznalonev" placeholder="Username">
+      <input class="un " type="text" align="center" name="felhasznalonev" id="felhasznalonev" placeholder="Felhasználónév">
       <% if (errorCode != '') {%>
         <br>
       <% for (let error of errorCode) { %>
@@ -18,7 +18,7 @@
                 <% } %>
                     <% } %>
                     <% } %>
-      <input class="un " type="text" align="center" name="email" id="email" placeholder="E-mail address">
+      <input class="un " type="text" align="center" name="email" id="email" placeholder="E-mail cím">
       <% if (errorCode != '') {%>
       <br>
                               <% for (let error of errorCode) { %>
@@ -27,7 +27,7 @@
                                           <% } %>
                                               <% } %>
                                               <% } %>
-      <input class="pass" type="password" align="center" name="jelszo" id="jelszo" placeholder="Password">
+      <input class="pass" type="password" align="center" name="jelszo" id="jelszo" placeholder="Jelszó">
       <% if (errorCode != '') {%>
       <br>
                                                   <% for (let error of errorCode) { %>
@@ -36,7 +36,7 @@
                                                               <% } %>
                                                                   <% } %>
                                                                   <% } %>
-      <input class="pass" type="password" align="center" name="password_again" id="password_again" placeholder="Password again">
+      <input class="pass" type="password" align="center" name="password_again" id="password_again" placeholder="Jelszó újra">
       <% if (errorCode != '') {%>
         <br>
       <% for (let error of errorCode) { %>
@@ -45,8 +45,8 @@
                 <% } %>
                     <% } %>
                     <% } %>
-      <p align="center"><button type="submit" class="submit">Registrate</button></p>
-      <p class="forgot" align="center">Already have an account? <a href="/bejelentkezes"><u>Log In</u></a>
+      <p align="center"><button type="submit" class="submit">Regisztráció</button></p>
+      <p class="forgot" align="center">Már van egy fiókod? <a href="/bejelentkezes"><u>Bejelentkezés</u></a>
       </p>
             
     </form>            

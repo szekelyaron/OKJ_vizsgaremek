@@ -48,7 +48,7 @@ exports.getContactus = (req, res, next) => {
 exports.checkUserLogon = (req,res,next) => {
     if(req.session.user != null)
     {
-        res.redirect('./dashboard/index');
+        res.redirect('/fooldal');
     }
     else
     {
@@ -61,7 +61,7 @@ exports.checkUserLogon = (req,res,next) => {
 exports.checkLogin = (req, res, next) => {
     if(req.session.user != null)
     {
-        res.redirect('./dashboard/index');
+        res.redirect('/fooldal');
     }
     else
     {
@@ -80,7 +80,7 @@ exports.getLogin = (req, res, next) => {
 exports.getRegistration = (req, res, next) => {
     if(req.session.user != null)
     {
-        res.redirect('./dashboard/index');
+        res.redirect('/fooldal');
     }
     else{
     res.render('regisztracio', {
@@ -112,7 +112,15 @@ exports.postLogin = (req, res, next) => {
 
 const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
+const logout = require('../models/users/logout.js');
+const res = require('express/lib/response');
 
+exports.getLogout = (req, res, next) => {
+    if (req.session.user = null)
+    {
+        res.redirect('/');
+    }
+}
 
 exports.validateRegistration = (req,res,next) => {
         let msg = []
