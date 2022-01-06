@@ -10,6 +10,17 @@ h1{
     font-family: Angel;
     color: darkred;
 }
+@media (max-width: 740px) {
+  h1 {
+    font-size: 4vh;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  h1 {
+    font-size: 6vh;
+  }
+}
+
 .form__group {
     position: relative;
     padding: 10px 0 0;
@@ -71,6 +82,7 @@ h1{
   
   body {
     display: flex;
+    overflow-x: hidden;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;

@@ -135,4 +135,5 @@ input:focus::placeholder {
 .error_message{
     color: red;
     margin-left: 12%;
+    margin-right: 12%;
 }
