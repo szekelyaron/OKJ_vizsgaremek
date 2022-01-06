@@ -1,6 +1,6 @@
 @font-face{
-    font-family: Angel;
-    src: url(../font/Angels.ttf);
+    font-family: gtiming;
+    src: url(../font/good\ timing\ bd.ttf);
 }
 .nav-bk{
      
@@ -13,7 +13,7 @@
     max-width: 90px;
 }
 .navbar{
-    font-size: 22px;
-    font-family: Angel;
+    font-size: 25px;
+    font-family: gtiming;
 }
     
