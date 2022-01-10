@@ -22,11 +22,18 @@ exports.getRegisztracio = (req, res, next) => {
 };
 
 exports.getFooldal = (req, res, next) => {
-    res.render('fooldal', {
-        pageTitle: 'CarScope - Főoldal',
-        path: '/fooldal',
-        //errorCode: '',
-    });
+    if(req.session.user != null)
+    {
+        res.render('fooldal', {
+            pageTitle: 'CarScope - Főoldal',
+            path: '/fooldal',
+            //errorCode: '',
+        });
+    }
+    else
+    {
+        res.redirect('/vendeg');
+    }
 };
 
 exports.getSugo = (req, res, next) => {
@@ -65,7 +72,7 @@ exports.checkLogin = (req, res, next) => {
     }
     else
     {
-        next();
+        res.redirect('/vendeg');
     }
 };
 
@@ -115,12 +122,16 @@ const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
 const res = require('express/lib/response');
 
-exports.getLogout = (req, res, next) => {
-    if (req.session.user = null)
-    {
+exports.postLogout = (req,res,next) => {
+    logout.logoutUser(req, res, function(err, data) {
+      if (err) {
+        console.log({ 'error': data.error, 'message': data.message });
+      } else {
+        console.log({ 'success': data.success, 'message': data.message });
         res.redirect('/');
-    }
-}
+      }
+    });
+};
 
 exports.validateRegistration = (req,res,next) => {
         let msg = []

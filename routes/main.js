@@ -35,5 +35,8 @@ router.get('/sugo', mainController.getSugo);
 
 router.get('/contactus', mainController.getContactus);
 
+router.post('/kijelentkezes', mainController.postLogout);
+
+router.post('/fooldal',mainController.checkLogin);
 
 module.exports = router;
