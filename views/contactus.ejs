@@ -5,16 +5,23 @@
 <body>
     <%- include('includes/navbar.ejs') %>
     <h1>Kapcsolat</h1>
-    <div class="form__group field">
-        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-        <label for="name" class="form__label">Név</label>
-    </div>
-
-    <div class="form__group_text field_text">
-        <textarea type="input" class="form__field_text" placeholder="Name" name="name" id='name' required  rows="10"></textarea>
-        <label for="name" class="form__label_text">Üzenet</label>
-    </div>
-    <a href="/" class="join_btn joinform">Küldés</a>
+    <form action="https://formsubmit.co/carscope.site@gmail.com" method="POST">
+        <div class="form__group field">
+            <input type="text" class="form__field" placeholder="Name" name="name" id='name' required />
+            <label for="name" class="form__label">Név</label>
+        </div>
+    
+        <div class="form__group field">
+            <input type="email" class="form__field" placeholder="Email" name="email" id='email' required />
+            <label for="email" class="form__label">Email</label>
+        </div>
+        <!--<input type="hidden" name="_next" value="localhost:6969"/>-->
+        <div class="form__group_text field_text">
+            <textarea type="text" class="form__field_text" placeholder="Message" name="Message" id='message' required  rows="10"></textarea>
+            <label for="name" class="form__label_text">Üzenet</label>
+        </div>
+        <button type="submit" class="join_btn joinform">Küldés</button>
+    </form>
     
 </body>
 <%- include('includes/footer.ejs') %>
