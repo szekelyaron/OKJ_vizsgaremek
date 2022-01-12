@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+.rendszam {
+    color: white;
+    display: block;
+    margin: 2em auto;
+    border: none;
+    padding: 0;
+    width: 10.5ch;
+    background: repeating-linear-gradient(90deg, white 0, white 1ch, transparent 0, transparent 1.5ch) 0 100%/10ch 2px no-repeat;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+    text-transform: uppercase;
+  }
+  .rendszam .alvazszam:focus {
+    outline: none;
+    color: white;
+  }
+  option{
+    align-items: center;
+    text-align: center;
+  }
+  select{
+    align-items: center;
+    text-align: center;
+  }
+  .row{
+    align-items: center;
+    align-content: center;
+  }
+  .alvazszam {
+    color: white;
+    display: block;
+    margin: 2em auto;
+    border: none;
+    padding: 0;
+    width: 25.5ch;
+    background: repeating-linear-gradient(90deg, white 0, white 1ch, transparent 0, transparent 1.5ch) 0 100%/25ch 2px no-repeat;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+    text-transform: uppercase;
+  }

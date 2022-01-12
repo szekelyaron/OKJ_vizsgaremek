@@ -2,10 +2,28 @@
 <link rel="stylesheet" href="/css/kezdolap.css">
 <link rel="stylesheet" href="/css/buttons.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/fooldal.css">
+<link rel="stylesheet" href="/css/select.css">
+<script src="https://unpkg.com/vue@next" defer></script>
+<script src="/js/fooldal.js" defer></script>
 </head>
 </head>
 <body>
     <%- include('includes/navbar_fooldal.ejs') %>
     <h1>Főoldal</h1>
+
+    <div id="cars">
+        <label class="custom-select" for="styledSelect1">
+        <select v-model="selected" id="styledSelect1" name="options">
+            <option value="R" selected>Rendszám</option>
+            <option value="A">Alvázszám</option>
+        </select>
+        </label>
+        <div v-if="valasztott == 'R'">
+            <input maxlength='7' value='R123456' class="rendszam" id="target"/>
+        </div>
+        <div v-if="valasztott == 'A'">
+            <input maxlength='17' value='A1234567813456789' class="alvazszam"/>
+        </div>
 </body>
 <%- include('includes/footer.ejs') %>
