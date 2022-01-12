@@ -6,7 +6,7 @@ var lekerd = function(){};
 lekerd.prototype.lekerdRendszam = function(req, res, callback){
     rendszam = req.body.rendszams,
     details = [],
-    lekerdquery = 'SELECT autó.Gyártó, autó.Típus, info.Évjárat, info.Állapot, info.Futottkm, info.VezetettSzervK, autó.Megbízhatóság, autó.Típushiba, info.Okmányok, info.Műszakiér, info.Alvázszám, info.Gumiabroncs FROM info INNER JOIN autó ON info.Autó_AID = autó.AID INNER JOIN gumiabroncs ON gumiabroncs.Info_ID = info.IID WHERE info.Rendszám = '+rendszam;
+    lekerdquery = 'SELECT auto.Gyarto, auto.Tipus, info.Evjarat, info.Allapot, info.Futottkm, info.VezetettSzervK, auto.Megbizhatosag, auto.Tipushiba, info.Okmanyok, info.Muszakierv, info.Alvazszam, info.Gumiabroncs FROM info INNER JOIN auto ON info.Auto_AID = auto.AID INNER JOIN gumiabroncs ON gumiabroncs.Info_ID = info.IID WHERE info.Rendszam = '+rendszam;
     mysqlPool.getConnection(function(err, connection){
 		connection.query(lekerdquery, function(err, rows, fields){
             if(rows.length <= 0){

@@ -19,11 +19,13 @@
             <option value="A">Alvázszám</option>
         </select>
         </label>
-        <div v-if="valasztott == 'R'">
-            <input maxlength='7' value='R123456' class="rendszam" id="target"/>
-        </div>
-        <div v-if="valasztott == 'A'">
-            <input maxlength='17' value='A1234567813456789' class="alvazszam"/>
-        </div>
+        <form method="post" action="/fooldal"> 
+            <div v-if="valasztott == 'R'">
+                <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+            </div>
+            <div v-if="valasztott == 'A'">
+                <input maxlength='17' value='A1234567813456789' class="alvazszam"/>
+            </div>
+        </form>
 </body>
 <%- include('includes/footer.ejs') %>

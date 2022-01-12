@@ -14,13 +14,6 @@ exports.getBejelentkezes = (req, res, next) => {
     });
 };
 
-exports.getRegisztracio = (req, res, next) => {
-    res.render('regisztracio', {
-        pageTitle: 'CarScope - Regisztáció',
-        path: '/regisztracio',
-        errorCode: '',
-    });
-};
 
 exports.getFooldal = (req, res, next) => {
     if(req.session.user != null)
@@ -28,8 +21,8 @@ exports.getFooldal = (req, res, next) => {
         res.render('fooldal', {
             pageTitle: 'CarScope - Főoldal',
             path: '/fooldal',
-            //errorCode: '',
-        });
+            rendszam: req.session.rendszam,
+        }); 
     }
     else
     {
@@ -85,7 +78,7 @@ exports.getLogin = (req, res, next) => {
     });
 };
 
-exports.getRegistration = (req, res, next) => {
+exports.getRegisztracio = (req, res, next) => {
     if(req.session.user != null)
     {
         res.redirect('/fooldal');
@@ -126,7 +119,20 @@ exports.postLogin = (req, res, next) => {
 const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
+const rendzsamlekerdez = require('../models/users/rendszam.js');
+
 const res = require('express/lib/response');
+
+exports.rendszamlekerd = (req,res,next) => {
+    rendzsamlekerdez.lekerdRendszam(req, res, function(err, data) {
+        res.render('fooldal',{
+            pageTitle: 'CarScope - Főoldal',
+            path: '/fooldal',
+            rendszam: req.session.rendszam,
+        })
+    });
+};
+
 
 exports.postLogout = (req,res,next) => {
     logout.logoutUser(req, res, function(err, data) {

@@ -9,9 +9,9 @@ register.prototype.registerUser = function(req, res, next) {
         md5Hasher = crypto.createHmac("md5", secret);
         jelszo = md5Hasher.update(jelszo).digest("hex");
         params = [req.body.felhasznalonev, req.body.email,jelszo, req.body.password_again,0],
-        checkAvailabilityQuery = 'SELECT Felhasználónév, Email FROM felhasználó WHERE Felhasználónév = ? OR Email = ?',
-        registerUserQuery = 'INSERT INTO felhasználó(Felhasználónév, Email, Jelszó) VALUES (?,?,?)',
-        getDetailQuery = 'SELECT FID, Felhasználónév, Email, Jelszó FROM felhasználó WHERE FID = ?';
+        checkAvailabilityQuery = 'SELECT Felhasználónév, Email FROM felhasznalo WHERE Felhasználónév = ? OR Email = ?',
+        registerUserQuery = 'INSERT INTO felhasznalo(Felhasználónév, Email, Jelszó) VALUES (?,?,?)',
+        getDetailQuery = 'SELECT FID, Felhasználónév, Email, Jelszó FROM felhasznalo WHERE FID = ?';
 	mysqlPool.getConnection(function(err, connection){
         connection.query(checkAvailabilityQuery, params, function(err,rows,fields)
         {

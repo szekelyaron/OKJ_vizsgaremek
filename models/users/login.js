@@ -15,8 +15,8 @@ login.prototype.loginUser = function(req, res, callback){
         params = [req.body.email, jelszo,0],
         detailParams = [],
         updateParams = [],
-	    loginUserQuery = 'SELECT * FROM felhasználó WHERE Email = ? AND Jelszó = ?',
-        getDetailQuery = 'SELECT FID, Felhasználónév, Email, Jelszó FROM felhasználó WHERE FID = ?';
+	    loginUserQuery = 'SELECT * FROM felhasznalo WHERE Email = ? AND Jelszó = ?',
+        getDetailQuery = 'SELECT FID, Felhasználónév, Email, Jelszó FROM felhasznalo WHERE FID = ?';
 	mysqlPool.getConnection(function(err, connection){
 		connection.query(loginUserQuery, params, function(err, rows, fields) {
            if(rows.length <= 0){

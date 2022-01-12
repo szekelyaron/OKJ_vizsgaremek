@@ -25,11 +25,11 @@ router.get('/bejelentkezes', mainController.checkLogin);
 
 router.get('/regisztracio', mainController.getRegisztracio);
 
-router.get('/regisztracio', mainController.getRegistration);
-
 router.post('/regisztracio', validationForm.form ,mainController.validateRegistration);
 
 router.get('/fooldal', mainController.getFooldal);
+
+router.post('/fooldal',mainController.rendszamlekerd);
 
 router.get('/sugo', mainController.getSugo);
 
