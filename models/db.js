@@ -21,7 +21,7 @@ DB.prototype.getConnection = function(pool,callback){
 			return;
 		}
 		connection.on('error', function(err) {
-			if(err.code === "PROTOCOL_CONNECTION_LOST") {
+			if(err.code === "Nem sikerült csatlakozni az adatbázishoz") {
 				connection.destroy();				
 			} else {
 				connection.release();
