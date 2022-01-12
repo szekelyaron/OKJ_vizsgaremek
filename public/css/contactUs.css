@@ -3,12 +3,12 @@
   src: url(../font/Angels.ttf);
 }
 h1{
-    
     padding-top: 15vh;
     font-size: 6vh;
     text-align: center;
     font-family: Angel;
     color: darkred;
+    margin-bottom: 8vh;
 }
 @media (max-width: 740px) {
   h1 {
@@ -25,8 +25,9 @@ h1{
     position: relative;
     padding: 10px 0 0;
     margin-top: 50px;
-    width: 50%;
-    
+    width: 30%;
+    margin: auto;
+    margin-bottom: 3vh;
   }
   
   .form__field {
@@ -95,6 +96,7 @@ h1{
     padding: 20px 0 0;
     margin-top: 100px;
     width: 80%;
+    margin: auto;
   }
   
   .form__field_text {
@@ -162,8 +164,14 @@ h1{
     margin-top: 50px;
     border: 1px solid white !important;
     margin-bottom: 20px;
+    background-color: transparent;
   }
   .join_btn:hover {
     box-shadow: none !important;
-    color: red !important;
+    color: red !important
+  }
+  .contactform{
+    width: 100%;
+    align-items: center;
+    text-align: center;
   }
