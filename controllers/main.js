@@ -9,7 +9,8 @@ exports.getIndex = (req, res, next) => {
 exports.getBejelentkezes = (req, res, next) => {
     res.render('bejelentkezes', {
         pageTitle: 'CarScope - Bejelentkezés',
-        path: '/bejelentkezes'
+        path: '/bejelentkezes',
+        error: '',
     });
 };
 
@@ -105,11 +106,16 @@ exports.postLogin = (req, res, next) => {
     if(req.session.user != null)
     {
         res.redirect('/fooldal');
-    }
+    } 
     else{
     login.loginUser(req, res, function(err, data) {
         if (err) {
-          res.json({ 'error': true, 'message': 'Error logged in' });
+            res.render('bejelentkezes', {
+                pageTitle: 'CarScope - Bejelentkezés',
+                path: '/bejelentkezes',
+                error: 'Hibás emailcím vagy jelszó',
+                user: req.session.user,
+            });
         } else {
             res.redirect('/fooldal');
         }

@@ -108,10 +108,16 @@ a {
 background-image:none;
 background-color:rgb(124, 124, 124);
 }
+.error_message{
+    color: red;
+    margin-left: 12%;
+    margin-right: 12%;
+}
 
 input:focus::placeholder {
     color: transparent;
   }
+  
 
 @media (max-width: 600px) {
     .main{

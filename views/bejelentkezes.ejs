@@ -8,6 +8,10 @@
   <div class="main">
     <p class="sign" align="center">Bejelentkezés</p>
     <form class="form1" action="/bejelentkezes" method="post">
+      <% if (error != '') {%>
+        <br>
+        <p class="error_message"><%= error %></p>
+        <% } %>
       <input class="un " type="text" name="email" id="email" align="center" placeholder="E-mail Cím">
       <input class="pass" type="password" name="jelszo" id="jelszo" align="center" placeholder="Jelszó">
       <p align="center"><button type="submit" class="submit">Bejelentkezés</button></p>
