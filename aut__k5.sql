@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Jan 03. 09:55
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.10
+-- Létrehozás ideje: 2022. Jan 12. 13:54
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `autók5`
 --
-CREATE DATABASE IF NOT EXISTS `autók5` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci;
-USE `autók5`;
 
 -- --------------------------------------------------------
 
@@ -75,7 +74,9 @@ INSERT INTO `felhasználó` (`FID`, `Felhasználónév`, `Jelszó`, `Email`) VAL
 (2, 'AutóNepper', '1234567890', 'neppervagyok@gmail.com'),
 (3, 'TigerHero', '123', 'aronvok@gmail.com'),
 (4, 'Dromarci', 'Virág4ever', 'takacsmarci@gmail.com'),
-(5, 'DaweDie', 'TaKa', 'dawedie@gmail.com');
+(5, 'DaweDie', 'TaKa', 'dawedie@gmail.com'),
+(6, 'AAAdmin', '63ed1a588f1b5c0e96bb1a91c4246ebb', 'aaadmin@amdin.admin'),
+(7, 'Gregoryy', '2ac5efd7077cb66d640029a6862eb8d9', 'greg@greg.com');
 
 -- --------------------------------------------------------
 
@@ -110,12 +111,12 @@ CREATE TABLE `info` (
   `IID` int(11) NOT NULL,
   `Rendszám` varchar(10) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `Alvázszám` varchar(30) COLLATE utf8_hungarian_ci NOT NULL,
-  `Futott km` int(11) NOT NULL,
+  `Futottkm` int(11) NOT NULL,
   `Évjárat` year(4) NOT NULL,
   `Állapot` set('Újszerű','Használt','Enyhén sérült','Frissen felújított','Sérült') COLLATE utf8_hungarian_ci NOT NULL,
   `VezetettSzervK` tinyint(1) NOT NULL,
   `Okmányok` set('Érvényes magyar okmányokkal','Lejárt magyar okmányokkal','Külföldi okmányokkal','Okmányok nélkül') COLLATE utf8_hungarian_ci NOT NULL,
-  `Műszaki érv` date NOT NULL,
+  `Műszakiérv` date NOT NULL,
   `Gumiabroncs` set('Nyári','Téli','Négyévszakos','') COLLATE utf8_hungarian_ci NOT NULL,
   `Autó_AID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
@@ -124,7 +125,7 @@ CREATE TABLE `info` (
 -- A tábla adatainak kiíratása `info`
 --
 
-INSERT INTO `info` (`IID`, `Rendszám`, `Alvázszám`, `Futott km`, `Évjárat`, `Állapot`, `VezetettSzervK`, `Okmányok`, `Műszaki érv`, `Gumiabroncs`, `Autó_AID`) VALUES
+INSERT INTO `info` (`IID`, `Rendszám`, `Alvázszám`, `Futottkm`, `Évjárat`, `Állapot`, `VezetettSzervK`, `Okmányok`, `Műszakiérv`, `Gumiabroncs`, `Autó_AID`) VALUES
 (1, 'RPL-916', 'FZfrrg248467', 35000, 2019, 'Újszerű', 1, 'Érvényes magyar okmányokkal', '2022-09-10', 'Téli', 1),
 (2, 'SGA-030', 'FZfrefs4748467', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10', 'Nyári', 14);
 
@@ -191,7 +192,7 @@ ALTER TABLE `autó`
 -- AUTO_INCREMENT a táblához `felhasználó`
 --
 ALTER TABLE `felhasználó`
-  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT a táblához `gumiabroncs`
