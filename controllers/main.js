@@ -119,18 +119,25 @@ exports.postLogin = (req, res, next) => {
 const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
-const rendzsamlekerdez = require('../models/users/rendszam.js');
+//const rendzsamlekerdez = require('../models/users/rendszam.js');
+//const adatai = require('lekerdezeseredmenye');
 
 const res = require('express/lib/response');
 
 exports.rendszamlekerd = (req,res,next) => {
-    rendzsamlekerdez.lekerdRendszam(req, res, function(err, data) {
+    let abc = []
+    const adatoklist = adatai(req);
+    adatoklist.forEach(element => {
+        abc.push({param: element.abc})
+    });
+    if( abc != '')
+    {
         res.render('fooldal',{
             pageTitle: 'CarScope - Főoldal',
             path: '/fooldal',
-            rendszam: req.session.rendszam,
+            lekerderedm:abc,
         })
-    });
+    }
 };
 
 

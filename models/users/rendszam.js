@@ -2,6 +2,7 @@ var mysql =	require("../db.js"),
 	mysqlPool = mysql.createPool();
 const crypto = require("crypto");
 var lekerd = function(){};
+const adatai = require('lekerdezeseredmenye');
 
 lekerd.prototype.lekerdRendszam = function(req, res, callback){
     rendszam = req.body.rendszams,
@@ -14,6 +15,7 @@ lekerd.prototype.lekerdRendszam = function(req, res, callback){
                 console.log("Nincs ilyen rendszámú")
             }else{
                 req.session.auto = rows[0];
+                adatai = rows{0};
                 connection.release();
                 callback(null,rows[0]);
             }
