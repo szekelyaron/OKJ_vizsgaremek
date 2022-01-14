@@ -30,6 +30,13 @@ exports.getFooldal = (req, res, next) => {
     }
 };
 
+exports.getVendeg = (req, res, next) => {
+    res.render('vendeg', {
+        pageTitle: 'CarScope - Vendég',
+        path: '/vendeg',
+    });
+};
+
 exports.getSugo = (req, res, next) => {
     res.render('sugo', {
         pageTitle: 'CarScope - Súgó',

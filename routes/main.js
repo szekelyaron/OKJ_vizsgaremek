@@ -39,4 +39,6 @@ router.post('/kijelentkezes', mainController.postLogout);
 
 router.post('/fooldal',mainController.checkLogin);
 
+router.get('/vendeg',mainController.getVendeg);
+
 module.exports = router;

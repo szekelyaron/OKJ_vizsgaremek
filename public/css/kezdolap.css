@@ -37,6 +37,7 @@ body{
     padding-top: 50px;
   }
   .font{
+    padding-top: 4vh;
     font-size: 7vw;
   }
 }
