@@ -22,6 +22,8 @@ exports.getFooldal = (req, res, next) => {
             pageTitle: 'CarScope - Főoldal',
             path: '/fooldal',
             rendszam: req.session.rendszam,
+            lekerderedm: undefined
+
         }); 
     }
     else
@@ -130,21 +132,22 @@ const logout = require('../models/users/logout.js');
 //const adatai = require('lekerdezeseredmenye');
 
 const res = require('express/lib/response');
+const lekerd = require('../models/users/rendszam');
 
 exports.rendszamlekerd = (req,res,next) => {
-    let abc = []
-    const adatoklist = adatai(req);
-    adatoklist.forEach(element => {
-        abc.push({param: element.abc})
-    });
-    if( abc != '')
-    {
-        res.render('fooldal',{
-            pageTitle: 'CarScope - Főoldal',
-            path: '/fooldal',
-            lekerderedm:abc,
-        })
-    }
+    lekerd.lekerdRendszam(req, res, function(err, data) {
+        if(err)
+         {
+             console.log("Szar")
+         }
+         else {
+            res.render('fooldal',{
+                pageTitle: 'CarScope - Főoldal',
+                path: '/fooldal',
+                lekerderedm: req.session.auto,
+            })
+         }
+    })
 };
 
 
