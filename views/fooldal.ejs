@@ -22,31 +22,23 @@
         <form method="post" action="/fooldal"> 
             <div v-if="valasztott == 'R'">
                 <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
-                <button class="btn btn-outline-light" style="margin: 10px; width: 200px; height: 100px; font-size: larger;" type="submit">Keres</button>
             </div>
             <div v-if="valasztott == 'A'">
                 <input maxlength='17' value='' class="alvazszam"/>
             </div>
-        </form>
-        <br>
-        <br>
-        <% if (lekerderedm.Okmanyok != '') { %>
+            <% if (lekerderedm != undefined) {%>
             <div class="card">
                 <div class="card-header">
-                <p><%= lekerderedm.Gyarto %></p>
-                <p><%= lekerderedm.Tipus %></p>
-                <p><%= lekerderedm.Evjarat %></p>
-                <p><%= lekerderedm.Allapot %></p>
-                <p><%= lekerderedm.Futottkm %></p>
-                <p><%= lekerderedm.VezetettSzervK %></p>
-                <p><%= lekerderedm.Megbizhatosag %></p>
-                <p><%= lekerderedm.Tipshiba %></p>
-                <p><%= lekerderedm.Okmanyok %></p>
-                <p><%= lekerderedm.Muszakierv %></p>
-                <p><%= lekerderedm.Alvazszam %></p>
-                <p><%= lekerderedm.Gumiabroncs %></p>
+                    <%= rendszam.evjarat %>
                 </div>
-            </div>
-              <% } %>
+                <% } %>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+        </form>
 </body>
 <%- include('includes/footer.ejs') %>

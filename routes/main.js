@@ -41,4 +41,6 @@ router.post('/fooldal',mainController.checkLogin);
 
 router.get('/vendeg',mainController.getVendeg);
 
+router.get('/termekek',mainController.getTermekek);
+
 module.exports = router;

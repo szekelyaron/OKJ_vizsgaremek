@@ -39,6 +39,13 @@ exports.getVendeg = (req, res, next) => {
     });
 };
 
+exports.getTermekek = (req, res, next) => {
+    res.render('termekek', {
+        pageTitle: 'CarScope - Termékek',
+        path: '/termekek',
+    });
+};
+
 exports.getSugo = (req, res, next) => {
     res.render('sugo', {
         pageTitle: 'CarScope - Súgó',
