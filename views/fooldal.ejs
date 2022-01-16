@@ -21,30 +21,51 @@
         </select>
         </label>
         <form method="post" action="/fooldal"> 
-            <div v-if="valasztott == 'R'">
-                <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+            <div v-if="valasztott == 'R'">  
+                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"/>
             </div>
             <div v-if="valasztott == 'A'">
-                <input maxlength='17' value='' class="alvazszam"/>
+                <input maxlength='17' value='' class="alvazszam" id="alvazszam" name="alvazszam" type="text"/>
             </div>
-            <% if (lekerderedm != undefined) {%>
+            <button type="submit">Keresés</button>
+            <% if (lekerderedm_rendsz != undefined) {%>
                 <article class="postcard dark red">
                     <a class="postcard__img_link" href="#">
                         <img class="postcard__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0DAv5GUtD5qWy2-NbndHTPiNX9qhEL416w&usqp=CAU" alt="Image Title" />	
                     </a>
                     <div class="postcard__text">
-                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm.Gyarto %> <%= lekerderedm.Tipus %></a></h1>
+                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm_rendsz.Gyarto %> <%= lekerderedm_rendsz.Tipus %></a></h1>
                         <div class="postcard__bar"></div>
                         <div class="postcard__preview-txt">
-                            <p>Évjárat: <%= lekerderedm.Evjarat %></p>
-                            <p>Állapot: <%= lekerderedm.Allapot %></p>
-                            <p>Futott km: <%= lekerderedm.Futottkm %></p>
-                            <p>Okmányok jellege: <%= lekerderedm.Okmanyok %></p>
-                            <p>Gumiabroncs fajtája: <%= lekerderedm.Gumiabroncs %></p>
+                            <p>Évjárat: <%= lekerderedm_rendsz.Evjarat %></p>
+                            <p>Állapot: <%= lekerderedm_rendsz.Allapot %></p>
+                            <p>Futott km: <%= lekerderedm_rendsz.Futottkm %></p>
+                            <p>Okmányok jellege: <%= lekerderedm_rendsz.Okmanyok %></p>
+                            <p>Gumiabroncs fajtája: <%= lekerderedm_rendsz.Gumiabroncs %></p>
                         </div>
                     </div>
                 </article>
-                <% } %>
+            <% } %>
+            <% if (lekerderedm_alvaz != undefined) {%>
+                <article class="postcard dark red">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0DAv5GUtD5qWy2-NbndHTPiNX9qhEL416w&usqp=CAU" alt="Image Title" />	
+                    </a>
+                    <div class="postcard__text">
+                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm_alvaz.Gyarto %> <%= lekerderedm_alvaz.Tipus %></a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">
+                            <p>Évjárat: <%= lekerderedm_alvaz.Evjarat %></p>
+                            <p>Állapot: <%= lekerderedm_alvaz.Allapot %></p>
+                            <p>Futott km: <%= lekerderedm_alvaz.Futottkm %></p>
+                            <p>Okmányok jellege: <%= lekerderedm_alvaz.Okmanyok %></p>
+                            <p>Gumiabroncs fajtája: <%= lekerderedm_alvaz.Gumiabroncs %></p>
+                        </div>
+                    </div>
+                </article>
+            <% } %>
         </form>
+    </div>   
+        
 </body>
 <%- include('includes/footer.ejs') %>

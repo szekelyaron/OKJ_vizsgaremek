@@ -29,7 +29,9 @@ router.post('/regisztracio', validationForm.form ,mainController.validateRegistr
 
 router.get('/fooldal', mainController.getFooldal);
 
-router.post('/fooldal',mainController.rendszamlekerd);
+router.post('/fooldal',mainController.rendszamlekerdezes);
+
+router.post('/fooldal',mainController.alvazszamlekerdezes);
 
 router.get('/sugo', mainController.getSugo);
 

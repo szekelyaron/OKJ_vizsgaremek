@@ -22,8 +22,9 @@ exports.getFooldal = (req, res, next) => {
             pageTitle: 'CarScope - Főoldal',
             path: '/fooldal',
             rendszam: req.session.rendszam,
-            lekerderedm: undefined
-
+            alvazszam: req.session.alvazszam,
+            lekerderedm_rendsz: undefined,
+            lekerderedm_alvaz: undefined
         }); 
     }
     else
@@ -135,14 +136,11 @@ exports.postLogin = (req, res, next) => {
 const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
-//const rendzsamlekerdez = require('../models/users/rendszam.js');
-//const adatai = require('lekerdezeseredmenye');
-
 const res = require('express/lib/response');
-const lekerd = require('../models/users/rendszam');
+const lekerd = require('../models/users/rendszam.js');
 
-exports.rendszamlekerd = (req,res,next) => {
-    lekerd.lekerdRendszam(req, res, function(err, data) {
+exports.rendszamlekerdezes = (req,res,next) => {
+    lekerd.rendszamalapjan(req, res, function(err, data) {
         if(err)
          {
              console.log("Szar")
@@ -151,7 +149,26 @@ exports.rendszamlekerd = (req,res,next) => {
             res.render('fooldal',{
                 pageTitle: 'CarScope - Főoldal',
                 path: '/fooldal',
-                lekerderedm: req.session.auto,
+                lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+                lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+            })
+         }
+    })
+};
+
+exports.alvazszamlekerdezes = (req,res,next) => {
+    lekerd.alvazszamalapjan(req, res, function(err, data) {
+        if(err)
+         {
+             console.log("Szar")
+         }
+         else {
+            res.render('fooldal',{
+                pageTitle: 'CarScope - Főoldal',
+                path: '/fooldal',
+                lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+                lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+
             })
          }
     })
