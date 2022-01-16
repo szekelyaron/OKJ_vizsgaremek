@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/fooldal.css">
 <link rel="stylesheet" href="/css/select.css">
+<link rel="stylesheet" href="/css/card.css">
 <script src="https://unpkg.com/vue@next" defer></script>
 <script src="/js/fooldal.js" defer></script>
 </head>
@@ -27,18 +28,23 @@
                 <input maxlength='17' value='' class="alvazszam"/>
             </div>
             <% if (lekerderedm != undefined) {%>
-            <div class="card">
-                <div class="card-header">
-                    <%= rendszam.evjarat %>
-                </div>
+                <article class="postcard dark red">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0DAv5GUtD5qWy2-NbndHTPiNX9qhEL416w&usqp=CAU" alt="Image Title" />	
+                    </a>
+                    <div class="postcard__text">
+                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm.Gyarto %> <%= lekerderedm.Tipus %></a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">
+                            <p>Évjárat: <%= lekerderedm.Evjarat %></p>
+                            <p>Állapot: <%= lekerderedm.Allapot %></p>
+                            <p>Futott km: <%= lekerderedm.Futottkm %></p>
+                            <p>Okmányok jellege: <%= lekerderedm.Okmanyok %></p>
+                            <p>Gumiabroncs fajtája: <%= lekerderedm.Gumiabroncs %></p>
+                        </div>
+                    </div>
+                </article>
                 <% } %>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
         </form>
 </body>
 <%- include('includes/footer.ejs') %>
