@@ -137,42 +137,47 @@ const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
 const res = require('express/lib/response');
-const lekerd = require('../models/users/rendszam.js');
+const lekerdR = require('../models/users/rendszam.js');
+const lekerdA = require('../models/users/rendszam.js');
 
 exports.rendszamlekerdezes = (req,res,next) => {
-    lekerd.rendszamalapjan(req, res, function(err, data) {
-        if(err)
-         {
-             console.log("Szar")
-         }
-         else {
-            res.render('fooldal',{
-                pageTitle: 'CarScope - Főoldal',
-                path: '/fooldal',
-                lekerderedm_rendsz: req.session.auto_adatai_rendsz,
-                lekerderedm_alvaz: req.session.auto_adatai_alvaz,
-            })
-         }
-    })
+    if(req.body.R == "True")
+    {
+        lekerdR.rendszamalapjan(req, res, function(err, data) {
+            if(err)
+            {
+                console.log("Szar")
+            }
+            else {
+                res.render('fooldal',{
+                    pageTitle: 'CarScope - Főoldal',
+                    path: '/fooldal',
+                    lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+                    lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+                })
+            }
+        })
+    }
+    if(req.body.A == "True")
+    {
+        lekerdA.alvazszamalapjan(req, res, function(err, data) {
+            if(err)
+            {
+                console.log("Szar")
+            }
+            else {
+                res.render('fooldal',{
+                    pageTitle: 'CarScope - Főoldal',
+                    path: '/fooldal',
+                    lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+                    lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+
+                })
+            }
+        })
+    }
 };
 
-exports.alvazszamlekerdezes = (req,res,next) => {
-    lekerd.alvazszamalapjan(req, res, function(err, data) {
-        if(err)
-         {
-             console.log("Szar")
-         }
-         else {
-            res.render('fooldal',{
-                pageTitle: 'CarScope - Főoldal',
-                path: '/fooldal',
-                lekerderedm_alvaz: req.session.auto_adatai_alvaz,
-                lekerderedm_rendsz: req.session.auto_adatai_rendsz,
-
-            })
-         }
-    })
-};
 
 
 exports.postLogout = (req,res,next) => {

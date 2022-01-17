@@ -23,10 +23,18 @@
         <form method="post" action="/fooldal"> 
             <div v-if="valasztott == 'R'">  
                 <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+                <input type="text" id="R" name="R" hidden value="True">
+                <input type="text" id="A" name="A" hidden value="False">
+
+
             </div>
             <div v-if="valasztott == 'A'">
                 <input maxlength='17' value='' class="alvazszam" id="alvazszam" name="alvazszam" type="text"/>
+                <input type="text" id="A" name="A" hidden value="True">
+                <input type="text" id="R" name="R" hidden value="False">
+
             </div>
+
             <button type="submit">Keresés</button>
             <% if (lekerderedm_rendsz != undefined) {%>
                 <article class="postcard dark red">
@@ -46,6 +54,7 @@
                     </div>
                 </article>
             <% } %>
+        
             <% if (lekerderedm_alvaz != undefined) {%>
                 <article class="postcard dark red">
                     <a class="postcard__img_link" href="#">

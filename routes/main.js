@@ -31,8 +31,6 @@ router.get('/fooldal', mainController.getFooldal);
 
 router.post('/fooldal',mainController.rendszamlekerdezes);
 
-router.post('/fooldal',mainController.alvazszamlekerdezes);
-
 router.get('/sugo', mainController.getSugo);
 
 router.get('/contactus', mainController.getContactus);
