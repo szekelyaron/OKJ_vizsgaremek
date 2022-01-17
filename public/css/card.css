@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 /* This pen */
- body {
-	 font-family: "Baloo 2", cursive;
-	 font-size: 16px;
-	 color: #fff;
-	 text-rendering: optimizeLegibility;
-	 font-weight: initial;
-}
+
  .dark {
 	 background: #110f16;
 }
@@ -25,11 +19,21 @@
 }
 /* Cards */
  .postcard {
+	 font-family: "Baloo 2", cursive;
+	 font-size: 16px;
+	 color: #fff;
+ 	 text-rendering: optimizeLegibility;
+ 	 font-weight: initial;
+	 width: 80%;
+	 margin-left: auto;
+	 margin-right: auto;
+	 border: 4px solid darkred;
 	 flex-wrap: wrap;
 	 display: flex;
 	 box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
 	 border-radius: 10px;
-	 margin: 0 0 2rem 0;
+	 margin-left: auto;
+	 margin-right: auto;
 	 overflow: hidden;
 	 position: relative;
 	 color: #fff;

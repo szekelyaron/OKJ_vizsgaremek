@@ -11,7 +11,7 @@
 </head>
 <body>
     <%- include('includes/navbar_fooldal.ejs') %>
-    <h1>Főoldal</h1>
+    <h1 class="font">Lekérdezés</h1>
 
     <div id="cars">
         <label class="custom-select" for="styledSelect1">
@@ -34,12 +34,13 @@
                 <input type="text" id="R" name="R" hidden value="False">
 
             </div>
-
-            <button type="submit">Keresés</button>
+            <div class="centered">
+                <button type="submit" class="join_btn joinform">Keresés</button>
+            </div>  
             <% if (lekerderedm_rendsz != undefined) {%>
                 <article class="postcard dark red">
                     <a class="postcard__img_link" href="#">
-                        <img class="postcard__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0DAv5GUtD5qWy2-NbndHTPiNX9qhEL416w&usqp=CAU" alt="Image Title" />	
+                        <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
                     </a>
                     <div class="postcard__text">
                         <h1 class="postcard__title red"><a href="#"><%= lekerderedm_rendsz.Gyarto %> <%= lekerderedm_rendsz.Tipus %></a></h1>
@@ -58,7 +59,7 @@
             <% if (lekerderedm_alvaz != undefined) {%>
                 <article class="postcard dark red">
                     <a class="postcard__img_link" href="#">
-                        <img class="postcard__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl0DAv5GUtD5qWy2-NbndHTPiNX9qhEL416w&usqp=CAU" alt="Image Title" />	
+                        <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
                     </a>
                     <div class="postcard__text">
                         <h1 class="postcard__title red"><a href="#"><%= lekerderedm_alvaz.Gyarto %> <%= lekerderedm_alvaz.Tipus %></a></h1>

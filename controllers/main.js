@@ -41,10 +41,17 @@ exports.getVendeg = (req, res, next) => {
 };
 
 exports.getTermekek = (req, res, next) => {
-    res.render('termekek', {
-        pageTitle: 'CarScope - Termékek',
-        path: '/termekek',
-    });
+    if(req.session.user != null)
+    {
+        res.render('termekek', {
+            pageTitle: 'CarScope - Termékek',
+            path: '/termekek',
+        }); 
+    }
+    else
+    {
+        res.redirect('/vendeg');
+    }
 };
 
 exports.getSugo = (req, res, next) => {

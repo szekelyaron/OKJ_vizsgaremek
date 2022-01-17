@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
       return {
-          valasztott:  '',
+          valasztott:  'R',
           selected: '',
       };
   },

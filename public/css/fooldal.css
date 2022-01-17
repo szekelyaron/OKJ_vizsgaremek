@@ -1,3 +1,14 @@
+@font-face{
+  font-family: gtiming;
+    src: url(../font/good\ timing\ bd.ttf);
+}
+
+.font{
+  font-size: 3.5vw;
+  padding: 2.5vw;
+  font-family: gtiming;
+  text-align: center;
+}
 body{
     background-color: black;
 }
@@ -44,4 +55,18 @@ h1{
     font: 5ch droid sans mono, consolas, monospace;
     letter-spacing: 0.5ch;
     text-transform: uppercase;
+  }
+  .join_btn {
+    border: 1px solid white !important;
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+  .join_btn:hover {
+    box-shadow: none !important;
+    color: red !important
+  }
+  .centered{
+    align-items: center;
+    text-align: center;
+    align-content: center;
   }
