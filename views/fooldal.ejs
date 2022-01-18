@@ -18,6 +18,12 @@
             <option value="R" selected>Rendszám</option>
             <option value="A">Alvázszám</option>
         </select>
+        <div v-if="valasztott == 'R'">
+            <select v-model="coutry" id="cusSelectbox" name="options">
+                <option value="M" selected>Magyar</option>
+                <option value="N">Német</option>
+            </select>
+        </div>
         </label>
         <form method="post" action="/fooldal"> 
             <div v-if="valasztott == 'R'">  
