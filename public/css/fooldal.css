@@ -5,7 +5,7 @@
 
 .font{
   font-size: 3.5vw;
-  padding: 2.5vw;
+  padding-top: 100px;
   font-family: gtiming;
   text-align: center;
 }
@@ -69,4 +69,16 @@ h1{
     align-items: center;
     text-align: center;
     align-content: center;
+  }
+  @media (max-width: 650px) {
+    .alvazszam{
+    margin: 1em auto;
+    width: 25.5ch;
+    background: repeating-linear-gradient(90deg, white 0, white 1ch, transparent 0, transparent 1.5ch) 0 100%/25ch 2px no-repeat;
+    font: 2.7ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+    }
+    .font{
+      font-size: 10vw;
+    }
   }
