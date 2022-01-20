@@ -13,14 +13,16 @@
     <%- include('includes/navbar_fooldal.ejs') %>
     <h1 class="font">Lekérdezés</h1>
 
-    <div id="cars">
+    <div id="cars" class="justify-content-center centered">
         <select v-model="selected" id="cusSelectbox" name="options">
-            <option value="R" selected>Rendszám</option>
+            <option value="" selected="selected" disabled="disabled">Rendszám/Alvázszám</option>
+            <option value="R">Rendszám</option>
             <option value="A">Alvázszám</option>
         </select>
-        <div v-if="valasztott == 'R'">
-            <select v-model="coutry" id="cusSelectbox" name="options">
-                <option value="M" selected>Magyar</option>
+        <div v-if="valasztott == 'R'" class="justify-content-center centered">
+            <select v-model="coutry" id="cusSelectbox" name="options" class="justify-content-center">
+                <option value="" selected="selected" disabled="disabled">Ország</option>
+                <option value="M">Magyar</option>
                 <option value="N">Német</option>
             </select>
         </div>
@@ -30,18 +32,19 @@
                 <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"/>
                 <input type="text" id="R" name="R" hidden value="True">
                 <input type="text" id="A" name="A" hidden value="False">
-
-
+                <div class="centered keresBTN">
+                    <button type="submit" class="join_btn joinform">Keresés</button>
+                </div> 
             </div>
             <div v-if="valasztott == 'A'">
                 <input maxlength='17' value='' class="alvazszam" id="alvazszam" name="alvazszam" type="text"/>
                 <input type="text" id="A" name="A" hidden value="True">
                 <input type="text" id="R" name="R" hidden value="False">
-
+                <div class="centered keresBTN">
+                    <button type="submit" class="join_btn joinform">Keresés</button>
+                </div> 
             </div>
-            <div class="centered">
-                <button type="submit" class="join_btn joinform">Keresés</button>
-            </div>  
+             
             <% if (lekerderedm_rendsz != undefined) {%>
                 <article class="postcard dark red">
                     <a class="postcard__img_link" href="#">

@@ -4,8 +4,9 @@
 }
 
 .font{
-  font-size: 3.5vw;
+  font-size: 5vw;
   padding-top: 100px;
+  padding-bottom: 30px;
   font-family: gtiming;
   text-align: center;
 }
@@ -78,6 +79,14 @@ h1{
     font: 2.7ch droid sans mono, consolas, monospace;
     letter-spacing: 0.5ch;
     }
+    .font{
+      font-size: 14vw;
+    }
+  }
+  .keresBTN{
+    padding-top: 0px;
+  }
+  @media (min-width: 650px) and (max-width: 1150px) {
     .font{
       font-size: 10vw;
     }
