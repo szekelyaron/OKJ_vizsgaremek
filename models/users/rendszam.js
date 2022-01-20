@@ -33,7 +33,7 @@ lekerd.prototype.alvazszamalapjan = function(req, res, callback){
             if(rows.length <= 0){
                 connection.release();
                 console.log(alvazszam);
-                console.log("Nincs ilyen alvázszámű");
+                console.log("Nincs ilyen alvázszámú");
                 req.session.auto_adatai_alvaz = undefined;
             }else{
                 req.session.auto_adatai_alvaz = rows[0];

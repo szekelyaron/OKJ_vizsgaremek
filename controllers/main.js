@@ -24,7 +24,8 @@ exports.getFooldal = (req, res, next) => {
             rendszam: req.session.rendszam,
             alvazszam: req.session.alvazszam,
             lekerderedm_rendsz: undefined,
-            lekerderedm_alvaz: undefined
+            lekerderedm_alvaz: undefined,
+            kerdezettE: false
         }); 
     }
     else
@@ -151,9 +152,15 @@ exports.rendszamlekerdezes = (req,res,next) => {
     if(req.body.R == "True")
     {
         lekerdR.rendszamalapjan(req, res, function(err, data) {
-            if(err)
+            if(err || req.session.auto_adatai_rendsz == undefined)
             {
-                console.log("Szar")
+                console.log("Nem jó");
+                res.render('fooldal'),{
+                    pageTitle: 'CarScope - Főoldal',
+                    path: '/fooldal',
+                    kerdezettE: true
+                }
+                
             }
             else {
                 res.render('fooldal',{
@@ -161,6 +168,8 @@ exports.rendszamlekerdezes = (req,res,next) => {
                     path: '/fooldal',
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+                    kerdezettE: true
+
                 })
             }
         })
@@ -168,9 +177,14 @@ exports.rendszamlekerdezes = (req,res,next) => {
     if(req.body.A == "True")
     {
         lekerdA.alvazszamalapjan(req, res, function(err, data) {
-            if(err)
+            if(err || req.session.auto_adatai_alvaz == undefined)
             {
-                console.log("Szar")
+                console.log("nemjó")
+                res.render('fooldal'),{
+                    pageTitle: 'CarScope - Főoldal',
+                    path: '/fooldal',
+                    kerdezettE: true
+                }
             }
             else {
                 res.render('fooldal',{
@@ -178,7 +192,7 @@ exports.rendszamlekerdezes = (req,res,next) => {
                     path: '/fooldal',
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
-
+                    kerdezettE: true
                 })
             }
         })
