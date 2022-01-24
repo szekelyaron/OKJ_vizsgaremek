@@ -13,7 +13,8 @@ lekerd.prototype.rendszamalapjan = function(req, res, callback){
                 connection.release();
                 console.log(rendszam);
                 console.log("Nincs ilyen rendszámú");
-                req.session.auto_adatai_rendsz = undefined;
+                req.session.auto_adatai_rendsz = null;
+                req.session.auto_adatai_alvaz = null;
                 callback(null,undefined);
             }else{
                 req.session.auto_adatai_rendsz = rows[0];
@@ -36,7 +37,8 @@ lekerd.prototype.alvazszamalapjan = function(req, res, callback){
                 connection.release();
                 console.log(alvazszam);
                 console.log("Nincs ilyen alvázszámú");
-                req.session.auto_adatai_alvaz = undefined;
+                req.session.auto_adatai_alvaz = null;
+                req.session.auto_adatai_rendsz = null;
                 callback(null,undefined);
             }else{
                 req.session.auto_adatai_alvaz = rows[0];
