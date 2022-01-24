@@ -155,11 +155,13 @@ exports.rendszamlekerdezes = (req,res,next) => {
             if(err || req.session.auto_adatai_rendsz == undefined)
             {
                 console.log("Nem jó");
-                res.render('fooldal'),{
+                res.render('fooldal',{
                     pageTitle: 'CarScope - Főoldal',
                     path: '/fooldal',
-                    kerdezettE: true
-                }
+                    kerdezettE: true,
+                    lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+                    lekerderedm_alvaz: req.session.auto_adatai_alvaz
+                })
                 
             }
             else {
@@ -180,11 +182,13 @@ exports.rendszamlekerdezes = (req,res,next) => {
             if(err || req.session.auto_adatai_alvaz == undefined)
             {
                 console.log("nemjó")
-                res.render('fooldal'),{
+                res.render('fooldal',{
                     pageTitle: 'CarScope - Főoldal',
                     path: '/fooldal',
-                    kerdezettE: true
-                }
+                    kerdezettE: true,
+                    lekerderedm_alvaz: req.session.auto_adatai_alvaz,
+                    lekerderedm_rendsz: req.session.auto_adatai_rendsz,
+                })
             }
             else {
                 res.render('fooldal',{
