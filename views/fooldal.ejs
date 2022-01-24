@@ -15,25 +15,45 @@
 
     <div id="cars" class="justify-content-center centered">
         <select v-model="selected" id="cusSelectbox" name="options">
-            <option value="" selected="selected" disabled="disabled">Rendszám/Alvázszám</option>
+            <option value="" selected disabled>Rendszám/Alvázszám</option>
             <option value="R">Rendszám</option>
             <option value="A">Alvázszám</option>
         </select>
         <div v-if="valasztott == 'R'" class="justify-content-center centered">
-            <select v-model="coutry" id="cusSelectbox" name="options" class="justify-content-center">
-                <option value="" selected="selected" disabled="disabled">Ország</option>
+            <select v-model="country" id="cusSelectbox" name="options" class="justify-content-center">
+                <option value="" selected disabled>Ország</option>
                 <option value="M">Magyar</option>
                 <option value="N">Német</option>
+                <option value="A">Angol</option>
             </select>
         </div>
         </label>
         <form method="post" action="/fooldal"> 
-            <div v-if="valasztott == 'R'">  
-                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+            <div v-if="valasztott == 'R' && country_valasztott == 'M'">  
+                <img src="img/magyar.png" class="landscape">
+                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" placeholder="   -   "/>
                 <input type="text" id="R" name="R" hidden value="True">
                 <input type="text" id="A" name="A" hidden value="False">
                 <div class="centered keresBTN">
                     <button type="submit" class="join_btn joinform">Keresés</button>
+                </div> 
+            </div>
+            <div v-if="valasztott == 'R' && country_valasztott == 'N'">
+                <img src="img/nemet.png" class="landscape">
+                <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam" type="text"/>
+                <input type="text" id="R" name="R" hidden value="True">
+                <input type="text" id="A" name="A" hidden value="False">
+                <div class="centered keresBTN">
+                <button type="submit" class="join_btn joinform">Keresés</button>
+                </div> 
+            </div>
+            <div v-if="valasztott == 'R' && country_valasztott == 'A'">  
+                <img src="img/angol.png" class="landscape">
+                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+                <input type="text" id="R" name="R" hidden value="True">
+                <input type="text" id="A" name="A" hidden value="False">
+                <div class="centered keresBTN">
+                <button type="submit" class="join_btn joinform">Keresés</button>
                 </div> 
             </div>
             <div v-if="valasztott == 'A'">

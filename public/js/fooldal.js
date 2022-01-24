@@ -3,11 +3,14 @@ const app = Vue.createApp({
       return {
           valasztott:  '',
           selected: '',
+          country_valasztott: '',
+          country: '',
       };
   },
   methods: {
     selectionChanged() {
       console.log(selected.value);
+      console.log(country.value)
     }
   },
   watch: {
@@ -21,6 +24,23 @@ const app = Vue.createApp({
         if(value == "A")
         {
           this.valasztott = "A";
+        }
+      },
+
+      country(value)
+      {
+        console.log(value);
+        if(value == "M")
+        {
+          this.country_valasztott = "M";
+        }
+        if(value == "N")
+        {
+          this.country_valasztott = "N";
+        }
+        if(value == "A")
+        {
+          this.country_valasztott = "A";
         }
       }
   }

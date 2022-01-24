@@ -14,6 +14,9 @@ h1{
   h1 {
     font-size: 4vh;
   }
+  .form__group{
+    width: 60% !important;
+  }
 }
 @media (min-width: 800px) and (max-width: 850px) {
   h1 {
