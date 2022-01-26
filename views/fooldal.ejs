@@ -102,8 +102,37 @@
                     </div>
                 </article>
             <% } %>
-            <% if (lekerderedm_alvaz == undefined && lekerderedm_rendsz == undefined && kerdezettE) {%>
-                <p>Na ilyen nincs az adatbázisban</p>
+            <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null && kerdezettE) {%>
+                <article class="postcard dark red">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
+                    </a>
+                    <div class="postcard__text">
+                        <h1 class="postcard__title red">Kérjük ilyen formában adja meg a rendszámot</h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">
+                            <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030</p>
+                            <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape"> : BGA4030N</p>
+                            <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape"> : FD013GH</p>
+                            <p><%= lekerderedm_rendsz %></p>
+                        </div>
+                    </div>
+                </article>
+            <% } %>
+            <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null && kerdezettE) {%>
+                <article class="postcard dark red">
+                    <a class="postcard__img_link" href="#">
+                        <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
+                    </a>
+                    <div class="postcard__text">
+                        <h1 class="postcard__title red">Kérjük ilyen formában adja meg az alvázszámot</h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">
+                            <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> : 12HDD45JHB33NK9L5</p>
+                            <p><%= lekerderedm_alvaz %></p>
+                        </div>
+                    </div>
+                </article>
             <% } %>
 
             
