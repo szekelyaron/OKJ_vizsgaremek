@@ -1,9 +1,17 @@
 <%- include('includes/header.ejs') %>
 <link rel="stylesheet" href="/css/fooldal.css">
+<link rel="stylesheet" href="/css/buttons.css">
+<link rel="stylesheet" href="/css/card.css">
+<script src="/js/fooldal.js" defer></script>
 <body>
     <%- include('includes/navbar_vendeg.ejs') %>
+    <h1 class="font">Kérdezze le a járművet</h1>
     <div>
         <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
     </div>
+    <div class="centered keresBTN">
+        <button type="submit" class="join_btn joinform">Keresés</button>
+    </div> 
+    
 </body>
 <%- include('includes/footer.ejs') %>
