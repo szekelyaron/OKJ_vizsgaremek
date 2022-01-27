@@ -14,7 +14,9 @@ body{
     max-height: fit-content;
   }
   .products .card {
-    color: gray;
+    border: rgb(36, 36, 36) solid 1px;
+    background-color: rgb(0, 0, 0);
+    color: lightgray;
     text-align: center;
     padding: 30px 10px 30px 10px;
     transition: 0.3s;
@@ -27,16 +29,21 @@ body{
   }
   .products .card:hover {
     transition: 0.3s;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 25px lightgray;
   }
   .products h1 {
     font-size: large;
     font-weight: bold;
   }
   
-  .products .productTitle {
-    color: black;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  .products .productTitle_teli {
+    color: rgb(0, 0, 235);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+  }
+  .products .productTitle_nyari {
+    color: rgb(238, 56, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: x-large;
   }
   .products .productIMG img {
@@ -48,47 +55,36 @@ body{
   .products .productPrice {
     font-size: large;
     font-weight: bold;
-    color: gray;
+    color: lightgray;
     margin-top: 10px;
     margin-bottom: 15px;
   }
   .products a {
     text-decoration: none;
   }
-  
-  .productBTN {
-    color: darkgray;
-    font-family:'Times New Roman', Times, serif;
-    text-decoration: none;
-    margin-left: 10px;
-    padding: 5px;
+  .join_btn {
+    border: 1px solid white !important;
+    margin-bottom: 20px;
     background-color: transparent;
-    transition: 0.1s;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    border: 1px solid black;
   }
-  .productBTN:hover {
-    background-color: lightgray;
-    color: black;
-    box-shadow: 0 0 5px gray;
-    transition: 0.1s;
-    text-decoration: none;
+  .join_btn:hover {
+    box-shadow: none !important;
+    color: white !important;
   }
-  .pbtn{
-      margin-top: 20px;
+  .joinform {
+    color: grey!important;
   }
-  
-
-
-  
-
-   
-  
-  
-  
-  
-  
-  
-  
+  .join_btn:before {
+    background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(248, 248, 248, 0.4),
+    transparent
+    )!important;
+    transition: all 600ms !important;
+  }
+  .joinform {
+    margin-top: 20px !important;
+    font-size: 0.9rem !important;
+    padding: 0.9rem 0.9rem !important;
+  }
