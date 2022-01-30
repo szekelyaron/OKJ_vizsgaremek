@@ -55,6 +55,20 @@ exports.getTermekek = (req, res, next) => {
     }
 };
 
+exports.getKosar = (req, res, next) => {
+    if(req.session.user != null)
+    {
+        res.render('kosar', {
+            pageTitle: 'CarScope - Kosár',
+            path: '/kosar',
+        }); 
+    }
+    else
+    {
+        res.redirect('/vendeg');
+    }
+};
+
 exports.getSugo = (req, res, next) => {
     res.render('sugo', {
         pageTitle: 'CarScope - Súgó',

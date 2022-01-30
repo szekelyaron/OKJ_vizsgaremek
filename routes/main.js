@@ -43,4 +43,6 @@ router.get('/vendeg',mainController.getVendeg);
 
 router.get('/termekek',mainController.getTermekek);
 
+router.get('/kosar',mainController.getKosar);
+
 module.exports = router;
