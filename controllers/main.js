@@ -47,6 +47,8 @@ exports.getTermekek = (req, res, next) => {
         res.render('termekek', {
             pageTitle: 'CarScope - Termékek',
             path: '/termekek',
+            lekerderedm_gumik: undefined,
+
         }); 
     }
     else
@@ -159,8 +161,9 @@ const register = require('../models/users/register.js');
 const { body, validationResult } = require('express-validator');
 const logout = require('../models/users/logout.js');
 const res = require('express/lib/response');
-const lekerdR = require('../models/users/rendszam.js');
-const lekerdA = require('../models/users/rendszam.js');
+const lekerdR = require('../models/users/auto.js');
+const lekerdA = require('../models/users/auto.js');
+const lekerdGumik = require('../models/users/gumi.js');
 
 exports.rendszamlekerdezes = (req,res,next) => {
     if(req.body.R == "True")
@@ -217,8 +220,15 @@ exports.rendszamlekerdezes = (req,res,next) => {
     }
 };
 
-
-
+exports.gumikLekerdezes = (req,res,next) => {
+    lekerdGumik.gumikKilistaz(req, res, function(err, data) {
+        res.render('termekek', {
+            pageTitle: 'CarScope - Termékek',
+            path: '/termekek',
+            lekerderedm_gumik: req.session.gumiabroncs
+        })
+    })
+}
 exports.postLogout = (req,res,next) => {
     logout.logoutUser(req, res, function(err, data) {
       if (err) {

@@ -6,80 +6,85 @@
     <%- include('includes/navbar_fooldal.ejs') %>
     <h1>Termékek</h1>
     <div class="wrapper">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-            <section class="products">
-                    <div class="container">         
-                            <div class="card">
-                                <div>
-                                    <h1 class="productTitle_teli">
-                                        TéliGumi
-                                    </h1>
-                                </div>
-                                <div class="productIMG">
-                                    <img src="img/gumi.png" alt="">
-                                </div>
-                                <div>
-                                    <h2 class="productPrice">
-                                        40000 Ft
-                                    </h2>
-                                </div>
-                                <div>
-                                    
-                                    Megbizható
-                                </div>
-                                <div class="pbtn">
-                                    
-                                    <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Kosárhoz ad</button>
-
-                                </div>
-                            </div>              
-                    </div>
-            </section>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
+        <form method="post" action="/termekek">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
                 <section class="products">
-                    <div class="container">         
-                            <div class="card">
-                                <div>
-                                    <h1 class="productTitle_nyari">
-                                        NyáriGumi
-                                    </h1>
-                                </div>
-                                <div class="productIMG">
-                                    <img src="img/gumi.png" alt="">
-                                </div>
-                                <div>
-                                    <h2 class="productPrice">
-                                        40000 Ft
-                                    </h2>
-                                </div>
-                                <div>
-                                    
-                                    Megbizható
-                                </div>
-                                <div class="pbtn">
-                                    
-                                    <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal"  onclick="timer(this);">Kosárhoz ad</button>
+                    <% if (lekerderedm_gumik != undefined) {%>
+                        <% for (let gumi of lekerderedm_gumik) { %>
+                        <div class="container">         
+                                <div class="card">
+                                    <div>
+                                        <h1 class="productTitle_teli">
+                                        </h1>
+                                    </div>
+                                    <div class="productIMG">
+                                        <img src="img/gumi.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h2 class="productPrice">
+                                            40000 Ft
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        
+                                        Megbizható
+                                    </div>
+                                    <div class="pbtn">
+                                        
+                                        <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Kosárhoz ad</button>
 
-                                </div>
-                            </div>              
-                    </div>
-            </section>
-            </div>
-            
-            <div class="modal fade text-center" id="exampleModal">
-                <div class="modal-dialog text-center">
-                  <div class="modal-content modalbg text-center">                  
-                    <div class="modal-body text-light text-center">
-                        <h4 class="modal-title text-center font-weight-bold">Kosárhoz adva</h4>
-                        <img src="img/checkmark.png" alt="" class="popup_img">
-                    </div>
-                  </div>
+                                    </div>
+                                </div>              
+                        </div>
+                        <% } %>
+                    <% } %>
+                </section>
                 </div>
-              </div>
-        </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <section class="products">
+                        <div class="container">         
+                                <div class="card">
+                                    <div>
+                                        <h1 class="productTitle_nyari">
+                                            NyáriGumi
+                                        </h1>
+                                    </div>
+                                    <div class="productIMG">
+                                        <img src="img/gumi.png" alt="">
+                                    </div>
+                                    <div>
+                                        <h2 class="productPrice">
+                                            40000 Ft
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        
+                                        Megbizható
+                                    </div>
+                                    <div class="pbtn">
+                                        
+                                        <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal"  onclick="timer(this);">Kosárhoz ad</button>
+
+                                    </div>
+                                </div>              
+                        </div>
+                </section>
+                </div>
+                
+                <div class="modal fade text-center" id="exampleModal">
+                    <div class="modal-dialog text-center">
+                    <div class="modal-content modalbg text-center">                  
+                        <div class="modal-body text-light text-center">
+                            <h4 class="modal-title text-center font-weight-bold">Kosárhoz adva</h4>
+                            <img src="img/checkmark.png" alt="" class="popup_img">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 <%- include('includes/footer.ejs') %>
