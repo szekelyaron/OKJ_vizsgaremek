@@ -41,9 +41,7 @@ router.post('/fooldal',mainController.checkLogin);
 
 router.get('/vendeg',mainController.getVendeg);
 
-router.get('/termekek',mainController.getTermekek);
-
-router.post('/termekek',mainController.gumikLekerdezes);
+router.get('/termekek',mainController.gumikLekerdezes);
 
 router.get('/kosar',mainController.getKosar);
 

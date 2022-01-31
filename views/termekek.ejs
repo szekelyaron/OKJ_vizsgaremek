@@ -6,29 +6,30 @@
     <%- include('includes/navbar_fooldal.ejs') %>
     <h1>Termékek</h1>
     <div class="wrapper">
-        <form method="post" action="/termekek">
             <div class="row">
+                <% if (lekerderedm_gumik != undefined) {%>
+                    <% for (let gumi of lekerderedm_gumik) { %>
                 <div class="col-12 col-md-6 col-lg-3">
                 <section class="products">
-                    <% if (lekerderedm_gumik != undefined) {%>
-                        <% for (let gumi of lekerderedm_gumik) { %>
+                    
                         <div class="container">         
                                 <div class="card">
                                     <div>
                                         <h1 class="productTitle_teli">
+                                            <%= gumi.Evszak %>
                                         </h1>
                                     </div>
                                     <div class="productIMG">
                                         <img src="img/gumi.png" alt="">
                                     </div>
                                     <div>
+                                        <h1 class="productTitle_teli"><%= gumi.Gyarto %></h1>
                                         <h2 class="productPrice">
-                                            40000 Ft
+                                            <%= gumi.Ar %> Ft
                                         </h2>
                                     </div>
                                     <div>
-                                        
-                                        Megbizható
+                                        Értékelés: <%= gumi.Kategoria %>
                                     </div>
                                     <div class="pbtn">
                                         
@@ -37,42 +38,11 @@
                                     </div>
                                 </div>              
                         </div>
-                        <% } %>
-                    <% } %>
+                        
                 </section>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-3">
-                    <section class="products">
-                        <div class="container">         
-                                <div class="card">
-                                    <div>
-                                        <h1 class="productTitle_nyari">
-                                            NyáriGumi
-                                        </h1>
-                                    </div>
-                                    <div class="productIMG">
-                                        <img src="img/gumi.png" alt="">
-                                    </div>
-                                    <div>
-                                        <h2 class="productPrice">
-                                            40000 Ft
-                                        </h2>
-                                    </div>
-                                    <div>
-                                        
-                                        Megbizható
-                                    </div>
-                                    <div class="pbtn">
-                                        
-                                        <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal"  onclick="timer(this);">Kosárhoz ad</button>
-
-                                    </div>
-                                </div>              
-                        </div>
-                </section>
-                </div>
-                
+                </div> 
+                <% } %>
+                <% } %> 
                 <div class="modal fade text-center" id="exampleModal">
                     <div class="modal-dialog text-center">
                     <div class="modal-content modalbg text-center">                  
@@ -84,7 +54,6 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </body>
 <%- include('includes/footer.ejs') %>
