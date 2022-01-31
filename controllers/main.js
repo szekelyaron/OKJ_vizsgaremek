@@ -191,7 +191,6 @@ exports.rendszamlekerdezes = (req,res,next) => {
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
                     kerdezettE: true
-
                 })
             }
         })

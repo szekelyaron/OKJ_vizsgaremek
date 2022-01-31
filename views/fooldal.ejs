@@ -11,6 +11,9 @@
 </head>
 <body>
     <%- include('includes/navbar_fooldal.ejs') %>
+
+    <!--Lekérdezés -->   
+
     <h1 class="font">Kérdezze le a járművet</h1>
 
     <div id="cars" class="justify-content-center centered">
@@ -65,45 +68,75 @@
                 </div> 
             </div>
              
+            <!--Kiírása a sikeres lekérdezésnek-->   
+            <div v-if="valasztott != 'A' && valasztott !='R'">
+                <% if (lekerderedm_rendsz != undefined) {%>
+                    <article class="postcard dark red">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title red"><a href="#"><%= lekerderedm_rendsz.Gyarto %> <%= lekerderedm_rendsz.Tipus %></a></h1>
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                                <p>Évjárat: <%= lekerderedm_rendsz.Evjarat %></p>
+                                <p>Állapot: <%= lekerderedm_rendsz.Allapot %></p>
+                                <p>Futott km: <%= lekerderedm_rendsz.Futottkm %></p>
+                                <p>Okmányok jellege: <%= lekerderedm_rendsz.Okmanyok %></p>
+                                <p>Gumiabroncs fajtája: <%= lekerderedm_rendsz.Gumiabroncs %></p>
+                            </div>
+                        </div>
+                    </article>
+                <% } %>
             
-            <% if (lekerderedm_rendsz != undefined) {%>
-                <article class="postcard dark red">
-                    <a class="postcard__img_link" href="#">
-                        <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
-                    </a>
-                    <div class="postcard__text">
-                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm_rendsz.Gyarto %> <%= lekerderedm_rendsz.Tipus %></a></h1>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <p>Évjárat: <%= lekerderedm_rendsz.Evjarat %></p>
-                            <p>Állapot: <%= lekerderedm_rendsz.Allapot %></p>
-                            <p>Futott km: <%= lekerderedm_rendsz.Futottkm %></p>
-                            <p>Okmányok jellege: <%= lekerderedm_rendsz.Okmanyok %></p>
-                            <p>Gumiabroncs fajtája: <%= lekerderedm_rendsz.Gumiabroncs %></p>
+                <% if (lekerderedm_alvaz != undefined) {%>
+                    <article class="postcard dark red">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title red"><a href="#"><%= lekerderedm_alvaz.Gyarto %> <%= lekerderedm_alvaz.Tipus %></a></h1>
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                                <p>Évjárat: <%= lekerderedm_alvaz.Evjarat %></p>
+                                <p>Állapot: <%= lekerderedm_alvaz.Allapot %></p>
+                                <p>Futott km: <%= lekerderedm_alvaz.Futottkm %></p>
+                                <p>Okmányok jellege: <%= lekerderedm_alvaz.Okmanyok %></p>
+                                <p>Gumiabroncs fajtája: <%= lekerderedm_alvaz.Gumiabroncs %></p>
+                            </div>
                         </div>
-                    </div>
-                </article>
-            <% } %>
-        
-            <% if (lekerderedm_alvaz != undefined) {%>
-                <article class="postcard dark red">
-                    <a class="postcard__img_link" href="#">
-                        <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
-                    </a>
-                    <div class="postcard__text">
-                        <h1 class="postcard__title red"><a href="#"><%= lekerderedm_alvaz.Gyarto %> <%= lekerderedm_alvaz.Tipus %></a></h1>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <p>Évjárat: <%= lekerderedm_alvaz.Evjarat %></p>
-                            <p>Állapot: <%= lekerderedm_alvaz.Allapot %></p>
-                            <p>Futott km: <%= lekerderedm_alvaz.Futottkm %></p>
-                            <p>Okmányok jellege: <%= lekerderedm_alvaz.Okmanyok %></p>
-                            <p>Gumiabroncs fajtája: <%= lekerderedm_alvaz.Gumiabroncs %></p>
+                    </article>
+                <% } %>
+            </div>
+            <!--Ha nincs ilyen az adatbázisban-->
+            <div v-if="valasztott != ''">
+                <% if (lekerderedm_rendsz == undefined && kerdezettE == true) {%>
+                    <article class="postcard dark red">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title red">Sajnos az adatbázisunkban nincs ilyen rendszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyton frissül!</h1>
                         </div>
-                    </div>
-                </article>
-            <% } %>
-            <div v-if="valasztott == 'R'">
+                    </article>
+                <% } %>
+            </div>
+            <div v-if="valasztott != ''">
+                <% if (lekerderedm_alvaz == undefined && kerdezettE == true) {%>
+                    <article class="postcard dark red">
+                        <a class="postcard__img_link" href="#">
+                            <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
+                        </a>
+                        <div class="postcard__text">
+                            <h1 class="postcard__title red">Sajnos az adatbázisunkban nincs ilyen alvázszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyton frissül!</h1>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+
+            <!--Útmutató a megfelelő beviteli formához--> 
+
+            <div v-if="valasztott == 'R' && country_valasztott != ''">
                 <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null) {%>
                     <article class="postcard dark red">
                         <a class="postcard__img_link" href="#">
@@ -122,7 +155,6 @@
                     </article>
                 <% } %>
             </div>
-
             <div v-if="valasztott == 'A'">
                 <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null) {%>
                     <article class="postcard dark red">
