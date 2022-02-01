@@ -6,12 +6,38 @@
 <body>
     <%- include('includes/navbar_vendeg.ejs') %>
     <h1 class="font">Kérdezze le a járművet</h1>
-    <div>
-        <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
-    </div>
-    <div class="centered keresBTN">
-        <button type="submit" class="join_btn joinform">Keresés</button>
-    </div> 
+    <form action="/vendeg" method="post">
+        <div>
+            <input maxlength='7' value='ABC-123' class="rendszam" id="rendszam" name="rendszam" type="text"/>
+        </div>
+        <div class="centered keresBTN">
+            <button type="submit" class="join_btn joinform">Keresés</button>
+        </div>
     
+        <% if (lekerderedm_vendeg != undefined) {%>
+            <article class="postcard dark red">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="img/seat.jpg" alt="Image Title" />	
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title red"><a href="#"><%= lekerderedm_vendeg.Gyarto %> <%= lekerderedm_vendeg.Tipus %></a></h1>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">
+                        <p>Évjárat: <%= lekerderedm_vendeg.Evjarat %></p>
+                        <p>Futott km: <%= lekerderedm_vendeg.Futottkm %></p>
+                        <p>Okmányok jellege: <%= lekerderedm_vendeg.Okmanyok %></p>
+            </article>
+        <% } %>
+        <% if (lekerderedm_vendeg == undefined && VendegKerdezettER == true) {%>
+            <article class="postcard dark red">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
+                </a>
+                <div class="postcard__text">
+                    <h1 class="postcard__title red">Sajnos az adatbázisunkban nincs ilyen rendszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyton frissül!</h1>
+                </div>
+            </article>
+        <% } %>
+    </form>
 </body>
 <%- include('includes/footer.ejs') %>

@@ -34,20 +34,14 @@ exports.getFooldal = (req, res, next) => {
             alvazszam: req.session.alvazszam,
             lekerderedm_rendsz: undefined,
             lekerderedm_alvaz: undefined,
-            kerdezettE: false
+            kerdezettEA: false,
+            kerdezettER: false
         }); 
     }
     else
     {
         res.redirect('/vendeg');
     }
-};
-
-exports.getVendeg = (req, res, next) => {
-    res.render('vendeg', {
-        pageTitle: 'CarScope - Vendég',
-        path: '/vendeg',
-    });
 };
 
 exports.gumikLekerdezes = (req,res,next) => {
@@ -80,6 +74,40 @@ exports.getKosar = (req, res, next) => {
     {
         res.redirect('/vendeg');
     }
+};
+
+exports.getVendeg = (req, res, next) => {
+    res.render('vendeg', {
+        pageTitle: 'CarScope - Vendég',
+        path: '/vendeg',
+        VendegKerdezettER: false,
+        rendszam: req.session.rendszam,
+        lekerderedm_vendeg: undefined
+    });
+};
+
+exports.rendszamlekerdezesVendeg = (req,res,next) => {
+    lekerdR.rendszamalapjan(req, res, function(err, data) {
+        if(err || req.session.auto_adatai_rendsz == undefined)
+        {
+            //console.log("Nincs ilyen");
+            res.render('vendeg',{
+                pageTitle: 'CarScope - Vendég',
+                path: '/vendeg',
+                VendegKerdezettER: true,
+                lekerderedm_vendeg: req.session.auto_adatai_rendsz,
+            })
+            
+        }
+        else {
+            res.render('vendeg',{
+                pageTitle: 'CarScope - Vendég',
+                path: '/vendeg',
+                lekerderedm_vendeg: req.session.auto_adatai_rendsz,
+                VendegKerdezettER: true
+            })
+        }
+    })
 };
 
 exports.getSugo = (req, res, next) => {
@@ -178,7 +206,8 @@ exports.rendszamlekerdezes = (req,res,next) => {
                 res.render('fooldal',{
                     pageTitle: 'CarScope - Főoldal',
                     path: '/fooldal',
-                    kerdezettE: true,
+                    kerdezettER: true,
+                    kerdezettEA: false,
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz
                 })
@@ -190,7 +219,8 @@ exports.rendszamlekerdezes = (req,res,next) => {
                     path: '/fooldal',
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
-                    kerdezettE: true
+                    kerdezettER: true,
+                    kerdezettEA: false
                 })
             }
         })
@@ -204,7 +234,8 @@ exports.rendszamlekerdezes = (req,res,next) => {
                 res.render('fooldal',{
                     pageTitle: 'CarScope - Főoldal',
                     path: '/fooldal',
-                    kerdezettE: true,
+                    kerdezettEA: true,
+                    kerdezettER: false,
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
                 })
@@ -215,7 +246,8 @@ exports.rendszamlekerdezes = (req,res,next) => {
                     path: '/fooldal',
                     lekerderedm_alvaz: req.session.auto_adatai_alvaz,
                     lekerderedm_rendsz: req.session.auto_adatai_rendsz,
-                    kerdezettE: true
+                    kerdezettEA: true,
+                    kerdezettER: false,
                 })
             }
         })

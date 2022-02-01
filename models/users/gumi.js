@@ -11,7 +11,7 @@ lekerdGumi.prototype.gumikKilistaz = function(req, res, callback){
 
                 connection.release();
                 console.log("Nincs gumiabroncs az adatbázisban");
-                req.session.gumiabroncs = undefined;
+                req.session.gumiabroncs = null;
                 callback(null,undefined);
             }else{
                 req.session.gumiabroncs = [];

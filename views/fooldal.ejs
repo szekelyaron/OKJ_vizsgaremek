@@ -69,7 +69,7 @@
             </div>
              
             <!--Kiírása a sikeres lekérdezésnek-->   
-            <div v-if="valasztott != 'A' && valasztott !='R'">
+            <div v-if="valasztott == ''">
                 <% if (lekerderedm_rendsz != undefined) {%>
                     <article class="postcard dark red">
                         <a class="postcard__img_link" href="#">
@@ -109,8 +109,8 @@
                 <% } %>
             </div>
             <!--Ha nincs ilyen az adatbázisban-->
-            <div v-if="valasztott != ''">
-                <% if (lekerderedm_rendsz == undefined && kerdezettE == true) {%>
+            <div v-if="valasztott == ''">
+                <% if (lekerderedm_rendsz == undefined && kerdezettER == true) {%>
                     <article class="postcard dark red">
                         <a class="postcard__img_link" href="#">
                             <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
@@ -121,8 +121,8 @@
                     </article>
                 <% } %>
             </div>
-            <div v-if="valasztott != ''">
-                <% if (lekerderedm_alvaz == undefined && kerdezettE == true) {%>
+            <div v-if="valasztott == ''">
+                <% if (lekerderedm_alvaz == undefined && kerdezettEA == true) {%>
                     <article class="postcard dark red">
                         <a class="postcard__img_link" href="#">
                             <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	

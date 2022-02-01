@@ -13,12 +13,12 @@ lekerd.prototype.rendszamalapjan = function(req, res, callback){
                 connection.release();
                 console.log(rendszam);
                 console.log("Nincs ilyen rendszámú");
-                req.session.auto_adatai_rendsz = undefined;
-                req.session.auto_adatai_alvaz = undefined;
+                req.session.auto_adatai_rendsz = null;
+                req.session.auto_adatai_alvaz = null;
                 callback(null,undefined);
             }else{
                 req.session.auto_adatai_rendsz = rows[0];
-                req.session.auto_adatai_alvaz = undefined;
+                req.session.auto_adatai_alvaz = null;
                 console.log(req.session.auto_adatai_rendsz)
                 connection.release();
                 callback(null,rows[0]);
