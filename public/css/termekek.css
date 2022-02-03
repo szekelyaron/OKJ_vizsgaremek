@@ -25,7 +25,7 @@ body{
     padding: 30px 10px 30px 10px;
     transition: 0.3s;
     margin: 0;
-    min-height: 400px;
+    min-height: 405px;
     max-height: fit-content;
     width: 250px;
     float: left;
@@ -43,12 +43,12 @@ body{
   .products .productTitle_teli {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: x-large;
+    font-size: 25px;
   }
   .products .productTitle_nyari {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: x-large;
+    font-size: 25px;
   }
   .products .productIMG img {
     width: 60%;

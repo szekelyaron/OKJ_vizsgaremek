@@ -138,7 +138,7 @@
 
             <div v-if="valasztott == 'R' && country_valasztott != ''">
                 <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null) {%>
-                    <article class="postcard dark red">
+                    <article class="postcard dark red info">
                         <a class="postcard__img_link" href="#">
                             <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
                         </a>
@@ -157,7 +157,7 @@
             </div>
             <div v-if="valasztott == 'A'">
                 <% if (lekerderedm_rendsz == null && lekerderedm_alvaz == null) {%>
-                    <article class="postcard dark red">
+                    <article class="postcard dark red info">
                         <a class="postcard__img_link" href="#">
                             <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
                         </a>
@@ -165,7 +165,7 @@
                             <h1 class="postcard__title red">Kérjük ilyen formában adja meg az alvázszámot</h1>
                             <div class="postcard__bar"></div>
                             <div class="postcard__preview-txt">
-                                <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> : 12HDD45JHB33NK9L5</p>
+                                <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> 12HDD45JHB33NK9L5</p>
                                 <p><%= lekerderedm_alvaz %></p>
                             </div>
                         </div>

@@ -116,3 +116,14 @@ h1{
 .rendszam_pelda{
   font-size: 3rem;
 }
+@media (max-width: 840px) {
+  .rendszam_pelda{
+    font-size: 2rem;
+  }
+}
+@media (max-width: 370px) {
+  .rendszam_pelda{
+    font-size: 1.6rem;
+  }
+}
+
