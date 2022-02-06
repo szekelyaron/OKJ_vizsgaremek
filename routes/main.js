@@ -47,4 +47,8 @@ router.get('/termekek',mainController.gumikLekerdezes);
 
 router.get('/kosar',mainController.getKosar);
 
+router.post('/kosarhozad',mainController.gumiKosarba);
+
+router.post('/kosartorol', mainController.gumiKosartorol);
+
 module.exports = router;

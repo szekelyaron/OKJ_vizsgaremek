@@ -32,8 +32,10 @@
                                         Értékelés: <%= gumi.Kategoria %>
                                     </div>
                                     <div class="pbtn">
-                                        
-                                        <button class="join_btn joinform" href="" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Kosárhoz ad</button>
+                                        <form action="/kosarhozad" method="POST">
+                                            <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
+                                        <button class="join_btn joinform" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Kosárhoz ad</button>
+                                    </form>
 
                                     </div>
                                 </div>              

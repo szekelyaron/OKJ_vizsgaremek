@@ -6,36 +6,64 @@
     <h1>Termékek</h1>
     <div class="wrapper">
         <div class="row">
+            <% if(kosarTartalma != undefined){ %>
+                <% for (let kosar of kosarTartalma) { %>
             <div class="col-12 col-md-6 col-lg-3">
             <section class="products">
                     <div class="container">         
                             <div class="card">
                                 <div>
                                     <h1 class="productTitle_teli">
-                                        TéliGumi
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID == kosar.termek_id) {%>
+                                                <%= gumi.Evszak %>
+                                                <%}%>
+                                            <%}%>
                                     </h1>
                                 </div>
                                 <div class="productIMG">
                                     <img src="img/gumi.png" alt="">
                                 </div>
                                 <div>
+                                    <h1 class="productTitle_teli">
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID == kosar.termek_id) {%>
+                                                <%= gumi.Gyarto %>
+                                                <%}%>
+                                            <%}%>
+                                    </h1>
                                     <h2 class="productPrice">
-                                        40000 Ft
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID == kosar.termek_id) {%>
+                                                <%= gumi.Ar %>
+                                                <%}%>
+                                            <%}%>
                                     </h2>
                                 </div>
                                 <div>
                                     
-                                    Megbizható
+                                    <% for(let gumi of lekerderedm_gumik){ %>
+                                        <% if(gumi.GID == kosar.termek_id) {%>
+                                            <%= gumi.Kategoria %>
+                                            <%}%>
+                                        <%}%>
+                                        <br>
+                                        (<%= kosar.qty %>)
                                 </div>
                                 <div class="pbtn">
                                     
-                                    <button class="join_btn joinform" href="" value="ALL ON" onclick="allOn();">Fizetés</button>
-
+                                        <button class="join_btn joinform" href="" value="ALL ON" onclick="allOn();">Fizetés</button>
+                                    <form action="/kosartorol" method="POST" >
+                                        <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
+                                        <button class="join_btn joinform" href="" value="ALL ON" >Töröl</button>
+                                    </form>
                                 </div>
                             </div>              
                     </div>
             </section>
             </div>
+            <% } %>
+            <% } %>
         </div>
     </div>
     
