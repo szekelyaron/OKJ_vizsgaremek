@@ -6,7 +6,6 @@ const lekerdR = require('../models/users/auto.js');
 const lekerdA = require('../models/users/auto.js');
 const lekerdGumik = require('../models/users/gumi.js');
 const login = require('../models/users/login.js');
-const kosar = require('../models/users/kosar.js');
 
 //Kezsőoldal
 exports.getIndex = (req, res, next) => {
@@ -247,7 +246,7 @@ exports.gumikLekerdezes = (req,res,next) => {
             res.redirect('/vendeg');
         }   
     })
-}
+};
 
 //Gumik kosárba helyezése/törlése
 exports.gumiKosarba = (req,res,next) => {
@@ -282,7 +281,7 @@ exports.gumiKosartorol = (req,res,next) => {
     var index = kosar.findIndex(g => g.termek_id == termek);
     kosar.splice(index, 1);
     res.redirect('/kosar');
-}
+};
 
 //Kosár betöltése
 exports.getKosar = (req, res, next) => {

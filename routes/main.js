@@ -15,7 +15,8 @@ router.use(session({
 }));
 
 router.get('/', mainController.getIndex);
-router.get('/', mainController.checkUserLogon);
+
+router.get('/', mainController.checkLogin);
 
 router.get('/bejelentkezes', mainController.getBejelentkezes);
 
