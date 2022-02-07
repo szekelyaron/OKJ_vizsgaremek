@@ -275,13 +275,28 @@ exports.gumiKosarba = (req,res,next) => {
     }
     res.redirect('/termekek');
 };
+
 exports.gumiKosartorol = (req,res,next) => {
+    console.log("Lefutott -");
     var termek = req.body.termek_id;
     var kosar = req.session.user.kosar;
     var index = kosar.findIndex(g => g.termek_id == termek);
     kosar.splice(index, 1);
     res.redirect('/kosar');
 };
+
+exports.gumiKosarPlusz = (req, res, next) => {
+    console.log("Lefutott +");
+
+    for(let termek of req.session.user.kosar)
+        {
+            if(termek.termek_id == req.body.termek_id)
+            {
+                termek.qty += 1;
+            }
+        }
+    res.redirect('/kosar');
+}
 
 //Kosár betöltése
 exports.getKosar = (req, res, next) => {

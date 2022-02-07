@@ -50,6 +50,8 @@ router.get('/kosar',mainController.getKosar);
 
 router.post('/kosarhozad',mainController.gumiKosarba);
 
-router.post('/kosartorol', mainController.gumiKosartorol);
+router.post('/kosarMinusz', mainController.gumiKosartorol);
+
+router.post('/kosarPlusz', mainController.gumiKosarPlusz);
 
 module.exports = router;
