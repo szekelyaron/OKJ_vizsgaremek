@@ -66,6 +66,10 @@
 	 object-fit: cover;
 	 position: relative;
 }
+.infolink{
+	max-height: 100px !important;
+	width: 60% !important;
+}
  .postcard .postcard__img_link {
 	 display: contents;
 }

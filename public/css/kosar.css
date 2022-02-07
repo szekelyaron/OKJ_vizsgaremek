@@ -1,0 +1,4 @@
+.products .card {
+    min-height: 505px !important;
+    width: 250px;
+  }
