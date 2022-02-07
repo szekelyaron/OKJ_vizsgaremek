@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Z:\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\
 CS_MyAdmin
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-Z:\CS-MyAdmin\CS-MyAdmin\App.xaml
-11407045341
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\App.xaml
+2-2016695974
 
-5-1994493485
+6539461245
 192-1533232326
-MainWindow.xaml;
+MainWindow.xaml;Pages\MainPage.xaml;
 
-False
+True
 

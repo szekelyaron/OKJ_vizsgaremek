@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj": {}
+    "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj": {}
   },
   "projects": {
-    "Z:\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj": {
+    "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+        "projectUniqueName": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
         "projectName": "CS-MyAdmin",
-        "projectPath": "Z:\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+        "projectPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
         "packagesPath": "C:\\Users\\szekely.aron\\.nuget\\packages\\",
-        "outputPath": "Z:\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
+        "outputPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

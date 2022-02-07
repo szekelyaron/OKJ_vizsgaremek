@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CS_MyAdmin.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using CS_MyAdmin.Pages;
+
 namespace CS_MyAdmin
 {
     /// <summary>
@@ -23,6 +26,8 @@ namespace CS_MyAdmin
         public MainWindow()
         {
             InitializeComponent();
+
+            FRM_Content.Content = new MainPage();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
