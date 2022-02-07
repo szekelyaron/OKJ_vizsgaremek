@@ -1,8 +1,108 @@
 <%- include('includes/header.ejs') %>
 <link rel="stylesheet" href="/css/termekek.css">
 <link rel="stylesheet" href="/css/buttons.css">
+<link rel="stylesheet" href="/css/kosar.css">
+<script src="/js/kosar.js" defer></script>
 <body>
     <%- include('includes/navbar_fooldal.ejs') %>
+    <div class="shopping-cart">
+        <!-- Title -->
+        <div class="title">
+          Kosár
+        </div>
+       
+        <!-- Product #1 -->
+        <div class="item">
+          <div class="buttons">
+            <button class="join_btn joinform" href="" value="ALL ON" >Töröl</button>
+          </div>
+          <div class="image">
+            <img src="img/gumi.png" alt="" class="gumi_img"/>
+          </div>
+       
+          <div class="description">
+            <span>Common Projects</span>
+            <span>Bball High</span>
+            <span>White</span>
+          </div>
+       
+          <div class="quantity">
+            <button class="minus-btn" type="button" name="button">
+                -
+            </button>
+
+            <input type="text" name="name" value="1" disabled class="db">
+
+            <button class="plus-btn" type="button" name="button">
+                +
+            </button>
+          </div>
+       
+          <div class="total-price">$549</div>
+        </div>
+       
+        <!-- Product #2 -->
+        <div class="item">
+          <div class="buttons">
+            <button class="join_btn joinform" href="" value="ALL ON" >Töröl</button>
+          </div>
+          <div class="image">
+            <img src="img/gumi.png" alt="" class="gumi_img"/>
+          </div>
+       
+          <div class="description">
+            <span>Common Projects</span>
+            <span>Bball High</span>
+            <span>White</span>
+          </div>
+       
+          <div class="quantity">
+            <button class="minus-btn" type="button" name="button">
+                -
+            </button>
+
+            <input type="text" name="name" value="1" disabled class="db">
+            
+            <button class="plus-btn" type="button" name="button">
+                +
+            </button>
+          </div>
+          <div class="total-price">$549</div>
+        </div>
+       
+        <!-- Product #3 -->
+        <div class="item">
+            <div class="buttons">
+              <button class="join_btn joinform" href="" value="ALL ON" >Töröl</button>
+            </div>
+            <div class="image">
+              <img src="img/gumi.png" alt="" class="gumi_img"/>
+            </div>
+         
+            <div class="description">
+              <span>Common Projects</span>
+              <span>Bball High</span>
+              <span>White</span>
+            </div>
+         
+            <div class="quantity">
+              <button class="minus-btn" type="button" name="button">
+                  -
+              </button>
+  
+              <input type="text" name="name" value="1" disabled class="db">
+              
+              <button class="plus-btn" type="button" name="button">
+                  +
+              </button>
+            </div>
+         
+            <div class="total-price">$549</div>
+          </div>
+      </div>
+
+      
+    <!--
     <h1>Termékek</h1>
     <div class="wrapper">
         <div class="row">
@@ -51,7 +151,6 @@
                                         (<%= kosar.qty %>)
                                 </div>
                                 <div class="pbtn">
-                                    
                                         <button class="join_btn joinform" href="" value="ALL ON" onclick="allOn();">Fizetés</button>
                                     <form action="/kosartorol" method="POST" >
                                         <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
@@ -66,6 +165,6 @@
             <% } %>
         </div>
     </div>
-    
+    -->
 </body>
 <%- include('includes/footer.ejs') %>
