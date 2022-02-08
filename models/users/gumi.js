@@ -18,7 +18,6 @@ lekerdGumi.prototype.gumikKilistaz = function(req, res, callback){
                 for(let row of rows){
                     req.session.gumiabroncs.push(row);
                 }
-                console.log(req.session.gumiabroncs);
                 connection.release();
                 callback(null,rows[0]);
             }

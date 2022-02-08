@@ -11,8 +11,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .shopping-cart {
-  width: 750px;
-  height: 423px;
+  width: 800px;
+  height: 453px;
   margin: 80px auto;
   background: -moz-linear-gradient(0deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
   background: -webkit-linear-gradient(0deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
@@ -86,6 +86,7 @@ body {
   color: white;
 }
 .quantity {
+  display: inline-block;
   padding-top: 30px;
   margin-right: 60px;
 }
@@ -129,7 +130,7 @@ input:focus {
 }
 */
 .total-price {
-  width: 83px;
+  width: 120px;
   padding-top: 25px;
   text-align: center;
   font-size: 26px;
@@ -174,4 +175,7 @@ input:focus {
 }
 .db{
   background: transparent;
+}
+.row{
+  display: inline-block;
 }

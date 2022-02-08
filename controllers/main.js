@@ -277,24 +277,38 @@ exports.gumiKosarba = (req,res,next) => {
     }
     res.redirect('/termekek');
  }
- setTimeout(kosarhozad, 900);
+ setTimeout(kosarhozad, 1000);
 };
 
 exports.gumiKosartorol = (req,res,next) => {
     console.log("Lefutott -");
     var termek = req.body.termek_id;
+    var termektemp = [];
+    var zero = false;
     var kosar = req.session.user.kosar;
     for(let termek of req.session.user.kosar)
     {
         if(termek.termek_id == req.body.termek_id)
         {
+            console.log(termek.termek_id)
+            console.log(req.body.termek_id)
             termek.qty -= 1;
-            if(termek.qty == 0)
+            if(termek.qty <= 0)
             {
-                var index = kosar.findIndex(g => g.termek_id == termek);
-                kosar.splice(index, 1);
+             zero = true;
             }
         }
+    }
+    if(zero == true)
+    {
+        for(let termek of req.session.user.kosar)
+        {
+            if(termek.qty  > 0)
+            {
+                termektemp.push(termek);
+            }
+        }
+        req.session.user.kosar = termektemp;
     }
     res.redirect('/kosar');
 };
