@@ -250,6 +250,8 @@ exports.gumikLekerdezes = (req,res,next) => {
 
 //Gumik kosárba helyezése/törlése
 exports.gumiKosarba = (req,res,next) => {
+    function kosarhozad(){
+    console.log("asd");
     termek = req.body.termek_id;
     if(req.session.user.kosar == undefined)
     {
@@ -274,14 +276,26 @@ exports.gumiKosarba = (req,res,next) => {
         }
     }
     res.redirect('/termekek');
+ }
+ setTimeout(kosarhozad, 900);
 };
 
 exports.gumiKosartorol = (req,res,next) => {
     console.log("Lefutott -");
     var termek = req.body.termek_id;
     var kosar = req.session.user.kosar;
-    var index = kosar.findIndex(g => g.termek_id == termek);
-    kosar.splice(index, 1);
+    for(let termek of req.session.user.kosar)
+    {
+        if(termek.termek_id == req.body.termek_id)
+        {
+            termek.qty -= 1;
+            if(termek.qty == 0)
+            {
+                var index = kosar.findIndex(g => g.termek_id == termek);
+                kosar.splice(index, 1);
+            }
+        }
+    }
     res.redirect('/kosar');
 };
 

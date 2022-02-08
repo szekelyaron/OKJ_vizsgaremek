@@ -42,15 +42,16 @@
           </div>
        
           <div class="quantity">
-            <form action="/kosarMinusz" method="POST" ></form>
+            <form action="/kosarMinusz" method="POST" >
               <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
-              <button class="minus-btn" type="button" value="ALL ON">
+              <button class="minus-btn" type="submit" value="ALL ON">
                   -
               </button>
             </form>
             <input type="text" name="name" value="<%= kosar.qty %>" disabled class="db">
             <form action="/kosarPlusz" method="POST">
-              <button class="plus-btn" type="button" name="button" value="ALL ON">
+              <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
+              <button class="plus-btn" type="submit" name="button" value="ALL ON">
                   +
               </button>
             </form>
