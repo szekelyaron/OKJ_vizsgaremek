@@ -51,7 +51,7 @@
             </Border>
 
             <Menu Grid.Row="1">
-                <MenuItem Header="Home" Name="MI_Home"/>
+                <MenuItem Header="Databases" Name="MI_Home"/>
             </Menu>
 
             <Frame x:Name="FRM_Content"
