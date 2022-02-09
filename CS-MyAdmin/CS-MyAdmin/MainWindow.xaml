@@ -51,7 +51,10 @@
             </Border>
 
             <Menu Grid.Row="1">
-                <MenuItem Header="Databases" Name="MI_Home"/>
+                <MenuItem Header="Databases" Name="MI_Home">
+                    <MenuItem x:Name="MI_database1" Header="Tábla1" Click="MI_database1_Click"></MenuItem>
+                    <MenuItem x:Name="MI_database2" Header="Tábla2" Click="MI_database2_Click"></MenuItem>
+                </MenuItem>
             </Menu>
 
             <Frame x:Name="FRM_Content"

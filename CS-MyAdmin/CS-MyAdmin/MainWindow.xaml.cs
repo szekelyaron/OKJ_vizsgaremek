@@ -37,5 +37,15 @@ namespace CS_MyAdmin
                 this.DragMove();
             }
         }
+
+        private void MI_database1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MI_database2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
