@@ -67,14 +67,7 @@
           <% } %>
         <% } %>
         <% if(kosarTartalma == undefined){ %>
-          <article class="postcard dark red">
-            <a class="postcard__img_link" href="#">
-                <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />	
-            </a>
-            <div class="postcard__text">
-                <h1 class="postcard__title red">A kosár üres</h1>
-            </div>
-          </article>
+          <p class="ureskosar">Jelenleg üres a kosár</p>
         <% } %>
 </body>
 <%- include('includes/footer.ejs') %>
