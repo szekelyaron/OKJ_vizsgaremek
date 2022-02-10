@@ -277,7 +277,7 @@ exports.gumiKosarba = (req,res,next) => {
     }
     res.redirect('/termekek');
  }
- setTimeout(kosarhozad, 1000);
+ setTimeout(kosarhozad, 950);
 };
 
 exports.gumiKosartorol = (req,res,next) => {
