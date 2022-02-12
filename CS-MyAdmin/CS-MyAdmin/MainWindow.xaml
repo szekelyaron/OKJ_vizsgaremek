@@ -62,7 +62,9 @@
                Grid.Row="2"/>
             <StackPanel Grid.Row="2">
                 <Label Content="Autók:" FontWeight="Bold"/>
+                <DataGrid x:Name="DG_autok" Height="230" IsReadOnly="False" AutoGenerateColumns="True"/>
             </StackPanel>
+
 
         </Grid>
     </Border>

@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using CS_MyAdmin.Pages;
+using System.Collections.ObjectModel;
+using CS_MyAdmin.Models;
+using System.Linq;
 
 namespace CS_MyAdmin
 {
@@ -26,6 +29,8 @@ namespace CS_MyAdmin
         public MainWindow()
         {
             InitializeComponent();
+            
+
 
             FRM_Content.Content = new MainPage();
         }

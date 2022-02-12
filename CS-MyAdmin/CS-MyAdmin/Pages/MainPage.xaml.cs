@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CS_MyAdmin.Pages;
+using System.Collections.ObjectModel;
+using CS_MyAdmin.Models;
+using System.Linq;
 
 namespace CS_MyAdmin.Pages
 {
@@ -18,9 +22,12 @@ namespace CS_MyAdmin.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        ObservableCollection<AutoModel> autok = new ObservableCollection<AutoModel>();
         public MainPage()
         {
             InitializeComponent();
+            autok = AutoModel.select();
+            
         }
     }
 }

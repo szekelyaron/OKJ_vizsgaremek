@@ -63,6 +63,27 @@ namespace CS_MyAdmin.Models
             this.tipusHiba = reader["Tipshiba"].ToString();
         }
 
+        public static ObservableCollection<AutoModel> select()
+        {
+            var lista = new ObservableCollection<AutoModel>();
+
+            using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
+            {
+                con.Open();
+                var sql = "SELECT * FROM auto";
+                using (var cmd = new MySqlCommand(sql, con))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new AutoModel(reader));
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
         
 
 
