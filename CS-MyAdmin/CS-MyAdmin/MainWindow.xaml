@@ -10,7 +10,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown" FontSize="16">
 
     <Window.Resources>
 
@@ -32,6 +32,7 @@
                 <RowDefinition/>
 
             </Grid.RowDefinitions>
+
 
             <Border Background="#FF760000"
                     CornerRadius="10,10,0,0">
@@ -59,6 +60,9 @@
 
             <Frame x:Name="FRM_Content"
                Grid.Row="2"/>
+            <StackPanel Grid.Row="2">
+                <Label Content="Autók:" FontWeight="Bold"/>
+            </StackPanel>
 
         </Grid>
     </Border>
