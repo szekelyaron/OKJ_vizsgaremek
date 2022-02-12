@@ -4,7 +4,7 @@ const crypto = require("crypto");
 var lekerdGumi = function(){};
 
 lekerdGumi.prototype.gumikKilistaz = function(req, res, callback){
-    lekerdquery = 'SELECT gumiabroncs.GID, gumiabroncs.Gyarto, gumiabroncs.Evszak, gumiabroncs.Kategoria, gumiabroncs.Ar, gumiabroncs.Info_ID FROM gumiabroncs';
+    lekerdquery = 'SELECT gumiabroncs.GID, gumiabroncs.Gyarto, gumiabroncs.Evszak, gumiabroncs.Kategoria, gumiabroncs.Ar, gumiabroncs.Atmero, gumiabroncs.Oldalfal, gumiabroncs.Szelesseg FROM gumiabroncs';
     mysqlPool.getConnection(function(err, connection){
 		connection.query(lekerdquery, function(err, rows, fields){
             if(rows.length <= 0){
