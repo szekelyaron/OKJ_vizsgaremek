@@ -342,7 +342,6 @@
             <!--Oszlopok-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <!--Első sor / Munkavállalók adatai-->
@@ -357,7 +356,7 @@
 
                 <StackPanel Margin="0,0,0,0">
 
-                    <ListView x:Name="LV_Munkavallalok"
+                    <!--<ListView x:Name="LV_Munkavallalok"
                               Margin="0,10,0,0"
                               ItemsSource="{Binding}"
                               IsSynchronizedWithCurrentItem="True"
@@ -368,9 +367,13 @@
                               Background="Transparent"
                               ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                              ItemContainerStyle="{DynamicResource theListViewItem}" />
+                              ItemContainerStyle="{DynamicResource theListViewItem}" />-->
 
-                </StackPanel>
+                <DataGrid x:Name="DG_asd"
+                          AutoGenerateColumns="True"
+                          IsReadOnly="False"/>
+
+            </StackPanel>
 
             </Border>
 

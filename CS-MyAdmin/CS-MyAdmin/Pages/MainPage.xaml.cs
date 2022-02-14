@@ -27,6 +27,8 @@ namespace CS_MyAdmin.Pages
         {
             InitializeComponent();
             autok = AutoModel.select();
+
+            DG_asd.ItemsSource = autok;
             
         }
     }

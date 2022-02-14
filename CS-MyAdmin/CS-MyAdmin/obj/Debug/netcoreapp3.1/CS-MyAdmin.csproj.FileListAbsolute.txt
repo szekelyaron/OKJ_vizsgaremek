@@ -93,3 +93,14 @@ C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAd
 C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\ZstdNet.dll
 C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\CS-MyAdmin.csproj.CopyComplete
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\CS-MyAdmin.dll.config
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\ZstdNet.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\CS-MyAdmin.csproj.CopyComplete
