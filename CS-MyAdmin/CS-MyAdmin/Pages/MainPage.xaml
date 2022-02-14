@@ -474,9 +474,17 @@
                 <Button Style="{StaticResource ButtonStyle1}"
                         Width="100"
                         Height="50"
+                        Margin="5"
+                        Padding="5"
                         Content="Save changes" Click="Button_Click">
                     
                 </Button>
+                <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
+                <StackPanel Orientation="Horizontal">
+                <Label Content="ID:" Foreground="White"/>
+                <TextBox x:Name="TB_aId" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+                
 
             </StackPanel>
 
