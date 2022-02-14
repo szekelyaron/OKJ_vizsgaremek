@@ -1,3 +1,7 @@
+@font-face{
+  font-family: gtiming;
+    src: url(../font/good\ timing\ bd.ttf);
+}
 * {
   box-sizing: border-box;
 }
@@ -11,7 +15,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .shopping-cart {
-  width: 900px;
+  width: 950px;
   height: fit-content;
   margin: 80px auto;
   background: -moz-linear-gradient(0deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
@@ -26,6 +30,7 @@ body {
   flex-direction: column;
 }
 .title {
+  font-family: gtiming;
   text-align: center;
   height: 110px;
   border-bottom: 1px solid #E1E8EE;
@@ -37,7 +42,7 @@ body {
  
 .item {
   padding: 20px 30px;
-  height: 120px;
+  height: fit-content;
   display: flex;
 }
  
@@ -56,9 +61,10 @@ body {
 }
  
 .description {
+  font-family: gtiming;
   padding-top: 10px;
   margin-right: 60px;
-  width: 175px;
+  width: 195px;
 }
  
 .description span {
@@ -77,6 +83,7 @@ body {
   color: white;
 }
 .quantity {
+  font-family: gtiming;
   display: inline-block;
   padding-top: 30px;
   margin-right: 60px;
@@ -101,6 +108,7 @@ body {
 }
 */
 .minus-btn {
+  font-family: gtiming;
   border: solid 1px lightgray;
   width: 30px;
   background: transparent;
@@ -108,6 +116,7 @@ body {
   font-weight: bold;
 }
 .plus-btn{
+  font-family: gtiming;
   border: solid 1px lightgray;
   width: 30px;
   background: transparent;
@@ -122,13 +131,21 @@ body {
 }
 
 .total-price {
-  width: 160px;
+  font-family: gtiming;
+  width: 180px;
   padding-top: 25px;
   text-align: center;
   font-size: 26px;
   color: white;
   font-weight: bold;
   margin-left: 30px;
+}
+.ureskosar{
+  text-align: center;
+  color: white;
+  margin: 20px;
+  font-size: 2rem;
+  font-family: gtiming;
 }
 @media (max-width: 800px) {
   .shopping-cart {
@@ -158,6 +175,9 @@ body {
   .gumi_img{
     margin: 0px;
   }
+  .ureskosar{
+    font-size: 1.5rem;
+  }
 }
 .gumi_img
 {
@@ -170,10 +190,4 @@ body {
 }
 .row{
   display: inline-block;
-}
-.ureskosar{
-  text-align: center;
-  color: white;
-  margin: 20px;
-  font-size: 3rem;
 }
