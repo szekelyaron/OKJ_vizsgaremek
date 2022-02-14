@@ -251,7 +251,6 @@ exports.gumikLekerdezes = (req,res,next) => {
 //Gumik kosárba helyezése/törlése
 exports.gumiKosarba = (req,res,next) => {
     function kosarhozad(){
-    console.log("asd");
     termek = req.body.termek_id;
     if(req.session.user.kosar == undefined)
     {
@@ -281,7 +280,7 @@ exports.gumiKosarba = (req,res,next) => {
 };
 
 exports.gumiKosartorol = (req,res,next) => {
-    console.log("Lefutott -");
+    //console.log("Lefutott -");
     var termek = req.body.termek_id;
     var termektemp = [];
     var zero = false;
@@ -363,5 +362,26 @@ exports.getContactus = (req, res, next) => {
     res.render('contactus', {
         pageTitle: 'CarScope - Contactus',
         path: '/contactus',
+    });
+};
+
+//Kerék magasság kalkulátor
+exports.getKalkulator = (req, res, next) => {
+    res.render('kalkulator', {
+        pageTitle: 'CarScope - Kalkulátor',
+        path: '/kalkulator',
+        Eredmeny: undefined,
+    });
+};
+exports.postKalkulator = (req, res, next) => {
+    var szelesseg = req.body.szelesseg;
+    var oldalfal = req.body.oldalfal;
+    var atmer = req.body.magassag;
+    var teljesAtmero;
+    teljesAtmero = (2.54*atmer)+(2*(szelesseg*(oldalfal/100))/10);
+    res.render('kalkulator', {
+        pageTitle: 'CarScope - Kalkulátor',
+        path: '/kalkulator',
+        Eredmeny: teljesAtmero,
     });
 };

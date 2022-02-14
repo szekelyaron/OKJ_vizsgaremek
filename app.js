@@ -22,17 +22,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));// Body parser use JSON data
 
-//
 var db = require('./models/db.js');
-
 
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({
   extended: true
 }));// Body parser use JSON data
 
- 
 db.createPool(); //create a global sql pool connection
-//
 
 app.listen(6969, () => console.log('Listening at port 6969'));

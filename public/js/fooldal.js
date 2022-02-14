@@ -9,14 +9,14 @@ const app = Vue.createApp({
   },
   methods: {
     selectionChanged() {
-      console.log(selected.value);
-      console.log(country.value)
+      //console.log(selected.value);
+      //console.log(country.value)
     }
   },
   watch: {
       selected(value)
       {
-        console.log(value);
+        //console.log(value);
         if(value == "R")
         {
           this.valasztott = "R";
@@ -29,7 +29,7 @@ const app = Vue.createApp({
 
       country(value)
       {
-        console.log(value);
+        //console.log(value);
         if(value == "M")
         {
           this.country_valasztott = "M";
@@ -49,14 +49,3 @@ app.mount('#cars')
 
 var target = $('#target'),
     val = target.val();
-
-/*function monitor()
-{
-    var current_val = $(this).val();
-    if (current_val != val) {
-        console.log('changed from', val, 'to', current_val);
-        val = current_val;
-    }
-}
-
-target.keypress(monitor);*/

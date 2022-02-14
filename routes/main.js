@@ -54,4 +54,9 @@ router.post('/kosarMinusz', mainController.gumiKosartorol);
 
 router.post('/kosarPlusz', mainController.gumiKosarPlusz);
 
+router.get('/kalkulator', mainController.getKalkulator);
+
+router.post('/kalkulator', mainController.postKalkulator);
+
+
 module.exports = router;
