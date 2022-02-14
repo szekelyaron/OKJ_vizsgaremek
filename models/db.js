@@ -6,7 +6,7 @@ DB.prototype.createPool = function(){
 			host     : 'localhost', // Hostname 'localhost' If locally connected
 			user     : 'root',      // Username
 			password : '',          // Password
-			database: 'autók5',           // Database name
+			database: 'autok6',           // Database name
 			connectionLimit : 100
 		});
 }
