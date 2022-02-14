@@ -84,9 +84,27 @@ namespace CS_MyAdmin.Models
             }
             return lista;
         }
-        
 
+        public static void update(int id, string gyarto, string tipus, int megbizhatosag, string tipushiba)
+        {
+            var lista = new ObservableCollection<AutoModel>();
 
+            using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
+            {
+                con.Open();
+                var sql = "UPDATE auto SET AID = @id, Gyarto = @gyarto, Tipus = @tipus, Megbizhatosag = @megbizhatosag, Tipshiba = @tipushiba WHERE AID = @id";
+                using (var cmd = new MySqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@gyarto", gyarto);
+                    cmd.Parameters.AddWithValue("@tipus", tipus);
+                    cmd.Parameters.AddWithValue("@megbizhatosag", megbizhatosag);
+                    cmd.Parameters.AddWithValue("@tipushiba", tipushiba);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
     }
 }

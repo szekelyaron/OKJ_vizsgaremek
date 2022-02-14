@@ -31,5 +31,12 @@ namespace CS_MyAdmin.Pages
             DG_asd.ItemsSource = autok;
             
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in autok)
+            {
+                AutoModel.update(item.aId, item.gyarto, item.tipus, item.megbizhatosag, item.tipusHiba);
+            }
+        }
     }
 }

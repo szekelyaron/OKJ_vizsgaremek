@@ -333,26 +333,125 @@
             </Setter>
         </Style>
         <!---->
-    </Page.Resources>
 
-    
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="Background"
+                    Value="#bfbfbf" />
+            <Setter Property="Foreground"
+                    Value="#000" />
+            <Setter Property="Padding"
+                    Value="5" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+        </Style>
+        <Style TargetType="DataGrid">
+            <!-- Make the border and grid lines a little less imposing -->
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="BorderThickness"
+                    Value="0" />
+            <Setter Property="HorizontalGridLinesBrush"
+                    Value="#DDDDDD" />
+            <Setter Property="VerticalGridLinesBrush"
+                    Value="#DDDDDD" />
+            <Setter Property="ColumnWidth"
+                    Value="*" />
+            <Setter Property="FontWeight"
+                    Value="Thin" />
+
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background"
+                                Value="White" />
+                        <Setter Property="Foreground"
+                                Value="#555" />
+                        <Style.Triggers>
+                            <!-- Highlight a grid row as the mouse passes over -->
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#efefef" />
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#dfdfdf" />
+                                <Setter Property="Foreground"
+                                        Value="#555" />
+                                <Setter Property="BorderThickness"
+                                        Value="0" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#efefef" />
+                                <Setter Property="BorderThickness"
+                                        Value="0" />
+                                <Setter Property="Foreground"
+                                        Value="#555" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Background"
+                                Value="Transparent" />
+                        <!-- Add some padding around the contents of a cell -->
+                        <Setter Property="Padding"
+                                Value="4,3,4,3" />
+                        <Setter Property="BorderBrush"
+                                Value="Transparent" />
+                        <Setter Property="BorderThickness"
+                                Value="1" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridCell">
+                                    <Border Padding="{TemplateBinding Padding}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="FocusVisualStyle">
+                            <Setter.Value>
+                                <Style TargetType="Control">
+                                    <Setter Property="BorderBrush"
+                                            Value="Transparent" />
+                                </Style>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources >
+
+
 
         <Grid>
 
             <!--Oszlopok-->
-            <Grid.ColumnDefinitions>
+            <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>-->
 
             <!--Első sor / Munkavállalók adatai-->
 
             <!--Első oszlop / Munkavállalók-->
-            <Border Grid.Column="0"
-                    Background="#FF760000"
-                    Margin="0,0,10,0"
+            <Border Background="#FF760000"
                     BorderBrush="#FF430000"
                     BorderThickness="0,0,2,0"
-                    CornerRadius="0,0,0,8">
+                    CornerRadius="0,0,8,8">
 
                 <StackPanel Margin="0,0,0,0">
 
@@ -372,6 +471,12 @@
                 <DataGrid x:Name="DG_asd"
                           AutoGenerateColumns="True"
                           IsReadOnly="False"/>
+                <Button Style="{StaticResource ButtonStyle1}"
+                        Width="100"
+                        Height="50"
+                        Content="Save changes" Click="Button_Click">
+                    
+                </Button>
 
             </StackPanel>
 
