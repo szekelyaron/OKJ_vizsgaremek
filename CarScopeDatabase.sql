@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Adatbázis: `autók5`
 --
 CREATE DATABASE IF NOT EXISTS `autok6` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci;
-USE `autók5`;
+USE `autok6`;
 
 -- --------------------------------------------------------
 
