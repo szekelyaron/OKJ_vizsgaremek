@@ -310,6 +310,11 @@ exports.gumiKosartorol = (req,res,next) => {
         }
         req.session.user.kosar = termektemp;
     }
+    console.log(req.session.user.kosar)
+    if( req.session.user.kosar == "")
+    {
+        req.session.user.kosar = undefined;
+    }
     res.redirect('/kosar');
 };
 

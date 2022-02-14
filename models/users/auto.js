@@ -6,7 +6,7 @@ var lekerd = function(){};
 lekerd.prototype.rendszamalapjan = function(req, res, callback){
     rendszam = req.body.rendszam,
     params = [rendszam],
-    lekerdquery = 'SELECT auto.Gyarto, auto.Tipus, info.Evjarat, info.Allapot, info.Futottkm, info.VezetettSzervK, auto.Megbizhatosag, auto.Tipshiba, info.Okmanyok, info.Muszakierv, info.Alvazszam, info.Gumiabroncs FROM info INNER JOIN auto ON info.Auto_AID = auto.AID WHERE info.Rendszam = ?';
+    lekerdquery = 'SELECT auto.Gyarto, auto.Tipus, info.Evjarat, info.Allapot, info.Futottkm, info.VezetettSzervK, auto.Megbizhatosag, auto.Tipshiba, info.Okmanyok, info.Muszakierv, info.Alvazszam, info.Gumiabroncs, info.Kepcim FROM info INNER JOIN auto ON info.Auto_AID = auto.AID WHERE info.Rendszam = ?';
     mysqlPool.getConnection(function(err, connection){
 		connection.query(lekerdquery, params, function(err, rows, fields){
             if(rows.length <= 0){
@@ -30,7 +30,7 @@ lekerd.prototype.rendszamalapjan = function(req, res, callback){
 lekerd.prototype.alvazszamalapjan = function(req, res, callback){
     alvazszam = req.body.alvazszam,
     params2 = [alvazszam],
-    lekerdquery = 'SELECT auto.Gyarto, auto.Tipus, info.Evjarat, info.Allapot, info.Futottkm, info.VezetettSzervK, auto.Megbizhatosag, auto.Tipshiba, info.Okmanyok, info.Muszakierv, info.Rendszam, info.Gumiabroncs FROM info INNER JOIN auto ON info.Auto_AID = auto.AID INNER JOIN gumiabroncs ON gumiabroncs.Info_ID = info.IID WHERE info.Alvazszam = ?';
+    lekerdquery = 'SELECT auto.Gyarto, auto.Tipus, info.Evjarat, info.Allapot, info.Futottkm, info.VezetettSzervK, auto.Megbizhatosag, auto.Tipshiba, info.Okmanyok, info.Muszakierv, info.Rendszam, info.Gumiabroncs, info.Kepcim FROM info INNER JOIN auto ON info.Auto_AID = auto.AID WHERE info.Alvazszam = ?';
     mysqlPool.getConnection(function(err, connection){
 		connection.query(lekerdquery, params2, function(err, rows, fields){
             if(rows.length <= 0){
