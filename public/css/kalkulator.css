@@ -1,0 +1,62 @@
+@font-face{
+    font-family: gtiming;
+      src: url(../font/good\ timing\ bd.ttf);
+  }
+.title{
+    font-family: gtiming;
+    padding-top: 50px;
+}
+.gumi_input {
+    color: white;
+    display: block;
+    margin-left:  auto;
+    margin-right: auto;
+    border: none;
+    width: 4.5ch;
+    background: repeating-linear-gradient(90deg, white 0, white 1ch, transparent 0, transparent 1.5ch) 0 100%/4.4ch 2px no-repeat;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+    text-transform: uppercase;
+  }
+  .gumi_input:focus {
+    outline: none;
+    color: white;
+  }
+  .joinform {
+      margin-top: 20px;
+  }
+  .oldalfal, .magassag{
+    color: white;
+    display: block;
+    margin-left:  auto;
+    margin-right: auto;
+    border: none;
+    width: 3.5ch;
+    background: repeating-linear-gradient(90deg, white 0, white 1ch, transparent 0, transparent 1.5ch) 0 100%/3ch 2px no-repeat;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 0.5ch;
+    text-transform: uppercase;
+  }
+  .inline{
+      display: inline-block;
+  }
+  .disabled {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    color: gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .centered{
+      margin-left: auto;
+      margin-right: auto;
+  }
