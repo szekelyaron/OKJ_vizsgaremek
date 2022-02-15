@@ -29,6 +29,11 @@ namespace CS_MyAdmin.Pages
             autok = AutoModel.select();
 
             DG_asd.ItemsSource = autok;
+            for (int i = 1; i < 11; i++)
+            {
+                CB_megbizhatosag.Items.Add(i);
+            }
+            CB_megbizhatosag.SelectedIndex = 9;
             
         }
         private void Button_Click(object sender, RoutedEventArgs e)

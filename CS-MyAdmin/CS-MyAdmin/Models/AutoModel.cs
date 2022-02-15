@@ -106,5 +106,10 @@ namespace CS_MyAdmin.Models
             }
         }
 
+        public static void insert(string gyarto, string tipus, int megbizhatosag, string tipushiba)
+        {
+
+        }
+
     }
 }

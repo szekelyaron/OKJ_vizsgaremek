@@ -481,10 +481,22 @@
                 </Button>
                 <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                 <StackPanel Orientation="Horizontal">
-                <Label Content="ID:" Foreground="White"/>
-                <TextBox x:Name="TB_aId" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    <Label Content="Gyártó:" Foreground="White"/>
+                    <TextBox x:Name="TB_gyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
                 </StackPanel>
-                
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Típus:" Foreground="White"/>
+                    <TextBox x:Name="TB_tipus" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Megbízhatóság:" Foreground="White"/>
+                    <ComboBox x:Name="CB_megbizhatosag" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Típushiba:" Foreground="White"/>
+                    <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                </StackPanel>
+
 
             </StackPanel>
 
