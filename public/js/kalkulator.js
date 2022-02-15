@@ -13,7 +13,7 @@ const app = Vue.createApp({
     watch: {
         szelesseg(value)
         {
-          if(!/\D/.test(value) && Number(value) <=400 && Number(value) > 0)
+          if(!/\D/.test(value) && Number(value) <=400 && Number(value) > 100)
           {
             this.szelesseg_validate = true;
           console.log(value);
@@ -28,7 +28,7 @@ const app = Vue.createApp({
         oldalfal(value)
         {
 
-            if(!/\D/.test(value) && Number(value) <=100 && Number(value) > 0)
+            if(!/\D/.test(value) && Number(value) <=100 && Number(value) > 19)
             {
              console.log(value);
 
@@ -44,7 +44,7 @@ const app = Vue.createApp({
         magassag(value)
         {
 
-            if(!/\D/.test(value) && Number(value) <=24 && Number(value) > 0)
+            if(!/\D/.test(value) && Number(value) <=24 && Number(value) > 12)
             {
               console.log(value);
 

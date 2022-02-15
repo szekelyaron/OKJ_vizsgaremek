@@ -22,14 +22,11 @@
             <input v-model='magassag' maxlength='2' id="magassag" name="magassag" type="number"/>
             <div v-if="magassag_validate == true && oldalfal_validate == true && szelesseg_validate == true">
                 <div class="centered keresBTN">
-                    <h1>Anyád</h1>
-                    <button enabled type="button" class="join_btn joinform">Számítás</button>
+                    <button type="submit" class="join_btn joinform">Számítás</button>
                 </div>
             </div>
             <div v-else-if="magassag_validate == false || oldalfal_validate == false || szelesseg_validate == false">
                 <div class="centered keresBTN">
-                    <h1>aőád</h1>
-
                     <button disabled type="button" class="join_btn joinform">Számítás</button>
                 </div>
             </div>
