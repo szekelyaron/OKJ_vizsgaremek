@@ -496,6 +496,13 @@
                     <Label Content="Típushiba:" Foreground="White"/>
                     <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
                 </StackPanel>
+                <Button x:Name="BTN_insert" Style="{StaticResource ButtonStyle1}"
+                        Width="100"
+                        Height="50"
+                        Margin="5"
+                        Padding="5"
+                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insert_Click"/>
+
 
 
             </StackPanel>

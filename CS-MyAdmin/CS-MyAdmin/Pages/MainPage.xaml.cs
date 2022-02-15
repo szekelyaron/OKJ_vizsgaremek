@@ -43,5 +43,10 @@ namespace CS_MyAdmin.Pages
                 AutoModel.update(item.aId, item.gyarto, item.tipus, item.megbizhatosag, item.tipusHiba);
             }
         }
+
+        private void BTN_insert_Click(object sender, RoutedEventArgs e)
+        {
+            AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, CB_megbizhatosag.Items.Count, TB_tipushiba.Text);
+        }
     }
 }
