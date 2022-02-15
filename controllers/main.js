@@ -371,6 +371,7 @@ exports.getKalkulator = (req, res, next) => {
         pageTitle: 'CarScope - Kalkulátor',
         path: '/kalkulator',
         Eredmeny: undefined,
+        Kerdezett: false
     });
 };
 exports.postKalkulator = (req, res, next) => {
@@ -378,10 +379,12 @@ exports.postKalkulator = (req, res, next) => {
     var oldalfal = req.body.oldalfal;
     var atmer = req.body.magassag;
     var teljesAtmero;
+
     teljesAtmero = (2.54*atmer)+(2*(szelesseg*(oldalfal/100))/10);
     res.render('kalkulator', {
         pageTitle: 'CarScope - Kalkulátor',
         path: '/kalkulator',
         Eredmeny: teljesAtmero,
+        Kerdezett: true
     });
 };

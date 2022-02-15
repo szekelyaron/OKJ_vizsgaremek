@@ -19,13 +19,13 @@ register.prototype.registerUser = function(req, res, next) {
             {
                 msg = [],
                 response = JSON.stringify(rows);
-                //console.log(rows.length)
+
                 for (let i = 0; i < rows.length; i++) {
-                    if(JSON.parse(response)[i].email == params[1])
+                    if(JSON.parse(response)[i].Email == params[1])
                     {
                         msg.push({param: "Email" ,msg: "Ez az email cím már foglalt!"});
                     }
-                    if(JSON.parse(response)[i].username == params[0])
+                    if(JSON.parse(response)[i].Felhasználónév == params[0])
                     {
                         msg.push({param: "Felhasználónév",msg: "Ez a felhasználónév már foglalt!"});
                     }
