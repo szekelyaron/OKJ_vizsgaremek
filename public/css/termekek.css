@@ -34,8 +34,7 @@ body{
     margin-bottom: 30px;
     min-height: 405px;
     max-height: fit-content;
-    width: 250px;
-    height: 150px;
+    width: 270px;
     
   }
   .products .card:hover {
@@ -74,8 +73,8 @@ body{
     text-decoration: none;
   }
   .join_btn {
-    border: 1px solid white !important;
-    margin-bottom: 20px;
+    border: 1px solid lightgray !important;
+    margin-bottom:0;
     background-color: transparent;
   }
   .join_btn:hover {
@@ -83,7 +82,9 @@ body{
     color: white !important;
   }
   .joinform {
-    color: grey!important;
+    color: lightgray!important;
+    border: 1px solid white !important;
+    border-radius: 5px;
   }
   .join_btn:before {
     background: linear-gradient(
@@ -97,7 +98,7 @@ body{
   .joinform {
     margin-top: 20px !important;
     font-size: 0.9rem !important;
-    padding: 0.9rem 0.9rem !important;
+    padding: 0.7rem !important;
   }
   .popup_img{
     margin-top: 15px;
@@ -131,5 +132,9 @@ body{
       margin-left:auto;
       margin-right:auto;
     }
+  }
+  .egydb{
+    font-size: 0.7rem !important;
+    padding: 0.5rem !important;
   }
 
