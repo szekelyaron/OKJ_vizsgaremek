@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R4kxBjjhFsTyH++SUJYK8qxhjacPUS8bq4I1X0RzAighylp9i4zR1TTtmnMkcuqAeRhiOzxfOIc/FQ9PbWsgBQ==",
+  "dgSpecHash": "J71/CMc+1gFXteRlqLbOI/KSzlWsE7cyHupattVZpeeyEJ8chL7RUw1fpg4S+3cJIiPcWQl9mi7WSWyDVeMfVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+  "projectFilePath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\szekely.aron\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

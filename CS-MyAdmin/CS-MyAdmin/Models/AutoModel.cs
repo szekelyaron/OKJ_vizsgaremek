@@ -110,7 +110,7 @@ namespace CS_MyAdmin.Models
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
                 con.Open();
-                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`, `Tipshiba`) VALUES @gyarto, @tipus, @megbizhatosag, @tipushiba";
+                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`, `Tipshiba`) VALUES (@gyarto, @tipus, @megbizhatosag, @tipushiba)";
                 using (var cmd = new MySqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@gyarto", gyarto);

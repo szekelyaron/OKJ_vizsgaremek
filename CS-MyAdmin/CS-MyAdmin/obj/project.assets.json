@@ -854,21 +854,19 @@
   },
   "packageFolders": {
     "C:\\Users\\szekely.aron\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\szekely.aron\\Documents\\GitHub\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+      "projectUniqueName": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
       "projectName": "CS-MyAdmin",
-      "projectPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+      "projectPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
       "packagesPath": "C:\\Users\\szekely.aron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
+      "outputPath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\szekely.aron\\AppData\\Roaming\\NuGet\\NuGet.Config",

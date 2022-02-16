@@ -470,7 +470,7 @@
 
                 <DataGrid x:Name="DG_asd"
                           AutoGenerateColumns="True"
-                          IsReadOnly="False"/>
+                          IsReadOnly="False" Height="250"/>
                 <Button Style="{StaticResource ButtonStyle1}"
                         Width="100"
                         Height="50"
@@ -496,12 +496,16 @@
                     <Label Content="Típushiba:" Foreground="White"/>
                     <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
                 </StackPanel>
-                <Button x:Name="BTN_insert" Style="{StaticResource ButtonStyle1}"
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="BTN_insert" Style="{StaticResource ButtonStyle1}"
                         Width="100"
                         Height="50"
                         Margin="5"
                         Padding="5"
                         Content="Insert" HorizontalAlignment="Left" Click="BTN_insert_Click"/>
+                    <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                </StackPanel>
+
 
 
 

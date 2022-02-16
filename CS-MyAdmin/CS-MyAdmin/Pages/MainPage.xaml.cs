@@ -26,9 +26,10 @@ namespace CS_MyAdmin.Pages
         public MainPage()
         {
             InitializeComponent();
-            autok = AutoModel.select();
 
+            autok = AutoModel.select();
             DG_asd.ItemsSource = autok;
+
             for (int i = 1; i < 11; i++)
             {
                 CB_megbizhatosag.Items.Add(i);
@@ -41,12 +42,27 @@ namespace CS_MyAdmin.Pages
             foreach (var item in autok)
             {
                 AutoModel.update(item.aId, item.gyarto, item.tipus, item.megbizhatosag, item.tipusHiba);
+
             }
+            autok = AutoModel.select();
+            DG_asd.ItemsSource = autok;
         }
 
         private void BTN_insert_Click(object sender, RoutedEventArgs e)
         {
-            AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, CB_megbizhatosag.Items.Count, TB_tipushiba.Text);
+            if (TB_gyarto.Text == "" || TB_tipus.Text == "" || TB_tipushiba.Text == "")
+            {
+                LB_uresMezo.IsEnabled = true;
+            }
+            else
+            {
+                LB_uresMezo.IsEnabled = false;
+                AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, Convert.ToInt32(CB_megbizhatosag.SelectedItem), TB_tipushiba.Text);
+
+                autok = AutoModel.select();
+                DG_asd.ItemsSource = autok;
+            }
+
         }
     }
 }
