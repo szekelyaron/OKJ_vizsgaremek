@@ -33,6 +33,11 @@ namespace CS_MyAdmin.Pages
             cb_databases.Items.Add("gumiabroncs");
             cb_databases.SelectedIndex = 0;
 
+            CB_GumiEvszak.Items.Add("Nyári");
+            CB_GumiEvszak.Items.Add("Téli");
+            CB_GumiEvszak.Items.Add("Négyévszakos");
+            CB_GumiEvszak.SelectedIndex = 0;
+
 
             autok = AutoModel.select();
             gumik = GumiModel.select();
@@ -45,8 +50,10 @@ namespace CS_MyAdmin.Pages
             for (int i = 1; i < 11; i++)
             {
                 CB_megbizhatosag.Items.Add(i);
+                CB_GumiKategoria.Items.Add(i);
             }
             CB_megbizhatosag.SelectedIndex = 9;
+            CB_GumiKategoria.SelectedIndex = 9;
 
 
             
@@ -109,6 +116,22 @@ namespace CS_MyAdmin.Pages
 
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_GumiGyarto.Text == "" || TB_GumiAr.Text == "" || TB_GumiAtmero.Text == "" || TB_GumiOldalfal.Text == "" || TB_GumiSzelesseg.Text == "")
+            {
+                LB_GumiuresMezo.IsEnabled = true;
+            }
+            else
+            {
+                LB_GumiuresMezo.IsEnabled = false;
+                GumiModel.insert(TB_GumiGyarto.Text, CB_GumiEvszak.SelectedItem.ToString(),Convert.ToInt32(CB_GumiKategoria.SelectedItem), int.Parse(TB_GumiAr.Text), Convert.ToInt32(TB_GumiAtmero.Text), Convert.ToInt32(TB_GumiOldalfal.Text), Convert.ToInt32(TB_GumiSzelesseg.Text));
+
+                gumik = GumiModel.select();
+                DG_asd.ItemsSource = gumik;
             }
         }
     }

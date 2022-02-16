@@ -522,6 +522,35 @@
                         <Label Content="Évszak:" Foreground="White"/>
                         <ComboBox x:Name="CB_GumiEvszak" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Kategória:" Foreground="White"/>
+                        <ComboBox x:Name="CB_GumiKategoria" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Ár:" Foreground="White"/>
+                        <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Átmérő:" Foreground="White"/>
+                        <TextBox x:Name="TB_GumiAtmero" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Oldalfal:" Foreground="White"/>
+                        <TextBox x:Name="TB_GumiOldalfal" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Szélesség:" Foreground="White"/>
+                        <TextBox x:Name="TB_GumiSzelesseg" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="BTN_insertGumi" Style="{StaticResource ButtonStyle1}"
+                        Width="100"
+                        Height="50"
+                        Margin="5"
+                        Padding="5"
+                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insertGumi_Click"/>
+                        <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
                 </StackPanel>
 
 
