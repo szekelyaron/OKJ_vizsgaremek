@@ -486,19 +486,19 @@
                 <StackPanel x:Name="SP_autokInsert" Visibility="Visible">
                     <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Gyártó:" Foreground="White"/>
-                        <TextBox x:Name="TB_gyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <Label Width="100" Content="Gyártó:" Foreground="White"/>
+                        <TextBox x:Name="TB_gyarto" HorizontalAlignment="Left" Margin="5" Width="100" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Típus:" Foreground="White"/>
+                        <Label Width="100" Content="Típus:" Foreground="White"/>
                         <TextBox x:Name="TB_tipus" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Megbízhatóság:" Foreground="White"/>
+                        <Label Width="100" Content="Megbízhatóság:" Foreground="White"/>
                         <ComboBox x:Name="CB_megbizhatosag" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Típushiba:" Foreground="White"/>
+                        <Label Width="100" Content="Típushiba:" Foreground="White"/>
                         <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -515,31 +515,31 @@
                 <StackPanel x:Name="SP_gumikInsert" Visibility="Collapsed">
                     <Label Content="Új gumi hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Gyártó:" Foreground="White"/>
+                        <Label Width="100" Content="Gyártó:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiGyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Évszak:" Foreground="White"/>
+                        <Label Width="100" Content="Évszak:" Foreground="White"/>
                         <ComboBox x:Name="CB_GumiEvszak" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Kategória:" Foreground="White"/>
+                        <Label Width="100" Content="Kategória:" Foreground="White"/>
                         <ComboBox x:Name="CB_GumiKategoria" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Ár:" Foreground="White"/>
+                        <Label Width="100" Content="Ár:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Átmérő:" Foreground="White"/>
+                        <Label Width="100" Content="Átmérő:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiAtmero" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Oldalfal:" Foreground="White"/>
+                        <Label Width="100" Content="Oldalfal:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiOldalfal" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Szélesség:" Foreground="White"/>
+                        <Label Width="100" Content="Szélesség:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiSzelesseg" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">

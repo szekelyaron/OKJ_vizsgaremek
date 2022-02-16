@@ -14,6 +14,7 @@ using CS_MyAdmin.Pages;
 using System.Collections.ObjectModel;
 using CS_MyAdmin.Models;
 using System.Linq;
+using System.Globalization;
 
 namespace CS_MyAdmin.Pages
 {
@@ -58,6 +59,7 @@ namespace CS_MyAdmin.Pages
 
             
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (cb_databases.SelectedIndex == 0)
