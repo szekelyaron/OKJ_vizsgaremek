@@ -468,7 +468,11 @@
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
                               ItemContainerStyle="{DynamicResource theListViewItem}" />-->
 
-                <DataGrid x:Name="DG_asd"
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                    <ComboBox x:Name="cb_databases" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
+                </StackPanel>
+                    <DataGrid x:Name="DG_asd"
                           AutoGenerateColumns="True"
                           IsReadOnly="False" Height="250"/>
                 <Button Style="{StaticResource ButtonStyle1}"
@@ -479,33 +483,46 @@
                         Content="Save changes" Click="Button_Click">
                     
                 </Button>
-                <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Gyártó:" Foreground="White"/>
-                    <TextBox x:Name="TB_gyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Típus:" Foreground="White"/>
-                    <TextBox x:Name="TB_tipus" Margin="5" Width="100" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Megbízhatóság:" Foreground="White"/>
-                    <ComboBox x:Name="CB_megbizhatosag" Margin="5" Width="100" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Típushiba:" Foreground="White"/>
-                    <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="BTN_insert" Style="{StaticResource ButtonStyle1}"
+                <StackPanel x:Name="SP_autokInsert" Visibility="Visible">
+                    <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Gyártó:" Foreground="White"/>
+                        <TextBox x:Name="TB_gyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Típus:" Foreground="White"/>
+                        <TextBox x:Name="TB_tipus" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Megbízhatóság:" Foreground="White"/>
+                        <ComboBox x:Name="CB_megbizhatosag" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Típushiba:" Foreground="White"/>
+                        <TextBox x:Name="TB_tipushiba" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="BTN_insert" Style="{StaticResource ButtonStyle1}"
                         Width="100"
                         Height="50"
                         Margin="5"
                         Padding="5"
                         Content="Insert" HorizontalAlignment="Left" Click="BTN_insert_Click"/>
-                    <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                        <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
+                
                 </StackPanel>
-
+                <StackPanel x:Name="SP_gumikInsert" Visibility="Collapsed">
+                    <Label Content="Új gumi hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Gyártó:" Foreground="White"/>
+                        <TextBox x:Name="TB_GumiGyarto" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Évszak:" Foreground="White"/>
+                        <ComboBox x:Name="CB_GumiEvszak" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
 
 
 

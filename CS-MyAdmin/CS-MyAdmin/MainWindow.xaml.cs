@@ -14,10 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using CS_MyAdmin.Pages;
 using System.Collections.ObjectModel;
 using CS_MyAdmin.Models;
-using System.Linq;
 
 namespace CS_MyAdmin
 {
@@ -45,7 +43,7 @@ namespace CS_MyAdmin
 
         private void MI_database1_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void MI_database2_Click(object sender, RoutedEventArgs e)

@@ -23,29 +23,56 @@ namespace CS_MyAdmin.Pages
     public partial class MainPage : Page
     {
         ObservableCollection<AutoModel> autok = new ObservableCollection<AutoModel>();
+        ObservableCollection<GumiModel> gumik = new ObservableCollection<GumiModel>();
+
         public MainPage()
         {
             InitializeComponent();
 
+            cb_databases.Items.Add("autok");
+            cb_databases.Items.Add("gumiabroncs");
+            cb_databases.SelectedIndex = 0;
+
+
             autok = AutoModel.select();
+            gumik = GumiModel.select();
             DG_asd.ItemsSource = autok;
+
+
+
+            
 
             for (int i = 1; i < 11; i++)
             {
                 CB_megbizhatosag.Items.Add(i);
             }
             CB_megbizhatosag.SelectedIndex = 9;
+
+
             
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in autok)
+            if (cb_databases.SelectedIndex == 0)
             {
-                AutoModel.update(item.aId, item.gyarto, item.tipus, item.megbizhatosag, item.tipusHiba);
+                foreach (var item in autok)
+                {
+                    AutoModel.update(item.aId, item.gyarto, item.tipus, item.megbizhatosag, item.tipusHiba);
 
+                }
+                autok = AutoModel.select();
+                DG_asd.ItemsSource = autok;
             }
-            autok = AutoModel.select();
-            DG_asd.ItemsSource = autok;
+            else if(cb_databases.SelectedIndex == 1)
+            {
+                foreach (var item in gumik)
+                {
+                    GumiModel.update(item.gId, item.gyarto, item.evszak, item.kategoria, item.ar, item.atmero, item.oldalFal, item.szelesseg);
+                }
+                gumik = GumiModel.select();
+                DG_asd.ItemsSource = gumik;
+            }
+
         }
 
         private void BTN_insert_Click(object sender, RoutedEventArgs e)
@@ -63,6 +90,26 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = autok;
             }
 
+        }
+
+        private void cb_databases_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cb_databases.SelectedIndex == 0)
+            {
+                autok = AutoModel.select();
+                DG_asd.ItemsSource = autok;
+
+                SP_gumikInsert.Visibility = Visibility.Collapsed;
+                SP_autokInsert.Visibility = Visibility.Visible;
+            }
+            if (cb_databases.SelectedIndex == 1)
+            {
+                gumik = GumiModel.select();
+                DG_asd.ItemsSource = gumik;
+
+                SP_autokInsert.Visibility = Visibility.Collapsed;
+                SP_gumikInsert.Visibility = Visibility.Visible;
+            }
         }
     }
 }
