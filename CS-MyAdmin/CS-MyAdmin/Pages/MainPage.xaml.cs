@@ -25,6 +25,7 @@ namespace CS_MyAdmin.Pages
     {
         ObservableCollection<AutoModel> autok = new ObservableCollection<AutoModel>();
         ObservableCollection<GumiModel> gumik = new ObservableCollection<GumiModel>();
+        ObservableCollection<InfoModel> infok = new ObservableCollection<InfoModel>();
 
         public MainPage()
         {
@@ -32,6 +33,7 @@ namespace CS_MyAdmin.Pages
 
             cb_databases.Items.Add("autok");
             cb_databases.Items.Add("gumiabroncs");
+            cb_databases.Items.Add("info");
             cb_databases.SelectedIndex = 0;
 
             CB_GumiEvszak.Items.Add("Nyári");
@@ -42,6 +44,7 @@ namespace CS_MyAdmin.Pages
 
             autok = AutoModel.select();
             gumik = GumiModel.select();
+            infok = InfoModel.select();
             DG_asd.ItemsSource = autok;
 
 
@@ -118,6 +121,11 @@ namespace CS_MyAdmin.Pages
 
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Visible;
+            }
+            if (cb_databases.SelectedIndex == 2)
+            {
+                infok = InfoModel.select();
+                DG_asd.ItemsSource = infok;
             }
         }
 

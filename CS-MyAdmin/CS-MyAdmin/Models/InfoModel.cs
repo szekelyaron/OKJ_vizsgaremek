@@ -118,8 +118,34 @@ namespace CS_MyAdmin.Models
             this.futottKm = Convert.ToInt32(reader["Futottkm"]);
             this.evJarat = Convert.ToInt32(reader["Evjarat"]);
             this.allapot = reader["Allapot"].ToString();
+            this.szervKonyv = Convert.ToInt32(reader["VezetettSzervK"]);
+            this.okmanyok = reader["Okmanyok"].ToString();
+            this.muszaki = Convert.ToDateTime(reader["Muszakierv"]);
+            this.GumiAbroncs = reader["Gumiabroncs"].ToString();
 
 
+        }
+
+        public static ObservableCollection<InfoModel> select()
+        {
+            var lista = new ObservableCollection<InfoModel>();
+
+            using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
+            {
+                con.Open();
+                var sql = "SELECT * FROM info";
+                using (var cmd = new MySqlCommand(sql, con))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new InfoModel(reader));
+                        }
+                    }
+                }
+            }
+            return lista;
         }
 
 
