@@ -38,4 +38,5 @@ h1{
 }
 .card-text{
   margin-top: 20px;
+  text-align: justify;
 }

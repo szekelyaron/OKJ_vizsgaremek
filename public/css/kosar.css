@@ -15,7 +15,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .shopping-cart {
-  width: 950px;
+  width: 1200px;
+  min-width: fit-content;
   height: fit-content;
   margin: 80px auto;
   background: -moz-linear-gradient(0deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
@@ -28,6 +29,7 @@ body {
   border: solid 2px white;
   display: flex;
   flex-direction: column;
+  
 }
 .title {
   font-family: gtiming;
@@ -87,6 +89,7 @@ body {
   display: inline-block;
   padding-top: 30px;
   margin-right: 60px;
+  min-width: fit-content;
 }
 .quantity input {
   -webkit-appearance: none;
@@ -130,7 +133,7 @@ body {
   color: darkred; 
 }
 
-.total-price {
+.price {
   font-family: gtiming;
   width: 180px;
   padding-top: 25px;
@@ -139,6 +142,18 @@ body {
   color: white;
   font-weight: bold;
   margin-left: 30px;
+  min-width: fit-content;
+}
+.total-price {
+  font-family: gtiming;
+  width: 220px;
+  padding-top: 17px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  margin-left: 45px;
+  min-width: fit-content;
 }
 .ureskosar{
   text-align: center;
@@ -177,6 +192,9 @@ body {
   }
   .ureskosar{
     font-size: 1.5rem;
+  }
+  .price {
+    margin-left: 0px;
   }
 }
 .gumi_img

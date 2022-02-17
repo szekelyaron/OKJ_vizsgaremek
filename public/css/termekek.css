@@ -32,8 +32,7 @@ body{
     padding: 30px 10px 30px 10px;
     transition: 0.3s;
     margin-bottom: 30px;
-    min-height: 405px;
-    max-height: fit-content;
+    min-height: 445px;
     width: 270px;
     
   }
@@ -50,6 +49,7 @@ body{
     color: white;
     font-family: gtiming;
     font-size: 28px;
+    min-height: 66px;
   }
   .poduct_type{
     color: white;

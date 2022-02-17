@@ -56,17 +56,17 @@
               </button>
             </form>
           </div>
-          <div class="total-price row">
+          <div class="price row">
             <% for(let gumi of lekerderedm_gumik){ %>
               <% if(gumi.GID == kosar.termek_id) {%>
                   <%= gumi.Ar %> Ft/db
                   <%}%>
               <%}%>
           </div>
-          <div>
+          <div class="total-price row">
             <% for(let gumi of lekerderedm_gumik){ %>
               <% if(gumi.GID == kosar.termek_id) {%>
-                  <h1><%= gumi.Ar*kosar.qty %></h1>
+                 <%= gumi.Ar*kosar.qty %> FT
                   <%}%>
               <%}%>
           </div>
