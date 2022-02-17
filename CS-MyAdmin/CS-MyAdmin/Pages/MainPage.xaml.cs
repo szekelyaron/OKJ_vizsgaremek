@@ -84,6 +84,16 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
             }
+            else if (cb_databases.SelectedIndex == 2)
+            {
+                foreach (var item in infok)
+                {
+                    InfoModel.update(item.IID, item.rendszam, item.alvazszam, item.futottKm, item.evJarat, item.allapot,
+                        item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim);
+                    infok = InfoModel.select();
+                    DG_asd.ItemsSource = infok;
+                }
+            }
             
         }
 
