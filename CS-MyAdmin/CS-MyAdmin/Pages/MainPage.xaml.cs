@@ -81,7 +81,7 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
             }
-
+            
         }
 
         private void BTN_insert_Click(object sender, RoutedEventArgs e)
