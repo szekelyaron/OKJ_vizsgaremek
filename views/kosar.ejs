@@ -63,6 +63,13 @@
                   <%}%>
               <%}%>
           </div>
+          <div>
+            <% for(let gumi of lekerderedm_gumik){ %>
+              <% if(gumi.GID == kosar.termek_id) {%>
+                  <h1><%= gumi.Ar*kosar.qty %></h1>
+                  <%}%>
+              <%}%>
+          </div>
         </div>
           <% } %>
         <% } %>

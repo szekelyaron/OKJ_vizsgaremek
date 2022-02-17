@@ -333,6 +333,7 @@ exports.gumiKosarPlusz = (req, res, next) => {
 //Kosár betöltése
 exports.getKosar = (req, res, next) => {
     lekerdGumik.gumikKilistaz(req, res, function(err, data) {
+
         if(req.session.user != null)
         {
             res.render('kosar', {
@@ -367,12 +368,19 @@ exports.getContactus = (req, res, next) => {
 
 //Kerék magasság kalkulátor
 exports.getKalkulator = (req, res, next) => {
-    res.render('kalkulator', {
-        pageTitle: 'CarScope - Kalkulátor',
-        path: '/kalkulator',
-        Eredmeny: undefined,
-        Kerdezett: false
-    });
+    if(req.session.user != null)
+    {
+        res.render('kalkulator', {
+            pageTitle: 'CarScope - Kalkulátor',
+            path: '/kalkulator',
+            Eredmeny: undefined,
+            Kerdezett: false
+        });
+    }
+    else {
+        res.redirect('/vendeg');
+    }
+    
 };
 exports.postKalkulator = (req, res, next) => {
     var szelesseg = req.body.szelesseg;
