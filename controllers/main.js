@@ -319,7 +319,7 @@ exports.gumiKosartorol = (req,res,next) => {
 
 exports.gumiKosarPlusz = (req, res, next) => {
     console.log("Lefutott +");
-
+    
     for(let termek of req.session.user.kosar)
         {
             if(termek.termek_id == req.body.termek_id)
@@ -332,15 +332,28 @@ exports.gumiKosarPlusz = (req, res, next) => {
 
 //Kosár betöltése
 exports.getKosar = (req, res, next) => {
+    
     lekerdGumik.gumikKilistaz(req, res, function(err, data) {
-
+        req.session.user.kosarOsszeg = 0;
         if(req.session.user != null)
         {
+            for(let termek of req.session.user.kosar)
+            {
+                for(let gumi of req.session.gumiabroncs)
+                {
+                    if(termek.termek_id == gumi.GID)
+                    {
+                        req.session.user.kosarOsszeg += termek.qty * gumi.Ar;
+                    }
+                }
+            }
+            
             res.render('kosar', {
                 pageTitle: 'CarScope - Kosár',
                 path: '/kosar',
                 lekerderedm_gumik: req.session.gumiabroncs,
-                kosarTartalma: req.session.user.kosar
+                kosarTartalma: req.session.user.kosar,
+                kosarOsszeg: req.session.user.kosarOsszeg 
             })
         }
         else
