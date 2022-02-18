@@ -86,7 +86,16 @@
                                 <p>Állapot: <%= lekerderedm_rendsz.Allapot %></p>
                                 <p>Futott km: <%= lekerderedm_rendsz.Futottkm %></p>
                                 <p>Okmányok jellege: <%= lekerderedm_rendsz.Okmanyok %></p>
-                                <p>Gumiabroncs fajtája: <%= lekerderedm_rendsz.Gumiabroncs %></p>
+                                <% if(lekerderedm_rendsz.VezetettSzervK == 0) { %>
+                                    <p>Az autó nem rendelkezik vetzetett szervizkönyvvel</p>
+                                <% } %>
+                                <% if(lekerderedm_rendsz.VezetettSzervK == 1) { %>
+                                    <p>Az autó vetzetett szervizkönyvvel rendelkezik</p>
+                                <% } %>
+                                <p>Ismert típushibák: <%= lekerderedm_rendsz.Tipshiba %></p>
+                                <p>Ismert típushibák: <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.') %></p>
+                                <p>Az autó <%= lekerderedm_rendsz.Gumiabroncs %> gumiabroncscsal van szerelve.</p>
+                                <p>Más gumiabroncsot is szeretne az autóra? Látogassa meg <a href="/termekek"><u>webshopunkat</u></a></p>
                             </div>
                         </div>
                     </article>
@@ -108,7 +117,16 @@
                                 <p>Állapot: <%= lekerderedm_alvaz.Allapot %></p>
                                 <p>Futott km: <%= lekerderedm_alvaz.Futottkm %></p>
                                 <p>Okmányok jellege: <%= lekerderedm_alvaz.Okmanyok %></p>
-                                <p>Gumiabroncs fajtája: <%= lekerderedm_alvaz.Gumiabroncs %></p>
+                                <% if(lekerderedm_alvaz.VezetettSzervK == 0) { %>
+                                    <p>Az autó nem rendelkezik vetzetett szervizkönyvvel</p>
+                                <% } %>
+                                <% if(lekerderedm_alvaz.VezetettSzervK == 1) { %>
+                                    <p>Az autó vetzetett szervizkönyvvel rendelkezik</p>
+                                <% } %>
+                                <p>Ismert típushibák: <%= lekerderedm_alvaz.Tipshiba %></p>
+                                <p>Ismert típushibák: <%= lekerderedm_alvaz.Muszakierv.replace(/-/g,'.') %></p>
+                                <p>Az autó <%= lekerderedm_alvaz.Gumiabroncs %> gumiabroncscsal van szerelve.</p>
+                                <p>Más gumiabroncsot is szeretne az autóra? Látogassa meg <a href="/termekek"><u>webshopunkat</u></a></p>
                             </div>
                         </div>
                     </article>
