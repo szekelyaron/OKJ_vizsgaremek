@@ -22,7 +22,7 @@
                                         <img src="img/gumi.png" alt="">
                                     </div>
                                     <div>
-                                        <h1 class="product_type"><%= gumi.Evszak %></h1>
+                                        <h1 class="product_type evszak"><%= gumi.Evszak %></h1>
                                         <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
                                         <h1 class="product_type"><%= gumi.Szelesseg %>/<%= gumi.Oldalfal %> R<%= gumi.Atmero %></h1>
                                         
@@ -38,7 +38,7 @@
                                         </form>
                                         <form action="/kosarhozadSzett" method="POST">
                                             <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
-                                            <button class="join_btn joinform" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Szett vásárlása</button>
+                                            <button class="join_btn joinform szettbtn" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Szett vásárlása</button>
                                         </form>             
                                     </div>
                                 

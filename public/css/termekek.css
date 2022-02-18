@@ -29,12 +29,12 @@ body{
     border: rgb(36, 36, 36) solid 1px;
     color: lightgray;
     text-align: center;
-    padding: 30px 10px 30px 10px;
+    padding: 20px 10px 20px 10px;
     transition: 0.3s;
     margin-bottom: 30px;
     min-height: 445px;
     width: 270px;
-    
+    border-radius: 10px;
   }
   .products .card:hover {
     transition: 0.3s;
@@ -67,7 +67,7 @@ body{
     font-weight: bold;
     color: lightgray;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .products a {
     text-decoration: none;
@@ -139,6 +139,12 @@ body{
   }
   .ertekeles{
     max-width: 110px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .szettbtn{
+    margin-top: 10px !important;
+  }
+  .evszak{
+    font-size: 25px !important;
   }
 
