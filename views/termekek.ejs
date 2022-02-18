@@ -28,14 +28,14 @@
                                         </h2>
                                     </div>
                                     <div>
-                                        Értékelés: <%= gumi.Kategoria %>
+                                        <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
                                     </div>
                                     <div class="pbtn">
                                         <form action="/kosarhozad" method="POST">
                                             <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
                                             <button class="join_btn joinform egydb" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">1db vásárlása</button>
                                         </form>
-                                        <form action="/kosarhozad" method="POST">
+                                        <form action="/kosarhozadSzett" method="POST">
                                             <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
                                             <button class="join_btn joinform" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Szett vásárlása</button>
                                         </form>             

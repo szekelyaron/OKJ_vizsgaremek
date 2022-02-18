@@ -40,7 +40,9 @@
               <span>
                 <% for(let gumi of lekerderedm_gumik){ %>
                   <% if(gumi.GID == kosar.termek_id) {%>
-                      <%= gumi.Kategoria %>
+                        <div>
+                          <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
+                        </div>
                       <%}%>
                   <%}%>
               </span>

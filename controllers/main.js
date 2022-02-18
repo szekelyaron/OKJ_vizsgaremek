@@ -279,6 +279,36 @@ exports.gumiKosarba = (req,res,next) => {
  setTimeout(kosarhozad, 950);
 };
 
+exports.gumiKosarbaSzett = (req,res,next) => {
+    function kosarhozad(){
+    termek = req.body.termek_id;
+    if(req.session.user.kosar == undefined)
+    {
+        req.session.user.kosar = []
+        var kosar = {termek_id: termek, qty: 4}
+        req.session.user.kosar.push(kosar);
+    }
+    else
+    {
+        var contains = false;
+        for(let termek of req.session.user.kosar)
+        {
+            if(termek.termek_id == req.body.termek_id)
+            {
+                termek.qty += 4;
+                var contains = true;
+            }
+        }
+        if(contains == false)
+        {
+            req.session.user.kosar.push({termek_id: termek, qty: 4})
+        }
+    }
+    res.redirect('/termekek');
+ }
+ setTimeout(kosarhozad, 950);
+};
+
 exports.gumiKosartorol = (req,res,next) => {
     //console.log("Lefutott -");
     var termek = req.body.termek_id;
@@ -334,19 +364,24 @@ exports.gumiKosarPlusz = (req, res, next) => {
 exports.getKosar = (req, res, next) => {
     
     lekerdGumik.gumikKilistaz(req, res, function(err, data) {
-        req.session.user.kosarOsszeg = 0;
-        if(req.session.user != null)
+        if(req.session.user != null && req.session.user != "")
         {
-            for(let termek of req.session.user.kosar)
+            console.log(req.session.user.kosar)
+            if(req.session.user.kosar != undefined)
             {
-                for(let gumi of req.session.gumiabroncs)
+                req.session.user.kosarOsszeg = 0;
+                for(let termek of req.session.user.kosar)
                 {
-                    if(termek.termek_id == gumi.GID)
+                    for(let gumi of req.session.gumiabroncs)
                     {
-                        req.session.user.kosarOsszeg += termek.qty * gumi.Ar;
+                        if(termek.termek_id == gumi.GID)
+                        {
+                            req.session.user.kosarOsszeg += termek.qty * gumi.Ar;
+                            console.log( req.session.user.kosarOsszeg)
+                        }
                     }
                 }
-            }
+            };
             
             res.render('kosar', {
                 pageTitle: 'CarScope - Kosár',

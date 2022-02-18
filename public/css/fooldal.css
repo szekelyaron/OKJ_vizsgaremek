@@ -126,4 +126,6 @@ h1{
     font-size: 1.6rem;
   }
 }
-
+.ertekeles{
+  max-width: 240px;
+}

@@ -209,3 +209,6 @@ body {
 .row{
   display: inline-block;
 }
+.ertekeles{
+  max-width: 90px;
+}
