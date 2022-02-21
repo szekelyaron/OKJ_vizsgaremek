@@ -207,14 +207,15 @@ body {
   .vegosszeg{
     margin-left: auto;
     margin-right: auto;
-    float: none;
-    text-align: center;
+    text-align: center !important;
+    padding-bottom: 10px !important;
   }
   .fizetesgomb{
     margin-left: auto !important;
     margin-right: auto !important;
-    float: none;
-    text-align: center;
+    float: none !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
   }
 }
 .gumi_img
