@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Feb 21. 07:48
+-- Létrehozás ideje: 2022. Feb 21. 08:35
 -- Kiszolgáló verziója: 10.4.22-MariaDB
 -- PHP verzió: 8.1.2
 
@@ -128,7 +128,7 @@ CREATE TABLE `info` (
   `Allapot` set('Újszerű','Használt','Enyhén sérült','Frissen felújított','Sérült') COLLATE utf8_hungarian_ci NOT NULL,
   `VezetettSzervK` tinyint(1) NOT NULL,
   `Okmanyok` set('Érvényes magyar okmányokkal','Lejárt magyar okmányokkal','Külföldi okmányokkal','Okmányok nélkül') COLLATE utf8_hungarian_ci NOT NULL,
-  `Muszakierv` date NOT NULL,
+  `Muszakierv` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `Gumiabroncs` set('Nyári','Téli','Négyévszakos','') COLLATE utf8_hungarian_ci NOT NULL,
   `Auto_AID` int(11) NOT NULL,
   `Kepcim` text COLLATE utf8_hungarian_ci NOT NULL,
