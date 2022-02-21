@@ -14,7 +14,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="contactus">Kapcsolat</a>
         </li>
-        <li class="nav-item dropdown">
+        <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Packages
@@ -25,15 +25,27 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Platinum</a>
           </div>
-        </li>
+        </li> -->
         <li class="nav-item active">
           <a class="nav-link" href="sugo">Tudj meg többet</a>
         </li>
+        <% if(user != undefined) { %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/fooldal">Jármű lekérdezés</a>
+          </li>
+        <% } %>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <a class="btn btn-outline-light" href="bejelentkezes" type="submit">Bejelentkezés</a>
-        &nbsp;&nbsp;
-        <a href="regisztracio" class="btn btn-outline-light" type="submit">Regisztráció</a>
-      </form>
+        <% if(user == undefined) { %>
+          <form class="form-inline my-2 my-lg-0">
+
+            <a class="btn btn-outline-light" href="bejelentkezes" type="submit">Bejelentkezés</a>
+            &nbsp;&nbsp;
+            <a href="regisztracio" class="btn btn-outline-light" type="submit">Regisztráció</a>
+          </form>
+        <% }else{ %>
+          <form class="form-inline my-2 my-lg-0" method="post" action="/kijelentkezes">
+            <button class="btn btn-outline-light" type="submit">Kijelentkezés</button>
+          </form>
+        <% } %>
     </div>
   </nav>

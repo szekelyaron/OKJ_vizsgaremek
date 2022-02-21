@@ -41,4 +41,4 @@ auth: {
 }
 });
 
-app.listen(6969, () => console.log('Listening at port 6969'));
+app.listen(2001, () => console.log('2001 - es porton fut'));

@@ -24,7 +24,8 @@ exports.getVendeg = (req, res, next) => {
         path: '/vendeg',
         VendegKerdezettER: false,
         rendszam: req.session.rendszam,
-        lekerderedm_vendeg: undefined
+        lekerderedm_vendeg: undefined,
+        user: req.session.user,
     });
 };
 
@@ -77,6 +78,7 @@ exports.getBejelentkezes = (req, res, next) => {
         pageTitle: 'CarScope - Bejelentkezés',
         path: '/bejelentkezes',
         error: '',
+        user: req.session.user
     });
 };
 
@@ -133,12 +135,14 @@ exports.getFooldal = (req, res, next) => {
         res.render('fooldal', {
             pageTitle: 'CarScope - Főoldal',
             path: '/fooldal',
+            user: req.session.user,
             rendszam: req.session.rendszam,
             alvazszam: req.session.alvazszam,
             lekerderedm_rendsz: undefined,
             lekerderedm_alvaz: undefined,
             kerdezettEA: false,
             kerdezettER: false
+
         }); 
     }
     else
@@ -238,6 +242,7 @@ exports.gumikLekerdezes = (req,res,next) => {
             res.render('termekek', {
                 pageTitle: 'CarScope - Termékek',
                 path: '/termekek',
+                user: req.session.user,
                 lekerderedm_gumik: req.session.gumiabroncs,
                 kosarTartalma: req.session.kosarTartalma
             })
@@ -389,7 +394,8 @@ exports.getKosar = (req, res, next) => {
                 path: '/kosar',
                 lekerderedm_gumik: req.session.gumiabroncs,
                 kosarTartalma: req.session.user.kosar,
-                kosarOsszeg: req.session.user.kosarOsszeg 
+                kosarOsszeg: req.session.user.kosarOsszeg,
+                user: req.session.user 
             })
         }
         else
@@ -404,6 +410,7 @@ exports.getSugo = (req, res, next) => {
     res.render('sugo', {
         pageTitle: 'CarScope - Súgó',
         path: '/sugo',
+        user: req.session.user
     });
 };
 
@@ -412,6 +419,7 @@ exports.getContactus = (req, res, next) => {
     res.render('contactus', {
         pageTitle: 'CarScope - Contactus',
         path: '/contactus',
+        user: req.session.user
     });
 };
 
@@ -439,7 +447,8 @@ exports.getKalkulator = (req, res, next) => {
             pageTitle: 'CarScope - Kalkulátor',
             path: '/kalkulator',
             Eredmeny: undefined,
-            Kerdezett: false
+            Kerdezett: false,
+            user: req.session.user,
         });
     }
     else {
@@ -458,6 +467,7 @@ exports.postKalkulator = (req, res, next) => {
         pageTitle: 'CarScope - Kalkulátor',
         path: '/kalkulator',
         Eredmeny: teljesAtmero,
-        Kerdezett: true
+        Kerdezett: true,
+        user: req.session.user,
     });
 };
