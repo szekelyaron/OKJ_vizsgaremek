@@ -6,6 +6,7 @@ const lekerdR = require('../models/users/auto.js');
 const lekerdA = require('../models/users/auto.js');
 const lekerdGumik = require('../models/users/gumi.js');
 const login = require('../models/users/login.js');
+var nodemailer = require('nodemailer');
 
 //Kezsőoldal
 exports.getIndex = (req, res, next) => {
@@ -411,6 +412,22 @@ exports.getContactus = (req, res, next) => {
     res.render('contactus', {
         pageTitle: 'CarScope - Contactus',
         path: '/contactus',
+    });
+};
+
+exports.postContactus = (req, res, next) => {
+    var mailOptions = {
+    to: 'carscope.site@gmail.com',
+    subject: 'Contatus',
+    text: req.body.uzenet+' Feladó: ' + req.body.name+ ' ' + req.body.email
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email elküldve: ' + info.response);
+    }
     });
 };
 

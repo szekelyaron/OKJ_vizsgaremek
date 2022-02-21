@@ -36,6 +36,8 @@ router.get('/sugo', mainController.getSugo);
 
 router.get('/contactus', mainController.getContactus);
 
+router.get('/contactus', mainController.postContactus);
+
 router.post('/kijelentkezes', mainController.postLogout);
 
 router.post('/fooldal',mainController.checkLogin);

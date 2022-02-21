@@ -31,4 +31,14 @@ app.use(bodyParser.urlencoded({
 
 db.createPool(); //create a global sql pool connection
 
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+service: 'gmail',
+auth: {
+    user: 'carscope.site@gmail.com',
+    pass: 'Carscope2022'
+}
+});
+
 app.listen(6969, () => console.log('Listening at port 6969'));
