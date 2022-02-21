@@ -62,5 +62,4 @@ router.get('/kalkulator', mainController.getKalkulator);
 
 router.post('/kalkulator', mainController.postKalkulator);
 
-
 module.exports = router;
