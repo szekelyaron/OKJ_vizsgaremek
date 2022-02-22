@@ -35,6 +35,8 @@ body{
     min-height: 445px;
     width: 270px;
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .products .card:hover {
     transition: 0.3s;
@@ -147,4 +149,26 @@ body{
   .evszak{
     font-size: 25px !important;
   }
-
+  .termekek_section{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .justify-content-center
+  {
+    margin-top: 30px;
+  }
+  .inline{
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 20px;
+  }
+.select_div{
+  margin-left: auto;
+  margin-right: auto;
+}
+.centered{
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
