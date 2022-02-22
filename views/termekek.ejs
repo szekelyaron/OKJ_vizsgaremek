@@ -1,51 +1,79 @@
 <%- include('includes/header.ejs') %>
 <link rel="stylesheet" href="/css/termekek.css">
 <link rel="stylesheet" href="/css/buttons.css">
+<script src="https://unpkg.com/vue@next" defer></script>
 <script src="/js/termekek.js" defer></script>
 <body>
     <%- include('includes/navbar_fooldal.ejs') %>
     <h1>Termékek</h1>
-    <div class="wrapper">
+    <div class="wrapper" id="termekek">
+        <% if (lekerderedm_gumik != undefined) {%>
+            <div class="justify-content-center centered">
+                <select v-model="valasztottEvszak" name="rendez" class="justify-content-center">
+                    <option value="" selected>Összes</option>
+                    <option value="Nyári">Nyári</option>
+                    <option value="Téli">Téli</option>
+                    <option value="Négyévszakos">Négyévszakos</option>
+                </select>
+            </div>
+            <div class="justify-content-center centered">
+                <select v-model="valasztottMeret" name="rendez" class="justify-content-center">
+                    <option value="" selected>Összes</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+            </div>
+        <% } %>
             <div class="row">
                 <% if (lekerderedm_gumik != undefined) {%>
                     <% for (let gumi of lekerderedm_gumik) { %>
-                <div class="col-12 col-md-6 col-xl-3 col-xxl-2">
-                <section class="products">
-                                <div class="card">
-                                    <div>
-                                        <h1 class="productTitle">
-                                            <%= gumi.Gyarto %>
-                                            
-                                        </h1>
+                        <section v-if="(valasztottEvszak == '<%= gumi.Evszak %>' || valasztottEvszak == '') && (valasztottMeret == '<%= gumi.Atmero %>' || valasztottMeret == '')"> 
+                            <div class="col-12 col-md-6 col-xl-3 col-xxl-2 col-lg-4">
+                            <section class="products">
+                                            <div class="card">
+                                                <div>
+                                                    <h1 class="productTitle">
+                                                        <%= gumi.Gyarto %>
+                                                        
+                                                    </h1>
+                                                </div>
+                                                <div class="productIMG">
+                                                    <img src="img/gumi.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <h1 class="product_type evszak"><%= gumi.Evszak %></h1>
+                                                    <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
+                                                    <h1 class="product_type"><%= gumi.Szelesseg %>/<%= gumi.Oldalfal %> R<%= gumi.Atmero %></h1>
+                                                    
+                                                    <h2 class="productPrice">
+                                                        <%= gumi.Ar %> Ft/db
+                                                    </h2>
+                                                </div>
+                                                
+                                                <div class="pbtn">
+                                                    <form action="/kosarhozad" method="POST">
+                                                        <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
+                                                        <button class="join_btn joinform egydb" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">1db vásárlása</button>
+                                                    </form>
+                                                    <form action="/kosarhozadSzett" method="POST">
+                                                        <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
+                                                        <button class="join_btn joinform szettbtn" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Szett vásárlása</button>
+                                                    </form>             
+                                                </div>   
                                     </div>
-                                    <div class="productIMG">
-                                        <img src="img/gumi.png" alt="">
-                                    </div>
-                                    <div>
-                                        <h1 class="product_type evszak"><%= gumi.Evszak %></h1>
-                                        <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
-                                        <h1 class="product_type"><%= gumi.Szelesseg %>/<%= gumi.Oldalfal %> R<%= gumi.Atmero %></h1>
-                                        
-                                        <h2 class="productPrice">
-                                            <%= gumi.Ar %> Ft/db
-                                        </h2>
-                                    </div>
-                                    
-                                    <div class="pbtn">
-                                        <form action="/kosarhozad" method="POST">
-                                            <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
-                                            <button class="join_btn joinform egydb" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">1db vásárlása</button>
-                                        </form>
-                                        <form action="/kosarhozadSzett" method="POST">
-                                            <input type="text" name="termek_id" value="<%= gumi.GID %>" hidden>
-                                            <button class="join_btn joinform szettbtn" data-toggle="modal" data-target="#exampleModal" onclick="timer(this);">Szett vásárlása</button>
-                                        </form>             
-                                    </div>
-                                
-                        </div>
-                </section>
-                </div> 
-                <% } %>
+                            </section>
+                            </div>
+                        </section>
+                    <% } %>
                 <% } %> 
                 <div class="modal fade text-center" id="exampleModal">
                     <div class="modal-dialog text-center">
