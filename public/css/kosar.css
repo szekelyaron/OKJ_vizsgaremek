@@ -16,7 +16,6 @@ body {
 }
 .shopping-cart {
   width: 1200px;
-  min-width: fit-content;
   height: fit-content;
   margin: 80px auto;
   background: -moz-linear-gradient(0deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
@@ -29,6 +28,8 @@ body {
   border: solid 2px white;
   display: flex;
   flex-direction: column;
+  margin-left: 10px auto;
+  margin-right: 10px auto;
   
 }
 .title {
@@ -227,7 +228,7 @@ body {
 .db{
   background: transparent;
 }
-.row{
+.kosar_row{
   display: inline-block;
 }
 .ertekeles{

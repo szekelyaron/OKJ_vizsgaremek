@@ -8,19 +8,10 @@ body{
     max-width: 100vw;
     font-family: "Open Sans", sans-serif;
 }
-.row{
-    max-width: 100vw;
-    margin: 0px;
-    padding: 0px;
-  }
   .products {
     max-width: fit-content;
     margin: 40px;
     max-height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .row{
     margin-left: auto;
     margin-right: auto;
   }
@@ -124,13 +115,6 @@ body{
     background-color: rgb(0, 0, 0);
     border: solid 3px darkgray;
   }
-  .wrapper .row{
-    max-width: 100vw;
-    align-items: center;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
   @media (max-width: 800px) {
     .modal{
       margin-left:auto;
@@ -155,9 +139,18 @@ body{
   .evszak{
     font-size: 25px !important;
   }
-  .termekek_section{
-    margin-left: auto;
-    margin-right: auto;
+  .wrapper{
+    min-width: 100vw;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: auto;
+    padding-right: auto;
+  }
+  .row{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: auto;
+    padding-right: auto;
   }
   .justify-content-center
   {
