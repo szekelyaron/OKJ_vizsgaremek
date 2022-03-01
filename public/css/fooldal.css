@@ -12,6 +12,8 @@
 }
 body{
     background-color: black;
+    height: fit-content;
+    padding-bottom: 5vh;
 }
 h1{
     color: white;
@@ -115,6 +117,7 @@ h1{
 }
 .rendszam_pelda{
   font-size: 3rem;
+  color: white;
 }
 @media (max-width: 840px) {
   .rendszam_pelda{
