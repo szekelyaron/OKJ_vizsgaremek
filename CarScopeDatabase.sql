@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Feb 21. 08:35
+-- Létrehozás ideje: 2022. Már 01. 09:20
 -- Kiszolgáló verziója: 10.4.22-MariaDB
 -- PHP verzió: 8.1.2
 
@@ -132,7 +132,7 @@ CREATE TABLE `info` (
   `Gumiabroncs` set('Nyári','Téli','Négyévszakos','') COLLATE utf8_hungarian_ci NOT NULL,
   `Auto_AID` int(11) NOT NULL,
   `Kepcim` text COLLATE utf8_hungarian_ci NOT NULL,
-  `Torott` tinyint(4) NOT NULL
+  `Torott` set('Sérülésmentes','Enyhén sérült','Eleje sérült','Hátulja sérült','Oldala sérült','Sérült') COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -140,9 +140,9 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) VALUES
-(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, 'Újszerű', 1, 'Érvényes magyar okmányokkal', '2022-09-10', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 1),
-(2, 'SGA-030', 'FZ123456789123456', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10', 'Nyári', 14, 'https://i3.infocar.ua/img/bazar2/733/732349/5581219_3.jpg', 0),
-(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', 0);
+(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, 'Újszerű', 1, 'Érvényes magyar okmányokkal', '2022-09-10', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 'Sérülésmentes'),
+(2, 'SGA-030', 'FZ123456789123456', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10', 'Nyári', 14, 'https://i3.infocar.ua/img/bazar2/733/732349/5581219_3.jpg', ''),
+(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', '');
 
 -- --------------------------------------------------------
 
