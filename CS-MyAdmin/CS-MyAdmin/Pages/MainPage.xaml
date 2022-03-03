@@ -483,7 +483,7 @@
                         Content="Save changes" Click="Button_Click">
                     
                 </Button>
-                <StackPanel x:Name="SP_autokInsert" Visibility="Visible">
+                <StackPanel x:Name="SP_autokInsert" Visibility="Collapsed">
                     <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Gyártó:" Foreground="White"/>
@@ -551,6 +551,28 @@
                         Content="Insert" HorizontalAlignment="Left" Click="BTN_insertGumi_Click"/>
                         <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
                     </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="SP_infokInsert" Visibility="Visible">
+                    <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="100" Content="Rendszám:" Foreground="White"/>
+                        <TextBox x:Name="TB_Rendszam" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <Label Width="100" Content="Alvázszám:" Foreground="White"/>
+                        <TextBox x:Name="TB_Alvazszam" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="100" Content="Futott Km:" Foreground="White"/>
+                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <Label Width="100" Content="Évjárat:" Foreground="White"/>
+                        <TextBox x:Name="TB_Evjarat" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="100" Content="Állapot:" Foreground="White"/>
+                        <ComboBox x:Name="CB_allapot" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <Label Width="100" Content="Okmányok:" Foreground="White"/>
+                        <ComboBox x:Name="CB_okmanyok" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
                 </StackPanel>
 
 

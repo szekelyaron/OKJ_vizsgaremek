@@ -89,7 +89,7 @@ namespace CS_MyAdmin.Pages
                 foreach (var item in infok)
                 {
                     InfoModel.update(item.IID, item.rendszam, item.alvazszam, item.futottKm, item.evJarat, item.allapot,
-                        item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim);
+                        item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim, item.torott);
                     infok = InfoModel.select();
                     DG_asd.ItemsSource = infok;
                 }
