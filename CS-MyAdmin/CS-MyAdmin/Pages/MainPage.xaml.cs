@@ -58,10 +58,14 @@ namespace CS_MyAdmin.Pages
             CB_okmanyok.Items.Add("Lejárt magyar okmányokkal");
             CB_okmanyok.Items.Add("Külföldi okmányokkal");
             CB_okmanyok.Items.Add("Okmányok nélkül");
+            CB_okmanyok.SelectedIndex = 0;
 
             CB_Torott.Items.Add("Sérülésmentes");
-
-
+            CB_Torott.Items.Add("Apró sérülések");
+            CB_Torott.Items.Add("Eleje sérült");
+            CB_Torott.Items.Add("Hátulja sérült");
+            CB_Torott.Items.Add("Jelentősen sérült");
+            CB_Torott.SelectedIndex = 0;
 
 
             autok = AutoModel.select();

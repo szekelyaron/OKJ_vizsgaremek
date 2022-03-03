@@ -570,7 +570,7 @@
                         <Label Width="100" Content="Vezetett szervizk.:" Foreground="White"/>
                         <TextBox x:Name="TB_szervkönyv" Margin="5" Width="100" HorizontalAlignment="Left"/>
                         <Label Width="100" Content="Műszaki érvényes:" Foreground="White"/>
-                        <DatePicker x:Name="DP_muszaki" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <DatePicker x:Name="DP_muszaki" Text="Dátumsz" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Autó azon.:" Foreground="White"/>
