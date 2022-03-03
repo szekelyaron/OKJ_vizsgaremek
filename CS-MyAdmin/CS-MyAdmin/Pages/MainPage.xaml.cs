@@ -31,15 +31,37 @@ namespace CS_MyAdmin.Pages
         {
             InitializeComponent();
 
+            static void GumiFill(ComboBox CBgumi)
+            {
+                CBgumi.Items.Add("Nyári");
+                CBgumi.Items.Add("Téli");
+                CBgumi.Items.Add("Négyévszakos");
+                CBgumi.SelectedIndex = 0;
+            }
+
             cb_databases.Items.Add("autok");
             cb_databases.Items.Add("gumiabroncs");
             cb_databases.Items.Add("info");
             cb_databases.SelectedIndex = 0;
 
-            CB_GumiEvszak.Items.Add("Nyári");
-            CB_GumiEvszak.Items.Add("Téli");
-            CB_GumiEvszak.Items.Add("Négyévszakos");
-            CB_GumiEvszak.SelectedIndex = 0;
+            GumiFill(CB_GumiEvszak);
+            GumiFill(CB_GumiInfo);
+
+            CB_allapot.Items.Add("Újszerű");
+            CB_allapot.Items.Add("Frissen felújított");
+            CB_allapot.Items.Add("Használt");
+            CB_allapot.Items.Add("Enyhén sérült");
+            CB_allapot.Items.Add("Sérült");
+            CB_allapot.SelectedIndex = 0;
+
+            CB_okmanyok.Items.Add("Érvényes magyar okmányokkal");
+            CB_okmanyok.Items.Add("Lejárt magyar okmányokkal");
+            CB_okmanyok.Items.Add("Külföldi okmányokkal");
+            CB_okmanyok.Items.Add("Okmányok nélkül");
+
+            CB_Torott.Items.Add("Sérülésmentes");
+
+
 
 
             autok = AutoModel.select();
@@ -121,6 +143,7 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_asd.ItemsSource = autok;
 
+                SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Visible;
             }
@@ -129,6 +152,7 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
 
+                SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Visible;
             }
@@ -136,6 +160,10 @@ namespace CS_MyAdmin.Pages
             {
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
+
+                SP_autokInsert.Visibility = Visibility.Collapsed;
+                SP_gumikInsert.Visibility = Visibility.Collapsed;
+                SP_infokInsert.Visibility = Visibility.Visible;
             }
         }
 
