@@ -34,9 +34,8 @@
                 </div>
                 <form method="post" action="/fooldal">
                     <div v-if="valasztott == 'R' && country_valasztott == 'M'">
-                        <img src="img/magyar.png" class="landscape">
-                        <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"
-                            placeholder="   -   " />
+                        <img src="img/magyar.png" class="landscape"></img>
+                        <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" placeholder="   -   " />
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
                         <div class="centered keresBTN">
@@ -45,8 +44,7 @@
                     </div>
                     <div v-if="valasztott == 'R' && country_valasztott == 'N'">
                         <img src="img/nemet.png" class="landscape">
-                        <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam"
-                            type="text" />
+                        <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam" type="text" />
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
                         <div class="centered keresBTN">
@@ -118,11 +116,14 @@
                                                 <%= lekerderedm_rendsz.Gyarto %>
                                                     <%= lekerderedm_rendsz.Tipus %>
                                             </h1>
-                                            <h5>Évjárat: <%= lekerderedm_rendsz.Evjarat %>
+                                            <h5>Évjárat:
+                                                <%= lekerderedm_rendsz.Evjarat %>
                                             </h5>
-                                            <h5>Állapot: <%= lekerderedm_rendsz.Allapot %>
+                                            <h5>Állapot:
+                                                <%= lekerderedm_rendsz.Allapot %>
                                             </h5>
-                                            <h5>Futott km: <%= lekerderedm_rendsz.Futottkm %>
+                                            <h5>Futott km:
+                                                <%= lekerderedm_rendsz.Futottkm %>
                                             </h5>
 
                                         </div>
@@ -132,18 +133,21 @@
                                                     <%= lekerderedm_rendsz.Gyarto %>
                                                         <%= lekerderedm_rendsz.Tipus %>
                                                 </h1>
-                                                <h5>Évjárat: <%= lekerderedm_rendsz.Evjarat %>
+                                                <h5>Évjárat:
+                                                    <%= lekerderedm_rendsz.Evjarat %>
                                                 </h5>
-                                                <h5>Állapot: <%= lekerderedm_rendsz.Allapot %>
+                                                <h5>Állapot:
+                                                    <%= lekerderedm_rendsz.Allapot %>
                                                 </h5>
-                                                <h5>Futott km: <%= lekerderedm_rendsz.Futottkm %>
+                                                <h5>Futott km:
+                                                    <%= lekerderedm_rendsz.Futottkm %>
                                                 </h5>
                                             </div>
-                                            <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt=""
-                                                class="ertekeles">
+                                            <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt="" class="ertekeles">
                                             <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
                                             <div class="details" style="display: none;">
-                                                <h5><%= lekerderedm_rendsz.Okmanyok %>
+                                                <h5>
+                                                    <%= lekerderedm_rendsz.Okmanyok %>
                                                 </h5>
                                                 <% if(lekerderedm_rendsz.VezetettSzervK==0) { %>
                                                     <h5>Nincs vezetett szervizkönyv</h5>
@@ -164,14 +168,13 @@
                                                                                     <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.')
                                                                                         %>
                                                                                 </h5>
-                                                                                <h5>Az autó <%=
+                                                                                <h5>Az autó
+                                                                                    <%=
                                                                                         lekerderedm_rendsz.Gumiabroncs
                                                                                         %>
-                                                                                        gumiabroncscsal
-                                                                                        van szerelve.
+                                                                                        gumiabroncscsal van szerelve.
                                                                                 </h5>
-                                                                                <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br>
-                                                                                    Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
+                                                                                <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
                                                                                 </h5>
                                             </div>
                                         </div>
@@ -253,12 +256,9 @@
                                         <h1 class="postcard__title red">Kérjük ilyen formában adja meg a rendszámot</h1>
                                         <div class="postcard__bar"></div>
                                         <div class="postcard__preview-txt">
-                                            <p class="rendszam_pelda"><img src="img/magyar.png" alt=""
-                                                    class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                            <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape">
-                                                : BGA4030N</p>
-                                            <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape">
-                                                : FD013GH&nbsp;&nbsp;</p>
+                                            <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                            <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape"> : BGA4030N</p>
+                                            <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape"> : FD013GH&nbsp;&nbsp;</p>
                                             <p>
                                                 <%= lekerderedm_rendsz %>
                                             </p>
@@ -269,15 +269,14 @@
                             <div v-if="valasztott == 'A'">
                                 <article class="postcard dark red info">
                                     <a class="postcard__img_link" href="#">
-                                        <img class="postcard__img" src="img/felkiáltójel.jpg" alt="Image Title" />
+                                        <img class="postcard__img" src="img/info.png" alt="Image Title" />
                                     </a>
                                     <div class="postcard__text">
                                         <h1 class="postcard__title red">Kérjük ilyen formában adja meg az alvázszámot
                                         </h1>
                                         <div class="postcard__bar"></div>
                                         <div class="postcard__preview-txt">
-                                            <p class="rendszam_pelda"><img src="img/alvazszam.png" alt=""
-                                                    class="landscape2"> 12HDD45JHB33NK9L5</p>
+                                            <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> 12HDD45JHB33NK9L5</p>
                                             <p>
                                                 <%= lekerderedm_alvaz %>
                                             </p>
@@ -286,6 +285,6 @@
                                 </article>
                             </div>
                 </form>
-            </div>
+                </div>
     </body>
     <%- include('includes/footer.ejs') %>

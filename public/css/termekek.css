@@ -1,27 +1,33 @@
-@font-face{
-  font-family: gtiming;
+@font-face {
+    font-family: gtiming;
     src: url(../font/good\ timing\ bd.ttf);
 }
-body{
-    background-color: black;
+
+body {
+    background-image: url("../img/gumi_hatter.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     overflow-x: hidden;
     max-width: 100vw;
     font-family: "Open Sans", sans-serif;
 }
-  .products {
+
+.products {
     max-width: fit-content;
     margin: 40px;
     max-height: fit-content;
     margin-left: auto;
     margin-right: auto;
-  }
-  .products .card {
-    background: -moz-linear-gradient(90deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
-    background: -webkit-gradient(linear, 90deg, from(rgba(127, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7)));
-    background: -o-linear-gradient(90deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
-    background: linear-gradient(to 90deg, rgba(127, 0, 0, 0.6), rgba(0, 0, 0, 0.7) 100%);
-    border: rgb(36, 36, 36) solid 1px;
+}
+
+.products .card {
+    background: -moz-linear-gradient(90deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
+    background: -webkit-gradient(linear, 90deg, from(rgba(127, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
+    background: -o-linear-gradient(90deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(to 90deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
+    border: rgb(170, 170, 170) solid 1px;
     color: lightgray;
     text-align: center;
     padding: 20px 10px 20px 10px;
@@ -30,144 +36,159 @@ body{
     min-height: 445px;
     width: 270px;
     border-radius: 10px;
-  }
-  .products .card:hover {
+}
+
+.products .card:hover {
     transition: 0.3s;
-    box-shadow: 0 0 30px darkred;
-  }
-  .products h1 {
+    box-shadow: 0 0 30px rgb(170, 170, 170);
+    border-radius: 20px;
+}
+
+.products h1 {
     font-size: large;
     font-weight: bold;
-  }
-  
-  .products .productTitle{
+}
+
+.products .productTitle {
     color: white;
     font-family: gtiming;
     font-size: 28px;
     min-height: 66px;
-  }
-  .poduct_type{
+}
+
+.poduct_type {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 19px;
-  }
-  .products .productIMG img {
+}
+
+.products .productIMG img {
     width: 60%;
     max-height: 220px;
     max-width: 180px;
     margin-bottom: 5px;
-  }
-  .products .productPrice {
+}
+
+.products .productPrice {
     font-size: large;
     font-weight: bold;
     color: lightgray;
     margin-top: 10px;
     margin-bottom: 0px;
-  }
-  .products a {
+}
+
+.products a {
     text-decoration: none;
-  }
-  .join_btn {
+}
+
+.join_btn {
     border: 1px solid lightgray !important;
-    margin-bottom:0;
+    margin-bottom: 0;
     background-color: transparent;
-  }
-  .join_btn:hover {
+}
+
+.join_btn:hover {
     box-shadow: none !important;
     color: white !important;
-  }
-  .joinform {
+}
+
+.joinform {
     color: lightgray!important;
     border: 1px solid white !important;
     border-radius: 5px;
-  }
-  .join_btn:before {
-    background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(248, 248, 248, 0.4),
-    transparent
-    )!important;
+}
+
+.join_btn:before {
+    background: linear-gradient( 120deg, transparent, rgba(248, 248, 248, 0.4), transparent)!important;
     transition: all 600ms !important;
-  }
-  .joinform {
+}
+
+.joinform {
     margin-top: 20px !important;
     font-size: 0.9rem !important;
     padding: 0.7rem !important;
-  }
-  .popup_img{
+}
+
+.popup_img {
     margin-top: 15px;
     margin-bottom: 5px;
     max-height: 100px;
     max-width: 100px;
-  }
-  .text-center{
+}
+
+.text-center {
     align-items: center;
     text-align: center;
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-  }
-  .modalbg
-  {
+}
+
+.modalbg {
     margin-top: auto;
     margin-bottom: auto;
     background-color: rgb(0, 0, 0);
     border: solid 3px darkgray;
-  }
-  @media (max-width: 800px) {
-    .modal{
-      margin-left:auto;
-      margin-right:auto;
+}
+
+@media (max-width: 800px) {
+    .modal {
+        margin-left: auto;
+        margin-right: auto;
     }
-    .inline{
-      padding-right: 0px !important;
-      display: grid !important;
+    .inline {
+        padding-right: 0px !important;
+        display: grid !important;
     }
-  }
-  .egydb{
+}
+
+.egydb {
     font-size: 0.7rem !important;
     padding: 0.5rem !important;
-  }
-  .ertekeles{
+}
+
+.ertekeles {
     max-width: 110px;
     margin-bottom: 20px;
-  }
-  .szettbtn{
+}
+
+.szettbtn {
     margin-top: 10px !important;
-  }
-  .evszak{
+}
+
+.evszak {
     font-size: 25px !important;
-  }
-  .wrapper{
+}
+
+.wrapper {
     min-width: 100vw;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: auto;
     padding-right: auto;
-  }
-  .row{
+}
+
+.row {
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: auto;
     padding-right: auto;
-  }
-  .justify-content-center
-  {
+    justify-content: center;
+}
+
+.justify-content-center {
     margin-top: 30px;
-  }
-  .inline{
+}
+
+.inline {
     display: inline;
     margin-left: auto;
     margin-right: auto;
     padding-right: 20px;
-  }
-  .select_div{
-  margin-left: auto;
-  margin-right: auto;
-  } 
-  .centered{
-  align-items: center;
-  text-align: center;
-  align-content: center;
-  }
+}
+
+.centered {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
