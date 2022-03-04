@@ -13,13 +13,15 @@
         <div class="title">
           Kosár
         </div>
-        <% if(kosarTartalma !=undefined){ %>
+        <% if(kosarTartalma !=undefined || kosarTartalma == ''){ %>
           <div id="osszead">
             <% for (let kosar of kosarTartalma) { %>
               <div class="item">
-                <div class="buttons">
-                  <button class="join_btn joinform" href="" value="ALL ON">Töröl</button>
-                </div>
+                <form action="/torol" method="post">
+                  <div class="buttons">
+                    <button class="join_btn joinform" type="submit" value="ALL ON">Töröl</button>
+                  </div>
+                </form>
                 <div class="image">
                   <img src="img/gumi.png" alt="" class="gumi_img" />
                 </div>
@@ -81,16 +83,17 @@
                 </div>
               </div>
               <% } %>
-
+              <% if(kosarTartalma!=undefined && kosarTartalma != ''){ %>
                 <div class="vegosszeg">
                   Végösszeg: <%= kosarOsszeg %> Ft
                     <button class="join_btn joinform fizetesgomb" href="" value="">Tovább a fizetéshez</button>
                 </div>
+              <% } %>
 
           </div>
           <% } %>
-            <% if(kosarTartalma==undefined){ %>
+            <% if(kosarTartalma==undefined || kosarTartalma == ''){ %>
               <p class="ureskosar">Jelenleg üres a kosár</p>
-              <% } %>
+            <% } %>
   </body>
   <%- include('includes/footer.ejs') %>

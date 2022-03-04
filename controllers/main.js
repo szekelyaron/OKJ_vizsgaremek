@@ -285,6 +285,14 @@ exports.gumiKosarba = (req,res,next) => {
  setTimeout(kosarhozad, 950);
 };
 
+exports.gumiKosartorolTeljes = (req,res,next) => {
+    var termek = req.body.termek_id;
+    var kosar = req.session.user.kosar;
+    var index = kosar.findIndex(g => g.termek_id == termek);
+    kosar.splice(index, 1);
+    res.redirect('/kosar');
+}
+
 exports.gumiKosarbaSzett = (req,res,next) => {
     function kosarhozad(){
     termek = req.body.termek_id;
