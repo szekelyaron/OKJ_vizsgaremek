@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Már 03. 13:22
+-- Létrehozás ideje: 2022. Már 04. 12:04
 -- Kiszolgáló verziója: 10.4.21-MariaDB
 -- PHP verzió: 8.0.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `autok6`
 --
+CREATE DATABASE IF NOT EXISTS `autok6` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci;
+USE `autok6`;
 
 -- --------------------------------------------------------
 
@@ -69,15 +71,8 @@ CREATE TABLE `felhasznalo` (
 --
 
 INSERT INTO `felhasznalo` (`FID`, `Felhasználónév`, `Jelszó`, `Email`) VALUES
-(1, 'Pusoma Gergő', 'eztkinemtalalod', 'pusomagergo@gmail.com'),
-(2, 'AutóNepper', '1234567890', 'neppervagyok@gmail.com'),
-(3, 'TigerHero', '123', 'aronvok@gmail.com'),
-(4, 'Dromarci', 'Virág4ever', 'takacsmarci@gmail.com'),
-(5, 'DaweDie', 'TaKa', 'dawedie@gmail.com'),
 (6, 'asdasd', 'c329936d9323991c7e6039f3222082', 'asdasd@asdasd.asd'),
-(9, 'Gregoryy022', '2ac5efd7077cb66d640029a6862eb8d9', 'gregoryy@gmail.com'),
 (11, 'Admin1122', '9695476e054dcb63b752dc141702ff50', 'admin@admin.com'),
-(12, 'Admin112233', 'f7c6eeeb40882248ed771565f180382d', 'admin@admin.admin'),
 (13, 'Proba1122', '6e5a4db2259e8a7779d9679ccea9511e', 'proba@proba.com');
 
 -- --------------------------------------------------------
