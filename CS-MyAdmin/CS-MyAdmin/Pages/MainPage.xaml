@@ -596,7 +596,7 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insertGumi_Click"/>
+                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insertInfo_Click"/>
                         <Label x:Name="LB_InfouresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
                     </StackPanel>
 

@@ -186,5 +186,22 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = gumik;
             }
         }
+
+        private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_Rendszam.Text == "")
+            {                
+                LB_InfouresMezo.IsEnabled = true;
+            }
+            else
+            {
+                LB_InfouresMezo.IsEnabled = true; 
+                InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), Convert.ToInt32(TB_szervkönyv.Text), CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
+                    Convert.ToInt32(TB_autoAzon.Text), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
+
+                infok = InfoModel.select();
+                DG_asd.ItemsSource = infok;
+            }
+        }
     }
 }

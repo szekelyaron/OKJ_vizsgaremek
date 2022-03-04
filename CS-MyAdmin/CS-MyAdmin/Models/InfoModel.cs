@@ -191,17 +191,16 @@ namespace CS_MyAdmin.Models
             }
         }
 
-        public static void insert(int id, string rendszam, string alvazszam, int futottKm, int evJarat, string allapot, int szervKonyv, string okmanyok,
+        public static void insert(string rendszam, string alvazszam, int futottKm, int evJarat, string allapot, int szervKonyv, string okmanyok,
             DateTime muszaki, string Gumi, int autoId, string kep, string torott)
         {
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
                 con.Open();
-                var sql = "INSERT INTO `info`(`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) " +
-                    "VALUES ('@id','@rendszam','@alvazszam','@futottKm','@evJarat','@allapot','@szervKonyv','@okmanyok','@muszaki','@Gumi','@autoId','@kep', '@torott')";
+                var sql = "INSERT INTO `info`(`Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) " +
+                    "VALUES (@rendszam,@alvazszam,@futottKm,@evJarat,@allapot,@szervKonyv,@okmanyok,@muszaki,@Gumi,@autoId,@kep, @torott)";
                 using (var cmd = new MySqlCommand(sql, con))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@rendszam", rendszam);
                     cmd.Parameters.AddWithValue("@alvazszam", alvazszam);
                     cmd.Parameters.AddWithValue("@futottKm", futottKm);
