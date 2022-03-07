@@ -203,5 +203,34 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = infok;
             }
         }
+
+        private void BTN_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (cb_databases.SelectedIndex == 0)
+            {
+                AutoModel.delete(DG_asd.SelectedIndex);
+                autok = AutoModel.select();
+                DG_asd.ItemsSource = autok;
+            }
+            else if (cb_databases.SelectedIndex == 1)
+            {
+                foreach (var item in gumik)
+                {
+                    GumiModel.update(item.gId, item.gyarto, item.evszak, item.kategoria, item.ar, item.atmero, item.oldalFal, item.szelesseg);
+                }
+                gumik = GumiModel.select();
+                DG_asd.ItemsSource = gumik;
+            }
+            else if (cb_databases.SelectedIndex == 2)
+            {
+                foreach (var item in infok)
+                {
+                    InfoModel.update(item.IID, item.rendszam, item.alvazszam, item.futottKm, item.evJarat, item.allapot,
+                        item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim, item.torott);
+                    infok = InfoModel.select();
+                    DG_asd.ItemsSource = infok;
+                }
+            }
+        }
     }
 }
