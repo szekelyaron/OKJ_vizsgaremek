@@ -86,7 +86,7 @@
                                     <div class="vegosszeg">
                                         Végösszeg:
                                         <%= kosarOsszeg %> Ft
-                                            <button class="join_btn joinform fizetesgomb" href="" value="" data-toggle="modal" data-target=".bd-example-modal-lg">Tovább a fizetéshez</button>
+                                            <button class="join_btn joinform fizetesgomb" href="" value="" data-toggle="modal" data-target=".bd-example-modal-lg">Rendelés megerősítése</button>
                                     </div>
                                     <% } %>
 
@@ -101,18 +101,25 @@
                                         <div class="modal-content main">
                                             <div class="header">
                                                 <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                  <span class="closet" aria-hidden="true">&times;</span>
+                                                  <span class="bezar" aria-hidden="true">&times;</span>
                                                 </button></p>
-
                                             </div>
+                                            <div class="adatok">
+                                                <p> xyxyxyxyx yxyxyxyx</p>
+                                                <p> xyxyxyxyx yxyxyxyx</p>
+                                                <p> xyxyxyxyx yxyxyxyx</p>
+                                                <p> xyxyxyxyx yxyxyxyx</p>
+                                                <p> xyxyxyxyx yxyxyxyx</p>
+                                            </div>                                          
                                             <form class="form1">
+                                                <p class="error_message">hello</p>
                                                 <input class="un isz" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Irányítószám">
+                                                <p class="error_message">hello</p>
+                                                <input class="un telefonszam" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Telefonszám">
+                                                <p class="error_message">hello</p>
                                                 <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Lakcím">
-                                                <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Telefonszám">
-                                                <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>
-                                                </p>
+                                                <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>                                                
                                             </form>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                     </div>
                                 </div>

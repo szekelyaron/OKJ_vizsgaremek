@@ -414,10 +414,18 @@ input {
     margin-right: auto;
 }
 
-.closet {
+.bezar {
     padding-right: 20px;
 }
 
 .header {
-    display: inline-block;
+    
+}
+.telefonszam{
+    width: 250px;
+}
+.error_message{
+    color: red;
+    margin-left: 12%;
+    margin-right: 12%;
 }
