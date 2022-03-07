@@ -1,47 +1,46 @@
 <%- include('includes/header.ejs') %>
-  <link rel="stylesheet" href="/css/termekek.css">
-  <link rel="stylesheet" href="/css/buttons.css">
-  <link rel="stylesheet" href="/css/kosar.css">
-  <script>
+    <link rel="stylesheet" href="/css/termekek.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/kosar.css">
+    <script>
+    </script>
 
-  </script>
 
-
-  <body>
-    <%- include('includes/navbar_fooldal.ejs') %>
-      <div class="shopping-cart">
-        <div class="title">
-          Kosár
-        </div>
-        <% if(kosarTartalma !=undefined || kosarTartalma == ''){ %>
-          <div id="osszead">
-            <% for (let kosar of kosarTartalma) { %>
-              <div class="item">
-                <form action="/torol" method="post">
-                  <div class="buttons">
-                    <button class="join_btn joinform" type="submit" value="ALL ON">Töröl</button>
-                  </div>
-                </form>
-                <div class="image">
-                  <img src="img/gumi.png" alt="" class="gumi_img" />
+    <body>
+        <%- include('includes/navbar_fooldal.ejs') %>
+            <div class="shopping-cart">
+                <div class="title">
+                    Kosár
                 </div>
+                <% if(kosarTartalma !=undefined || kosarTartalma == ''){ %>
+                    <div id="osszead">
+                        <% for (let kosar of kosarTartalma) { %>
+                            <div class="item">
+                                <form action="/torol" method="post">
+                                    <div class="buttons">
+                                        <button class="join_btn joinform" type="submit" value="ALL ON">Töröl</button>
+                                    </div>
+                                </form>
+                                <div class="image">
+                                    <img src="img/gumi.png" alt="" class="gumi_img" />
+                                </div>
 
-                <div class="description">
-                  <span>
+                                <div class="description">
+                                    <span>
                     <% for(let gumi of lekerderedm_gumik){ %>
                       <% if(gumi.GID==kosar.termek_id) {%>
                         <%= gumi.Gyarto %>
                           <%}%>
                             <%}%>
                   </span>
-                  <span>
+                                    <span>
                     <% for(let gumi of lekerderedm_gumik){ %>
                       <% if(gumi.GID==kosar.termek_id) {%>
                         <%= gumi.Evszak %>
                           <%}%>
                             <%}%>
                   </span>
-                  <span>
+                                    <span>
                     <% for(let gumi of lekerderedm_gumik){ %>
                       <% if(gumi.GID==kosar.termek_id) {%>
                         <div>
@@ -50,50 +49,73 @@
                         <%}%>
                           <%}%>
                   </span>
-                </div>
+                                </div>
 
-                <div class="quantity">
-                  <form action="/kosarMinusz" method="POST" class="kosar_row">
-                    <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
-                    <button class="minus-btn" type="submit" value="ALL ON">
+                                <div class="quantity">
+                                    <form action="/kosarMinusz" method="POST" class="kosar_row">
+                                        <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
+                                        <button class="minus-btn" type="submit" value="ALL ON">
                       -
                     </button>
-                  </form>
-                  <input type="text" name="name" value="<%= kosar.qty %>" disabled class="db">
-                  <form action="/kosarPlusz" method="POST" class="kosar_row">
-                    <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
-                    <button class="plus-btn" type="submit" name="button" value="ALL ON">
+                                    </form>
+                                    <input type="text" name="name" value="<%= kosar.qty %>" disabled class="db">
+                                    <form action="/kosarPlusz" method="POST" class="kosar_row">
+                                        <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
+                                        <button class="plus-btn" type="submit" name="button" value="ALL ON">
                       +
                     </button>
-                  </form>
-                </div>
-                <div class="price kosar_row">
-                  <% for(let gumi of lekerderedm_gumik){ %>
-                    <% if(gumi.GID==kosar.termek_id) {%>
-                      <%= gumi.Ar %> Ft/db
-                        <%}%>
-                          <%}%>
-                </div>
-                <div class="total-price kosar_row">
-                  <% for(let gumi of lekerderedm_gumik){ %>
-                    <% if(gumi.GID==kosar.termek_id) {%>
-                      <%= gumi.Ar*kosar.qty %> FT
-                        <%}%>
-                          <%}%>
-                </div>
-              </div>
-              <% } %>
-              <% if(kosarTartalma!=undefined && kosarTartalma != ''){ %>
-                <div class="vegosszeg">
-                  Végösszeg: <%= kosarOsszeg %> Ft
-                    <button class="join_btn joinform fizetesgomb" href="" value="">Tovább a fizetéshez</button>
-                </div>
-              <% } %>
+                                    </form>
+                                </div>
+                                <div class="price kosar_row">
+                                    <% for(let gumi of lekerderedm_gumik){ %>
+                                        <% if(gumi.GID==kosar.termek_id) {%>
+                                            <%= gumi.Ar %> Ft/db
+                                                <%}%>
+                                                    <%}%>
+                                </div>
+                                <div class="total-price kosar_row">
+                                    <% for(let gumi of lekerderedm_gumik){ %>
+                                        <% if(gumi.GID==kosar.termek_id) {%>
+                                            <%= gumi.Ar*kosar.qty %> FT
+                                                <%}%>
+                                                    <%}%>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% if(kosarTartalma!=undefined && kosarTartalma != ''){ %>
+                                    <div class="vegosszeg">
+                                        Végösszeg:
+                                        <%= kosarOsszeg %> Ft
+                                            <button class="join_btn joinform fizetesgomb" href="" value="" data-toggle="modal" data-target=".bd-example-modal-lg">Tovább a fizetéshez</button>
+                                    </div>
+                                    <% } %>
 
-          </div>
-          <% } %>
-            <% if(kosarTartalma==undefined || kosarTartalma == ''){ %>
-              <p class="ureskosar">Jelenleg üres a kosár</p>
-            <% } %>
-  </body>
-  <%- include('includes/footer.ejs') %>
+                    </div>
+                    <% } %>
+                        <% if(kosarTartalma==undefined || kosarTartalma == ''){ %>
+                            <p class="ureskosar">Jelenleg üres a kosár</p>
+                            <% } %>
+
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content main">
+                                            <div class="header">
+                                                <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span class="closet" aria-hidden="true">&times;</span>
+                                                </button></p>
+
+                                            </div>
+                                            <form class="form1">
+                                                <input class="un isz" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Irányítószám">
+                                                <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Lakcím">
+                                                <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Telefonszám">
+                                                <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>
+                                                </p>
+                                            </form>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+    </body>
+    <%- include('includes/footer.ejs') %>
