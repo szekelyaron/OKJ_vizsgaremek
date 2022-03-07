@@ -86,7 +86,7 @@
                                     <div class="vegosszeg">
                                         Végösszeg:
                                         <%= kosarOsszeg %> Ft
-                                            <button class="join_btn joinform fizetesgomb" href="" value="" data-toggle="modal" data-target=".bd-example-modal-lg">Rendelés megerősítése</button>
+                                            <button class="join_btn joinform fizetesgomb" href="" value="" data-toggle="modal" data-target=".bd-example-modal-lg">Rendelés véglegesítése</button>
                                     </div>
                                     <% } %>
 
@@ -94,35 +94,31 @@
                     <% } %>
                         <% if(kosarTartalma==undefined || kosarTartalma == ''){ %>
                             <p class="ureskosar">Jelenleg üres a kosár</p>
-                            <% } %>
-
-                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content main">
-                                            <div class="header">
-                                                <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                  <span class="bezar" aria-hidden="true">&times;</span>
-                                                </button></p>
-                                            </div>
-                                            <div class="adatok">
-                                                <p> xyxyxyxyx yxyxyxyx</p>
-                                                <p> xyxyxyxyx yxyxyxyx</p>
-                                                <p> xyxyxyxyx yxyxyxyx</p>
-                                                <p> xyxyxyxyx yxyxyxyx</p>
-                                                <p> xyxyxyxyx yxyxyxyx</p>
-                                            </div>                                          
-                                            <form class="form1">
-                                                <p class="error_message">hello</p>
-                                                <input class="un isz" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Irányítószám">
-                                                <p class="error_message">hello</p>
-                                                <input class="un telefonszam" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Telefonszám">
-                                                <p class="error_message">hello</p>
-                                                <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Lakcím">
-                                                <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>                                                
-                                            </form>
-                                        </div>
+                        <% } %>
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content main">
+                                    <div class="header">
+                                        <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span class="bezar" aria-hidden="true">&times;</span>
+                                        </button></p>
                                     </div>
+                                    <div class="adatok">
+                                        <p> <%= username %></p>
+                                        <p> <%= email %></p>
+                                    </div>                                          
+                                    <form class="form1">
+                                        <p class="error_message">hello</p>
+                                        <input class="un isz" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Irányítószám">
+                                        <p class="error_message">hello</p>
+                                        <input class="un telefonszam" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Telefonszám">
+                                        <p class="error_message">hello</p>
+                                        <input class="un" type="text" name="felhasznalonev" id="felhasznalonev" placeholder="Lakcím">
+                                        <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>                                                
+                                    </form>
                                 </div>
+                            </div>
+                        </div>
 
     </body>
     <%- include('includes/footer.ejs') %>

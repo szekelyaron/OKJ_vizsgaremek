@@ -36,7 +36,7 @@ router.get('/sugo', mainController.getSugo);
 
 router.get('/contactus', mainController.getContactus);
 
-router.get('/contactus', mainController.postContactus);
+router.post('/contactuskuld', mainController.postContactus);
 
 router.post('/kijelentkezes', mainController.postLogout);
 

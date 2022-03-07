@@ -5,7 +5,10 @@
 <body>
     <%- include('includes/navbar.ejs') %>
     <h1>Kapcsolat</h1>
-    <form action="/contactus" method="POST" class="contactform">
+    <% if (siker == true) {%>
+        <h1>Sikeresen elküldte az üzenetet</h1>
+    <% } %>
+    <form action="/contactuskuld" method="POST" class="contactform">
         <div >
             <div class="form__group field">
                 <input type="text" class="form__field" placeholder="Name" name="name" id='name' required />
@@ -16,12 +19,13 @@
                 <input type="email" class="form__field" placeholder="Email" name="email" id='email' required />
                 <label for="email" class="form__label">Email</label>
             </div>
-            <!--<input type="hidden" name="_next" value="localhost:6969"/>-->
+            
             <div class="form__group_text field_text">
                 <textarea type="text" class="form__field_text" placeholder="Message" name="uzenet" id='uzenet' required  rows="10"></textarea>
                 <label for="name" class="form__label_text">Üzenet</label>
             </div>
-            <button type="submit" class="join_btn joinform">Küldés</button>
+            
+            <button class="join_btn joinform" type="submit" value="ALL ON">Küldés</button>
         </div> 
     </form>
     

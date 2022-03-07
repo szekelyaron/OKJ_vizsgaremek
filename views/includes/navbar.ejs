@@ -11,9 +11,11 @@
         <li class="nav-item active">
           <a class="nav-link effect-shine" href="/">Kezdőoldal</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link effect-shine" href="contactus">Kapcsolat</a>
-        </li>
+        <% if(user != undefined) { %>
+          <li class="nav-item active">
+            <a class="nav-link effect-shine" href="/fooldal">Jármű lekérdezés</a>
+          </li>
+        <% } %>
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -29,11 +31,10 @@
         <li class="nav-item active">
           <a class="nav-link effect-shine" href="sugo">Tudj meg többet</a>
         </li>
-        <% if(user != undefined) { %>
-          <li class="nav-item active">
-            <a class="nav-link effect-shine" href="/fooldal">Jármű lekérdezés</a>
-          </li>
-        <% } %>
+        <li class="nav-item active">
+          <a class="nav-link effect-shine" href="contactus">Kapcsolat</a>
+        </li>
+        
       </ul>
         <% if(user == undefined) { %>
           <form class="form-inline my-2 my-lg-0">

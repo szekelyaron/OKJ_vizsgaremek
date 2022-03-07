@@ -8,6 +8,14 @@ const lekerdGumik = require('../models/users/gumi.js');
 const login = require('../models/users/login.js');
 var nodemailer = require('nodemailer');
 
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'carscope.site@gmail.com',
+      pass: 'Carscope2022'
+    }
+  });
+ 
 //Kezsőoldal
 exports.getIndex = (req, res, next) => {
     res.render('kezdolap', {
@@ -396,14 +404,16 @@ exports.getKosar = (req, res, next) => {
                     }
                 }
             };
-            
+            console.log(req.session.detailParams)
             res.render('kosar', {
                 pageTitle: 'CarScope - Kosár',
                 path: '/kosar',
                 lekerderedm_gumik: req.session.gumiabroncs,
                 kosarTartalma: req.session.user.kosar,
                 kosarOsszeg: req.session.user.kosarOsszeg,
-                user: req.session.user 
+                user: req.session.user,
+                username: req.body.felhasznalonev,
+                email:  req.body.email
             })
         }
         else
@@ -427,22 +437,36 @@ exports.getContactus = (req, res, next) => {
     res.render('contactus', {
         pageTitle: 'CarScope - Contactus',
         path: '/contactus',
-        user: req.session.user
+        user: req.session.user,
+        siker: false
     });
 };
 
 exports.postContactus = (req, res, next) => {
+    
     var mailOptions = {
     to: 'carscope.site@gmail.com',
-    subject: 'Contatus',
-    text: req.body.uzenet+' Feladó: ' + req.body.name+ ' ' + req.body.email
-    };
-
+    subject: 'Contatus-email',
+    text: req.body.uzenet+' Feladó: ' + req.body.name+ ' ' + req.body.email};
+    console.log("Lefutott");
+    
     transporter.sendMail(mailOptions, function(error, info){
     if (error) {
         console.log(error);
+        res.render('contactus', {
+            pageTitle: 'CarScope - Contactus',
+            path: '/contactus',
+            user: req.session.user,
+            siker: false
+        });
     } else {
         console.log('Email elküldve: ' + info.response);
+        res.render('contactus', {
+            pageTitle: 'CarScope - Contactus',
+            path: '/contactus',
+            user: req.session.user,
+            siker: true
+        });
     }
     });
 };
