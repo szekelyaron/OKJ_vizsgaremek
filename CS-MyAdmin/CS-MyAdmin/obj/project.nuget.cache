@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZxDfaWp4Se7OJ6vUUZ9W4gkqC9FpiBuOUEuJzkExKQVyby2jvBhNTku/gwZD/UrCS7Nxlct+YWjIyn2qXDzjRA==",
+  "dgSpecHash": "vCNjbygjGKr/ItwNS62671O1yFs7kuTMyGEfghteZUKq3WljLr176TkGz2/sRzQkPj/2h7N4hzNohaTCtILwcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\szekely.aron\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,7 @@
     "C:\\Users\\szekely.aron\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\mysql.data\\8.0.28\\mysql.data.8.0.28.nupkg.sha512",
-    "C:\\Users\\szekely.aron\\.nuget\\packages\\mysqlconnector\\2.1.7\\mysqlconnector.2.1.7.nupkg.sha512",
+    "C:\\Users\\szekely.aron\\.nuget\\packages\\mysqlconnector\\2.1.8\\mysqlconnector.2.1.8.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\szekely.aron\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
