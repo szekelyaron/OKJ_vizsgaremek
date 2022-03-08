@@ -39,10 +39,6 @@ namespace CS_MyAdmin.Pages
                 CBgumi.SelectedIndex = 0;
             }
 
-            static void recordCount(Label label)
-            {
-                this.LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
-            }
 
             cb_databases.Items.Add("autok");
             cb_databases.Items.Add("gumiabroncs");
@@ -78,8 +74,8 @@ namespace CS_MyAdmin.Pages
             infok = InfoModel.select();
             DG_asd.ItemsSource = autok;
 
-            recordCount();
-            
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+
 
 
 
@@ -128,8 +124,8 @@ namespace CS_MyAdmin.Pages
                     DG_asd.ItemsSource = infok;
                 }
             }
-            record
-            
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+
         }
 
         private void BTN_insert_Click(object sender, RoutedEventArgs e)
@@ -146,6 +142,7 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_asd.ItemsSource = autok;
             }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
 
         }
 
@@ -154,7 +151,7 @@ namespace CS_MyAdmin.Pages
             if (cb_databases.SelectedIndex == 0)
             {
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_asd.ItemsSource = autok;             
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
@@ -178,6 +175,7 @@ namespace CS_MyAdmin.Pages
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
                 SP_infokInsert.Visibility = Visibility.Visible;
             }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
 
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
@@ -194,6 +192,7 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
             }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
 
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
@@ -211,6 +210,7 @@ namespace CS_MyAdmin.Pages
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
             }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
 
         private void BTN_Delete_Click(object sender, RoutedEventArgs e)
@@ -234,6 +234,7 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = infok;
                 
             }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
     }
 }
