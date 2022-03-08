@@ -221,12 +221,20 @@ namespace CS_MyAdmin.Models
             }
         }
 
+        public static void delete(int id)
+        {
+            using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
+            {
+                con.Open();
+                var sql = "DELETE FROM `info` WHERE IID = @id";
+                using (var cmd = new MySqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
 
-
-
-
-
-
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
 
     }

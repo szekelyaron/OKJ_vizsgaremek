@@ -39,6 +39,11 @@ namespace CS_MyAdmin.Pages
                 CBgumi.SelectedIndex = 0;
             }
 
+            static void recordCount(Label label)
+            {
+                this.LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            }
+
             cb_databases.Items.Add("autok");
             cb_databases.Items.Add("gumiabroncs");
             cb_databases.Items.Add("info");
@@ -73,9 +78,12 @@ namespace CS_MyAdmin.Pages
             infok = InfoModel.select();
             DG_asd.ItemsSource = autok;
 
-
-
+            recordCount();
             
+
+
+
+
 
             for (int i = 1; i < 11; i++)
             {
@@ -99,7 +107,7 @@ namespace CS_MyAdmin.Pages
 
                 }
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_asd.ItemsSource = autok;        
             }
             else if(cb_databases.SelectedIndex == 1)
             {
@@ -120,6 +128,7 @@ namespace CS_MyAdmin.Pages
                     DG_asd.ItemsSource = infok;
                 }
             }
+            record
             
         }
 
@@ -208,28 +217,22 @@ namespace CS_MyAdmin.Pages
         {
             if (cb_databases.SelectedIndex == 0)
             {
-                AutoModel.delete(DG_asd.SelectedIndex);
+                AutoModel.delete(autok[DG_asd.SelectedIndex].aId);
                 autok = AutoModel.select();
                 DG_asd.ItemsSource = autok;
             }
             else if (cb_databases.SelectedIndex == 1)
             {
-                foreach (var item in gumik)
-                {
-                    GumiModel.update(item.gId, item.gyarto, item.evszak, item.kategoria, item.ar, item.atmero, item.oldalFal, item.szelesseg);
-                }
+                GumiModel.delete(gumik[DG_asd.SelectedIndex].gId);
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
             }
             else if (cb_databases.SelectedIndex == 2)
             {
-                foreach (var item in infok)
-                {
-                    InfoModel.update(item.IID, item.rendszam, item.alvazszam, item.futottKm, item.evJarat, item.allapot,
-                        item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim, item.torott);
-                    infok = InfoModel.select();
-                    DG_asd.ItemsSource = infok;
-                }
+                InfoModel.delete(infok[DG_asd.SelectedIndex].IID);    
+                infok = InfoModel.select();
+                DG_asd.ItemsSource = infok;
+                
             }
         }
     }
