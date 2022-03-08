@@ -455,23 +455,10 @@
 
                 <StackPanel Margin="0,0,0,0">
 
-                    <!--<ListView x:Name="LV_Munkavallalok"
-                              Margin="0,10,0,0"
-                              ItemsSource="{Binding}"
-                              IsSynchronizedWithCurrentItem="True"
-                              Height="460"
-                              FontSize="12"
-                              HorizontalAlignment="Stretch"
-                              BorderThickness="0"
-                              Background="Transparent"
-                              ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                              ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                              ItemContainerStyle="{DynamicResource theListViewItem}" />-->
-
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
                     <ComboBox x:Name="cb_databases" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
-                    <Label x:Name="LBL_recordCount" Content="" Margin="5" Foreground="White"/>
+                    <Label x:Name="LBL_recordCount" FontWeight="Bold" Margin="5" Foreground="White"/>
                 </StackPanel>
                     <DataGrid x:Name="DG_asd"
                           AutoGenerateColumns="True"
