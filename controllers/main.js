@@ -340,7 +340,6 @@ exports.gumiKosarPlusz = (req, res, next) => {
 exports.getKosar = (req, res, next) => {
   lekerdGumik.gumikKilistaz(req, res, function (err, data) {
     if (req.session.user != null && req.session.user != "") {
-      console.log(req.session.user.kosar);
       if (req.session.user.kosar != undefined) {
         req.session.user.kosarOsszeg = 0;
         for (let termek of req.session.user.kosar) {
@@ -352,7 +351,6 @@ exports.getKosar = (req, res, next) => {
           }
         }
       }
-      console.log(req.session.detailParams);
       res.render("kosar", {
         pageTitle: "CarScope - Kosár",
         path: "/kosar",
@@ -362,6 +360,7 @@ exports.getKosar = (req, res, next) => {
         user: req.session.user,
         username: req.body.felhasznalonev,
         email: req.body.email,
+        siker: undefined
       });
     } else {
       res.redirect("/vendeg");
@@ -375,29 +374,61 @@ exports.postRendeles = (req, res, next) => {
   var varos = req.body.varos;
   var utca = req.body.utca;
   var hsz = req.body.hsz;
+  if (req.session.user.kosar != undefined) {
+    req.session.user.kosarOsszeg = 0;
+    for (let termek of req.session.user.kosar) {
+      for (let gumi of req.session.gumiabroncs) {
+        if (termek.termek_id == gumi.GID) {
+
+          req.session.user.kosarOsszeg += termek.qty * gumi.Ar;
+          console.log(req.session.user.kosarOsszeg);
+        }
+      }
+    }
+  }
+  var message = '<div>'
+    for (let termek of req.session.user.kosar) {
+      for (let gumi of req.session.gumiabroncs) {
+        if(termek.termek_id == gumi.GID)
+        {
+        message += '<div><p>'+gumi.Evszak +','+gumi.Gyarto+','+gumi.Ar+':'+ termek.qty+'='+gumi.Ar*termek.qty+'+</p></div>';
+        }
+      }
+    }
+    message += '<div>'+req.session.user.kosarOsszeg +'</div></div>';
+    console.log(message);
   console.log(iranyitoszam, telefonszam, varos, utca, hsz);
   var mailOptions = {
     to: "carscope.site@gmail.com",
     subject: "Rendelés-email",
-    text: "Rendelés: ",
+    html: message,
   };
-  console.log("Lefutott");
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
-      res.render("contactus", {
-        pageTitle: "CarScope - Contactus",
-        path: "/contactus",
+      res.render("kosar", {
+        pageTitle: "CarScope - Kosár",
+        path: "/kosar",
+        lekerderedm_gumik: req.session.gumiabroncs,
+        kosarTartalma: req.session.user.kosar,
+        kosarOsszeg: req.session.user.kosarOsszeg,
         user: req.session.user,
-        siker: false,
+        username: req.body.felhasznalonev,
+        email: req.body.email,
+        siker: false
       });
     } else {
       console.log("Email elküldve: " + info.response);
-      res.render("contactus", {
-        pageTitle: "CarScope - Contactus",
-        path: "/contactus",
+      res.render("kosar", {
+        pageTitle: "CarScope - Kosár",
+        path: "/kosar",
+        lekerderedm_gumik: req.session.gumiabroncs,
+        kosarTartalma: req.session.user.kosar,
+        kosarOsszeg: req.session.user.kosarOsszeg,
         user: req.session.user,
+        username: req.body.felhasznalonev,
+        email: req.body.email,
         siker: true,
       });
     }
