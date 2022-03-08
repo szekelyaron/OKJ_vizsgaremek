@@ -11,7 +11,7 @@
                 <div class="title">
                     Kosár
                 </div>
-                <% if(kosarTartalma !=undefined || kosarTartalma == ''){ %>
+                <% if(kosarTartalma !=undefined || kosarTartalma=='' ){ %>
                     <div id="osszead">
                         <% for (let kosar of kosarTartalma) { %>
                             <div class="item">
@@ -26,43 +26,43 @@
 
                                 <div class="description">
                                     <span>
-                    <% for(let gumi of lekerderedm_gumik){ %>
-                      <% if(gumi.GID==kosar.termek_id) {%>
-                        <%= gumi.Gyarto %>
-                          <%}%>
-                            <%}%>
-                  </span>
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID==kosar.termek_id) {%>
+                                                <%= gumi.Gyarto %>
+                                                    <%}%>
+                                                        <%}%>
+                                    </span>
                                     <span>
-                    <% for(let gumi of lekerderedm_gumik){ %>
-                      <% if(gumi.GID==kosar.termek_id) {%>
-                        <%= gumi.Evszak %>
-                          <%}%>
-                            <%}%>
-                  </span>
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID==kosar.termek_id) {%>
+                                                <%= gumi.Evszak %>
+                                                    <%}%>
+                                                        <%}%>
+                                    </span>
                                     <span>
-                    <% for(let gumi of lekerderedm_gumik){ %>
-                      <% if(gumi.GID==kosar.termek_id) {%>
-                        <div>
-                          <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
-                        </div>
-                        <%}%>
-                          <%}%>
-                  </span>
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID==kosar.termek_id) {%>
+                                                <div>
+                                                    <img src="img/<%= gumi.Kategoria %>.png" alt="" class="ertekeles">
+                                                </div>
+                                                <%}%>
+                                                    <%}%>
+                                    </span>
                                 </div>
 
                                 <div class="quantity">
                                     <form action="/kosarMinusz" method="POST" class="kosar_row">
                                         <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
                                         <button class="minus-btn" type="submit" value="ALL ON">
-                      -
-                    </button>
+                                            -
+                                        </button>
                                     </form>
                                     <input type="text" name="name" value="<%= kosar.qty %>" disabled class="db">
                                     <form action="/kosarPlusz" method="POST" class="kosar_row">
                                         <input type="text" name="termek_id" value="<%=kosar.termek_id%>" hidden>
                                         <button class="plus-btn" type="submit" name="button" value="ALL ON">
-                      +
-                    </button>
+                                            +
+                                        </button>
                                     </form>
                                 </div>
                                 <div class="price kosar_row">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <% } %>
-                                <% if(kosarTartalma!=undefined && kosarTartalma != ''){ %>
+                                <% if(kosarTartalma!=undefined && kosarTartalma !='' ){ %>
                                     <div class="vegosszeg">
                                         Végösszeg:
                                         <%= kosarOsszeg %> Ft
@@ -91,63 +91,66 @@
 
                     </div>
                     <% } %>
-                        <% if(kosarTartalma==undefined || kosarTartalma == ''){ %>
+                        <% if(kosarTartalma==undefined || kosarTartalma=='' ){ %>
                             <p class="ureskosar">Jelenleg üres a kosár</p>
-                        <% } %>
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content main" id="rendeles">
-                                    <div class="header">
-                                        <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span class="bezar" aria-hidden="true">&times;</span>
-                                        </button></p>
+                            <% } %>
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content main">
+                                            <div class="header">
+                                                <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span class="bezar" aria-hidden="true">&times;</span>
+                                                    </button></p>
+                                            </div>
+                                            <div class="adatok">
+                                                <p>
+                                                    <%= username %>
+                                                </p>
+                                                <p>
+                                                    <%= email %>
+                                                </p>
+                                            </div>
+                                            <form class="form1" action="/elkuld" method="post" id="rendeles">
+                                                <p>Telefonszám: </p>
+
+                                                <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30-222-5503">
+
+                                                <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz" pattern="[0-9]{4}" placeholder="Irányítószám">
+
+                                                <input v-model='city' class="un isz" type="text" name="varos" id="varos" placeholder="Település">
+
+                                                <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca">
+
+                                                <input v-model='number' class="un isz" type="text" name="hsz" id="hsz" pattern="[A-Za-z0-9]{1-4}" maxlength="4" placeholder="Házszám">
+
+                                                <h2>Végösszeg: <%= kosarOsszeg %> Ft</h2>
+
+                                                <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true">
+                                                    <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>
+                                                </div>
+                                                <div v-else-if="tel_validate == false || irsz_validate == false || utca_validate == false || varos_validate == false || szam_validate == false">
+                                                    <p align="center"><button type="submit" class="submitDisabled" disabled data-dismiss="modal">Rendelés leadása</button></p>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="adatok">
-                                        <p> <%= username %></p>
-                                        <p> <%= email %></p>
-                                    </div>                                          
-                                    <form class="form1" action="/elkuld" method="post">
-                                        <p class="error_message">hello</p>
-
-                                        <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz"
-                                        pattern="[0-9]{4}" placeholder="Irányítószám">
-
-                                        <p class="error_message">hello</p>
-
-                                        <p>Telefonszám: </p>
-
-                                        <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel"
-                                        pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Így add meg: 30-222-5503">
-
-                                        <p class="error_message">hello</p>
-
-                                        <input v-model='address' class="un" type="text" name="cim" id="cim" placeholder="Cím">
-
-                                        <h2>Végösszeg: <%= kosarOsszeg %> Ft</h2>
-                                        <div v-if="tel_validate == true && irsz_validate == true && cim_validate == true">
-                                            <p align="center"><button type="submit" class="submit" data-dismiss="modal">Rendelés leadása</button></p>                                                
-                                        </div>
-                                        <div v-else-if="tel_validate == false || irsz_validate == false || cim_validate == false">
-                                            <p align="center"><button type="submit" class="submit" disabled data-dismiss="modal" >Rendelés leadása</button></p>                                                
-                                        </div>
-                                    </form>
                                 </div>
-                            </div>
-                        </div>
 
     </body>
     <style>
-            input:not(:focus):not(:placeholder-shown):invalid{
-            color:red;
+        input:not(:focus):not(:placeholder-shown):invalid {
+            color: red;
             border-color: red;
-            }
-            /*An correct input:*/
-            input:valid{
-            color:green;
-            }
-            /*A mandatory field:*/
-            input[required]{
-            background-color: transparent;
-            }
+        }
+
+        /*An correct input:*/
+        input:valid {
+            color: green;
+        }
+
+        /*A mandatory field:*/
+        input[required] {
+            background-color: rgb(200, 196, 196);
+        }
     </style>
     <%- include('includes/footer.ejs') %>

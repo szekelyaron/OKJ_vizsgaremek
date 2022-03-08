@@ -1,61 +1,81 @@
 @font-face {
-    font-family: gtiming;
-    src: url(../font/good\ timing\ bd.ttf);
+  font-family: gtiming;
+  src: url(../font/good\ timing\ bd.ttf);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  font-family: "Roboto", sans-serif;
 }
 
 .shopping-cart {
-    width: 1200px;
-    height: fit-content;
-    margin: 80px auto;
-    background: -moz-linear-gradient(0deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
-    background: -webkit-gradient(linear, 0deg, from(rgba(127, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
-    background: -o-linear-gradient(0deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
-    background: linear-gradient(to 0deg, rgba(127, 0, 0, 1), rgba(0, 0, 0, 1) 100%);
-    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
-    border-radius: 6px;
-    border: solid 2px white;
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px auto;
-    margin-right: 10px auto;
+  width: 1200px;
+  height: fit-content;
+  margin: 80px auto;
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(127, 0, 0, 1),
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(127, 0, 0, 1),
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    0deg,
+    from(rgba(127, 0, 0, 1)),
+    to(rgba(0, 0, 0, 1))
+  );
+  background: -o-linear-gradient(
+    0deg,
+    rgba(127, 0, 0, 1),
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    to 0deg,
+    rgba(127, 0, 0, 1),
+    rgba(0, 0, 0, 1) 100%
+  );
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  border: solid 2px white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px auto;
+  margin-right: 10px auto;
 }
 
 .title {
-    font-family: gtiming;
-    text-align: center;
-    height: 110px;
-    border-bottom: 1px solid #E1E8EE;
-    padding: 20px 30px;
-    color: white;
-    font-size: 3rem;
-    font-weight: 500;
+  font-family: gtiming;
+  text-align: center;
+  height: 110px;
+  border-bottom: 1px solid #e1e8ee;
+  padding: 20px 30px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .item {
-    padding: 20px 0px 10px 30px;
-    height: fit-content;
-    display: flex;
+  padding: 20px 0px 10px 30px;
+  height: fit-content;
+  display: flex;
 }
 
 .item {
-    border-top: 1px solid #E1E8EE;
-    border-bottom: 1px solid #E1E8EE;
+  border-top: 1px solid #e1e8ee;
+  border-bottom: 1px solid #e1e8ee;
 }
-
 
 /*.buttons {
   position: relative;
@@ -65,51 +85,50 @@ body {
 */
 
 .image {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .description {
-    font-family: gtiming;
-    padding-top: 10px;
-    margin-right: 60px;
-    width: 195px;
+  font-family: gtiming;
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 195px;
 }
 
 .description span {
-    display: block;
-    font-size: 14px;
-    color: white;
-    font-weight: 400;
+  display: block;
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
 }
 
 .description span:first-child {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .description span:last-child {
-    font-weight: 300;
-    margin-top: 8px;
-    color: white;
+  font-weight: 300;
+  margin-top: 8px;
+  color: white;
 }
 
 .quantity {
-    font-family: gtiming;
-    display: inline-block;
-    padding-top: 30px;
-    margin-right: 60px;
-    min-width: fit-content;
+  font-family: gtiming;
+  display: inline-block;
+  padding-top: 30px;
+  margin-right: 60px;
+  min-width: fit-content;
 }
 
 .quantity input {
-    -webkit-appearance: none;
-    border: none;
-    text-align: center;
-    width: 32px;
-    font-size: 16px;
-    color: white;
-    font-weight: 300;
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: white;
+  font-weight: 300;
 }
-
 
 /*button[class*=btn] {
   width: 30px;
@@ -122,310 +141,322 @@ body {
 */
 
 .minus-btn {
-    font-family: gtiming;
-    border: solid 1px lightgray;
-    width: 30px;
-    background: transparent;
-    color: white;
-    font-weight: bold;
+  font-family: gtiming;
+  border: solid 1px lightgray;
+  width: 30px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
 }
 
 .plus-btn {
-    font-family: gtiming;
-    border: solid 1px lightgray;
-    width: 30px;
-    background: transparent;
-    color: white;
-    font-weight: bold;
+  font-family: gtiming;
+  border: solid 1px lightgray;
+  width: 30px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
 }
 
 .plus-btn:hover {
-    color: darkred;
+  color: darkred;
 }
 
 .minus-btn:hover {
-    color: darkred;
+  color: darkred;
 }
 
 .price {
-    font-family: gtiming;
-    width: 180px;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 26px;
-    color: white;
-    font-weight: bold;
-    margin-left: 30px;
-    min-width: fit-content;
+  font-family: gtiming;
+  width: 180px;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  margin-left: 30px;
+  min-width: fit-content;
 }
 
 .total-price {
-    font-family: gtiming;
-    width: 220px;
-    padding-top: 17px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    font-weight: bold;
-    margin-left: 45px;
-    min-width: fit-content;
+  font-family: gtiming;
+  width: 220px;
+  padding-top: 17px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  margin-left: 45px;
+  min-width: fit-content;
 }
 
 .ureskosar {
-    text-align: center;
-    color: white;
-    margin: 20px;
-    font-size: 2rem;
-    font-family: gtiming;
+  text-align: center;
+  color: white;
+  margin: 20px;
+  font-size: 2rem;
+  font-family: gtiming;
 }
 
 @media (max-width: 650px) {
-    .shopping-cart {
-        width: 90% !important;
-        height: auto;
-        overflow: hidden;
-    }
-    .item {
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .image img {
-        margin-top: 10px;
-        margin-left: 0;
-    }
-    .image,
-    .quantity,
-    .description {
-        width: 100%;
-        text-align: center;
-        margin: 6px 0;
-    }
-    .total-price {
-        margin: 0;
-        width: 200px;
-    }
-    .gumi_img {
-        margin: 0px;
-    }
-    .ureskosar {
-        font-size: 1.5rem;
-    }
-    .price {
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
-    .quantity {
-        margin-top: 0px;
-        padding-top: 0px;
-    }
-    .vegosszeg {
-        font-size: 1.5rem !important;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center !important;
-        padding-bottom: 10px !important;
-    }
-    .fizetesgomb {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        float: none !important;
-        text-align: center !important;
-        margin-bottom: 10px !important;
-    }
+  .shopping-cart {
+    width: 90% !important;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .total-price {
+    margin: 0;
+    width: 200px;
+  }
+  .gumi_img {
+    margin: 0px;
+  }
+  .ureskosar {
+    font-size: 1.5rem;
+  }
+  .price {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .quantity {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .vegosszeg {
+    font-size: 1.5rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    padding-bottom: 10px !important;
+  }
+  .fizetesgomb {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+  }
 }
 
 @media (max-width: 1200px) {
-    .shopping-cart {
-        width: 70%;
-        height: auto;
-        overflow: hidden;
-    }
-    .item {
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .image img {
-        margin-top: 10px;
-        margin-left: 0;
-    }
-    .image,
-    .quantity,
-    .description {
-        width: 100%;
-        text-align: center;
-        margin: 6px 0;
-    }
-    .total-price {
-        margin: 0;
-        width: 200px;
-    }
-    .gumi_img {
-        margin: 0px;
-    }
-    .ureskosar {
-        font-size: 1.5rem;
-    }
-    .price {
-        margin-right: 30px;
-    }
-    .quantity {
-        margin-top: 0px;
-        padding-top: 0px;
-    }
-    .vegosszeg {
-        font-size: 1.5rem !important;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center !important;
-        padding-bottom: 10px !important;
-    }
-    .fizetesgomb {
-        margin-right: auto !important;
-        float: none !important;
-        text-align: center !important;
-        margin-bottom: 10px !important;
-    }
+  .shopping-cart {
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .total-price {
+    margin: 0;
+    width: 200px;
+  }
+  .gumi_img {
+    margin: 0px;
+  }
+  .ureskosar {
+    font-size: 1.5rem;
+  }
+  .price {
+    margin-right: 30px;
+  }
+  .quantity {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .vegosszeg {
+    font-size: 1.5rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    padding-bottom: 10px !important;
+  }
+  .fizetesgomb {
+    margin-right: auto !important;
+    float: none !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+  }
 }
 
 @media (min-width: 680px) and (max-width: 1200px) {
-    .fizetesgomb {
-        margin-left: 30px;
-    }
+  .fizetesgomb {
+    margin-left: 30px;
+  }
 }
 
 .gumi_img {
-    margin-left: 25px;
-    height: 90px;
-    width: 90px;
+  margin-left: 25px;
+  height: 90px;
+  width: 90px;
 }
 
 .db {
-    background: transparent;
+  background: transparent;
 }
 
 .kosar_row {
-    display: inline-block;
+  display: inline-block;
 }
 
 .ertekeles {
-    max-width: 90px;
+  max-width: 90px;
 }
 
 .vegosszeg {
-    font-family: gtiming;
-    text-align: left;
-    padding: 20px 30px;
-    color: white;
-    font-size: 3rem;
-    font-weight: 500;
+  font-family: gtiming;
+  text-align: left;
+  padding: 20px 30px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .fizetesgomb {
-    float: right;
-    text-align: right;
-    font-size: 1rem !important;
-    padding: 1rem 1rem !important;
-    margin-top: 10px !important;
+  float: right;
+  text-align: right;
+  font-size: 1rem !important;
+  padding: 1rem 1rem !important;
+  margin-top: 10px !important;
 }
 
 .main {
-    background-color: #e7e5e5;
-    height: 100%;
-    margin: 10em auto;
-    border-radius: 1.5em;
+  background-color: #e7e5e5;
+  height: 100%;
+  margin: 10em auto;
+  border-radius: 1.5em;
 }
 
 .main:hover {
-    transition: 0.2s;
-    box-shadow: 0 0 20px white;
+  transition: 0.2s;
+  box-shadow: 0 0 20px white;
 }
 
 .sign {
-    padding-top: 30px;
-    color: black;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    font-size: 28px;
+  padding-top: 30px;
+  color: black;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .un {
-    width: 76%;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(0, 0, 0, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+  width: 76%;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .isz {
-    width: 200px !important;
+  width: 200px !important;
 }
 
 .form1 {
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .un:focus,
 .pass:focus {
-    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
 
 .submit {
-    cursor: pointer;
-    border-radius: 5em;
-    color: white !important;
-    background: black;
-    border: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 13px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  border-radius: 5em;
+  color: white !important;
+  background: black;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 .submit:hover {
-    background-image: none;
-    background-color: rgb(124, 124, 124);
+  background-image: none;
+  background-color: rgb(124, 124, 124);
 }
 
 input:focus::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 input {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bezar {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
-.header {
-    
+.telefonszam {
+  width: 250px;
 }
-.telefonszam{
-    width: 250px;
+.error_message {
+  color: red;
+  margin-left: 12%;
+  margin-right: 12%;
 }
-.error_message{
-    color: red;
-    margin-left: 12%;
-    margin-right: 12%;
+
+.submitDisabled {
+  background-color: rgb(124, 124, 124);
+  cursor: pointer;
+  border-radius: 5em;
+  color: white !important;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
