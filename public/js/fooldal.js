@@ -14,9 +14,8 @@ const app = Vue.createApp({
     }
   },
   watch: {
-      selected(value)
+     selected(value)
       {
-        //console.log(value);
         if(value == "R")
         {
           this.valasztott = "R";

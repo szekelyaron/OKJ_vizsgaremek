@@ -423,6 +423,14 @@ exports.getKosar = (req, res, next) => {
     })
 };
 
+exports.postRendeles = (req, res, next) => {
+    var iranyitoszam = req.body.irsz;
+    var telefonszam = req.body.tel.replace(' ','');
+    var cim = req.body.cim;
+    console.log(iranyitoszam, telefonszam, cim)
+    res.redirect('/kosar');
+};
+
 //Sugo
 exports.getSugo = (req, res, next) => {
     res.render('sugo', {

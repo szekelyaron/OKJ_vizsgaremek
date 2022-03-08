@@ -58,6 +58,8 @@ router.post('/kosarMinusz', mainController.gumiKosartorol);
 
 router.post('/kosarPlusz', mainController.gumiKosarPlusz);
 
+router.post('/elkuld',mainController.postRendeles);
+
 router.get('/kalkulator', mainController.getKalkulator);
 
 router.post('/kalkulator', mainController.postKalkulator);
