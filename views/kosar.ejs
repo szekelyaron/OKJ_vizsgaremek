@@ -98,9 +98,10 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content main">
                                             <div class="header">
-                                                <p class="sign" align="center">Rendelés véglegesítése <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span class="bezar" aria-hidden="true">&times;</span>
-                                                    </button></p>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span class="bezar" aria-hidden="true">&times;</span>
+                                                </button>
+                                                <p class="sign" align="center">Rendelés véglegesítése</p>
                                             </div>
                                             <div class="adatok">
                                                 <p>
@@ -111,19 +112,18 @@
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
-                                                <p>Telefonszám: </p>
 
-                                                <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30-222-5503">
-
+                                                <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
+                                            <div class="inline">
                                                 <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz" pattern="[0-9]{4}" placeholder="Irányítószám">
 
-                                                <input v-model='city' class="un isz" type="text" name="varos" id="varos" placeholder="Település">
-
+                                                <input v-model='city' class="un telepules" type="text" name="varos" id="varos" placeholder="Település">
+                                            </div>
                                                 <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca">
 
-                                                <input v-model='number' class="un isz" type="text" name="hsz" id="hsz" pattern="[A-Za-z0-9]" maxlength="4" placeholder="Házszám">
+                                                <input v-model='number' class="un hazszam" type="text" name="hsz" id="hsz" pattern="[A-Za-z0-9]" maxlength="4" placeholder="Házszám">
 
-                                                <h2>Végösszeg: <%= kosarOsszeg %> Ft</h2>
+                                                <p class="vegosszeg_modal" align="center">Végösszeg: <%= kosarOsszeg %> Ft</p>
 
                                                 <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true">
                                                     <p align="center"><button type="submit" class="submit" >Rendelés leadása</button></p>
@@ -137,20 +137,5 @@
                                 </div>
 
     </body>
-    <style>
-        input:not(:focus):not(:placeholder-shown):invalid {
-            color: red;
-            border-color: red;
-        }
-
-        /*An correct input:*/
-        input:valid {
-            color: green;
-        }
-
-        /*A mandatory field:*/
-        input[required] {
-            background-color: rgb(200, 196, 196);
-        }
-    </style>
+    
     <%- include('includes/footer.ejs') %>

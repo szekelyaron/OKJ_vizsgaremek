@@ -352,7 +352,7 @@ body {
 .main {
   background-color: #e7e5e5;
   height: 100%;
-  margin: 10em auto;
+  margin: 5em auto;
   border-radius: 1.5em;
 }
 
@@ -362,11 +362,11 @@ body {
 }
 
 .sign {
-  padding-top: 30px;
+  padding-top: 50px;
   color: black;
   font-family: "Ubuntu", sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 40px;
 }
 
 .un {
@@ -388,7 +388,15 @@ body {
 }
 
 .isz {
-  width: 200px !important;
+  width: 140px;
+  margin-right: 15px;
+}
+
+@media (max-width: 800px) {
+  .isz{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .form1 {
@@ -435,10 +443,16 @@ input {
 
 .bezar {
   padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.close{
+  margin-top: 20px;
 }
 
 .telefonszam {
-  width: 250px;
+  width: 300px;
 }
 .error_message {
   color: red;
@@ -448,7 +462,6 @@ input {
 
 .submitDisabled {
   background-color: rgb(124, 124, 124);
-  cursor: pointer;
   border-radius: 5em;
   color: white !important;
   border: 0;
@@ -459,4 +472,35 @@ input {
   font-family: "Ubuntu", sans-serif;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+input:not(:focus):not(:placeholder-shown):invalid {
+  color: red;
+  border-color: red;
+}
+
+/*An correct input:*/
+input:valid {
+  color: black;
+}
+
+/*A mandatory field:*/
+input[required] {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.inline{
+  display: inline-block;
+}
+.telepules{
+  width: 230px;
+}
+.hazszam{
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+}
+.vegosszeg_modal{
+  color: black;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
 }
