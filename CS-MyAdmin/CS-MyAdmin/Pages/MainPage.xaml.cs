@@ -48,7 +48,7 @@ namespace CS_MyAdmin.Pages
             GumiFill(CB_GumiEvszak);
             GumiFill(CB_GumiInfo);
 
-            CB_allapot.Items.Add("Újszerű");
+            CB_allapot.Items.Add("Alig használt");
             CB_allapot.Items.Add("Frissen felújított");
             CB_allapot.Items.Add("Használt");
             CB_allapot.Items.Add("Enyhén sérült");
