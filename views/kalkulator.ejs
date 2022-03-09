@@ -1,5 +1,5 @@
 <%- include('includes/header.ejs') %>
-    <link rel="stylesheet" href="/css/kalkulator.css">
+    <link rel="stylesheet" href="/css/kalkulator.css" defer>
     <link rel="stylesheet" href="/css/buttons.css">
     <link rel="stylesheet" href="/css/fooldal.css">
     <script src="https://unpkg.com/vue@next" defer></script>
@@ -10,12 +10,24 @@
             <h1 class="h1-responsive font-weight-bold mt-sm-5 text-center title" style="color: white;">Kerék magasság kalkulátor</h1>
             <form method="post" action="/kalkulator" class="centered">
                 <div id="kalkulator" class="justify-content-center centered">
-                    <img src="https://electricscooterparts.com/graphics/wheel-diameter2.png" class="landscape">
-                    <input v-model='szelesseg' maxlength='3' id="szelesseg" name="szelesseg" type="text" class="gumi_input" maxlength="3" />
-                    <p style="color: white;">/</p>
-                    <input v-model='oldalfal' maxlength='2' id="oldalfal" name="oldalfal" type="text" class="oldalfal" maxlength="2" />
-                    <p style="color: white;">R</p>
-                    <input v-model='magassag' maxlength='2' id="magassag" name="magassag" type="text" class="magassag" maxlength="2" />
+                    <label class="field field_v2">
+                        <input class="field__input" placeholder="111" v-model='szelesseg' maxlength='3' id="szelesseg" name="szelesseg" type="text" maxlength="3">
+                        <span class="field__label-wrap">
+                          <span class="field__label">Szélesség</span>
+                        </span>
+                    </label>
+                    <label class="field field_v2">
+                        <input class="field__input" placeholder="22" v-model='oldalfal' maxlength='2' id="oldalfal" name="oldalfal" type="text" maxlength="2">
+                        <span class="field__label-wrap">
+                          <span class="field__label">Oldalfal</span>
+                        </span>
+                    </label>
+                    <label class="field field_v2">
+                        <input class="field__input" placeholder="22" v-model='magassag' maxlength='2' id="magassag" name="magassag" type="text" maxlength="2">
+                        <span class="field__label-wrap">
+                          <span class="field__label">Magasság</span>
+                        </span>
+                    </label>
                     <div v-if="magassag_validate == true && oldalfal_validate == true && szelesseg_validate == true">
                         <div class="centered keresBTN">
                             <button type="submit" class="join_btn joinform">Számítás</button>
@@ -26,9 +38,12 @@
                             <button disabled type="button" class="disabled">Számítás</button>
                         </div>
                     </div>
-                    <% if (Eredmeny !=undefined) {%>
-                        <p style="color: white;">Számított kerékmagasság: <%= Eredmeny.toFixed(2)%> cm</p>
-                    <% } %>
+                    <div class="eredmeny">
+                        <% if (Eredmeny !=undefined) {%>
+                            <p style="color: white;">Kerékmagasság:
+                                <%= Eredmeny.toFixed(2)%> cm</p>
+                            <% } %>
+                    </div>
                 </div>
             </form>
 
