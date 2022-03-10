@@ -105,15 +105,17 @@
                                             </div>
                                             <div class="adatok">
                                                 <p>
-                                                    <%= username %>
+                                                   Felhasználónév: <%= user.Felhasználónév %>
                                                 </p>
                                                 <p>
-                                                    <%= email %>
+                                                   Email cím: <%= user.Email %>
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
-
-                                                <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
+                                                <div class="form-text">
+                                                    <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
+                                                    <label for="tel" class="static-value">+36 </label>
+                                                </div>
                                             <div class="inline">
                                                 <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz" pattern="[0-9]{4}" placeholder="Irányítószám">
 
@@ -121,7 +123,7 @@
                                             </div>
                                                 <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca">
 
-                                                <input v-model='number' class="un hazszam" type="text" name="hsz" id="hsz" pattern="[A-Za-z0-9]" maxlength="4" placeholder="Házszám">
+                                                <input v-model='number' class="un hazszam" type="text" name="hsz" id="hsz" maxlength="4" placeholder="Házszám">
 
                                                 <p class="vegosszeg_modal" align="center">Végösszeg: <%= kosarOsszeg %> Ft</p>
 

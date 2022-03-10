@@ -504,3 +504,17 @@ input[required] {
   font-weight: bold;
   font-size: 36px;
 }
+
+.static-value{
+	position:absolute;
+	left:10px;
+	font-weight:bold;
+	font-size:0.8em;
+	color: black;
+	top:9px;
+  
+}
+
+.form-text{
+	position:relative;
+}
