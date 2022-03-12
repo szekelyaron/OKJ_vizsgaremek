@@ -29,7 +29,10 @@
                                 <div class="btn_container">
                                     <% if(user == undefined) { %>
                                         <a href="/bejelentkezes" class="join_btn joinform">Bejelentkezés most</a> &nbsp;&nbsp;
-                                        <% }%>
+                                        
+                                        <% }else{ %>
+                                            <a href="/termekek" class="join_btn joinform">Termékek</a> &nbsp;&nbsp;
+                                            <% } %>
                                             <a href="/fooldal" class="join_btn joinform">
                                                 <% if(user == undefined) { %>
                                                     Folytatás vendégként

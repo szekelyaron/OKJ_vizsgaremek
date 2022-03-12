@@ -37,15 +37,17 @@ border-radius: 20px;
 outline: none;
 box-sizing: border-box;
 border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
-text-align: center;
 margin-bottom: 27px;
+text-align: center;
 font-family: 'Ubuntu', sans-serif;
 }
 
 form.form1 {
-    padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .pass {
@@ -61,8 +63,6 @@ border-radius: 20px;
 outline: none;
 box-sizing: border-box;
 border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 50px;
-margin-left: 46px;
 text-align: center;
 margin-bottom: 27px;
 font-family: 'Ubuntu', sans-serif;
@@ -115,8 +115,6 @@ input:focus::placeholder {
     .main{
       height: 100%;
       width: 100%;
-      margin-top: 50%;
-      margin-bottom: 50%;
       box-shadow: none;
       padding-bottom: 10px;
     }

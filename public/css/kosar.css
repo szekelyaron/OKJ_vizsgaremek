@@ -507,12 +507,11 @@ input[required] {
 
 .static-value{
 	position:absolute;
-	left:10px;
-	font-weight:bold;
-	font-size:0.8em;
+	left:20px;
+	font-weight: 700;
+  font-size: 15px;
 	color: black;
-	top:9px;
-  
+  top: 11px;
 }
 
 .form-text{
