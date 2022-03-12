@@ -19,6 +19,9 @@ h1{
     color: white;
     text-align: center;
 }
+.rendszamdiv{
+  margin-left: 12px;
+}
 .rendszam {
     color: white;
     display: block;
@@ -83,6 +86,15 @@ h1{
     .font{
       font-size: 14vw;
     }
+    .nincs_talalat{
+      font-size: 25px;
+    }
+    .infokep{
+      max-width: 200px !important;
+    }
+    .info_cim{
+      font-size: 25px;
+    }
   }
   .keresBTN{
     padding-top: 0px;
@@ -119,6 +131,9 @@ h1{
   font-size: 3rem;
   color: white;
 }
+.m_rendszam_pelda{
+  margin-left: 8px;
+}
 @media (max-width: 840px) {
   .rendszam_pelda{
     font-size: 2rem;
@@ -131,4 +146,23 @@ h1{
 }
 .ertekeles{
   max-width: 240px;
+}
+.info_cim{
+  margin-bottom: 30px;
+}
+.infokep{
+  max-width: 300px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.infokepdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.nincs_talalat{
+  margin-left: 10%;
+  margin-right: 10%;
 }

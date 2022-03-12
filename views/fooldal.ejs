@@ -35,8 +35,11 @@
                 <form method="post" action="/fooldal">
                     <div v-if="valasztott == 'R' && country_valasztott == 'M'">
                         <img src="img/magyar.png" class="landscape"></img>
-                        <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"
-                            placeholder="   -   " />
+                        <div class="rendszamdiv">
+                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"
+                                placeholder="   -   " />
+                        </div>
+
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
                         <div class="centered keresBTN">
@@ -45,8 +48,10 @@
                     </div>
                     <div v-if="valasztott == 'R' && country_valasztott == 'N'">
                         <img src="img/nemet.png" class="landscape">
-                        <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam"
-                            type="text" />
+                        <div class="rendszamdiv">
+                            <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam"
+                                type="text" />
+                        </div>
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
                         <div class="centered keresBTN">
@@ -55,7 +60,9 @@
                     </div>
                     <div v-if="valasztott == 'R' && country_valasztott == 'A'">
                         <img src="img/angol.png" class="landscape">
-                        <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" />
+                        <div class="rendszamdiv">
+                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" />
+                        </div>
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
                         <div class="centered keresBTN">
@@ -74,40 +81,7 @@
                     <!--Kiírása a sikeres lekérdezésnek-->
                     <div v-if="valasztott == ''">
                         <% if (lekerderedm_rendsz !=undefined) {%>
-                            <!--<article class="postcard dark red">
-                        <a class="postcard__img_link" href="#">
-                            <img class="postcard__img" src="<%= lekerderedm_rendsz.Kepcim %>"alt="Image Title" />	
-                        </a>
-                        <div class="postcard__text">
-                            <h1 class="postcard__title red"><a href="#"><%= lekerderedm_rendsz.Gyarto %> <%= lekerderedm_rendsz.Tipus %></a></h1>
-                            <div class="postcard__bar"></div>
-                            <div>
-                                <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt="" class="ertekeles">
-                            </div>
-                            <div class="postcard__preview-txt">
-                                <p>Évjárat: <%= lekerderedm_rendsz.Evjarat %></p>
-                                <p>Állapot: <%= lekerderedm_rendsz.Allapot %></p>
-                                <p>Futott km: <%= lekerderedm_rendsz.Futottkm %></p>
-                                <p>Okmányok jellege: <%= lekerderedm_rendsz.Okmanyok %></p>
-                                <% if(lekerderedm_rendsz.VezetettSzervK == 0) { %>
-                                    <p>Az autó nem rendelkezik vetzetett szervizkönyvvel</p>
-                                <% } %>
-                                <% if(lekerderedm_rendsz.VezetettSzervK == 1) { %>
-                                    <p>Az autó vetzetett szervizkönyvvel rendelkezik</p>
-                                <% } %>
-                                <% if(lekerderedm_rendsz.Torott == 0) { %>
-                                    <p>Az autónak nincs ismert kártörténete</p>
-                                <% } %>
-                                <% if(lekerderedm_rendsz.Torott == 1) { %>
-                                    <p>Az autó törve volt</p>
-                                <% } %>
-                                <p>Ismert típushibák: <%= lekerderedm_rendsz.Tipshiba %></p>
-                                <p>Ismert típushibák: <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.') %></p>
-                                <p>Az autó <%= lekerderedm_rendsz.Gumiabroncs %> gumiabroncscsal van szerelve.</p>
-                                <p>Más gumiabroncsot is szeretne az autóra? Látogassa meg <a href="/termekek"><u>webshopunkat</u></a></p>
-                            </div>
-                        </div>
-                    </article>-->
+
                             <div class="card" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
                                 <div class="card-body" style="display: block;">
                                     <div class="card-container">
@@ -228,8 +202,8 @@
                                                                 <%= lekerderedm_alvaz.Futottkm %>
                                                             </h5>
                                                         </div>
-                                                        <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png"
-                                                            alt="" class="ertekeles">
+                                                        <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png" alt=""
+                                                            class="ertekeles">
                                                         <button class="details-button"
                                                             onclick="showDetails()">RÉSZLETEK</button>
                                                         <div class="details" style="display: none;">
@@ -246,8 +220,8 @@
                                                                                 <h5>Az autónak nincs ismert kártörténete
                                                                                 </h5>
                                                                                 <% } %>
-                                                                                    <% if(lekerderedm_alvaz.Torott==1)
-                                                                                        { %>
+                                                                                    <% if(lekerderedm_alvaz.Torott==1) {
+                                                                                        %>
                                                                                         <h5>Az autó törve volt</h5>
                                                                                         <% } %>
                                                                                             <h5>Ismert típushibák:
@@ -280,12 +254,11 @@
                                         <!--Ha nincs ilyen az adatbázisban-->
                                         <div v-if="valasztott == ''">
                                             <% if (lekerderedm_rendsz==undefined && kerdezettER==true) {%>
-                                                <a class="postcard__img_link" href="#">
-                                                    <img class="postcard__img" src="img/felkiáltójel.jpg"
-                                                        alt="Image Title" />
-                                                </a>
-                                                <div class="postcard__text">
-                                                    <h1 class="postcard__title red">Sajnos az adatbázisunkban nincs
+
+                                                <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
+
+                                                <div>
+                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
                                                         ilyen rendszámú
                                                         autó, próbáljon meg másikat vagy látogasson vissza később,
                                                         adatbázisunk
@@ -295,68 +268,68 @@
                                         </div>
                                         <div v-if="valasztott == ''">
                                             <% if (lekerderedm_alvaz==undefined && kerdezettEA==true) {%>
-                                                <article class="postcard dark red">
-                                                    <a class="postcard__img_link" href="#">
-                                                        <img class="postcard__img" src="img/felkiáltójel.jpg"
-                                                            alt="Image Title" />
-                                                    </a>
-                                                    <div class="postcard__text">
-                                                        <h1 class="postcard__title red">Sajnos az adatbázisunkban nincs
-                                                            ilyen
-                                                            alvázszámú autó, próbáljon meg másikat vagy látogasson
-                                                            vissza később,
-                                                            adatbázisunk folyamatosan frissül!</h1>
-                                                    </div>
-                                                </article>
+
+
+                                                <img class="infokep" src="img/felkiáltójel.jpg" alt="Image Title" />
+
+                                                <div>
+                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
+                                                        ilyen
+                                                        alvázszámú autó, próbáljon meg másikat vagy látogasson
+                                                        vissza később,
+                                                        adatbázisunk folyamatosan frissül!</h1>
+                                                </div>
+
                                                 <% } %>
                                         </div>
 
                                         <!--Útmutató a megfelelő beviteli formához-->
 
                                         <div v-if="valasztott == 'R' && country_valasztott != ''">
-                                            <article class="postcard dark red info">
-                                                <a class="postcard__img_link" href="#">
-                                                    <img class="postcard__img" src="img/info.png" alt="Image Title" />
-                                                </a>
-                                                <div class="postcard__text">
-                                                    <h1 class="postcard__title red">Kérjük ilyen formában adja meg a
-                                                        rendszámot</h1>
-                                                    <div class="postcard__bar"></div>
-                                                    <div class="postcard__preview-txt">
-                                                        <p class="rendszam_pelda"><img src="img/magyar.png" alt=""
-                                                                class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                                        <p class="rendszam_pelda"><img src="img/nemet.png" alt=""
-                                                                class="landscape">
-                                                            : BGA4030N</p>
-                                                        <p class="rendszam_pelda"><img src="img/angol.png" alt=""
-                                                                class="landscape">
-                                                            : FD013GH&nbsp;&nbsp;</p>
-                                                        <p>
-                                                            <%= lekerderedm_rendsz %>
-                                                        </p>
+
+
+                                            <img class="infokep" src="img/info.png" alt="Image Title" />
+
+                                            <div class="postcard__text">
+                                                <h1 class="info_cim">Kérjük ilyen formában adja meg a
+                                                    rendszámot</h1>
+
+                                                <div>
+                                                    <div class="m_rendszam_pelda">
+                                                    <p class="rendszam_pelda"><img src="img/magyar.png" alt=""
+                                                            class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                                     </div>
+                                                    <p class="rendszam_pelda"><img src="img/nemet.png" alt=""
+                                                            class="landscape">
+                                                        : BGA4030N</p>
+                                                    <p class="rendszam_pelda"><img src="img/angol.png" alt=""
+                                                            class="landscape">
+                                                        : FD013GH&nbsp;&nbsp;</p>
+                                                    <p>
+                                                        <%= lekerderedm_rendsz %>
+                                                    </p>
                                                 </div>
-                                            </article>
+                                            </div>
+
                                         </div>
                                         <div v-if="valasztott == 'A'">
-                                            <article class="postcard dark red info">
-                                                <a class="postcard__img_link" href="#">
-                                                    <img class="postcard__img" src="img/info.png" alt="Image Title" />
-                                                </a>
-                                                <div class="postcard__text">
-                                                    <h1 class="postcard__title red">Kérjük ilyen formában adja meg az
-                                                        alvázszámot
-                                                    </h1>
-                                                    <div class="postcard__bar"></div>
-                                                    <div class="postcard__preview-txt">
-                                                        <p class="rendszam_pelda"><img src="img/alvazszam.png" alt=""
-                                                                class="landscape2"> 12HDD45JHB33NK9L5</p>
-                                                        <p>
-                                                            <%= lekerderedm_alvaz %>
-                                                        </p>
-                                                    </div>
+
+                                            <img class="infokep" src="img/info.png" alt="Image Title" />
+
+                                            <div>
+                                                <h1 class="info_cim">Kérjük ilyen formában adja meg az
+                                                    alvázszámot
+                                                </h1>
+
+                                                <div>
+                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt=""
+                                                            class="landscape2"> 12HDD45JHB33NK9L5</p>
+                                                    <p>
+                                                        <%= lekerderedm_alvaz %>
+                                                    </p>
                                                 </div>
-                                            </article>
+                                            </div>
+
                                         </div>
                 </form>
             </div>

@@ -197,13 +197,16 @@ CORE STYLES
     margin-top: 30px;
     margin-bottom: 80px;
 }
+@media (min-width: 600px) {
 .gumikep{
     background-color: lightgray;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
 }
-
+.magyarazat_cim{
+    margin-bottom: 20px;
+}
 .flip-box {
     background-color: transparent;
     width: 800px;
@@ -220,6 +223,7 @@ CORE STYLES
       }
       .magyarazat_cim{
         font-size: 20px;
+        margin-bottom: 10px;
       }
       .magyarazat{
         font-size: 12px;
@@ -263,4 +267,31 @@ CORE STYLES
     margin-top: 20px;
     margin-left: 10px auto;
     margin-right: 10px auto;
+}
+}
+
+@media (max-width: 600px) {
+    .gumikep{
+        background-color: lightgray;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .magyarazat_cim{
+        text-align: center !important;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        color: white;
+    }
+    .magyarazat{
+      color: white;
+      margin-left: 10px auto;
+      margin-right: 10px auto;
+      text-align: justify;
+  }
+  .flip-box-back{
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+  }
 }
