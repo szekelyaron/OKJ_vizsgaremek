@@ -6,7 +6,8 @@
 
     <body>
         <%- include('includes/navbar.ejs') %>
-            <div class="view" style="background-image: url('img/hatter2.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
+            <div class="view"
+                style="background-image: url('img/hatter2.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
                 <!-- Mask & flexbox options-->
                 <div class="text-light">
                     <br>
@@ -22,24 +23,28 @@
                         <div class="row">
                             <!--Grid column-->
                             <div class="col-md-6 text-light text-center text-md-left mt-xl-5 mb-5">
-                                <h1 class="h1-responsive font-weight-bold mt-sm-5 text-center">Tudj meg mindent a jövőbeli autódról</h1>
+                                <h1 class="h1-responsive font-weight-bold mt-sm-5 text-center cim">Tudj meg mindent a
+                                    jövőbeli autódról</h1>
                                 <hr class="hr-light">
-                                <h6 class="mb-4 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae iste.
+                                <h6 class="mb-4 text-center">Ha szeretne megbizonyosodni az ön által
+                                    megvásárolni kívánt autó állapotáról akkor tökéletes helyen jár. Nálunk gyorsan és könnyedén megtekintheti weboldalunkon a választott autó adatait
+                                    mindössze egy rendszám vagy alvázszám megadásával.
                                 </h6>
                                 <div class="btn_container">
-                                    <% if(user == undefined) { %>
-                                        <a href="/bejelentkezes" class="join_btn joinform">Bejelentkezés most</a> &nbsp;&nbsp;
-                                        
+                                    <% if(user==undefined) { %>
+                                        <a href="/bejelentkezes" class="join_btn joinform">Bejelentkezés most</a>
+                                        &nbsp;&nbsp;
+
                                         <% }else{ %>
                                             <a href="/termekek" class="join_btn joinform">Termékek</a> &nbsp;&nbsp;
                                             <% } %>
-                                            <a href="/fooldal" class="join_btn joinform">
-                                                <% if(user == undefined) { %>
-                                                    Folytatás vendégként
-                                                    <% }else{ %>
-                                                        Jármű lekérdezés
-                                                        <% } %>
-                                            </a>
+                                                <a href="/fooldal" class="join_btn joinform">
+                                                    <% if(user==undefined) { %>
+                                                        Folytatás vendégként
+                                                        <% }else{ %>
+                                                            Jármű lekérdezés
+                                                            <% } %>
+                                                </a>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -65,14 +70,19 @@
                     <div class="row py-5">
                         <!--Grid column-->
                         <div class="col-md-12 text-center">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.</p>
                             <div class="socialmedia">
                                 <a href="https://www.facebook.com/carscopesite" class="fa fa-facebook"></a>
                                 <a href="https://twitter.com/PCarscope" class="fa fa-twitter"></a>
                                 <a href="#" class="fa fa-google"></a>
                                 <a href="https://www.instagram.com/carscopeproject/" class="fa fa-instagram"></a>
-                                <a href="https://www.youtube.com/channel/UC8czUSPqf6TLcAVAt8JQllw" class="fa fa-youtube"></a>
+                                <a href="https://www.youtube.com/channel/UC8czUSPqf6TLcAVAt8JQllw"
+                                    class="fa fa-youtube"></a>
                             </div>
                         </div>
                         <!--Grid column-->
