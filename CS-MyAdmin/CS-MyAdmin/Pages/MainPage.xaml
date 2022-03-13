@@ -458,9 +458,10 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
                     <ComboBox x:Name="cb_databases" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
+                    <TextBox x:Name="TB_searchbar" Margin="5" Width="200" TextChanged="TB_searchbar_TextChanged"/>
                     <Label x:Name="LBL_recordCount" FontWeight="Bold" Margin="5" Foreground="White"/>
                 </StackPanel>
-                    <DataGrid x:Name="DG_asd"
+                <DataGrid x:Name="DG_asd"
                           AutoGenerateColumns="True"
                           IsReadOnly="False" Height="250"/>
                 <StackPanel Orientation="Horizontal">

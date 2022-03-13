@@ -73,12 +73,9 @@ namespace CS_MyAdmin.Pages
             gumik = GumiModel.select();
             infok = InfoModel.select();
             DG_asd.ItemsSource = autok;
+            
 
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
-
-
-
-
 
 
             for (int i = 1; i < 11; i++)
@@ -233,6 +230,50 @@ namespace CS_MyAdmin.Pages
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
                 
+            }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+        }
+
+        private void TB_searchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (cb_databases.SelectedIndex == 0)
+            {
+                if (TB_searchbar.Text != "")
+                {
+                    DG_asd.IsReadOnly = true;
+                    var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.tipus.ToLower().StartsWith(TB_searchbar.Text));
+                    DG_asd.ItemsSource = filteredList;
+                }
+                else
+                {
+                    DG_asd.ItemsSource = autok;
+                }
+            }
+            else if (cb_databases.SelectedIndex == 1)
+            {
+                if (TB_searchbar.Text != "")
+                {
+                    DG_asd.IsReadOnly = true;
+                    var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.evszak.ToLower().StartsWith(TB_searchbar.Text));
+                    DG_asd.ItemsSource = filteredList;
+                }
+                else
+                {
+                    DG_asd.ItemsSource = gumik;
+                }
+            }
+            else if (cb_databases.SelectedIndex == 2)
+            {
+                if (TB_searchbar.Text != "")
+                {
+                    DG_asd.IsReadOnly = true;
+                    var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text) || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text));
+                    DG_asd.ItemsSource = filteredList;
+                }
+                else
+                {
+                    DG_asd.ItemsSource = infok;
+                }
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
