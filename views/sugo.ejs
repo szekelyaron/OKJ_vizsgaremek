@@ -1,41 +1,69 @@
 <%- include('includes/header.ejs') %>
-<link rel="stylesheet" href="/css/sugo.css">
-</head>
-<body>
-  <%- include('includes/navbar.ejs') %>
-    <h1>Tudj meg t2bbet</h1>
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card text-white bg-dark box">
-                    <div class="card-header">A CarScope</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Mi a célja az oldalnak?</h5>
-                      <p class="card-text">Oldalunk célja, hogy az adatbázisunkan található információkat olcsón és könnyen elérhetően szolgáltassuk önöknek. Ezekkel az adatokkal elkerülhető egy rossz, törött, esetleg valótlan kilóméteróra állású autó vásárlása.</p>
-                    </div>
-                  </div>
-            </div>
+    <link rel="stylesheet" href="/css/sugo.css">
+    </head>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card text-white bg-dark box">
-                    <div class="card-header">Lekérdezés</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Mi az a járműazonosító szám, közismert nevén alvázszám, (VIN)?</h5>
-                      <p class="card-text">A VIN a Vehicle Identification Number angol kifejezés rövídítése; egy egyedi, 17 karakterből álló azonosítóról van szó, amelyet a gépkocsi gyártója rendel az egyes gépkocsikhoz. A VIN szám a gépkocsi különböző alkatrészein, illetve a forgalmi engedélyben is megtalálható.</p>
+    <body>
+        <%- include('includes/navbar.ejs') %>
+            <h1>Tudj meg t2bbet</h1>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">A CarScope</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mi a célja az oldalnak?</h5>
+                                <p class="card-text">Oldalunk célja, hogy az adatbázisunkan található információkat olcsón és könnyen elérhetően szolgáltassuk önöknek. Ezekkel az adatokkal elkerülhető egy rossz, törött, esetleg valótlan kilóméteróra állású autó vásárlása.</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card text-white bg-dark box">
-                    <div class="card-header">Adatbázis</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Honnan származnak az adatok?</h5>
-                      <p class="card-text">Különböző forrásokból gyűjtjük be az adatokat, mint például szerelőműhelyek, állami nyilvántartások, biztosítótársaságok, hálózatba kapcsolt gépjárműflották, stb.</p>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">Alvázszám</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mi az a járműazonosító szám, közismert nevén alvázszám, (VIN)?</h5>
+                                <p class="card-text">A VIN a Vehicle Identification Number angol kifejezés rövidítése; egy egyedi, 17 karakterből álló azonosító. A VIN szám a gépkocsi különböző alkatrészein, illetve a forgalmi engedélyben is megtalálható.</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">Adatbázis</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Honnan származnak az adatok?</h5>
+                                <p class="card-text">Különböző forrásokból gyűjtjük be az adatokat, mint például szerelőműhelyek, állami nyilvántartások, biztosítótársaságok, hálózatba kapcsolt gépjárműflották, stb. Az adatok hitelességét szakértőink ellenőrzik.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">Országok</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Milyen rendszámokat lehet lekérdezni?</h5>
+                                <p class="card-text">Jelenleg 3 különböző nemzetiségű rendszámot lehet lekérdezni a weboldalunkon: Magyar, Angol és Német. A lekérdezés menüpont alatt kilehet választani ezek közül melyik alapján szeretne lekérdezni. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">Költségek</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Van költsége a lekérdezésnek?</h5>
+                                <p class="card-text">Oldalunk használata teljesen ingyenes, azonban a teljes lekérdezéshez bejelentkezés szükséges. Bejelentkezés után gumiabroncs vásárlásra is lehetősége nyílik, amennyiben nem megfelelő a megvásárolni kívánt autón levő abroncs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-white bg-dark box">
+                            <div class="card-header">Elérhetőség</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Hol vagyunk elérhetőek?</h5>
+                                <p class="card-text">Különböző közösségi média oldalakon elérhetőek vagyunk CarScope néven például: facebookon, instagrammon vagy twitteren. Ha kérdése vagy panasza van akkor pedig a kapcsolat menüpont alatt tud írni nekünk.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </div>
-        </div>
-    </div>
-</body>
+            </div>
+    </body>
     <%- include('includes/footer.ejs') %>
