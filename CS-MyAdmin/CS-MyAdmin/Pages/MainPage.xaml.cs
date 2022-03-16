@@ -100,7 +100,7 @@ namespace CS_MyAdmin.Pages
 
                 }
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;        
+                DG_asd.ItemsSource = autok;
             }
             else if(cb_databases.SelectedIndex == 1)
             {
@@ -200,7 +200,7 @@ namespace CS_MyAdmin.Pages
             }
             else
             {
-                LB_InfouresMezo.IsEnabled = true; 
+                LB_InfouresMezo.IsEnabled = true;
                 InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), Convert.ToInt32(TB_szervkönyv.Text), CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
                     Convert.ToInt32(TB_autoAzon.Text), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
 

@@ -6,8 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Lenovo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Lenovo\\.nuget\\packages",
+      "C:\\Users\\szekely.aron\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\szekely.aron\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ],
     "configProperties": {
