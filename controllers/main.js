@@ -433,6 +433,7 @@ exports.postRendeles = (req, res, next) => {
       });
     }
   });
+  req.session.user.kosar = [];
 };
 
 //Sugo

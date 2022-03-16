@@ -9,8 +9,8 @@ const app = Vue.createApp({
   },
   methods: {
     selectionChanged() {
-      //console.log(selected.value);
-      //console.log(country.value)
+      console.log(selected.value);
+      console.log(country.value)
     }
   },
   watch: {
@@ -19,16 +19,20 @@ const app = Vue.createApp({
         if(value == "R")
         {
           this.valasztott = "R";
+          this.country_valasztott = "";
         }
         if(value == "A")
         {
           this.valasztott = "A";
+          this.country_valasztott = "";
+
         }
+        console.log(this.valasztott);
       },
 
       country(value)
       {
-        //console.log(value);
+        console.log(value);
         if(value == "M")
         {
           this.country_valasztott = "M";
@@ -46,5 +50,4 @@ const app = Vue.createApp({
 });
 app.mount('#cars')
 
-var target = $('#target'),
-    val = target.val();
+
