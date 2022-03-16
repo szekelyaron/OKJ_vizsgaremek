@@ -487,7 +487,9 @@
                     <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Gyártó:" Foreground="White"/>
-                        <TextBox x:Name="TB_gyarto" HorizontalAlignment="Left" Margin="5" Width="100" />
+                        <TextBox x:Name="TB_gyarto" HorizontalAlignment="Left" Margin="5" Width="100" Text="{Binding gyarto, 
+                                    UpdateSourceTrigger=PropertyChanged, 
+                                    ValidatesOnDataErrors=True}"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Típus:" Foreground="White"/>

@@ -4,10 +4,11 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace CS_MyAdmin.Models
 {
-    class AutoModel
+    class AutoModel 
     {
         private int _aId;
 
@@ -42,6 +43,8 @@ namespace CS_MyAdmin.Models
         }
 
         private string _tipusHiba;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public string tipusHiba
         {
@@ -138,6 +141,8 @@ namespace CS_MyAdmin.Models
                 }
             }
         }
+
+
 
     }
 }
