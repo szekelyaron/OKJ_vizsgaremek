@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
+using MySql.Connections;
 using System.Configuration;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
