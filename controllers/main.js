@@ -399,7 +399,7 @@ exports.postRendeles = (req, res, next) => {
     console.log(message);
   console.log(iranyitoszam, telefonszam, varos, utca, hsz);
   var mailOptions = {
-    to: "carscope.site@gmail.com",
+    to: "carscope.site@gmail.com," + req.body.email,
     subject: "Rendelés-email",
     html: message,
   };
@@ -461,7 +461,6 @@ exports.postContactus = (req, res, next) => {
     subject: "Contatus-email",
     text: req.body.uzenet + " Feladó: " + req.body.name + " " + req.body.email,
   };
-  console.log("Lefutott");
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {

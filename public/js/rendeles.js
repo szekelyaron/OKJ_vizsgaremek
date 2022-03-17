@@ -6,15 +6,23 @@ const app = Vue.createApp({
       street: "",
       city: "",
       number: "",
+      afsz: "",
+      isChecked: "",
       tel_validate: false,
       irsz_validate: false,
       utca_validate: false,
       varos_validate: false,
       szam_validate: false,
+      afsz_validate: false,
     };
   },
   methods: {
     selectionChanged() {},
+    gombelfogad() {
+      console.log(this.isChecked);
+      this.isChecked = 'checked'
+      this.afsz_validate = true;
+    }
   },
   watch: {
     postalcode(value) {
@@ -59,6 +67,14 @@ const app = Vue.createApp({
         this.szam_validate = false;
       }
     },
+    afsz(value) {
+      if(value == true){
+        this.afsz_validate = true;
+      }
+      else{
+        this.afsz_validate = false;
+      }
+    }
   },
 });
-app.mount("#rendeles");
+app.mount("body");

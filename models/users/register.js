@@ -1,7 +1,16 @@
 var mysql =	require("../db.js"),
 	mysqlPool = mysql.createPool();
 const crypto = require("crypto");
+const { runInNewContext } = require("vm");
 var register = function(){};
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'carscope.site@gmail.com ',
+        pass: 'CarScope2022'
+    }
+});
 
 register.prototype.registerUser = function(req, res, next) {
         secret = "!%/=._"+req.body.jelszo+"!%/._";
@@ -38,14 +47,20 @@ register.prototype.registerUser = function(req, res, next) {
                 connection.release();
             }
             else{
-                console.log
                 connection.query(registerUserQuery, params, function(err, rows, fields) {
                     if(err){
                          console.log(err);
                          connection.release();
                      }else{
-                         connection.release();
-                         res.redirect('/')
+                        var mailoptions = {
+                            to: req.body.email,
+                            subject: 'SIKER!',
+                            text: 'Sikeresen regisztrál a CarScope oldalon!',
+                        };
+                        transporter.sendMail(mailoptions, function(error, info){
+                            connection.release();
+                            res.redirect('/bejelentkezes')
+                        })
                      }
                  });
             }

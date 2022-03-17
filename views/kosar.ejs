@@ -94,7 +94,7 @@
                     <% } %>
                         <% if(kosarTartalma==undefined || kosarTartalma=='' ){ %>
                             <p class="ureskosar">Jelenleg üres a kosár</p>
-                            <% } %>
+                            <% } else { %>
                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content main">
@@ -115,12 +115,12 @@
                                                         <% for(let gumi of lekerderedm_gumik){ %>
                                                             <% if(gumi.GID==kosar.termek_id) {%>
                                                                 <%= gumi.Gyarto %>
-                                                                    (
-                                                                    <%= kosar.qty %>db)
+                                                                    (<%= kosar.qty %>db)
                                                                         <br>
                                                                         <%}%>
                                                                             <%}%>
                                                                                 <%}%>
+                                                                                
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
@@ -141,22 +141,22 @@
                                                 <p class="vegosszeg_modal" align="center">Végösszeg:
                                                     <%= kosarOsszeg %> Ft</p>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <input class="form-check-input" v-model='afsz' id="afsz" name="afsz" type="checkbox" value="" :checked="isChecked" id="flexCheckDefault">
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                           Elfogadom az <a href="" data-toggle="modal" data-target="#tajekoztato">általános szerződési feltételeket</a> 
                                                     </label>
                                                 </div>
-                                                <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true">
+                                                <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true && afsz_validate == true">
                                                     <p align="center"><button type="submit" class="submit">Rendelés leadása</button></p>
                                                 </div>
-                                                <div v-else-if="tel_validate == false || irsz_validate == false || utca_validate == false || varos_validate == false || szam_validate == false">
+                                                <div v-else-if="tel_validate == false || irsz_validate == false || utca_validate == false || varos_validate == false || szam_validate == false || afsz_validate == false">
                                                     <p align="center"><button type="submit" class="submitDisabled" disabled data-dismiss="modal">Rendelés leadása</button></p>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-
+                                <%}%>
 
                                 <div class="modal fade bd-example-modal-lg" id="tajekoztato" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
@@ -443,7 +443,7 @@
                                                     hogy a törölt rendelkezés(ek) a lehető legteljesebb mértékbenérvényesüljenek. © CarScope Kft. / Jambrik Ügyvédi Iroda (2018) 2018. január 19 napjáig hatályos szöveg
                                                 </p>
                                             </div>
-                                            <p align="center"><button type="submit elfogad" class="submit" data-dismiss="modal">Elfogadom</button></p>
+                                            <p align="center"><button name="elfogad" id="elfogad" @click="gombelfogad" type="submit elfogad" class="submit" data-dismiss="modal">Elfogadom</button></p>
                                         </div>
                                     </div>
                                 </div>
