@@ -7,17 +7,17 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item <%= path === '/fooldal' ? '' : 'active' %>">
           <a class="nav-link effect-shine" href="/fooldal">Lekérdezés</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item <%= path === '/termekek' ? '' : 'active' %>">
           <a class="nav-link effect-shine" href="/termekek">Termékek</a>
         </li>
         
-        <li class="nav-item active">
+        <li class="nav-item <%= path === '/kosar' ? '' : 'active' %>">
           <a class="nav-link effect-shine" href="/kosar">Kosár</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item <%= path === '/kalkulator' ? '' : 'active' %>">
           <a class="nav-link effect-shine" href="/kalkulator">Magasság kalkulátor</a>
         </li>
       </ul>

@@ -449,7 +449,7 @@ exports.getSugo = (req, res, next) => {
 exports.getContactus = (req, res, next) => {
   res.render("contactus", {
     pageTitle: "CarScope - Contactus",
-    path: "/contactus",
+    path: "/kapcsolat",
     user: req.session.user,
     siker: false,
   });

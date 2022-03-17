@@ -34,7 +34,7 @@ router.post('/fooldal',mainController.rendszamlekerdezes);
 
 router.get('/sugo', mainController.getSugo);
 
-router.get('/contactus', mainController.getContactus);
+router.get('/kapcsolat', mainController.getContactus);
 
 router.post('/contactuskuld', mainController.postContactus);
 
