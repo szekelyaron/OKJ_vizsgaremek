@@ -22,6 +22,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 28px;
+    margin-bottom: 0px !important;
 }
 
 .un {
@@ -37,7 +38,7 @@ border-radius: 20px;
 outline: none;
 box-sizing: border-box;
 border: 2px solid rgba(0, 0, 0, 0.02);
-margin-bottom: 27px;
+margin-top: 27px;
 text-align: center;
 font-family: 'Ubuntu', sans-serif;
 }
@@ -45,7 +46,7 @@ font-family: 'Ubuntu', sans-serif;
 form.form1 {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -64,7 +65,7 @@ outline: none;
 box-sizing: border-box;
 border: 2px solid rgba(0, 0, 0, 0.02);
 text-align: center;
-margin-bottom: 27px;
+margin-top: 27px;
 font-family: 'Ubuntu', sans-serif;
 }
 
@@ -86,14 +87,15 @@ font-family: 'Ubuntu', sans-serif;
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    margin-top: 27px;
 }
 
 .forgot {
     text-shadow: 0px 0px 3px rgba(206, 205, 205, 0.12);
     color: black;
     padding-top: 15px;
-    margin-bottom: 10px;
     padding-bottom: 20px;
+    margin-bottom: 0px !important;
 }
 
 a {
@@ -135,4 +137,7 @@ input:focus::placeholder {
     color: red;
     margin-left: 12%;
     margin-right: 12%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

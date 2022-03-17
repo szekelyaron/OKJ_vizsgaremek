@@ -524,6 +524,7 @@ input[required] {
 
 .megrendelo {
     font-weight: bold;
+    font-size: 25px;
 }
 
 .elsomodal_szoveg {
@@ -566,6 +567,6 @@ input[required] {
     overflow-x: hidden;
 }
 
-.elfogad {
+#elfogad {
     margin-top: 20px !important;
 }
