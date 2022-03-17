@@ -4,11 +4,12 @@ const crypto = require("crypto");
 const { runInNewContext } = require("vm");
 var register = function(){};
 var nodemailer = require('nodemailer');
+const { getMaxListeners } = require("process");
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'carscope.site@gmail.com ',
-        pass: 'CarScope2022'
+        user: 'carscope.site@gmail.com',
+        pass: 'Carscope2022'
     }
 });
 
@@ -52,15 +53,21 @@ register.prototype.registerUser = function(req, res, next) {
                          console.log(err);
                          connection.release();
                      }else{
-                        var mailoptions = {
+                         console.log(req.body.email)
+                        var mailOptions = {
                             to: req.body.email,
-                            subject: 'SIKER!',
-                            text: 'Sikeresen regisztrál a CarScope oldalon!',
+                            subject: 'SIKER! - CarScope',
+                            text: 'Sikeresen regisztrál a CarScope oldalon!'
                         };
-                        transporter.sendMail(mailoptions, function(error, info){
-                            connection.release();
-                            res.redirect('/bejelentkezes')
-                        })
+                        transporter.sendMail(mailOptions, function(error, info){
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent: ' + info.response);
+                                connection.release();
+                                res.redirect('/bejelentkezes')
+                            }
+                        });
                      }
                  });
             }

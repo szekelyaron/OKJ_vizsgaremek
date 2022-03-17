@@ -391,15 +391,17 @@ exports.postRendeles = (req, res, next) => {
       for (let gumi of req.session.gumiabroncs) {
         if(termek.termek_id == gumi.GID)
         {
-        message += '<div><p>'+gumi.Evszak +','+gumi.Gyarto+','+gumi.Ar+':'+ termek.qty+'='+gumi.Ar*termek.qty+'+</p></div>';
+        message += '<div><p> Rendelés adatai:'+gumi.Evszak +', '+gumi.Gyarto+', Ár/db: '+gumi.Ar+' Rendelt mennyiség: '+ termek.qty+' Ára:'+gumi.Ar*termek.qty+'+</p></div>';
         }
       }
     }
-    message += '<div>'+req.session.user.kosarOsszeg +'</div></div>';
-    console.log(message);
-  console.log(iranyitoszam, telefonszam, varos, utca, hsz);
+    message += '<div><p> Teljes ár: '+req.session.user.kosarOsszeg +'</p></div></div>';
+    message += 'Telefonszám: '+telefonszam+" Cím: "+iranyitoszam+' '+varos+' '+utca+' '+hsz;
+  console.log(message);
+  var emails = "carscope.site@gmail.com,"+req.body.email;
+  console.log(emails);
   var mailOptions = {
-    to: "carscope.site@gmail.com," + req.body.email,
+    to: emails,
     subject: "Rendelés-email",
     html: message,
   };
