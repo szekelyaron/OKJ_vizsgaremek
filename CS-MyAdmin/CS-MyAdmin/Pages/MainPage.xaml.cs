@@ -15,6 +15,8 @@ using System.Collections.ObjectModel;
 using CS_MyAdmin.Models;
 using System.Linq;
 using System.Globalization;
+using System.Configuration;
+using MySqlConnector;
 
 namespace CS_MyAdmin.Pages
 {
@@ -44,6 +46,7 @@ namespace CS_MyAdmin.Pages
             cb_databases.Items.Add("gumiabroncs");
             cb_databases.Items.Add("info");
             cb_databases.SelectedIndex = 0;
+
 
             GumiFill(CB_GumiEvszak);
             GumiFill(CB_GumiInfo);
