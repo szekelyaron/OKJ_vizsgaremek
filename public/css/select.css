@@ -9,8 +9,17 @@ select {
     font-weight: bold;
     letter-spacing: 0.15em;
     border-radius: 0;
-  }
-  select:focus, select:active {
+}
+
+select:focus,
+select:active {
     outline: 0;
     border-bottom-color: red;
-  }
+}
+
+@media (min-width: 800px) {
+    select {
+        font-size: 25px;
+        width: 400px;
+    }
+}

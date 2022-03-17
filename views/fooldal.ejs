@@ -35,8 +35,7 @@
                     <div v-if="valasztott == 'R' && country_valasztott == 'M'">
                         <img src="img/magyar.png" class="landscape"></img>
                         <div class="rendszamdiv">
-                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text"
-                                placeholder="   -   " />
+                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" placeholder="   -   " />
                         </div>
 
                         <input type="text" id="R" name="R" hidden value="True">
@@ -48,8 +47,7 @@
                     <div v-if="valasztott == 'R' && country_valasztott == 'N'">
                         <img src="img/nemet.png" class="landscape">
                         <div class="rendszamdiv">
-                            <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam"
-                                type="text" />
+                            <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam" type="text" />
                         </div>
                         <input type="text" id="R" name="R" hidden value="True">
                         <input type="text" id="A" name="A" hidden value="False">
@@ -84,8 +82,7 @@
                             <div class="card" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
                                 <div class="card-body" style="display: block;">
                                     <div class="card-container">
-                                        <div class="mobile-only image-div"
-                                            style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
+                                        <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
                                         </div>
                                         <div class="card-container-left">
                                             <h1 class="card-title">
@@ -119,8 +116,7 @@
                                                     <%= lekerderedm_rendsz.Futottkm %>
                                                 </h5>
                                             </div>
-                                            <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt=""
-                                                class="ertekeles">
+                                            <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt="" class="ertekeles">
                                             <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
                                             <div class="details" style="display: none;">
                                                 <h5>
@@ -150,10 +146,7 @@
                                                                                         %>
                                                                                         gumiabroncscsal van szerelve.
                                                                                 </h5>
-                                                                                <h5 class="ad">Más gumiabroncsot is
-                                                                                    szeretne az autóra?<br> Látogassa
-                                                                                    meg <a
-                                                                                        href="/termekek"><u>webshopunkat</u></a>!
+                                                                                <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
                                                                                 </h5>
                                             </div>
                                         </div>
@@ -162,12 +155,10 @@
                                 <% } %>
 
                                     <% if (lekerderedm_alvaz !=undefined) {%>
-                                        <div class="card"
-                                            style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
+                                        <div class="card" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
                                             <div class="card-body" style="display: block;">
                                                 <div class="card-container">
-                                                    <div class="mobile-only image-div"
-                                                        style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
+                                                    <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
                                                     </div>
                                                     <div class="card-container-left">
                                                         <h1 class="card-title">
@@ -201,9 +192,8 @@
                                                                 <%= lekerderedm_alvaz.Futottkm %>
                                                             </h5>
                                                         </div>
-                                                        <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png" alt="" class="ertekeles"/>
-                                                        <button class="details-button"
-                                                            onclick="showDetails()">RÉSZLETEK</button>
+                                                        <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png" alt="" class="ertekeles" />
+                                                        <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
                                                         <div class="details" style="display: none;">
                                                             <h5>
                                                                 <%= lekerderedm_alvaz.Okmanyok %>
@@ -233,15 +223,9 @@
                                                                                             <h5>Az autó
                                                                                                 <%= lekerderedm_alvaz.Gumiabroncs
                                                                                                     %>
-                                                                                                    gumiabroncscsal van
-                                                                                                    szerelve.
+                                                                                                    gumiabroncscsal van szerelve.
                                                                                             </h5>
-                                                                                            <h5 class="ad">Más
-                                                                                                gumiabroncsot is
-                                                                                                szeretne az autóra?<br>
-                                                                                                Látogassa
-                                                                                                meg <a
-                                                                                                    href="/termekek"><u>webshopunkat</u></a>!
+                                                                                            <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
                                                                                             </h5>
                                                         </div>
                                                     </div>
@@ -256,11 +240,7 @@
                                                 <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
 
                                                 <div>
-                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
-                                                        ilyen rendszámú
-                                                        autó, próbáljon meg másikat vagy látogasson vissza később,
-                                                        adatbázisunk
-                                                        folyamatosan frissül!</h1>
+                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen rendszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül!</h1>
                                                 </div>
                                                 <% } %>
                                         </div>
@@ -268,14 +248,10 @@
                                             <% if (lekerderedm_alvaz==undefined && kerdezettEA==true) {%>
 
 
-                                                <img class="infokep" src="img/felkiáltójel.jpg" alt="Image Title" />
+                                                <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
 
                                                 <div>
-                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
-                                                        ilyen
-                                                        alvázszámú autó, próbáljon meg másikat vagy látogasson
-                                                        vissza később,
-                                                        adatbázisunk folyamatosan frissül!</h1>
+                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen alvázszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül!</h1>
                                                 </div>
 
                                                 <% } %>
@@ -290,15 +266,10 @@
                                                 <h1 class="info_cim">Kérjük ilyen formában adja meg a rendszámot</h1>
                                                 <div>
                                                     <div class="m_rendszam_pelda">
-                                                    <p class="rendszam_pelda"><img src="img/magyar.png" alt=""
-                                                            class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                                     </div>
-                                                    <p class="rendszam_pelda"><img src="img/nemet.png" alt=""
-                                                            class="landscape">
-                                                        : BGA4030N</p>
-                                                    <p class="rendszam_pelda"><img src="img/angol.png" alt=""
-                                                            class="landscape">
-                                                        : FD013GH&nbsp;&nbsp;</p>
+                                                    <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape"> : BGA4030N</p>
+                                                    <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape"> : FD013GH&nbsp;&nbsp;</p>
                                                     <p>
                                                         <%= lekerderedm_rendsz %>
                                                     </p>
@@ -311,13 +282,11 @@
                                             <img class="infokep" src="img/info.png" alt="Image Title" />
 
                                             <div>
-                                                <h1 class="info_cim">Kérjük ilyen formában adja meg az
-                                                    alvázszámot
+                                                <h1 class="info_cim">Kérjük ilyen formában adja meg az alvázszámot
                                                 </h1>
 
                                                 <div>
-                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt=""
-                                                            class="landscape2"> 12HDD45JHB33NK9L5</p>
+                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> 12HDD45JHB33NK9L5</p>
                                                     <p>
                                                         <%= lekerderedm_alvaz %>
                                                     </p>
@@ -325,6 +294,6 @@
                                             </div>
                                         </div>
                 </form>
-            </div>
+                </div>
     </body>
     <%- include('includes/footer.ejs') %>
