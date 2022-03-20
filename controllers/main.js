@@ -371,6 +371,7 @@ exports.getKosar = (req, res, next) => {
 exports.postRendeles = (req, res, next) => {
   var iranyitoszam = req.body.irsz;
   var telefonszam = req.body.tel;
+  var nev = req.body.vezetek +' '+req.body.kereszt;
   var varos = req.body.varos;
   var utca = req.body.utca;
   var hsz = req.body.hsz;

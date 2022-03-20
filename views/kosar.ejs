@@ -124,7 +124,8 @@
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
-
+                                                <input v-model='vezetek' class="un" type="text" name="vezetek" id="vezetek" placeholder="Vezetéknév" pattern="[A-Za-z]+">
+                                                <input v-model='kereszt' class="un" type="text" name="kereszt" id="kereszt" placeholder="Keresztnév" pattern="[A-Za-z]+">
                                                 <div class="form-text">
                                                     <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
                                                 </div>
@@ -146,10 +147,10 @@
                                                           Elfogadom az <a href="" data-toggle="modal" data-target="#tajekoztato">általános szerződési feltételeket</a> 
                                                     </label>
                                                 </div>
-                                                <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true && afsz_validate == true">
+                                                <div v-if="tel_validate == true && irsz_validate == true && utca_validate == true && varos_validate == true && szam_validate == true && afsz_validate == true && kereszt_validate == true && vezetek_validate == true">
                                                     <p align="center"><button type="submit" class="submit">Rendelés leadása</button></p>
                                                 </div>
-                                                <div v-else-if="tel_validate == false || irsz_validate == false || utca_validate == false || varos_validate == false || szam_validate == false || afsz_validate == false">
+                                                <div v-else-if="tel_validate == false || irsz_validate == false || utca_validate == false || varos_validate == false || szam_validate == false || afsz_validate == false || kereszt_validate == false || vezetek_validate == false">
                                                     <p align="center"><button type="submit" class="submitDisabled" disabled data-dismiss="modal">Rendelés leadása</button></p>
                                                 </div>
                                             </form>

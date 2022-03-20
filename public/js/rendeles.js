@@ -8,12 +8,16 @@ const app = Vue.createApp({
       number: "",
       afsz: "",
       isChecked: "",
+      vezetek:"",
+      kereszt:"",
       tel_validate: false,
       irsz_validate: false,
       utca_validate: false,
       varos_validate: false,
       szam_validate: false,
       afsz_validate: false,
+      vezetek_validate: false,
+      kereszt_validate: false
     };
   },
   methods: {
@@ -73,6 +77,28 @@ const app = Vue.createApp({
       }
       else{
         this.afsz_validate = false;
+      }
+    },
+    vezetek(value){
+      let a = value.replace(' ',''); 
+      console.log(a);
+      if(/^[a-zA-Z]+$/.test(a) == true && a.length > 0)
+      {
+        this.vezetek_validate = true;
+      }
+      else{
+        this.vezetek_validate = false;
+      }
+    },
+    kereszt(value){
+      let b = value.replace(' ',''); 
+      console.log(b);
+      if(/^[a-zA-Z]+$/.test(b) == true && b.length > 0)
+      {
+        this.kereszt_validate = true;
+      }
+      else{
+        this.kereszt_validate = false;
       }
     }
   },
