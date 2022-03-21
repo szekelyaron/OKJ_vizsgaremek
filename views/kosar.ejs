@@ -124,8 +124,8 @@
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
-                                                <input v-model='vezetek' class="un" type="text" name="vezetek" id="vezetek" placeholder="Vezetéknév" pattern="[A-Za-z]+">
-                                                <input v-model='kereszt' class="un" type="text" name="kereszt" id="kereszt" placeholder="Keresztnév" pattern="[A-Za-z]+">
+                                                <input v-model='vezetek' class="un" type="text" name="vezetek" id="vezetek" placeholder="Vezetéknév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
+                                                <input v-model='kereszt' class="un" type="text" name="kereszt" id="kereszt" placeholder="Keresztnév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
                                                 <div class="form-text">
                                                     <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
                                                 </div>
@@ -133,9 +133,9 @@
                                                 <div class="inline">
                                                     <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz" pattern="[0-9]{4}" placeholder="Irányítószám">
 
-                                                    <input v-model='city' class="un telepules" type="text" name="varos" id="varos" placeholder="Település">
+                                                    <input v-model='city' class="un telepules" type="text" name="varos" id="varos" placeholder="Település" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
                                                 </div>
-                                                <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca">
+                                                <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
 
                                                 <input v-model='number' class="un hazszam" type="text" name="hsz" id="hsz" maxlength="4" placeholder="Házszám">
 
