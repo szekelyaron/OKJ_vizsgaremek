@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Már 21. 09:35
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.10
+-- Létrehozás ideje: 2022. Már 21. 21:39
+-- Kiszolgáló verziója: 10.4.17-MariaDB
+-- PHP verzió: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,19 +34,19 @@ CREATE TABLE `auto` (
   `Gyarto` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
   `Tipus` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,
   `Megbizhatosag` int(11) NOT NULL,
-  `Tipshiba` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
+  `Tipushiba` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `auto`
 --
 
-INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipshiba`) VALUES
+INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALUES
 (1, 'Honda', 'Civic', 10, 'Ismeretlen'),
 (2, 'Volkswagen', 'Golf IV', 9, 'Korrózió'),
-(3, 'Volkswagen', 'Passat', 7, 'Főtengely csapágy'),
+(3, 'Volkswagen', 'Passat', 7, 'Fotengely csapágy'),
 (4, 'Ford', 'Focus', 5, 'Hengerfej'),
-(5, 'Opel', 'Corsa', 6, 'Futómű'),
+(5, 'Opel', 'Corsa', 6, 'Futómu'),
 (6, 'Mazda', '6', 8, 'EGR szelep'),
 (14, 'Seat', 'Leon', 9, 'Ismeretlen'),
 (21, 'Volkswagen', 'Arteon', 5, 'Led fényszóró meghibásodása'),
@@ -125,7 +125,7 @@ CREATE TABLE `info` (
   `Gumiabroncs` set('Nyári','Téli','Négyévszakos','') COLLATE utf8_hungarian_ci NOT NULL,
   `Auto_AID` int(11) NOT NULL,
   `Kepcim` text COLLATE utf8_hungarian_ci NOT NULL,
-  `Torott` set('Sérülésmentes','Apró sérülések','Eleje sérült','Hátulja sérült','Oldala sérült','Jelentősen sérült') COLLATE utf8_hungarian_ci NOT NULL
+  `Torott` set('Sérülésmentes','Apró sérülések','Eleje sérült','Hátulja sérült','Oldala sérült','Súlyosan sérült') COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -133,10 +133,9 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) VALUES
-(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, 'Újszerű', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 'Sérülésmentes'),
+(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, '', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 'Sérülésmentes'),
 (2, 'SGA-030', 'FZ123456789123456', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10 00:00:00', 'Nyári', 14, 'https://i3.infocar.ua/img/bazar2/733/732349/5581219_3.jpg', ''),
-(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', ''),
-(4, 'dgfgd', 'gdgd', 1010, 2000, '', 1, 'Érvényes magyar okmányokkal', '2022-03-22 00:00:00', 'Nyári', 14, 'ggrgr', 'Sérülésmentes');
+(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', '');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -176,7 +175,7 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT a táblához `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalo`
@@ -194,7 +193,7 @@ ALTER TABLE `gumiabroncs`
 -- AUTO_INCREMENT a táblához `info`
 --
 ALTER TABLE `info`
-  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Megkötések a kiírt táblákhoz
@@ -204,7 +203,7 @@ ALTER TABLE `info`
 -- Megkötések a táblához `info`
 --
 ALTER TABLE `info`
-  ADD CONSTRAINT `Autó_Info` FOREIGN KEY (`Auto_AID`) REFERENCES `auto` (`AID`) ON DELETE NO ACTION;
+  ADD CONSTRAINT `Autó_Info` FOREIGN KEY (`Auto_AID`) REFERENCES `auto` (`AID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
