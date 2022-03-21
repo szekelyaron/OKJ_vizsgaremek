@@ -118,7 +118,7 @@ CREATE TABLE `info` (
   `Alvazszam` varchar(17) COLLATE utf8_hungarian_ci NOT NULL,
   `Futottkm` int(11) NOT NULL,
   `Evjarat` year(4) NOT NULL,
-  `Allapot` set('Újszerű','Használt','Enyhén sérült','Frissen felújított','Sérült') COLLATE utf8_hungarian_ci NOT NULL,
+  `Allapot` set('Alig használt','Használt','Enyhén sérült','Frissen felújított','Sérült') COLLATE utf8_hungarian_ci NOT NULL,
   `VezetettSzervK` tinyint(1) NOT NULL,
   `Okmanyok` set('Érvényes magyar okmányokkal','Lejárt magyar okmányokkal','Külföldi okmányokkal','Okmányok nélkül') COLLATE utf8_hungarian_ci NOT NULL,
   `Muszakierv` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
