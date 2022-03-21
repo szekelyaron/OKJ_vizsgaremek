@@ -175,8 +175,7 @@ ALTER TABLE `gumiabroncs`
 -- A tábla indexei `info`
 --
 ALTER TABLE `info`
-  ADD PRIMARY KEY (`IID`),
-  ADD UNIQUE KEY `Autó_AID` (`Auto_AID`);
+  ADD PRIMARY KEY (`IID`);
 
 --
 -- A tábla indexei `kosar`
