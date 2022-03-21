@@ -457,7 +457,7 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
-                    <ComboBox x:Name="cb_databases" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
+                    <ComboBox x:Name="cb_databases" VerticalContentAlignment="Center" Height="25" Width="100" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
                     <TextBox x:Name="TB_searchbar" Margin="5" Width="200" Height="25" VerticalContentAlignment="Center" TextChanged="TB_searchbar_TextChanged"/>
                     <Label x:Name="LBL_recordCount" FontWeight="Bold" Margin="5" Foreground="White"/>
                 </StackPanel>

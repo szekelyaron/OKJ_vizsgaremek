@@ -8,14 +8,21 @@ using System.ComponentModel;
 
 namespace CS_MyAdmin.Models
 {
-    class AutoModel 
+    class AutoModel : INotifyPropertyChanged, IDataErrorInfo
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void onProprertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         private int _aId;
 
         public int aId
         {
             get { return _aId; }
-            set { _aId = value; }
+            set { _aId = value; onProprertyChanged("aId"); }
         }
 
         private string _gyarto;
@@ -23,7 +30,7 @@ namespace CS_MyAdmin.Models
         public string gyarto
         {
             get { return _gyarto; }
-            set { _gyarto = value; }
+            set { _gyarto = value; onProprertyChanged("gyarto"); }
         }
 
         private string _tipus;
@@ -31,7 +38,7 @@ namespace CS_MyAdmin.Models
         public string tipus
         {
             get { return _tipus; }
-            set { _tipus = value; }
+            set { _tipus = value; onProprertyChanged("tipus"); }
         }
 
         private int _megbizhatosag;
@@ -39,7 +46,7 @@ namespace CS_MyAdmin.Models
         public int megbizhatosag
         {
             get { return _megbizhatosag; }
-            set { _megbizhatosag = value; }
+            set { _megbizhatosag = value; onProprertyChanged("megbizhatosag"); }
         }
 
         private string _tipusHiba;
@@ -47,7 +54,7 @@ namespace CS_MyAdmin.Models
         public string tipusHiba
         {
             get { return _tipusHiba; }
-            set { _tipusHiba = value; }
+            set { _tipusHiba = value; onProprertyChanged("tipusHiba"); }
         }
 
         public AutoModel()
@@ -137,6 +144,38 @@ namespace CS_MyAdmin.Models
 
                     cmd.ExecuteNonQuery();
                 }
+            }
+        }
+        public string Error => throw new NotImplementedException();
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case "gyarto":
+                        if (string.IsNullOrEmpty(gyarto))
+                        {
+                            return "Kötelező kitölteni!";
+                        }
+                        break;
+                    case "tipus":
+                        if (string.IsNullOrEmpty(tipus))
+                        {
+                            return "Kötelező kitölteni!";
+                        }
+                        break;
+                    case "tipusHiba":
+                        if (string.IsNullOrEmpty(tipusHiba))
+                        {
+                            return "Kötelező kitölteni!";
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return null;
             }
         }
 
