@@ -17,6 +17,7 @@ using System.Linq;
 using System.Globalization;
 using System.Configuration;
 using MySqlConnector;
+using System.ComponentModel;
 
 namespace CS_MyAdmin.Pages
 {
@@ -279,6 +280,11 @@ namespace CS_MyAdmin.Pages
                 }
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+        }
+
+        private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

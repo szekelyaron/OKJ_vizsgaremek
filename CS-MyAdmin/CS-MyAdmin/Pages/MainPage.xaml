@@ -483,13 +483,11 @@
                     </Button>
                 </StackPanel>
 
-                <StackPanel x:Name="SP_autokInsert" Visibility="Collapsed" HorizontalAlignment="Center" >
+                <StackPanel x:Name="SP_autokInsert" Visibility="Visible" HorizontalAlignment="Center" >
                     <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Gyártó:" Foreground="White"/>
-                        <TextBox x:Name="TB_gyarto" HorizontalAlignment="Left" Margin="5" Width="100" Text="{Binding gyarto, 
-                                    UpdateSourceTrigger=PropertyChanged, 
-                                    ValidatesOnDataErrors=True}"  />
+                        <TextBox x:Name="TB_gyarto" HorizontalAlignment="Left" Margin="5" Width="100"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Típus:" Foreground="White"/>
@@ -554,7 +552,7 @@
                         <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel x:Name="SP_infokInsert" Visibility="Visible" HorizontalAlignment="Center">
+                <StackPanel x:Name="SP_infokInsert" Visibility="Collapsed" HorizontalAlignment="Center">
                     <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Rendszám:" Foreground="White"/>
