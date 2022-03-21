@@ -19,8 +19,7 @@
                     <div class="card" style="background-image: url('<%= lekerderedm_vendeg.Kepcim %>');">
                         <div class="card-body" style="display: block;">
                             <div class="card-container">
-                                <div class="mobile-only image-div"
-                                    style="background-image: url('<%= lekerderedm_vendeg.Kepcim %>');">
+                                <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_vendeg.Kepcim %>');">
                                 </div>
                                 <div class="card-container-left">
                                     <h1 class="card-title">
@@ -38,38 +37,22 @@
                                     </h5>
 
                                 </div>
-                                <div class="card-container-right">
-                                    <div class="mobile-only">
-                                        <h1 class="card-title">
-                                            <%= lekerderedm_vendeg.Gyarto %>
-                                                <%= lekerderedm_vendeg.Tipus %>
-                                        </h1>
-                                        <h5>Évjárat:
-                                            <%= lekerderedm_vendeg.Evjarat %>
-                                        </h5>
-                                        <h5>Állapot:
-                                            <%= lekerderedm_vendeg.Allapot %>
-                                        </h5>
-                                        <h5>Futott km:
-                                            <%= lekerderedm_vendeg.Futottkm %>
-                                        </h5>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <% } %>
                             <% if (lekerderedm_vendeg==undefined && VendegKerdezettER==true) {%>
-                                    <div class="infokepdiv">
+                                <div class="infokepdiv">
                                     <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
-                                    </div>
-                                    <div>
-                                        <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
-                                            ilyen rendszámú
-                                            autó, próbáljon meg másikat vagy látogasson vissza később,
-                                            adatbázisunk
-                                            folyamatosan frissül!</h1>
-                                    </div>
-                                    
+                                </div>
+                                <div>
+                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs
+                                        ilyen rendszámú
+                                        autó, próbáljon meg másikat vagy látogasson vissza később,
+                                        adatbázisunk
+                                        folyamatosan frissül!</h1>
+                                </div>
+
                                 <% } %>
             </form>
     </body>
