@@ -44,8 +44,6 @@ namespace CS_MyAdmin.Models
 
         private string _tipusHiba;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public string tipusHiba
         {
             get { return _tipusHiba; }
