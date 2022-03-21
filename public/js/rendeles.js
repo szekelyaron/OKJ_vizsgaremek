@@ -30,7 +30,7 @@ const app = Vue.createApp({
   },
   watch: {
     postalcode(value) {
-      if (!/\D/.test(value) == true && value.length == 4) {
+      if (!/\D/.test(value) == true && value.length == 4 && value.replace(' ','') != '') {
         this.irsz_validate = true;
       } else {
         this.irsz_validate = false;
@@ -51,25 +51,28 @@ const app = Vue.createApp({
     },
 
     street(value) {
-      if (value.length > 1) {
+      if (value.length > 1 && value.replace(' ','') != '') {
         this.utca_validate = true;
       } else {
         this.utca_validate = false;
       }
     },
     city(value) {
-      if (value.length > 2) {
+      if (value.length > 2 && /^[a-zA-Z]+$/.test(value) == true && value.replace(' ','') != '') {
         this.varos_validate = true;
       } else {
         this.varos_validate = false;
       }
+      console.log(this.varos_validate)
     },
     number(value) {
-      if (/[0-9]/.test(value) == true && value != 0 && value != "") {
+      if (/[0-9]/.test(value) == true && value != 0 && value != "" && value.replace(' ','') != '') {
         this.szam_validate = true;
       } else {
         this.szam_validate = false;
       }
+      console.log(this.szam_validate)
+
     },
     afsz(value) {
       if(value == true){
