@@ -69,7 +69,7 @@ namespace CS_MyAdmin.Pages
             CB_Torott.Items.Add("Apró sérülések");
             CB_Torott.Items.Add("Eleje sérült");
             CB_Torott.Items.Add("Hátulja sérült");
-            CB_Torott.Items.Add("Jelentősen sérült");
+            CB_Torott.Items.Add("Súlyosan sérült");
             CB_Torott.SelectedIndex = 0;
 
 

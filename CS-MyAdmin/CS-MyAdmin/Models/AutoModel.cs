@@ -62,7 +62,7 @@ namespace CS_MyAdmin.Models
             this.gyarto = reader["Gyarto"].ToString();
             this.tipus = reader["Tipus"].ToString();
             this.megbizhatosag = Convert.ToInt32(reader["Megbizhatosag"]);
-            this.tipusHiba = reader["Tipshiba"].ToString();
+            this.tipusHiba = reader["Tipushiba"].ToString();
         }
 
         public static ObservableCollection<AutoModel> select()
@@ -93,7 +93,7 @@ namespace CS_MyAdmin.Models
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
                 con.Open();
-                var sql = "UPDATE auto SET AID = @id, Gyarto = @gyarto, Tipus = @tipus, Megbizhatosag = @megbizhatosag, Tipshiba = @tipushiba WHERE AID = @id";
+                var sql = "UPDATE auto SET AID = @id, Gyarto = @gyarto, Tipus = @tipus, Megbizhatosag = @megbizhatosag, Tipushiba = @tipushiba WHERE AID = @id";
                 using (var cmd = new MySqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
@@ -112,7 +112,7 @@ namespace CS_MyAdmin.Models
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
                 con.Open();
-                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`, `Tipshiba`) VALUES (@gyarto, @tipus, @megbizhatosag, @tipushiba)";
+                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALUES (@gyarto, @tipus, @megbizhatosag, @tipushiba)";
                 using (var cmd = new MySqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@gyarto", gyarto);
