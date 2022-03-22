@@ -483,7 +483,7 @@
                     </Button>
                 </StackPanel>
 
-                <StackPanel x:Name="SP_autokInsert" Visibility="Visible" HorizontalAlignment="Center" >
+                <StackPanel x:Name="SP_autokInsert" Visibility="Collapsed" HorizontalAlignment="Center" >
                     <Label Content="Új autó hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Gyártó:" Foreground="White"/>
@@ -552,7 +552,7 @@
                         <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel x:Name="SP_infokInsert" Visibility="Collapsed" HorizontalAlignment="Center">
+                <StackPanel x:Name="SP_infokInsert" Visibility="Visible" HorizontalAlignment="Center">
                     <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Rendszám:" Foreground="White"/>
@@ -574,7 +574,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Autó azon.:" Foreground="White"/>
-                        <TextBox x:Name="TB_autoAzon" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_autoAzon" Margin="5" Width="120" HorizontalAlignment="Left"/>
                         <Label Width="120" Content="Képcím:" Foreground="White"/>
                         <TextBox x:Name="TB_kepCim" Margin="5" Width="120" HorizontalAlignment="Left"/>
                     </StackPanel>

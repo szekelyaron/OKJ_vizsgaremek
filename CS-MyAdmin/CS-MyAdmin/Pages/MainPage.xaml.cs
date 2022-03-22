@@ -72,6 +72,10 @@ namespace CS_MyAdmin.Pages
             CB_Torott.Items.Add("Súlyosan sérült");
             CB_Torott.SelectedIndex = 0;
 
+            CB_autoAzon.ItemsSource = autok.Select(x => x.aId);
+            CB_autoAzon.SelectedIndex = 0;
+            
+
 
             autok = AutoModel.select();
             gumik = GumiModel.select();
@@ -171,6 +175,8 @@ namespace CS_MyAdmin.Pages
             {
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
+                CB_autoAzon.ItemsSource = autok.Select(x => x.aId);
+                CB_autoAzon.SelectedIndex = 0;
 
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
@@ -206,7 +212,7 @@ namespace CS_MyAdmin.Pages
             {
                 LB_InfouresMezo.IsEnabled = true;
                 InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), Convert.ToInt32(TB_szervkönyv.Text), CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
-                    Convert.ToInt32(TB_autoAzon.Text), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
+                    Convert.ToInt32(CB_autoAzon.SelectedItem), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
 
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
