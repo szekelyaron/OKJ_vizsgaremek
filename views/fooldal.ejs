@@ -260,12 +260,12 @@
 
                                         <!--Útmutató a megfelelő beviteli formához-->
 
-                                        <div v-if="valasztott == 'R' && country_valasztott != ''">
+                                        <div v-if="valasztott == 'R' && country_valasztott != ''" class="info">
                                             <img class="infokep" src="img/info.png" alt="Image Title" />
 
-                                            <div class="postcard__text">
+                                            <div class="">
                                                 <h1 class="info_cim">Kérjük ilyen formában adja meg a rendszámot</h1>
-                                                <div>
+                                                <div class="sotetitett">
                                                     <div class="m_rendszam_pelda">
                                                         <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                                     </div>
@@ -287,7 +287,7 @@
                                                 </h1>
 
                                                 <div>
-                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"> 12HDD45JHB33NK9L5</p>
+                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"><p class="rendszam_pelda sotetitett">12HDD45JHB33NK9L5</p></p>
                                                     <p>
                                                         <%= lekerderedm_alvaz %>
                                                     </p>

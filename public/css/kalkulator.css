@@ -4,6 +4,8 @@
 }
 html body{
     height: fit-content;
+    background-image: none !important;
+    background-color: black;
 }
 
 .title {
