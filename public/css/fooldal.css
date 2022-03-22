@@ -11,7 +11,9 @@
   text-align: center;
 }
 body{
-    background-color: black;
+    background-image: url("../img/fooldal_hatter.jpg");
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.0.2);
     height: fit-content;
     padding-bottom: 5vh;
 }
