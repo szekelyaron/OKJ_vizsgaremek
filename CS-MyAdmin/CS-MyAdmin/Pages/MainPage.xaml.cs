@@ -72,6 +72,10 @@ namespace CS_MyAdmin.Pages
             CB_Torott.Items.Add("Súlyosan sérült");
             CB_Torott.SelectedIndex = 0;
 
+            CB_szervkönyv.Items.Add("Nem");
+            CB_szervkönyv.Items.Add("Igen");
+            CB_szervkönyv.SelectedIndex = 1;
+
             CB_autoAzon.ItemsSource = autok.Select(x => x.aId);
             CB_autoAzon.SelectedIndex = 0;
             
@@ -211,8 +215,10 @@ namespace CS_MyAdmin.Pages
             else
             {
                 LB_InfouresMezo.IsEnabled = true;
-                InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), Convert.ToInt32(TB_szervkönyv.Text), CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
+                InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
                     Convert.ToInt32(CB_autoAzon.SelectedItem), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
+                //foreach (TextBox textBox in LogicalTreeHelper.GetChildren(SP_infokInsert).OfType<TextBox>())
+                //    textBox.Text = "";
 
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
@@ -239,7 +245,6 @@ namespace CS_MyAdmin.Pages
                 InfoModel.delete(infok[DG_asd.SelectedIndex].IID);    
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
-                
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
