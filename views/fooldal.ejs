@@ -12,97 +12,80 @@
 
     <body>
         <div class="hatter">
-        <%- include('includes/navbar_fooldal.ejs') %>
+            <%- include('includes/navbar_fooldal.ejs') %>
 
-            <!--Lekérdezés -->
+                <!--Lekérdezés -->
 
-            <h1 class="font">Kérdezze le a járművet</h1>
+                <h1 class="font">Kérdezze le a járművet</h1>
 
-            <div id="cars" class="justify-content-center centered">
-                <select v-model="selected" id="cusSelectbox" name="options">
+                <div id="cars" class="justify-content-center centered">
+                    <select v-model="selected" id="cusSelectbox" name="options">
                     <option value="" selected disabled>Rendszám/Alvázszám</option>
                     <option value="R">Rendszám</option>
                     <option value="A">Alvázszám</option>
                 </select>
-                <div v-if="valasztott == 'R'" class="justify-content-center centered">
-                    <select v-model="country" id="cusSelectbox" name="options" class="justify-content-center">
+                    <div v-if="valasztott == 'R'" class="justify-content-center centered">
+                        <select v-model="country" id="cusSelectbox" name="options" class="justify-content-center">
                         <option value="" selected disabled>Ország</option>
                         <option value="M">Magyar</option>
                         <option value="N">Német</option>
                         <option value="A">Angol</option>
                     </select>
-                </div>
-                <form method="post" action="/fooldal">
-                    <div v-if="valasztott == 'R' && country_valasztott == 'M'">
-                        <img src="img/magyar.png" class="landscape"></img>
-                        <div class="rendszamdiv">
-                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" placeholder="   -   " />
+                    </div>
+                    <form method="post" action="/fooldal">
+                        <div v-if="valasztott == 'R' && country_valasztott == 'M'">
+                            <img src="img/magyar.png" class="landscape"></img>
+                            <div class="rendszamdiv">
+                                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" placeholder="   -   " />
+                            </div>
+
+                            <input type="text" id="R" name="R" hidden value="True">
+                            <input type="text" id="A" name="A" hidden value="False">
+                            <div class="centered keresBTN">
+                                <button type="submit" class="join_btn joinform">Keresés</button>
+                            </div>
+                        </div>
+                        <div v-if="valasztott == 'R' && country_valasztott == 'N'">
+                            <img src="img/nemet.png" class="landscape">
+                            <div class="rendszamdiv">
+                                <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam" type="text" />
+                            </div>
+                            <input type="text" id="R" name="R" hidden value="True">
+                            <input type="text" id="A" name="A" hidden value="False">
+                            <div class="centered keresBTN">
+                                <button type="submit" class="join_btn joinform">Keresés</button>
+                            </div>
+                        </div>
+                        <div v-if="valasztott == 'R' && country_valasztott == 'A'">
+                            <img src="img/angol.png" class="landscape">
+                            <div class="rendszamdiv">
+                                <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" />
+                            </div>
+                            <input type="text" id="R" name="R" hidden value="True">
+                            <input type="text" id="A" name="A" hidden value="False">
+                            <div class="centered keresBTN">
+                                <button type="submit" class="join_btn joinform">Keresés</button>
+                            </div>
+                        </div>
+                        <div v-if="valasztott == 'A'">
+                            <input maxlength='17' value='' class="alvazszam" id="alvazszam" name="alvazszam" type="text" />
+                            <input type="text" id="A" name="A" hidden value="True">
+                            <input type="text" id="R" name="R" hidden value="False">
+                            <div class="centered keresBTN">
+                                <button type="submit" class="join_btn joinform">Keresés</button>
+                            </div>
                         </div>
 
-                        <input type="text" id="R" name="R" hidden value="True">
-                        <input type="text" id="A" name="A" hidden value="False">
-                        <div class="centered keresBTN">
-                            <button type="submit" class="join_btn joinform">Keresés</button>
-                        </div>
-                    </div>
-                    <div v-if="valasztott == 'R' && country_valasztott == 'N'">
-                        <img src="img/nemet.png" class="landscape">
-                        <div class="rendszamdiv">
-                            <input maxlength='8' value='' class="rendszam nemet" id="rendszam" name="rendszam" type="text" />
-                        </div>
-                        <input type="text" id="R" name="R" hidden value="True">
-                        <input type="text" id="A" name="A" hidden value="False">
-                        <div class="centered keresBTN">
-                            <button type="submit" class="join_btn joinform">Keresés</button>
-                        </div>
-                    </div>
-                    <div v-if="valasztott == 'R' && country_valasztott == 'A'">
-                        <img src="img/angol.png" class="landscape">
-                        <div class="rendszamdiv">
-                            <input maxlength='7' value='' class="rendszam" id="rendszam" name="rendszam" type="text" />
-                        </div>
-                        <input type="text" id="R" name="R" hidden value="True">
-                        <input type="text" id="A" name="A" hidden value="False">
-                        <div class="centered keresBTN">
-                            <button type="submit" class="join_btn joinform">Keresés</button>
-                        </div>
-                    </div>
-                    <div v-if="valasztott == 'A'">
-                        <input maxlength='17' value='' class="alvazszam" id="alvazszam" name="alvazszam" type="text" />
-                        <input type="text" id="A" name="A" hidden value="True">
-                        <input type="text" id="R" name="R" hidden value="False">
-                        <div class="centered keresBTN">
-                            <button type="submit" class="join_btn joinform">Keresés</button>
-                        </div>
-                    </div>
+                        <!--Kiírása a sikeres lekérdezésnek-->
+                        <div v-if="valasztott == ''">
+                            <% if (lekerderedm_rendsz !=undefined) {%>
 
-                    <!--Kiírása a sikeres lekérdezésnek-->
-                    <div v-if="valasztott == ''">
-                        <% if (lekerderedm_rendsz !=undefined) {%>
-
-                            <div class="card" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
-                                <div class="card-body" style="display: block;">
-                                    <div class="card-container">
-                                        <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
-                                        </div>
-                                        <div class="card-container-left">
-                                            <h1 class="card-title">
-                                                <%= lekerderedm_rendsz.Gyarto %>
-                                                    <%= lekerderedm_rendsz.Tipus %>
-                                            </h1>
-                                            <h5>Évjárat:
-                                                <%= lekerderedm_rendsz.Evjarat %>
-                                            </h5>
-                                            <h5>Állapot:
-                                                <%= lekerderedm_rendsz.Allapot %>
-                                            </h5>
-                                            <h5>Futott km:
-                                                <%= lekerderedm_rendsz.Futottkm %>
-                                            </h5>
-
-                                        </div>
-                                        <div class="card-container-right">
-                                            <div class="mobile-only">
+                                <div class="card" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
+                                    <div class="card-body" style="display: block;">
+                                        <div class="card-container">
+                                            <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
+                                            </div>
+                                            <div class="card-container-left">
                                                 <h1 class="card-title">
                                                     <%= lekerderedm_rendsz.Gyarto %>
                                                         <%= lekerderedm_rendsz.Tipus %>
@@ -116,69 +99,69 @@
                                                 <h5>Futott km:
                                                     <%= lekerderedm_rendsz.Futottkm %>
                                                 </h5>
+
                                             </div>
-                                            <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt="" class="ertekeles">
-                                            <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
-                                            <div class="details" style="display: none;">
-                                                <h5>
-                                                    <%= lekerderedm_rendsz.Okmanyok %>
-                                                </h5>
-                                                <% if(lekerderedm_rendsz.VezetettSzervK==0) { %>
-                                                    <h5>Nincs vezetett szervizkönyv</h5>
-                                                    <% } %>
-                                                        <% if(lekerderedm_rendsz.VezetettSzervK==1) { %>
-                                                            <h5>Vezetett szervízkönyvvel rendelkezik</h5>
-                                                            <% } %>
-                                                                <% if(lekerderedm_rendsz.Torott==0) { %>
-                                                                    <h5>Az autónak nincs ismert kártörténete</h5>
-                                                                    <% } %>
-                                                                        <% if(lekerderedm_rendsz.Torott==1) { %>
-                                                                            <h5>Az autó törve volt</h5>
-                                                                            <% } %>
-                                                                                <h5>Ismert típushibák:
-                                                                                    <%= lekerderedm_rendsz.Tipushiba %>
-                                                                                </h5>
-                                                                                <h5>Ismert típushibák:
-                                                                                    <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.')
+                                            <div class="card-container-right">
+                                                <div class="mobile-only">
+                                                    <h1 class="card-title">
+                                                        <%= lekerderedm_rendsz.Gyarto %>
+                                                            <%= lekerderedm_rendsz.Tipus %>
+                                                    </h1>
+                                                    <h5>Évjárat:
+                                                        <%= lekerderedm_rendsz.Evjarat %>
+                                                    </h5>
+                                                    <h5>Állapot:
+                                                        <%= lekerderedm_rendsz.Allapot %>
+                                                    </h5>
+                                                    <h5>Futott km:
+                                                        <%= lekerderedm_rendsz.Futottkm %>
+                                                    </h5>
+                                                </div>
+                                                <img src="img/<%= lekerderedm_rendsz.Megbizhatosag %>.png" alt="" class="ertekeles">
+                                                <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
+                                                <div class="details" style="display: none;">
+                                                    <h5>
+                                                        <%= lekerderedm_rendsz.Okmanyok %>
+                                                    </h5>
+                                                    <% if(lekerderedm_rendsz.VezetettSzervK==0) { %>
+                                                        <h5>Nincs vezetett szervizkönyv</h5>
+                                                        <% } %>
+                                                            <% if(lekerderedm_rendsz.VezetettSzervK==1) { %>
+                                                                <h5>Vezetett szervízkönyvvel rendelkezik</h5>
+                                                                <% } %>
+                                                                    <% if(lekerderedm_rendsz.Torott==0) { %>
+                                                                        <h5>Az autónak nincs ismert kártörténete</h5>
+                                                                        <% } %>
+                                                                            <% if(lekerderedm_rendsz.Torott==1) { %>
+                                                                                <h5>Az autó törve volt</h5>
+                                                                                <% } %>
+                                                                                    <h5>Ismert típushibák:
+                                                                                        <%= lekerderedm_rendsz.Tipushiba %>
+                                                                                    </h5>
+                                                                                    <h5>Ismert típushibák:
+                                                                                        <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.')
                                                                                         %>
-                                                                                </h5>
-                                                                                <h5>Az autó
-                                                                                    <%= lekerderedm_rendsz.Gumiabroncs
+                                                                                    </h5>
+                                                                                    <h5>Az autó
+                                                                                        <%= lekerderedm_rendsz.Gumiabroncs
                                                                                         %>
-                                                                                        gumiabroncscsal van szerelve.
-                                                                                </h5>
-                                                                                <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
-                                                                                </h5>
+                                                                                            gumiabroncscsal van szerelve.
+                                                                                    </h5>
+                                                                                    <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
+                                                                                    </h5>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <% } %>
+                                    <% } %>
 
-                                    <% if (lekerderedm_alvaz !=undefined) {%>
-                                        <div class="card" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
-                                            <div class="card-body" style="display: block;">
-                                                <div class="card-container">
-                                                    <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
-                                                    </div>
-                                                    <div class="card-container-left">
-                                                        <h1 class="card-title">
-                                                            <%= lekerderedm_alvaz.Gyarto %>
-                                                                <%= lekerderedm_alvaz.Tipus %>
-                                                        </h1>
-                                                        <h5>Évjárat:
-                                                            <%= lekerderedm_alvaz.Evjarat %>
-                                                        </h5>
-                                                        <h5>Állapot:
-                                                            <%= lekerderedm_alvaz.Allapot %>
-                                                        </h5>
-                                                        <h5>Futott km:
-                                                            <%= lekerderedm_alvaz.Futottkm %>
-                                                        </h5>
-
-                                                    </div>
-                                                    <div class="card-container-right">
-                                                        <div class="mobile-only">
+                                        <% if (lekerderedm_alvaz !=undefined) {%>
+                                            <div class="card" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
+                                                <div class="card-body" style="display: block;">
+                                                    <div class="card-container">
+                                                        <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_alvaz.Kepcim %>');">
+                                                        </div>
+                                                        <div class="card-container-left">
                                                             <h1 class="card-title">
                                                                 <%= lekerderedm_alvaz.Gyarto %>
                                                                     <%= lekerderedm_alvaz.Tipus %>
@@ -192,110 +175,133 @@
                                                             <h5>Futott km:
                                                                 <%= lekerderedm_alvaz.Futottkm %>
                                                             </h5>
+
                                                         </div>
-                                                        <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png" alt="" class="ertekeles" />
-                                                        <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
-                                                        <div class="details" style="display: none;">
-                                                            <h5>
-                                                                <%= lekerderedm_alvaz.Okmanyok %>
-                                                            </h5>
-                                                            <% if(lekerderedm_alvaz.VezetettSzervK==0) { %>
-                                                                <h5>Nincs vezetett szervizkönyv</h5>
-                                                                <% } %>
-                                                                    <% if(lekerderedm_alvaz.VezetettSzervK==1) { %>
-                                                                        <h5>Vezetett szervízkönyvvel rendelkezik</h5>
-                                                                        <% } %>
-                                                                            <% if(lekerderedm_alvaz.Torott==0) { %>
-                                                                                <h5>Az autónak nincs ismert kártörténete
-                                                                                </h5>
-                                                                                <% } %>
-                                                                                    <% if(lekerderedm_alvaz.Torott==1) {
+                                                        <div class="card-container-right">
+                                                            <div class="mobile-only">
+                                                                <h1 class="card-title">
+                                                                    <%= lekerderedm_alvaz.Gyarto %>
+                                                                        <%= lekerderedm_alvaz.Tipus %>
+                                                                </h1>
+                                                                <h5>Évjárat:
+                                                                    <%= lekerderedm_alvaz.Evjarat %>
+                                                                </h5>
+                                                                <h5>Állapot:
+                                                                    <%= lekerderedm_alvaz.Allapot %>
+                                                                </h5>
+                                                                <h5>Futott km:
+                                                                    <%= lekerderedm_alvaz.Futottkm %>
+                                                                </h5>
+                                                            </div>
+                                                            <img src="img/<%= lekerderedm_alvaz.Megbizhatosag %>.png" alt="" class="ertekeles" />
+                                                            <button class="details-button" onclick="showDetails()">RÉSZLETEK</button>
+                                                            <div class="details" style="display: none;">
+                                                                <h5>
+                                                                    <%= lekerderedm_alvaz.Okmanyok %>
+                                                                </h5>
+                                                                <% if(lekerderedm_alvaz.VezetettSzervK==0) { %>
+                                                                    <h5>Nincs vezetett szervizkönyv</h5>
+                                                                    <% } %>
+                                                                        <% if(lekerderedm_alvaz.VezetettSzervK==1) { %>
+                                                                            <h5>Vezetett szervízkönyvvel rendelkezik</h5>
+                                                                            <% } %>
+                                                                                <% if(lekerderedm_alvaz.Torott==0) { %>
+                                                                                    <h5>Az autónak nincs ismert kártörténete
+                                                                                    </h5>
+                                                                                    <% } %>
+                                                                                        <% if(lekerderedm_alvaz.Torott==1) {
                                                                                         %>
-                                                                                        <h5>Az autó törve volt</h5>
-                                                                                        <% } %>
-                                                                                            <h5>Ismert típushibák:
-                                                                                                <%= lekerderedm_alvaz.Tipushiba
+                                                                                            <h5>Az autó törve volt</h5>
+                                                                                            <% } %>
+                                                                                                <h5>Ismert típushibák:
+                                                                                                    <%= lekerderedm_alvaz.Tipushiba
                                                                                                     %>
-                                                                                            </h5>
-                                                                                            <h5>Ismert típushibák:
-                                                                                                <%= lekerderedm_alvaz.Muszakierv.replace(/-/g,'.')
+                                                                                                </h5>
+                                                                                                <h5>Ismert típushibák:
+                                                                                                    <%= lekerderedm_alvaz.Muszakierv.replace(/-/g,'.')
                                                                                                     %>
-                                                                                            </h5>
-                                                                                            <h5>Az autó
-                                                                                                <%= lekerderedm_alvaz.Gumiabroncs
+                                                                                                </h5>
+                                                                                                <h5>Az autó
+                                                                                                    <%= lekerderedm_alvaz.Gumiabroncs
                                                                                                     %>
-                                                                                                    gumiabroncscsal van szerelve.
-                                                                                            </h5>
-                                                                                            <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
-                                                                                            </h5>
+                                                                                                        gumiabroncscsal van szerelve.
+                                                                                                </h5>
+                                                                                                <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
+                                                                                                </h5>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <% } %>
                                             </div>
-                                            <% } %>
-                                        </div>
-                                        <!--Ha nincs ilyen az adatbázisban-->
-                                        <div v-if="valasztott == ''">
-                                            <% if (lekerderedm_rendsz==undefined && kerdezettER==true) {%>
+                                            <!--Ha nincs ilyen az adatbázisban-->
+                                            <div v-if="valasztott == ''">
+                                                <% if (lekerderedm_rendsz==undefined && kerdezettER==true) {%>
 
-                                                <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
+                                                    <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
 
-                                                <div>
-                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen rendszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül!</h1>
-                                                </div>
-                                                <% } %>
-                                        </div>
-                                        <div v-if="valasztott == ''">
-                                            <% if (lekerderedm_alvaz==undefined && kerdezettEA==true) {%>
-
-
-                                                <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
-
-                                                <div>
-                                                    <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen alvázszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül!</h1>
-                                                </div>
-
-                                                <% } %>
-                                        </div>
-
-                                        <!--Útmutató a megfelelő beviteli formához-->
-
-                                        <div v-if="valasztott == 'R' && country_valasztott != ''" class="info">
-                                            <img class="infokep" src="img/info.png" alt="Image Title" />
-
-                                            <div class="">
-                                                <h1 class="info_cim">Kérjük ilyen formában adja meg a rendszámot</h1>
-                                                <div class="sotetitett">
-                                                    <div class="m_rendszam_pelda">
-                                                        <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                    <div>
+                                                        <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen rendszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül.</h1>
                                                     </div>
-                                                    <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape"> : BGA4030N</p>
-                                                    <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape"> : FD013GH&nbsp;&nbsp;</p>
-                                                    <p>
-                                                        <%= lekerderedm_rendsz %>
-                                                    </p>
-                                                </div>
+                                                    <% } %>
+                                            </div>
+                                            <div v-if="valasztott == ''">
+                                                <% if (lekerderedm_alvaz==undefined && kerdezettEA==true) {%>
+
+
+                                                    <img class="infokep" src="img/felkiáltójel.png" alt="Image Title" />
+
+                                                    <div>
+                                                        <h1 class="nincs_talalat">Sajnos az adatbázisunkban nincs ilyen alvázszámú autó, próbáljon meg másikat vagy látogasson vissza később, adatbázisunk folyamatosan frissül.</h1>
+                                                    </div>
+
+                                                    <% } %>
                                             </div>
 
-                                        </div>
-                                        <div v-if="valasztott == 'A'">
+                                            <!--Útmutató a megfelelő beviteli formához-->
 
-                                            <img class="infokep" src="img/info.png" alt="Image Title" />
+                                            <div v-if="valasztott == 'R' && country_valasztott != ''" class="info">
+                                                <img class="infokep" src="img/info.png" alt="Image Title" />
 
-                                            <div>
-                                                <h1 class="info_cim">Kérjük ilyen formában adja meg az alvázszámot
-                                                </h1>
+                                                <div class="">
+                                                    <h1 class="info_cim">Kérjük ilyen formában adja meg a rendszámot</h1>
+                                                    <div class="sotetitett">
+                                                        <div class="m_rendszam_pelda">
+                                                            <p class="rendszam_pelda"><img src="img/magyar.png" alt="" class="landscape"> : SGA-030&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                                        </div>
+                                                        <div class="n_rendszam_pelda">
+                                                            <p class="rendszam_pelda"><img src="img/nemet.png" alt="" class="landscape"> : BGA4030N</p>
+                                                        </div>
+                                                        <div class="a_rendszam_pelda">
+                                                            <p class="rendszam_pelda"><img src="img/angol.png" alt="" class="landscape"> : FD013GH&nbsp;&nbsp;</p>
+                                                        </div>
+                                                        <p>
+                                                            <%= lekerderedm_rendsz %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div v-if="valasztott == 'A'">
+
+                                                <img class="infokep" src="img/info.png" alt="Image Title" />
 
                                                 <div>
-                                                    <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2"><p class="rendszam_pelda sotetitett">12HDD45JHB33NK9L5</p></p>
-                                                    <p>
-                                                        <%= lekerderedm_alvaz %>
-                                                    </p>
+                                                    <h1 class="info_cim">Kérjük ilyen formában adja meg az alvázszámot
+                                                    </h1>
+
+                                                    <div>
+                                                        <p class="rendszam_pelda"><img src="img/alvazszam.png" alt="" class="landscape2">
+                                                            <p class="rendszam_pelda sotetitett">12HDD45JHB33NK9L5</p>
+                                                        </p>
+                                                        <p>
+                                                            <%= lekerderedm_alvaz %>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                </form>
-                </div>
-            </div>
+                    </form>
+                    </div>
+                    </div>
     </body>
     <%- include('includes/footer.ejs') %>

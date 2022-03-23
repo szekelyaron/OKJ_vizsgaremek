@@ -1,74 +1,71 @@
 <%- include('includes/header.ejs') %>
-<link rel="stylesheet" href="/css/kalkulator.css" defer>
-<link rel="stylesheet" href="/css/buttons.css">
-<link rel="stylesheet" href="/css/fooldal.css">
-<script src="https://unpkg.com/vue@next" defer></script>
-<script src="/js/kalkulator.js" defer></script>
+    <link rel="stylesheet" href="/css/kalkulator.css" defer>
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/fooldal.css">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="/js/kalkulator.js" defer></script>
 
-<body>
-    <%- include('includes/navbar_fooldal.ejs') %>
-    <h1 class="h1-responsive font-weight-bold mt-sm-5 text-center title" style="color: white;">Kerék magasság kalkulátor
-    </h1>
-    <form method="post" action="/kalkulator" class="centered">
-        <div id="kalkulator" class="justify-content-center centered">
-            <label class="field field_v2">
+    <body>
+        <%- include('includes/navbar_fooldal.ejs') %>
+            <h1 class="h1-responsive font-weight-bold mt-sm-5 text-center title" style="color: white;">Kerék magasság kalkulátor
+            </h1>
+            <form method="post" action="/kalkulator" class="centered">
+                <div id="kalkulator" class="justify-content-center centered">
+                    <label class="field field_v2">
                 <input class="field__input" placeholder="(101-400)" v-model='szelesseg' maxlength='3' id="szelesseg"
                     name="szelesseg" type="text" maxlength="3">
                 <span class="field__label-wrap">
                     <span class="field__label">Szélesség</span>
                 </span>
             </label>
-            <label class="field field_v2">
+                    <label class="field field_v2">
                 <input class="field__input" placeholder="(20-100)" v-model='oldalfal' maxlength='2' id="oldalfal"
                     name="oldalfal" type="text" maxlength="2">
                 <span class="field__label-wrap">
-                    <span class="field__label">Oldalfal</span>
+                    <span class="field__label">Profilarány</span>
                 </span>
             </label>
-            <label class="field field_v2">
+                    <label class="field field_v2">
                 <input class="field__input" placeholder="(13-24)" v-model='magassag' maxlength='2' id="magassag"
                     name="magassag" type="text" maxlength="2">
                 <span class="field__label-wrap">
-                    <span class="field__label">Magasság</span>
+                    <span class="field__label">Átmérő</span>
                 </span>
             </label>
-            <div v-if="magassag_validate == true && oldalfal_validate == true && szelesseg_validate == true">
-                <div class="centered keresBTN">
-                    <button type="submit" class="join_btn joinform">Számítás</button>
+                    <div v-if="magassag_validate == true && oldalfal_validate == true && szelesseg_validate == true">
+                        <div class="centered keresBTN">
+                            <button type="submit" class="join_btn joinform">Számítás</button>
+                        </div>
+                    </div>
+                    <div v-else-if="magassag_validate == false || oldalfal_validate == false || szelesseg_validate == false">
+                        <div class="centered keresBTN">
+                            <button disabled type="button" class="disabled">Számítás</button>
+                        </div>
+                    </div>
+                    <div class="eredmeny">
+                        <% if (Eredmeny !=undefined) {%>
+                            <p style="color: white;">Kerékmagasság:
+                                <%= Eredmeny.toFixed(2)%> cm</p>
+                            <% } %>
+                    </div>
                 </div>
-            </div>
-            <div v-else-if="magassag_validate == false || oldalfal_validate == false || szelesseg_validate == false">
-                <div class="centered keresBTN">
-                    <button disabled type="button" class="disabled">Számítás</button>
+
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <img src="img/gumimeret.png" alt="gumi_tulajdonságok" title="gumi_tulajdonságok" class="gumikep">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2 class="magyarazat_cim">MIT JELÖL A GUMI MÉRET?</h2>
+                            <pv class="magyarazat">A gumik oldalán mindig található egy hosszú, betűkkel kiegészített számsor, mely az abroncs részletes adatait jelöli. Ez a kód informál bennünket mindenről: a profil méreteiről, a belső konstrukcióról, a felni átmérőjéről,
+                                a terhelési- és súlyindexről. Ezekre az információkra mindenképpen szükségünk lesz vásárláskor, azonban mielőtt megvásárolnánk egy gumit, ne feledkezzünk meg a nulladik kérdésről: egyáltalán mekkora lesz a kerékmagasság?
+                            </pv>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="eredmeny">
-                <% if (Eredmeny !=undefined) {%>
-                <p style="color: white;">Kerékmagasság:
-                    <%= Eredmeny.toFixed(2)%> cm</p>
-                <% } %>
-            </div>
-        </div>
 
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <img src="img/gumimeret.png" alt="gumi_tulajdonságok" title="gumi_tulajdonságok" class="gumikep">
-                </div>
-                <div class="flip-box-back">
-                    <h2 class="magyarazat_cim">MIT JELÖL A GUMI MÉRET?</h2>
-                    <pv class="magyarazat">A gumik oldalán mindig található egy hosszú, betűkkel kiegészített számsor, mely az abroncs
-                        részletes adatait jelöli. Ez a kód informál bennünket mindenről: a profil méreteiről, a belső
-                        konstrukcióról, a felni átmérőjéről, a terhelési- és súlyindexről. Ezekre az információkra
-                        mindenképpen szükségünk lesz vásárláskor, azonban mielőtt megvásárolnánk egy gumit,
-                        ne feledkezzünk meg a nulladik kérdésről: egyáltalán mekkora lesz a kerékmagasság?
-                    </pv>
-            </div>
-        </div>
-        </div>
-
-    </form>
+            </form>
 
 
-</body>
-<%- include('includes/footer.ejs') %>
+    </body>
+    <%- include('includes/footer.ejs') %>

@@ -36,9 +36,16 @@
                                     <span>
                                         <% for(let gumi of lekerderedm_gumik){ %>
                                             <% if(gumi.GID==kosar.termek_id) {%>
-                                                <%= gumi.Evszak %>
+                                                <%= gumi.Evszak %>,
                                                     <%}%>
                                                         <%}%>
+                                        <% for(let gumi of lekerderedm_gumik){ %>
+                                            <% if(gumi.GID==kosar.termek_id) {%>
+                                                <%= gumi.Szelesseg %>/
+                                                <%= gumi.Oldalfal %> R
+                                                <%= gumi.Atmero %>
+                                            <%}%>
+                                        <%}%>
                                     </span>
                                     <span>
                                         <% for(let gumi of lekerderedm_gumik){ %>
@@ -115,19 +122,20 @@
                                                         <% for(let gumi of lekerderedm_gumik){ %>
                                                             <% if(gumi.GID==kosar.termek_id) {%>
                                                                 <%= gumi.Gyarto %>
-                                                                    (<%= kosar.qty %>db)
+                                                                    (
+                                                                    <%= kosar.qty %>db)
                                                                         <br>
                                                                         <%}%>
                                                                             <%}%>
                                                                                 <%}%>
-                                                                                
+
                                                 </p>
                                             </div>
                                             <form class="form1" method="POST" action="/elkuld" id="rendeles">
                                                 <div class="inline">
-                                                <input v-model='vezetek' class="un vnev" type="text" name="vezetek" id="vezetek" placeholder="Vezetéknév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
-                                                <input v-model='kereszt' class="un knev" type="text" name="kereszt" id="kereszt" placeholder="Keresztnév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
-                                            </div>
+                                                    <input v-model='vezetek' class="un vnev" type="text" name="vezetek" id="vezetek" placeholder="Vezetéknév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
+                                                    <input v-model='kereszt' class="un knev" type="text" name="kereszt" id="kereszt" placeholder="Keresztnév" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170]*">
+                                                </div>
                                                 <div class="form-text">
                                                     <input v-model='telephone' class="un telefonszam" type="tel" id="tel" name="tel" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" required placeholder="Telefonszám, pl: 30 222 5503">
                                                 </div>
@@ -161,24 +169,24 @@
                                 </div>
                                 <%}%>
 
-                                <div class="modal fade bd-example-modal-lg" id="tajekoztato" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content main">
-                                            <div class="header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <div class="modal fade bd-example-modal-lg" id="tajekoztato" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content main">
+                                                <div class="header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span class="bezar" aria-hidden="true">&times;</span>
                                                 </button>
-                                                <p class="sign" align="center">Adatkezelési tájékoztató</p>
+                                                    <p class="sign" align="center">Adatkezelési tájékoztató</p>
+                                                </div>
+                                                <div class="tajekoztato_div">
+                                                    <p class="adatkezelesi_tajekoztato">
+                                                        <%- include('includes/afsz.ejs') %>
+                                                    </p>
+                                                </div>
+                                                <p align="center"><button name="elfogad" id="elfogad" @click="gombelfogad" type="submit elfogad" class="submit" data-dismiss="modal">Elfogadom</button></p>
                                             </div>
-                                            <div class="tajekoztato_div">
-                                                <p class="adatkezelesi_tajekoztato">
-                                                    <%- include('includes/afsz.ejs') %>
-                                                </p>
-                                            </div>
-                                            <p align="center"><button name="elfogad" id="elfogad" @click="gombelfogad" type="submit elfogad" class="submit" data-dismiss="modal">Elfogadom</button></p>
                                         </div>
                                     </div>
-                                </div>
 
     </body>
 
