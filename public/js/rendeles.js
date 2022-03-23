@@ -1,3 +1,10 @@
+function timer(obj){
+  setTimeout(function() {
+      $('#sikeresRendeles').modal('hide');
+  }, 800);
+};
+
+
 const app = Vue.createApp({
   data() {
     return {

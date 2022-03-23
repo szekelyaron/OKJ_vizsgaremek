@@ -360,7 +360,7 @@ exports.getKosar = (req, res, next) => {
         user: req.session.user,
         username: req.body.felhasznalonev,
         email: req.body.email,
-        siker: undefined
+        siker: true
       });
     } else {
       res.redirect("/vendeg");
@@ -400,7 +400,7 @@ exports.postRendeles = (req, res, next) => {
     message += '<div><p> Teljes ár: '+req.session.user.kosarOsszeg +'</p></div></div>';
     message += 'Megrendelő: '+ nev +' Telefonszám: '+telefonszam+" Cím: "+iranyitoszam+' '+varos+' '+utca+' '+hsz;
   console.log(message);
-  var emails = "carscope.site@gmail.com,"+req.body.email;
+  var emails = "carscope.site@gmail.com,"+req.session.user.Email;
   console.log(emails);
   var mailOptions = {
     to: emails,
@@ -408,6 +408,7 @@ exports.postRendeles = (req, res, next) => {
     html: message,
   };
 //email elkuldese
+var emailerror = false;
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
@@ -420,7 +421,7 @@ exports.postRendeles = (req, res, next) => {
         user: req.session.user,
         username: req.body.felhasznalonev,
         email: req.body.email,
-        siker: false
+        siker: false,
       });
     } else {
       console.log("Email elküldve: " + info.response);
@@ -435,6 +436,7 @@ exports.postRendeles = (req, res, next) => {
         email: req.body.email,
         siker: true,
       });
+
     }
   });
   req.session.user.kosar = [];
