@@ -302,24 +302,41 @@ namespace CS_MyAdmin.Pages
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        private void TB_Rendszam_LostFocus(object sender, RoutedEventArgs e)
         {
             
             if (((TextBox)sender).Text.Length < 7)
             {
-                MessageBox.Show("You need to write at least 7 characters into " + ((TextBox)sender).Name, "Hiba");
+                MessageBox.Show("You need to write at least 7 characters into " + ((TextBox)sender).Name, "Hiba",MessageBoxButton.OK,MessageBoxImage.Error);
                 ((TextBox)sender).Text = "";
                 return;
             }
-            
-
-            
 
         }
 
         private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void TB_Alvazszam_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length < ((TextBox)sender).MaxLength)
+            {
+                MessageBox.Show("You need to write 17 characters into " + ((TextBox)sender).Name, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                ((TextBox)sender).Text = "";
+                return;
+            }
+        }
+
+        private void TB_Evjarat_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(((TextBox)sender).Text) < 1901 || Convert.ToInt32(((TextBox)sender).Text) > 2155)
+            {
+                MessageBox.Show("The value of " + ((TextBox)sender).Name + " must be between 1901 and 2155!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                ((TextBox)sender).Text = "";
+                return;
+            }
         }
     }
 }

@@ -528,19 +528,19 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Ár:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
+                        <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" MaxLength="6" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Átmérő:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiAtmero" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
+                        <TextBox x:Name="TB_GumiAtmero" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Oldalfal:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiOldalfal" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
+                        <TextBox x:Name="TB_GumiOldalfal" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Szélesség:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiSzelesseg" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
+                        <TextBox x:Name="TB_GumiSzelesseg" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="BTN_insertGumi" Style="{StaticResource ButtonStyle1}"
@@ -556,15 +556,15 @@
                     <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Rendszám:" Foreground="White"/>
-                        <TextBox x:Name="TB_Rendszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="8" Focusable="True" LostFocus="TextBox_LostFocus"/>
+                        <TextBox x:Name="TB_Rendszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="8" Focusable="True" LostFocus="TB_Rendszam_LostFocus"/>
                         <Label Width="120" Content="Alvázszám:" Foreground="White"/>
-                        <TextBox x:Name="TB_Alvazszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="17"/>
+                        <TextBox x:Name="TB_Alvazszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="17" LostFocus="TB_Alvazszam_LostFocus"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Futott Km:" Foreground="White"/>
-                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
+                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="11"/>
                         <Label Width="120" Content="Évjárat:" Foreground="White"/>
-                        <TextBox x:Name="TB_Evjarat" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="4"/>
+                        <TextBox x:Name="TB_Evjarat" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="4" LostFocus="TB_Evjarat_LostFocus"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Vezetett szervizk.:" Foreground="White"/>
