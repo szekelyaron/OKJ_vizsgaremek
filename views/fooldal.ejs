@@ -96,7 +96,8 @@
                                                 <h5>Állapot:
                                                     <%= lekerderedm_rendsz.Allapot %>
                                                 </h5>
-                                                <h5>Futott km:
+                                                <h4>Futoásteljesítmény:</h4>
+                                                <h5>
                                                     <%= lekerderedm_rendsz.Futottkm %>
                                                 </h5>
 
@@ -113,7 +114,7 @@
                                                     <h5>Állapot:
                                                         <%= lekerderedm_rendsz.Allapot %>
                                                     </h5>
-                                                    <h5>Futott km:
+                                                    <h5>Futásteljesítmény:
                                                         <%= lekerderedm_rendsz.Futottkm %>
                                                     </h5>
                                                 </div>
@@ -124,7 +125,7 @@
                                                         <%= lekerderedm_rendsz.Okmanyok %>
                                                     </h5>
                                                     <% if(lekerderedm_rendsz.VezetettSzervK==0) { %>
-                                                        <h5>Nincs vezetett szervizkönyv</h5>
+                                                        <h5>Nem rendelkezik vezetett szervizkönyvvel</h5>
                                                         <% } %>
                                                             <% if(lekerderedm_rendsz.VezetettSzervK==1) { %>
                                                                 <h5>Vezetett szervízkönyvvel rendelkezik</h5>
@@ -135,10 +136,10 @@
                                                                             <% if(lekerderedm_rendsz.Torott==1) { %>
                                                                                 <h5>Az autó törve volt</h5>
                                                                                 <% } %>
-                                                                                    <h5>Ismert típushibák:
+                                                                                    <h5>Típushibák:
                                                                                         <%= lekerderedm_rendsz.Tipushiba %>
                                                                                     </h5>
-                                                                                    <h5>Ismert típushibák: 
+                                                                                    <h5>Műszaki érvényessége: 
                                                                                         <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.')
                                                                                         %>
                                                                                     </h5>
@@ -172,7 +173,7 @@
                                                             <h5>Állapot:
                                                                 <%= lekerderedm_alvaz.Allapot %>
                                                             </h5>
-                                                            <h5>Futott km:
+                                                            <h5>Futásteljesítmény:
                                                                 <%= lekerderedm_alvaz.Futottkm %>
                                                             </h5>
 
@@ -189,7 +190,7 @@
                                                                 <h5>Állapot:
                                                                     <%= lekerderedm_alvaz.Allapot %>
                                                                 </h5>
-                                                                <h5>Futott km:
+                                                                <h5>Futásteljeítmény:
                                                                     <%= lekerderedm_alvaz.Futottkm %>
                                                                 </h5>
                                                             </div>
@@ -200,7 +201,7 @@
                                                                     <%= lekerderedm_alvaz.Okmanyok %>
                                                                 </h5>
                                                                 <% if(lekerderedm_alvaz.VezetettSzervK==0) { %>
-                                                                    <h5>Nincs vezetett szervizkönyv</h5>
+                                                                    <h5>Nem rendelkezik vezetett szervizkönyvvel</h5>
                                                                     <% } %>
                                                                         <% if(lekerderedm_alvaz.VezetettSzervK==1) { %>
                                                                             <h5>Vezetett szervízkönyvvel rendelkezik</h5>
@@ -213,17 +214,16 @@
                                                                                         %>
                                                                                             <h5>Az autó törve volt</h5>
                                                                                             <% } %>
-                                                                                                <h5>Ismert típushibák:
+                                                                                                <h5>Típushibák:
                                                                                                     <%= lekerderedm_alvaz.Tipushiba
                                                                                                     %>
                                                                                                 </h5>
-                                                                                                <h5>Ismert típushibák:
+                                                                                                <h5>Műszaki érvényessége::
                                                                                                     <%= lekerderedm_alvaz.Muszakierv.replace(/-/g,'.')
                                                                                                     %>
                                                                                                 </h5>
                                                                                                 <h5>Az autó
-                                                                                                    <%= lekerderedm_alvaz.Gumiabroncs
-                                                                                                    %>
+                                                                                                    <%= lekerderedm_alvaz.Gumiabroncs%>
                                                                                                         gumiabroncscsal van szerelve.
                                                                                                 </h5>
                                                                                                 <h5 class="ad">Más gumiabroncsot is szeretne az autóra?<br> Látogassa meg <a href="/termekek"><u>webshopunkat</u></a>!
