@@ -381,7 +381,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-    .vnev{
+    .vnev {
         margin-right: 0px !important;
     }
 }
@@ -487,11 +487,12 @@ input[required] {
     display: inline-block;
 }
 
-.vnev{
+.vnev {
     width: 200px;
     margin-right: 15px;
 }
-.knev{
+
+.knev {
     width: 200px;
 }
 
@@ -580,4 +581,8 @@ input[required] {
 
 #elfogad {
     margin-top: 20px !important;
+}
+
+.modalbg {
+    background-color: transparent !important;
 }
