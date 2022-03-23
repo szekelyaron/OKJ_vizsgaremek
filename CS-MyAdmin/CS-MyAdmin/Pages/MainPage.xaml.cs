@@ -43,6 +43,8 @@ namespace CS_MyAdmin.Pages
                 CBgumi.SelectedIndex = 0;
             }
 
+            
+
 
             cb_databases.Items.Add("autok");
             cb_databases.Items.Add("gumiabroncs");
@@ -302,11 +304,17 @@ namespace CS_MyAdmin.Pages
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            
             if (((TextBox)sender).Text.Length < 7)
             {
-                MessageBox.Show("You need to write at least 7 characters");
-                
+                MessageBox.Show("You need to write at least 7 characters into " + ((TextBox)sender).Name, "Hiba");
+                ((TextBox)sender).Text = "";
+                return;
             }
+            
+
+            
+
         }
 
         private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
