@@ -141,9 +141,9 @@
                                                 <div class="inline">
                                                     <input v-model='postalcode' class="un isz" type="text" name="irsz" id="irsz" pattern="[0-9]{4}" placeholder="Irányítószám">
 
-                                                    <input v-model='city' class="un telepules" type="text" name="varos" id="varos" placeholder="Település" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170\u0150]*">
+                                                    <input v-model='city' class="un telepules" type="text" name="varos" id="varos" placeholder="Település" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170\u0150 ^-,]*">
                                                 </div>
-                                                <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170\u0150]*">
+                                                <input v-model='street' class="un" type="text" name="utca" id="utca" placeholder="Utca" pattern="[ a-zA-ZÀ-ÿ\u00f1\u00d1\u0171\u0170\u0150 ^-,]*">
 
                                                 <input v-model='number' class="un hazszam" type="text" name="hsz" id="hsz" maxlength="4" placeholder="Házszám">
 

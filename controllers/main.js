@@ -388,7 +388,7 @@ exports.postRendeles = (req, res, next) => {
       }
     }
   }
-  var message = '<div>'
+  var message = '<h1>Köszönjük a rendelését!</h1><div>'
     for (let termek of req.session.user.kosar) {
       for (let gumi of req.session.gumiabroncs) {
         if(termek.termek_id == gumi.GID)
@@ -397,10 +397,10 @@ exports.postRendeles = (req, res, next) => {
         }
       }
     }
-    message += '<div><p> Teljes ár: '+req.session.user.kosarOsszeg +'</p></div></div>';
-    message += 'Megrendelő: '+ nev +' Telefonszám: '+telefonszam+" Cím: "+iranyitoszam+' '+varos+' '+utca+' '+hsz;
+    message += '<div><h2> Teljes ár: '+req.session.user.kosarOsszeg +'</h2></div></div>';
+    message += '<h3>Megrendelő: </h3>'+ nev +' Telefonszám: '+telefonszam+" Cím: "+iranyitoszam+' '+varos+' '+utca+' '+hsz;
   console.log(message);
-  var emails = "carscope.site@gmail.com,"+req.session.user.Email;
+  var emails = "carscope.site@gmail.com, "+req.session.user.Email;
   console.log(emails);
   var mailOptions = {
     to: emails,

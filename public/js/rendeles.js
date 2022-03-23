@@ -58,14 +58,14 @@ const app = Vue.createApp({
     },
 
     street(value) {
-      if (value.length > 1 && /^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM]+$/.test(value) == true && value.replace(' ','') != '') {
+      if (value.length > 1 && /^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM. ,;_]+$/.test(value) == true && value.replace(' ','') != '') {
         this.utca_validate = true;
       } else {
         this.utca_validate = false;
       }
     },
     city(value) {
-      if (value.length > 1 && /^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM]+$/.test(value) == true && value.replace(' ','') != '') {
+      if (value.length > 1 && /^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM. ,;_]+$/.test(value) == true && value.replace(' ','') != '') {
         this.varos_validate = true;
       } else {
         this.varos_validate = false;
@@ -92,7 +92,7 @@ const app = Vue.createApp({
     vezetek(value){
       let a = value.replace(' ',''); 
       console.log(a);
-      if(/^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM]+$/.test(a) == true && a.length > 0)
+      if(/^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM. ,;_]+$/.test(a) == true && a.length > 0)
       {
         this.vezetek_validate = true;
       }
@@ -103,7 +103,7 @@ const app = Vue.createApp({
     kereszt(value){
       let b = value.replace(' ',''); 
       console.log(b);
-      if(/^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM]+$/.test(b) == true && b.length > 0)
+      if(/^[qwertzuiopőúöüóasdfghjkléáűíyxcvbnmQWERTZUIOPŐÚÖÜÓASDFGHJKLÉÁŰÍYXCVBNM. ,;_]+$/.test(b) == true && b.length > 0)
       {
         this.kereszt_validate = true;
       }
