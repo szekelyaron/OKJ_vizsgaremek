@@ -528,19 +528,19 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Ár:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Átmérő:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiAtmero" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_GumiAtmero" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Oldalfal:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiOldalfal" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_GumiOldalfal" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Szélesség:" Foreground="White"/>
-                        <TextBox x:Name="TB_GumiSzelesseg" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_GumiSzelesseg" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="BTN_insertGumi" Style="{StaticResource ButtonStyle1}"
@@ -562,9 +562,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Futott Km:" Foreground="White"/>
-                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                         <Label Width="120" Content="Évjárat:" Foreground="White"/>
-                        <TextBox x:Name="TB_Evjarat" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="TB_Evjarat" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Vezetett szervizk.:" Foreground="White"/>

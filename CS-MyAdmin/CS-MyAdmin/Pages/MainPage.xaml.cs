@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Configuration;
 using MySqlConnector;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace CS_MyAdmin.Pages
 {
@@ -291,6 +292,12 @@ namespace CS_MyAdmin.Pages
                 }
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
