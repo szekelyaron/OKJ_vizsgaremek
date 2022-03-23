@@ -300,6 +300,15 @@ namespace CS_MyAdmin.Pages
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length < 7)
+            {
+                MessageBox.Show("You need to write at least 7 characters");
+                
+            }
+        }
+
         private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
         {
 
