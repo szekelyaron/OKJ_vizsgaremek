@@ -556,7 +556,7 @@
                     <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Rendszám:" Foreground="White"/>
-                        <TextBox x:Name="TB_Rendszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="8" LostFocus="TextBox_LostFocus"/>
+                        <TextBox x:Name="TB_Rendszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="8" Focusable="True" LostFocus="TextBox_LostFocus"/>
                         <Label Width="120" Content="Alvázszám:" Foreground="White"/>
                         <TextBox x:Name="TB_Alvazszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="17"/>
                     </StackPanel>
