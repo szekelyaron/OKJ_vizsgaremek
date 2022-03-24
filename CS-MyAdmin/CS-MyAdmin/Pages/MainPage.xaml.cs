@@ -43,7 +43,7 @@ namespace CS_MyAdmin.Pages
                 CBgumi.SelectedIndex = 0;
             }
 
-            
+            DP_muszaki.SelectedDate = DateTime.Today;
 
 
             cb_databases.Items.Add("autok");
@@ -79,8 +79,16 @@ namespace CS_MyAdmin.Pages
             CB_szervkönyv.Items.Add("Igen");
             CB_szervkönyv.SelectedIndex = 1;
 
-            CB_autoAzon.ItemsSource = autok.Select(x => x.aId);
+
+            CB_autoAzon.Items.Clear();
+            foreach (var item in autok)
+            {
+                CB_autoAzon.Items.Add(item.aId + ":" + " " + item.gyarto + " " + item.tipus);
+            }
             CB_autoAzon.SelectedIndex = 0;
+
+
+
             
 
 
@@ -182,7 +190,11 @@ namespace CS_MyAdmin.Pages
             {
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
-                CB_autoAzon.ItemsSource = autok.Select(x => x.aId);
+                CB_autoAzon.Items.Clear();
+                foreach (var item in autok)
+                {
+                    CB_autoAzon.Items.Add(item.aId + ":" + " " + item.gyarto + " " + item.tipus);
+                }
                 CB_autoAzon.SelectedIndex = 0;
 
                 SP_autokInsert.Visibility = Visibility.Collapsed;
@@ -211,17 +223,16 @@ namespace CS_MyAdmin.Pages
 
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
         {
+            string[] splittedText = CB_autoAzon.SelectedItem.ToString().Split(':');
             if (TB_Rendszam.Text == "")
             {                
                 LB_InfouresMezo.IsEnabled = true;
             }
             else
-            {
+            {               
                 LB_InfouresMezo.IsEnabled = true;
                 InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
-                    Convert.ToInt32(CB_autoAzon.SelectedItem), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
-                //foreach (TextBox textBox in LogicalTreeHelper.GetChildren(SP_infokInsert).OfType<TextBox>())
-                //    textBox.Text = "";
+                    Convert.ToInt32(splittedText[0]), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
 
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;

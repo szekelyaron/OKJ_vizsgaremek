@@ -137,8 +137,8 @@ C:\Users\szekely.aron\Documents\GitHub\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreap
 C:\Users\szekely.aron\Documents\GitHub\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\CS-MyAdmin.genruntimeconfig.cache
 C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\CS-MyAdmin.csproj.AssemblyReference.cache
 C:\Users\szekely.aron\Documents\GitHub\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\szekely.aron\Documents\GitHub\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Lenovo\Desktop\Áron\OKJ_vizsgaremek\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\szekely.aron\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\CS-MyAdmin.csproj.AssemblyReference.cache

@@ -56,6 +56,11 @@ namespace CS_MyAdmin.Models
 
         }
 
+        public string cbItem(string aid, string gyarto, string tipus)
+        {
+            return (string.Format("{0}: {1} - {2}",aId,gyarto, tipus));
+        }
+
         public AutoModel(MySqlDataReader reader)
         {
             this.aId = Convert.ToInt32(reader["AID"]);
