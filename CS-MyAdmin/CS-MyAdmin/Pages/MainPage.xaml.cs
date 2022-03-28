@@ -87,11 +87,6 @@ namespace CS_MyAdmin.Pages
             }
             CB_autoAzon.SelectedIndex = 0;
 
-
-
-            
-
-
             autok = AutoModel.select();
             gumik = GumiModel.select();
             infok = InfoModel.select();
@@ -124,6 +119,7 @@ namespace CS_MyAdmin.Pages
                 }
                 autok = AutoModel.select();
                 DG_asd.ItemsSource = autok;
+
             }
             else if(cb_databases.SelectedIndex == 1)
             {
@@ -150,13 +146,8 @@ namespace CS_MyAdmin.Pages
 
         private void BTN_insert_Click(object sender, RoutedEventArgs e)
         {
-            if (TB_gyarto.Text == "" || TB_tipus.Text == "" || TB_tipushiba.Text == "")
+            if (TB_gyarto.Text != "" && TB_tipus.Text != "" && TB_tipushiba.Text != "")
             {
-                LB_uresMezo.IsEnabled = true;
-            }
-            else
-            {
-                LB_uresMezo.IsEnabled = false;
                 AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, Convert.ToInt32(CB_megbizhatosag.SelectedItem), TB_tipushiba.Text);
 
                 autok = AutoModel.select();
@@ -206,13 +197,8 @@ namespace CS_MyAdmin.Pages
 
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
         {
-            if (TB_GumiGyarto.Text == "" || TB_GumiAr.Text == "" || TB_GumiAtmero.Text == "" || TB_GumiOldalfal.Text == "" || TB_GumiSzelesseg.Text == "")
+            if (TB_GumiGyarto.Text != "" && TB_GumiAr.Text != "" && TB_GumiAtmero.Text != "" && TB_GumiOldalfal.Text != "" && TB_GumiSzelesseg.Text != "")
             {
-                LB_GumiuresMezo.IsEnabled = true;
-            }
-            else
-            {
-                LB_GumiuresMezo.IsEnabled = false;
                 GumiModel.insert(TB_GumiGyarto.Text, CB_GumiEvszak.SelectedItem.ToString(),Convert.ToInt32(CB_GumiKategoria.SelectedItem), int.Parse(TB_GumiAr.Text), Convert.ToInt32(TB_GumiAtmero.Text), Convert.ToInt32(TB_GumiOldalfal.Text), Convert.ToInt32(TB_GumiSzelesseg.Text));
 
                 gumik = GumiModel.select();
@@ -224,12 +210,8 @@ namespace CS_MyAdmin.Pages
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
         {
             string[] splittedText = CB_autoAzon.SelectedItem.ToString().Split(':');
-            if (TB_Rendszam.Text == "")
-            {                
-                LB_InfouresMezo.IsEnabled = true;
-            }
-            else
-            {               
+            if (TB_Rendszam.Text != "" && TB_Alvazszam.Text != "" && TB_FutottKm.Text != "")
+            {                            
                 LB_InfouresMezo.IsEnabled = true;
                 InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
                     Convert.ToInt32(splittedText[0]), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
