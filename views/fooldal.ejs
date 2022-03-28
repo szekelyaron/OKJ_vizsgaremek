@@ -83,7 +83,8 @@
                                 <div class="card" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
                                     <div class="card-body" style="display: block;">
                                         <div class="card-container">
-                                            <div class="mobile-only image-div" style="background-image: url('<%= lekerderedm_rendsz.Kepcim %>');">
+                                            <div class="mobile-only image-div">
+                                                <img src="<%= lekerderedm_rendsz.Kepcim %>">
                                             </div>
                                             <div class="card-container-left">
                                                 <h1 class="card-title">
@@ -139,7 +140,7 @@
                                                                                     <h5>Típushibák:
                                                                                         <%= lekerderedm_rendsz.Tipushiba %>
                                                                                     </h5>
-                                                                                    <h5>Műszaki érvényessége: 
+                                                                                    <h5>Műszaki érvényessége:
                                                                                         <%= lekerderedm_rendsz.Muszakierv.replace(/-/g,'.')
                                                                                         %>
                                                                                     </h5>
