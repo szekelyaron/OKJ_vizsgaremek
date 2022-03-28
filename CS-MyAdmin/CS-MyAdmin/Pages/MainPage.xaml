@@ -458,6 +458,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
                     <ComboBox x:Name="cb_databases" VerticalContentAlignment="Center" Height="25" Width="100" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
+                    <Label Content="Keresés az adatbázisban:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
                     <TextBox x:Name="TB_searchbar" Margin="5" Width="200" Height="25" VerticalContentAlignment="Center" TextChanged="TB_searchbar_TextChanged"/>
                     <Label x:Name="LBL_recordCount" FontWeight="Bold" Margin="5" Foreground="White"/>
                 </StackPanel>
@@ -472,7 +473,7 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Save changes" Click="Button_Click">
+                        Content="Mentés" FontWeight="Bold" Click="Button_Click">
 
                     </Button>
                     <Button Style="{StaticResource ButtonStyle1}"
@@ -480,7 +481,7 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Delete" x:Name="BTN_Delete" Click="BTN_Delete_Click">
+                        Content="Törlés" FontWeight="Bold" x:Name="BTN_Delete" Click="BTN_Delete_Click">
 
                     </Button>
                 </StackPanel>
@@ -509,8 +510,8 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insert_Click"/>
-                        <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                        Content="Felvesz" FontWeight="Bold" HorizontalAlignment="Left" Click="BTN_insertAuto_Click"/>
+                        <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 
                 </StackPanel>
@@ -529,11 +530,11 @@
                         <ComboBox x:Name="CB_GumiKategoria" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Width="100" Content="Ár:" Foreground="White"/>
+                        <Label Width="100" Content="Ár (Ft):" Foreground="White"/>
                         <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" MaxLength="6" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Width="100" Content="Átmérő:" Foreground="White"/>
+                        <Label Width="100" Content="Átmérő (cm):" Foreground="White"/>
                         <TextBox x:Name="TB_GumiAtmero" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -541,7 +542,7 @@
                         <TextBox x:Name="TB_GumiOldalfal" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Width="100" Content="Szélesség:" Foreground="White"/>
+                        <Label Width="100" Content="Szélesség (mm):" Foreground="White"/>
                         <TextBox x:Name="TB_GumiSzelesseg" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -550,8 +551,8 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insertGumi_Click"/>
-                        <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                        Content="Felvesz" FontWeight="Bold" HorizontalAlignment="Left" Click="BTN_insertGumi_Click"/>
+                        <Label x:Name="LB_GumiuresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel x:Name="SP_infokInsert" Visibility="Visible" HorizontalAlignment="Center">

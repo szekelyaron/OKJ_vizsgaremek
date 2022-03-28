@@ -35,6 +35,17 @@ namespace CS_MyAdmin.Pages
         {
             InitializeComponent();
 
+            autok = AutoModel.select();
+            gumik = GumiModel.select();
+            infok = InfoModel.select();
+            DG_asd.ItemsSource = autok;
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+
+            cb_databases.Items.Add("autok");
+            cb_databases.Items.Add("gumiabroncs");
+            cb_databases.Items.Add("info");
+            cb_databases.SelectedIndex = 0;
+
             static void GumiFill(ComboBox CBgumi)
             {
                 CBgumi.Items.Add("Nyári");
@@ -42,18 +53,18 @@ namespace CS_MyAdmin.Pages
                 CBgumi.Items.Add("Négyévszakos");
                 CBgumi.SelectedIndex = 0;
             }
-
-            DP_muszaki.SelectedDate = DateTime.Today;
-
-
-            cb_databases.Items.Add("autok");
-            cb_databases.Items.Add("gumiabroncs");
-            cb_databases.Items.Add("info");
-            cb_databases.SelectedIndex = 0;
-
-
             GumiFill(CB_GumiEvszak);
             GumiFill(CB_GumiInfo);
+
+            for (int i = 1; i < 11; i++)
+            {
+                CB_megbizhatosag.Items.Add(i);
+                CB_GumiKategoria.Items.Add(i);
+            }
+            CB_megbizhatosag.SelectedIndex = 0;
+            CB_GumiKategoria.SelectedIndex = 0;
+
+            DP_muszaki.SelectedDate = DateTime.Today;
 
             CB_allapot.Items.Add("Alig használt");
             CB_allapot.Items.Add("Frissen felújított");
@@ -86,25 +97,6 @@ namespace CS_MyAdmin.Pages
                 CB_autoAzon.Items.Add(item.aId + ":" + " " + item.gyarto + " " + item.tipus);
             }
             CB_autoAzon.SelectedIndex = 0;
-
-            autok = AutoModel.select();
-            gumik = GumiModel.select();
-            infok = InfoModel.select();
-            DG_asd.ItemsSource = autok;
-            
-
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
-
-
-            for (int i = 1; i < 11; i++)
-            {
-                CB_megbizhatosag.Items.Add(i);
-                CB_GumiKategoria.Items.Add(i);
-            }
-            CB_megbizhatosag.SelectedIndex = 9;
-            CB_GumiKategoria.SelectedIndex = 9;
-
-
             
         }
 
@@ -144,25 +136,13 @@ namespace CS_MyAdmin.Pages
 
         }
 
-        private void BTN_insert_Click(object sender, RoutedEventArgs e)
-        {
-            if (TB_gyarto.Text != "" && TB_tipus.Text != "" && TB_tipushiba.Text != "")
-            {
-                AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, Convert.ToInt32(CB_megbizhatosag.SelectedItem), TB_tipushiba.Text);
-
-                autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
-            }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
-
-        }
 
         private void cb_databases_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cb_databases.SelectedIndex == 0)
             {
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;             
+                DG_asd.ItemsSource = autok;
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
@@ -194,12 +174,23 @@ namespace CS_MyAdmin.Pages
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
         }
+        private void BTN_insertAuto_Click(object sender, RoutedEventArgs e)
+        {
+            if (TB_gyarto.Text != "" && TB_tipus.Text != "" && TB_tipushiba.Text != "")
+            {
+                AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, Convert.ToInt32(CB_megbizhatosag.SelectedItem), TB_tipushiba.Text);
 
+                autok = AutoModel.select();
+                DG_asd.ItemsSource = autok;
+            }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+
+        }
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
         {
             if (TB_GumiGyarto.Text != "" && TB_GumiAr.Text != "" && TB_GumiAtmero.Text != "" && TB_GumiOldalfal.Text != "" && TB_GumiSzelesseg.Text != "")
             {
-                GumiModel.insert(TB_GumiGyarto.Text, CB_GumiEvszak.SelectedItem.ToString(),Convert.ToInt32(CB_GumiKategoria.SelectedItem), int.Parse(TB_GumiAr.Text), Convert.ToInt32(TB_GumiAtmero.Text), Convert.ToInt32(TB_GumiOldalfal.Text), Convert.ToInt32(TB_GumiSzelesseg.Text));
+                GumiModel.insert(TB_GumiGyarto.Text, CB_GumiEvszak.SelectedItem.ToString(), Convert.ToInt32(CB_GumiKategoria.SelectedItem), int.Parse(TB_GumiAr.Text), Convert.ToInt32(TB_GumiAtmero.Text), Convert.ToInt32(TB_GumiOldalfal.Text), Convert.ToInt32(TB_GumiSzelesseg.Text));
 
                 gumik = GumiModel.select();
                 DG_asd.ItemsSource = gumik;
@@ -300,7 +291,7 @@ namespace CS_MyAdmin.Pages
             
             if (((TextBox)sender).Text.Length < 7)
             {
-                MessageBox.Show("You need to write at least 7 characters into " + ((TextBox)sender).Name, "Hiba",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("A " + ((TextBox)sender).Name + " mezőbe bevitt értéknek legalább 7 karakter hosszúságúnak kell lennie!", "Figyelmeztetés",MessageBoxButton.OK,MessageBoxImage.Warning);
                 ((TextBox)sender).Text = "";
                 return;
             }
@@ -316,7 +307,7 @@ namespace CS_MyAdmin.Pages
         {
             if (((TextBox)sender).Text.Length < ((TextBox)sender).MaxLength)
             {
-                MessageBox.Show("You need to write 17 characters into " + ((TextBox)sender).Name, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("A " + ((TextBox)sender).Name + " mezőbe bevitt értéknek 17 karakter hosszúságúnak kell lennie!", "Figyelmeztetés", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ((TextBox)sender).Text = "";
                 return;
             }
@@ -324,9 +315,9 @@ namespace CS_MyAdmin.Pages
 
         private void TB_Evjarat_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(((TextBox)sender).Text) < 1901 || Convert.ToInt32(((TextBox)sender).Text) > 2155)
+            if (Convert.ToInt32(((TextBox)sender).Text) < 1901 || Convert.ToInt32(((TextBox)sender).Text) > 2155 || ((TextBox)sender).Text == "")
             {
-                MessageBox.Show("The value of " + ((TextBox)sender).Name + " must be between 1901 and 2155!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("A " + ((TextBox)sender).Name + " megadott évnek 1901 és 2155 között kell lennie!", "Figyelmeztetés", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ((TextBox)sender).Text = "";
                 return;
             }
