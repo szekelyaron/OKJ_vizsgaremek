@@ -292,7 +292,7 @@ body {
     }
 }
 
-@media (min-width: 680px) and (max-width: 1200px) {
+@media (min-width: 941px) and (max-width: 1200px) {
     .fizetesgomb {
         margin-left: 30px;
     }

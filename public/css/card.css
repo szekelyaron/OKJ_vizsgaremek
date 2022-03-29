@@ -97,12 +97,19 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 900px) {
     .card {
-        background: rgba(50, 50, 50, 1) !important;
+        min-height: 0vh !important;
+        background: transparent !important;
+        background-image: none !important;
         width: 70%;
-		height: fit-content;
+		height: fit-content !important;
+        max-width: fit-content !important;
     }
     .card-body {
         padding: 0px;
+        max-height: fit-content !important;
+        max-width: fit-content !important;
+        background: transparent !important;
+        background-image: none !important;
     }
     .card-container {
         display: flex;
@@ -121,6 +128,8 @@ body::-webkit-scrollbar {
         justify-content: center;
         align-items: center;
         background: linear-gradient(rgba(50, 50, 50, 1), rgba(100, 0, 0, 1));
+        
+        max-width: 576px;
     }
     .mobile-only {
         display: block;
@@ -128,6 +137,7 @@ body::-webkit-scrollbar {
     }
     .mobile-only img {
         height: 30vh;
+        
     }
 }
 
