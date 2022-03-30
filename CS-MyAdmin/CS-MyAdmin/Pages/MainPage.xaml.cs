@@ -315,7 +315,13 @@ namespace CS_MyAdmin.Pages
 
         private void TB_Evjarat_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(((TextBox)sender).Text) < 1901 || Convert.ToInt32(((TextBox)sender).Text) > 2155 || String.IsNullOrEmpty(((TextBox)sender).Text))
+            if (TB_Evjarat.Text == "")
+            {
+                MessageBox.Show("A " + ((TextBox)sender).Name + " mező kitöltése kötelező!", "Figyelmeztetés", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ((TextBox)sender).Text = "";
+                return;
+            }
+            else if (Convert.ToInt32(((TextBox)sender).Text) < 1901 || Convert.ToInt32(((TextBox)sender).Text) > 2155)
             {
                 MessageBox.Show("A " + ((TextBox)sender).Name + " megadott évnek 1901 és 2155 között kell lennie!", "Figyelmeztetés", MessageBoxButton.OK, MessageBoxImage.Warning);
                 ((TextBox)sender).Text = "";
