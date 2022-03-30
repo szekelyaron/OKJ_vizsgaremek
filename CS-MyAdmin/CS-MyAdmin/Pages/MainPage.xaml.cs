@@ -299,10 +299,15 @@ namespace CS_MyAdmin.Pages
                     DG_asd.IsReadOnly = true;
                     var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.evszak.ToLower().StartsWith(TB_searchbar.Text));
                     DG_asd.ItemsSource = filteredList;
+                    BTN_Delete.IsEnabled = false;
+                    BTN_Save.IsEnabled = false;
                 }
                 else
                 {
+                    DG_asd.IsReadOnly = false;
                     DG_asd.ItemsSource = gumik;
+                    BTN_Delete.IsEnabled = true;
+                    BTN_Save.IsEnabled = true;
                 }
             }
             else if (cb_databases.SelectedIndex == 2)
@@ -312,10 +317,15 @@ namespace CS_MyAdmin.Pages
                     DG_asd.IsReadOnly = true;
                     var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text) || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text));
                     DG_asd.ItemsSource = filteredList;
+                    BTN_Delete.IsEnabled = false;
+                    BTN_Save.IsEnabled = false;
                 }
                 else
                 {
+                    DG_asd.IsReadOnly = false;
                     DG_asd.ItemsSource = infok;
+                    BTN_Delete.IsEnabled = true;
+                    BTN_Save.IsEnabled = true;
                 }
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();

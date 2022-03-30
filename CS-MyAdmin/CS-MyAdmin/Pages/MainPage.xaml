@@ -500,7 +500,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Megbízhatóság:" Foreground="White"/>
-                        <ComboBox x:Name="CB_megbizhatosag" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_megbizhatosag" Style="{StaticResource theComboBox}" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Típushiba:" Foreground="White"/>
@@ -525,11 +525,11 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Évszak:" Foreground="White"/>
-                        <ComboBox x:Name="CB_GumiEvszak" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_GumiEvszak" Style="{StaticResource theComboBox}" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Kategória:" Foreground="White"/>
-                        <ComboBox x:Name="CB_GumiKategoria" Margin="5" Width="100" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_GumiKategoria" Style="{StaticResource theComboBox}" Margin="5" Width="100" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Ár (Ft):" Foreground="White"/>
@@ -573,27 +573,27 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Vezetett szervizk.:" Foreground="White"/>
-                        <ComboBox x:Name="CB_szervkönyv" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_szervkönyv" Style="{StaticResource theComboBox}" Margin="5" Width="120" HorizontalAlignment="Left"/>
                         <Label Width="120" Content="Műszaki érvényes:" Foreground="White"/>
                         <DatePicker x:Name="DP_muszaki" Margin="5" Width="120" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Autó azon.:" Foreground="White"/>
-                        <ComboBox x:Name="CB_autoAzon" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_autoAzon" Style="{StaticResource theComboBox}" Margin="5" Width="120" HorizontalAlignment="Left"/>
                         <Label Width="120" Content="Képcím:" Foreground="White"/>
                         <TextBox x:Name="TB_kepCim" Margin="5" Width="120" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Állapot:" Foreground="White"/>
-                        <ComboBox x:Name="CB_allapot" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_allapot" Style="{StaticResource theComboBox}" Margin="5" Width="120" HorizontalAlignment="Left"/>
                         <Label Width="120" Content="Okmányok:" Foreground="White"/>
-                        <ComboBox x:Name="CB_okmanyok" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_okmanyok" Style="{StaticResource theComboBox}" Margin="5" Width="120" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Gumiabroncs:" Foreground="White"/>
-                        <ComboBox x:Name="CB_GumiInfo" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_GumiInfo" Style="{StaticResource theComboBox}" Margin="5" Width="120" HorizontalAlignment="Left"/>
                         <Label Width="120" Content="Sérülés:" Foreground="White"/>
-                        <ComboBox x:Name="CB_Torott" Margin="5" Width="120" HorizontalAlignment="Left"/>
+                        <ComboBox x:Name="CB_Torott" Margin="5" Style="{StaticResource theComboBox}" Width="120" HorizontalAlignment="Left"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="BTN_insertInfo" Style="{StaticResource ButtonStyle1}"
@@ -601,8 +601,8 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Insert" HorizontalAlignment="Left" Click="BTN_insertInfo_Click"/>
-                        <Label x:Name="LB_InfouresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" IsEnabled="False"/>
+                        Content="Felvesz" HorizontalAlignment="Left" Click="BTN_insertInfo_Click"/>
+                        <Label x:Name="LB_InfouresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
 
                 </StackPanel>
