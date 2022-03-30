@@ -5,6 +5,7 @@ const { runInNewContext } = require("vm");
 var register = function(){};
 var nodemailer = require('nodemailer');
 const { getMaxListeners } = require("process");
+const { callbackify } = require("util");
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -39,7 +40,8 @@ register.prototype.registerUser = function(req, res, next) {
                     {
                         msg.push({param: "Felhasználónév",msg: "Ez a felhasználónév már foglalt!"});
                     }
-                }   
+                }
+                callback(true,msg);
                 res.render('regisztracio',{
                     pageTitle: 'Regisztráció',
                     path: '/regisztracio',
@@ -59,6 +61,7 @@ register.prototype.registerUser = function(req, res, next) {
                             subject: 'SIKER! - CarScope',
                             text: 'Sikeresen regisztrál a CarScope oldalon!'
                         };
+                        callback(false,msg);
                         transporter.sendMail(mailOptions, function(error, info){
                             if (error) {
                                 console.log(error);

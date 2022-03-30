@@ -4,7 +4,7 @@
   "description": "autok",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon app.js"
   },
   "repository": {
@@ -31,5 +31,8 @@
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }
