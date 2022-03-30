@@ -31,6 +31,39 @@ namespace CS_MyAdmin.Pages
         ObservableCollection<GumiModel> gumik = new ObservableCollection<GumiModel>();
         ObservableCollection<InfoModel> infok = new ObservableCollection<InfoModel>();
 
+        void resetSP(StackPanel Stackname)
+        {
+            List<Object> spanels = new List<Object>();
+
+            foreach (Object vizsgaltItem in Stackname.Children)
+            {
+                if (vizsgaltItem.GetType() == typeof(StackPanel))
+                {
+                    spanels.Add(vizsgaltItem);
+                }
+
+            }
+
+            foreach (StackPanel spanel in spanels)
+            {
+                foreach (Control item in spanel.Children)
+                {
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        ((TextBox)item).Text = string.Empty;
+                    }
+                    else if (item.GetType() == typeof(ComboBox))
+                    {
+                        ((ComboBox)item).SelectedIndex = 0;
+                    }
+                    else if (item.GetType() == typeof(DatePicker))
+                    {
+                        ((DatePicker)item).SelectedDate = DateTime.Now;
+                    }
+                }
+            }
+        }
+
         public MainPage()
         {
             InitializeComponent();
@@ -88,7 +121,7 @@ namespace CS_MyAdmin.Pages
 
             CB_szervkönyv.Items.Add("Nem");
             CB_szervkönyv.Items.Add("Igen");
-            CB_szervkönyv.SelectedIndex = 1;
+            CB_szervkönyv.SelectedIndex = 0;
 
 
             CB_autoAzon.Items.Clear();
@@ -184,6 +217,7 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = autok;
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            resetSP(SP_autokInsert);
 
         }
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
@@ -196,6 +230,7 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = gumik;
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            resetSP(SP_gumikInsert);
         }
 
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
@@ -211,6 +246,7 @@ namespace CS_MyAdmin.Pages
                 DG_asd.ItemsSource = infok;
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            resetSP(SP_infokInsert);
         }
 
         private void BTN_Delete_Click(object sender, RoutedEventArgs e)
@@ -245,10 +281,15 @@ namespace CS_MyAdmin.Pages
                     DG_asd.IsReadOnly = true;
                     var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.tipus.ToLower().StartsWith(TB_searchbar.Text));
                     DG_asd.ItemsSource = filteredList;
+                    BTN_Delete.IsEnabled = false;
+                    BTN_Save.IsEnabled = false;
                 }
                 else
                 {
+                    DG_asd.IsReadOnly = false;
                     DG_asd.ItemsSource = autok;
+                    BTN_Delete.IsEnabled = true;
+                    BTN_Save.IsEnabled = true;
                 }
             }
             else if (cb_databases.SelectedIndex == 1)

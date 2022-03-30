@@ -438,7 +438,7 @@
 
 
 
-        <Grid>
+        <Grid x:Name="GRD_sajatGrid">
 
             <!--Oszlopok-->
             <!--<Grid.ColumnDefinitions>
@@ -473,7 +473,9 @@
                         Height="50"
                         Margin="5"
                         Padding="5"
-                        Content="Mentés" FontWeight="Bold" Click="Button_Click">
+                        Content="Mentés"
+                        x:Name="BTN_Save"
+                        FontWeight="Bold" Click="Button_Click">
 
                     </Button>
                     <Button Style="{StaticResource ButtonStyle1}"
@@ -557,7 +559,7 @@
                 </StackPanel>
                 <StackPanel x:Name="SP_infokInsert" Visibility="Visible" HorizontalAlignment="Center">
                     <Label Content="Új info hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" x:Name="SP_proba">
                         <Label Width="100" Content="Rendszám:" Foreground="White"/>
                         <TextBox x:Name="TB_Rendszam" Margin="5" Width="120" HorizontalAlignment="Left" MaxLength="8" Focusable="True" LostFocus="TB_Rendszam_LostFocus"/>
                         <Label Width="120" Content="Alvázszám:" Foreground="White"/>
