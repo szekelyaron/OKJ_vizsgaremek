@@ -41,13 +41,13 @@ register.prototype.registerUser = function(req, res, next) {
                         msg.push({param: "Felhasználónév",msg: "Ez a felhasználónév már foglalt!"});
                     }
                 }
+                connection.release();
                 res.render('regisztracio',{
                     pageTitle: 'Regisztráció',
                     path: '/regisztracio',
                     errorCode: msg,
                 })
-                connection.release();
-                callback(true,msg);
+                
             }
             else{
                 connection.query(registerUserQuery, params, function(err, rows, fields) {

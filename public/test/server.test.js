@@ -12,12 +12,12 @@ test("login-jo", () => {
     var res = [];
     var rows = [];
     login.loginUser(req, res, function(err, data) {
-        expect(err).toBe(null)
+        expect(err).toBe(true)
     })
     req.session.user = null;
 });
 
-test("login-rossz", () => {
+ test("login-rossz", () => {
     var req = [];
     req.body = [];
     req.body.email = "proba2@proba.com";
@@ -30,15 +30,17 @@ test("login-rossz", () => {
 });
 
 test("register-jo", () => {
-    var req = [];
-    req.body = [];
-    req.body.felhasznalonev = "test2vagyok";
-    req.body.email = "test@test2.com";
-    req.body.jelszo = "Proba11222";
-    req.body.password_again = "Proba11222";
-    req.session = [];
-    var res = [];
-    register.registerUser(req, res, function(err, data) {
-        expect(err).toBe(null)
-    })
-});
+     var req = [];
+     req.body = [];
+     req.body.felhasznalonev = "test5vagyok";
+     req.body.email = "test@test5.com";
+     req.body.jelszo = "Proba11222";
+     req.body.password_again = "Proba11222";
+     req.session = [];
+     var res = [];
+     var res = function(){};
+     res.render = function(){};
+     register.registerUser(req, res, function(err, data) {
+         expect(err).toBe(true)
+     })
+ });
