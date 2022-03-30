@@ -41,13 +41,13 @@ register.prototype.registerUser = function(req, res, next) {
                         msg.push({param: "Felhasználónév",msg: "Ez a felhasználónév már foglalt!"});
                     }
                 }
-                callback(true,msg);
                 res.render('regisztracio',{
                     pageTitle: 'Regisztráció',
                     path: '/regisztracio',
                     errorCode: msg,
                 })
                 connection.release();
+                callback(true,msg);
             }
             else{
                 connection.query(registerUserQuery, params, function(err, rows, fields) {
@@ -61,13 +61,14 @@ register.prototype.registerUser = function(req, res, next) {
                             subject: 'SIKER! - CarScope',
                             text: 'Sikeresen regisztrál a CarScope oldalon!'
                         };
-                        callback(false,msg);
+                        
                         transporter.sendMail(mailOptions, function(error, info){
                             if (error) {
                                 console.log(error);
                             } else {
                                 console.log('Email sent: ' + info.response);
                                 connection.release();
+                                callback(null,null);
                                 res.redirect('/bejelentkezes')
                             }
                         });

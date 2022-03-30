@@ -14,14 +14,15 @@ login.prototype.loginUser = function(req, res, callback){
     console.log(jelszo)
         params = [req.body.email, jelszo,0],
         detailParams = [],
+        console.log(params),
         updateParams = [],
 	    loginUserQuery = 'SELECT * FROM felhasznalo WHERE Email = ? AND Jelszó = ?',
         getDetailQuery = 'SELECT FID, Felhasználónév, Email, Jelszó FROM felhasznalo WHERE FID = ?';
 	mysqlPool.getConnection(function(err, connection){
 		connection.query(loginUserQuery, params, function(err, rows, fields) {
-           if(rows.length <= 0){
+            if(rows.length <= 0){
                 connection.release();
-                callback(true, null);
+                callback(true, "Hiba  a bejelentkezésben");
                 console.log("Hiba a bejelentkezesben")
             }else{
                 detailParams = [rows[0].id];
