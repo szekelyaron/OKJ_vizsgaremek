@@ -28,19 +28,21 @@ router.get('/regisztracio', mainController.getRegisztracio);
 
 router.post('/regisztracio', validationForm.form ,mainController.validateRegistration);
 
-router.get('/fooldal', mainController.getFooldal);
-
-router.post('/fooldal',mainController.rendszamlekerdezes);
-
 router.get('/sugo', mainController.getSugo);
 
 router.get('/kapcsolat', mainController.getContactus);
 
 router.post('/contactuskuld', mainController.postContactus);
 
-router.post('/kijelentkezes', mainController.postLogout);
+// Fooldal
+
+router.get('/fooldal', mainController.getFooldal);
+
+router.post('/fooldal',mainController.rendszamlekerdezes);
 
 router.post('/fooldal',mainController.checkLogin);
+
+router.post('/kijelentkezes', mainController.postLogout);
 
 router.get('/vendeg',mainController.getVendeg);
 
