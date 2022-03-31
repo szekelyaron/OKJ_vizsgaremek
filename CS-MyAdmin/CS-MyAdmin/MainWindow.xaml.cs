@@ -50,5 +50,10 @@ namespace CS_MyAdmin
         {
 
         }
+
+        private void BTN_EXIT_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

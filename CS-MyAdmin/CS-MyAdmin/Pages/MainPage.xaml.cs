@@ -74,20 +74,24 @@ namespace CS_MyAdmin.Pages
             DG_asd.ItemsSource = autok;
             LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
 
-            cb_databases.Items.Add("autok");
-            cb_databases.Items.Add("gumiabroncs");
-            cb_databases.Items.Add("info");
-            cb_databases.SelectedIndex = 0;
 
-            static void GumiFill(ComboBox CBgumi)
-            {
-                CBgumi.Items.Add("Nyári");
-                CBgumi.Items.Add("Téli");
-                CBgumi.Items.Add("Négyévszakos");
-                CBgumi.SelectedIndex = 0;
-            }
-            GumiFill(CB_GumiEvszak);
-            GumiFill(CB_GumiInfo);
+            string[] dbItems = { "Autók", "Gumiabroncsok", "Info" };
+            string[] gumiItems = { "Nyári", "Téli", "Négyévszakos" };
+            string[] allapotItems = {"Alig használt", "Frissen felújított", "Használt", "Enyhén sérült", "Sérült" };
+            string[] okmanyItems = { "Érvényes magyar okmányokkal" , "Lejárt magyar okmányokkal" , "Külföldi okmányokkal" , "Okmányok nélkül" };
+            string[] torottItems = { "Sérülésmentes", "Apró sérülések", "Eleje sérült", "Hátulja sérült", "Súlyosan sérült" };
+            cb_databases.ItemsSource = dbItems;
+            cb_databases.SelectedIndex = 0;
+            CB_GumiEvszak.ItemsSource = gumiItems;
+            CB_GumiEvszak.SelectedIndex = 0;
+            CB_GumiInfo.ItemsSource = gumiItems;
+            CB_GumiInfo.SelectedIndex = 0;
+            CB_allapot.ItemsSource = allapotItems;
+            CB_allapot.SelectedIndex = 0;
+            CB_okmanyok.ItemsSource = okmanyItems;
+            CB_okmanyok.SelectedIndex = 0;
+            CB_Torott.ItemsSource = torottItems;
+            CB_Torott.SelectedIndex = 0;
 
             for (int i = 1; i < 11; i++)
             {
@@ -98,26 +102,6 @@ namespace CS_MyAdmin.Pages
             CB_GumiKategoria.SelectedIndex = 0;
 
             DP_muszaki.SelectedDate = DateTime.Today;
-
-            CB_allapot.Items.Add("Alig használt");
-            CB_allapot.Items.Add("Frissen felújított");
-            CB_allapot.Items.Add("Használt");
-            CB_allapot.Items.Add("Enyhén sérült");
-            CB_allapot.Items.Add("Sérült");
-            CB_allapot.SelectedIndex = 0;
-
-            CB_okmanyok.Items.Add("Érvényes magyar okmányokkal");
-            CB_okmanyok.Items.Add("Lejárt magyar okmányokkal");
-            CB_okmanyok.Items.Add("Külföldi okmányokkal");
-            CB_okmanyok.Items.Add("Okmányok nélkül");
-            CB_okmanyok.SelectedIndex = 0;
-
-            CB_Torott.Items.Add("Sérülésmentes");
-            CB_Torott.Items.Add("Apró sérülések");
-            CB_Torott.Items.Add("Eleje sérült");
-            CB_Torott.Items.Add("Hátulja sérült");
-            CB_Torott.Items.Add("Súlyosan sérült");
-            CB_Torott.SelectedIndex = 0;
 
             CB_szervkönyv.Items.Add("Nem");
             CB_szervkönyv.Items.Add("Igen");
@@ -194,6 +178,7 @@ namespace CS_MyAdmin.Pages
             {
                 infok = InfoModel.select();
                 DG_asd.ItemsSource = infok;
+
                 CB_autoAzon.Items.Clear();
                 foreach (var item in autok)
                 {
