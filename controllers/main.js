@@ -16,7 +16,7 @@ var transporter = nodemailer.createTransport({
     },
 });
 
-//Kezsőoldal
+//Kezdő oldal
 exports.getIndex = (req, res, next) => {
     res.render("kezdolap", {
         pageTitle: "CarScope",
@@ -62,7 +62,7 @@ exports.validateRegistration = (req, res, next) => {
     if (!error.isEmpty()) {
         res.render("regisztracio", {
             pageTitle: "CarScope - Regisztráció",
-            path: "/registration",
+            path: "/regisztracio",
             errorCode: msg,
             user: req.session.user,
         });

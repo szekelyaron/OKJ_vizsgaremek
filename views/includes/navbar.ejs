@@ -27,13 +27,17 @@
         <% if(user == undefined) { %>
           <form class="form-inline my-2 my-lg-0">
 
-            <a class="btn btn-outline-light" href="bejelentkezes" type="submit">Bejelentkezés</a>
+            <a class="btn btn-outline-light" href="bejelentkezes"
+            type="submit">Bejelentkezés</a>
             &nbsp;&nbsp;
-            <a href="regisztracio" class="btn btn-outline-light" type="submit">Regisztráció</a>
+            <a href="regisztracio" class="btn btn-outline-light"
+            type="submit">Regisztráció</a>
           </form>
         <% }else{ %>
-          <form class="form-inline my-2 my-lg-0" method="post" action="/kijelentkezes">
-            <button class="btn btn-outline-light" type="submit">Kijelentkezés</button>
+          <form class="form-inline my-2 my-lg-0" method="post"
+          action="/kijelentkezes">
+            <button class="btn btn-outline-light"
+            type="submit">Kijelentkezés</button>
           </form>
         <% } %>
     </div>

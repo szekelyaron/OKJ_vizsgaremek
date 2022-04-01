@@ -23,30 +23,30 @@
       <% for (let error of errorCode) { %>
         <% if (error.param == 'felhasznalonev') { %>
             <p class="error_message"><%= error.msg %></p>
+            <% } %>
+            <% if (error.param == 'Email') { %>
+              <p class="error_message"><%= error.msg %></p>
+                  <% } %>
                 <% } %>
-                <% if (error.param == 'Email') { %>
-                  <p class="error_message"><%= error.msg %></p>
-                      <% } %>
-                    <% } %>
-                    <% } %>
+                <% } %>
       <input class="un " type="text" align="center" name="email" id="email" placeholder="E-mail cím">
       <% if (errorCode != '') {%>
       <br>
-                              <% for (let error of errorCode) { %>
-                                  <% if (error.param == 'email') { %>
-                                    <p class="error_message"><%= error.msg %></p>
-                                          <% } %>
-                                        <% } %>
-                                      <% } %>
+      <% for (let error of errorCode) { %>
+          <% if (error.param == 'email') { %>
+            <p class="error_message"><%= error.msg %></p>
+                  <% } %>
+                <% } %>
+              <% } %>
       <input class="pass" type="password" align="center" name="jelszo" id="jelszo" placeholder="Jelszó">
       <% if (errorCode != '') {%>
       <br>
-                                                  <% for (let error of errorCode) { %>
-                                                      <% if (error.param == 'jelszo') { %>
-                                                        <p class="error_message"><%= error.msg %></p>
-                                                              <% } %>
-                                                                  <% } %>
-                                                                  <% } %>
+      <% for (let error of errorCode) { %>
+          <% if (error.param == 'jelszo') { %>
+            <p class="error_message"><%= error.msg %></p>
+                  <% } %>
+                      <% } %>
+                      <% } %>
       <input class="pass" type="password" align="center" name="password_again" id="password_again" placeholder="Jelszó újra">
       <% if (errorCode != '') {%>
         <br>
