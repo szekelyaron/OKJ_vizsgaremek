@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
     margin-bottom: 12px;
 }
 
-.card-container-right button {
+.card-container-right .details-button {
     padding: 5px 10px;
     margin-bottom: 10px;
     font-size: 20px;
@@ -69,11 +69,12 @@ body::-webkit-scrollbar {
     color: white;
     text-align: center;
     width: 245px;
+    cursor: pointer;
     transition: background 0.25s ease-in-out;
 }
 
-.card-container-right button:hover {
-    background: rgba(50, 0, 0, 0.5);
+.card-container-right .details-button:hover {
+    background: rgba(95, 95, 95, 0.5);
     cursor: pointer;
 }
 
@@ -146,6 +147,10 @@ body::-webkit-scrollbar {
         width: 80%;
     }
     .image-div {
-        height: 40%;
+        height: fit-content;
+    }
+    .image-div img{
+        max-width: 100%;
+        height: auto;
     }
 }
