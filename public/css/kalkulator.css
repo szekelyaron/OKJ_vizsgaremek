@@ -51,12 +51,6 @@ html body{
     color: var(--uiFieldPlaceholderColor);
 }
 
-/*
-=====
-CORE STYLES
-=====
-*/
-
 .field {
     --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
     --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
@@ -213,7 +207,7 @@ CORE STYLES
     background-color: transparent;
     width: 800px;
     height: 248px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px; /* 3D effect */
     float: bottom;
     margin-left: auto;
     margin-right: auto;
@@ -232,7 +226,6 @@ CORE STYLES
     }
   }
   
-  /* This container is needed to position the front and back side */
   .flip-box-inner {
     position: relative;
     width: 100%;
@@ -243,21 +236,20 @@ CORE STYLES
     float: bottom;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* 180 fokos fordítás */
   .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
   }
   
-  /* Style the back side */
+  /* Stílus hátulja */
   .flip-box-back {
     color: white;
     transform: rotateY(180deg);
