@@ -449,24 +449,12 @@
     </Page.Resources >
 
 
-
-        <Grid x:Name="GRD_sajatGrid">
-
-            <!--Oszlopok-->
-            <!--<Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>-->
-
-            <!--Első sor / Munkavállalók adatai-->
-
-            <!--Első oszlop / Munkavállalók-->
-            <Border Background="#FF760000"
+    <Grid x:Name="GRD_sajatGrid">
+        <Border Background="#FF760000"
                     BorderBrush="#FF430000"
                     BorderThickness="0,0,2,0"
                     CornerRadius="0,0,8,8">
-
-                <StackPanel Margin="0,0,0,0">
-
+            <StackPanel Margin="0,0,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Content="Válasszon adatbázist:" Margin="5" FontSize="16" FontWeight="Bold" Foreground="White"/>
                     <ComboBox x:Name="cb_databases" Style="{StaticResource theComboBox}" VerticalContentAlignment="Center" Height="25" Width="100" Margin="5" SelectionChanged="cb_databases_SelectionChanged"/>
@@ -474,7 +462,7 @@
                     <TextBox x:Name="TB_searchbar" Margin="5" Width="200" Height="25" VerticalContentAlignment="Center" TextChanged="TB_searchbar_TextChanged"/>
                     <Label x:Name="LBL_recordCount" FontWeight="Bold" Margin="5" Foreground="White"/>
                 </StackPanel>
-                <DataGrid x:Name="DG_asd"
+                <DataGrid x:Name="DG_adatok"
                           AutoGenerateColumns="True"
                           IsReadOnly="False"
                           CanUserAddRows="False"
@@ -488,7 +476,6 @@
                         Content="Mentés"
                         x:Name="BTN_Save"
                         FontWeight="Bold" Click="Button_Click">
-
                     </Button>
                     <Button Style="{StaticResource ButtonStyle1}"
                         Width="100"
@@ -496,7 +483,6 @@
                         Margin="5"
                         Padding="5"
                         Content="Törlés" FontWeight="Bold" x:Name="BTN_Delete" Click="BTN_Delete_Click">
-
                     </Button>
                 </StackPanel>
 
@@ -527,7 +513,7 @@
                         Content="Felvesz" FontWeight="Bold" HorizontalAlignment="Left" Click="BTN_insertAuto_Click"/>
                         <Label x:Name="LB_uresMezo" Content="Töltsön ki minden mezőt!" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
-                
+
                 </StackPanel>
                 <StackPanel x:Name="SP_gumikInsert" Visibility="Collapsed" HorizontalAlignment="Center">
                     <Label Content="Új gumi hozzáadása" FontSize="16" FontWeight="Bold" Foreground="White" Margin="5"/>
@@ -613,62 +599,10 @@
 
                 </StackPanel>
 
-
-
             </StackPanel>
 
-            </Border>
+        </Border>
 
-            <!--Második oszlop / Adatok-->
-
-            <!--Második sor / User actions-->
-
-            <!--User actions page-->
-
-
-            <!--<Button x:Name="BTN_Exit"
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    Margin="20"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom"
-                    Height="40"
-                    Width="40"
-                    BorderThickness="0"
-                    Click="BTN_Exit_Click">
-
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background">
-                            <Setter.Value>
-                                <ImageBrush ImageSource="/exit.png" />
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center"
-                                                          VerticalAlignment="Center" />
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver"
-                                     Value="True">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <ImageBrush ImageSource="/exit_hover.png" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-
-            </Button>-->
-
-        </Grid>
+    </Grid>
 
 </Page>

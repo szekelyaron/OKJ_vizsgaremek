@@ -71,15 +71,15 @@ namespace CS_MyAdmin.Pages
             autok = AutoModel.select();
             gumik = GumiModel.select();
             infok = InfoModel.select();
-            DG_asd.ItemsSource = autok;
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            DG_adatok.ItemsSource = autok;
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
 
 
-            string[] dbItems = { "Autók", "Gumiabroncsok", "Info" };
-            string[] gumiItems = { "Nyári", "Téli", "Négyévszakos" };
-            string[] allapotItems = {"Alig használt", "Frissen felújított", "Használt", "Enyhén sérült", "Sérült" };
-            string[] okmanyItems = { "Érvényes magyar okmányokkal" , "Lejárt magyar okmányokkal" , "Külföldi okmányokkal" , "Okmányok nélkül" };
-            string[] torottItems = { "Sérülésmentes", "Apró sérülések", "Eleje sérült", "Hátulja sérült", "Súlyosan sérült" };
+            string[] dbItems = {"Autók", "Gumiabroncsok", "Info"};
+            string[] gumiItems = {"Nyári","Téli","Négyévszakos" };
+            string[] allapotItems = {"Alig használt","Frissen felújított","Használt","Enyhén sérült","Sérült" };
+            string[] okmanyItems = {"Érvényes magyar okmányokkal" ,"Lejárt magyar okmányokkal" ,"Külföldi okmányokkal" ,"Okmányok nélkül"};
+            string[] torottItems = {"Sérülésmentes", "Apró sérülések", "Eleje sérült", "Hátulja sérült", "Súlyosan sérült"};
             cb_databases.ItemsSource = dbItems;
             cb_databases.SelectedIndex = 0;
             CB_GumiEvszak.ItemsSource = gumiItems;
@@ -127,7 +127,7 @@ namespace CS_MyAdmin.Pages
 
                 }
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_adatok.ItemsSource = autok;
 
             }
             else if(cb_databases.SelectedIndex == 1)
@@ -137,7 +137,7 @@ namespace CS_MyAdmin.Pages
                     GumiModel.update(item.gId, item.gyarto, item.evszak, item.kategoria, item.ar, item.atmero, item.oldalFal, item.szelesseg);
                 }
                 gumik = GumiModel.select();
-                DG_asd.ItemsSource = gumik;
+                DG_adatok.ItemsSource = gumik;
             }
             else if (cb_databases.SelectedIndex == 2)
             {
@@ -146,10 +146,10 @@ namespace CS_MyAdmin.Pages
                     InfoModel.update(item.IID, item.rendszam, item.alvazszam, item.futottKm, item.evJarat, item.allapot,
                         item.szervKonyv, item.okmanyok, item.muszaki, item.GumiAbroncs, item.AutoID, item.kepcim, item.torott);
                     infok = InfoModel.select();
-                    DG_asd.ItemsSource = infok;
+                    DG_adatok.ItemsSource = infok;
                 }
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
 
         }
 
@@ -159,7 +159,7 @@ namespace CS_MyAdmin.Pages
             if (cb_databases.SelectedIndex == 0)
             {
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_adatok.ItemsSource = autok;
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
@@ -168,7 +168,7 @@ namespace CS_MyAdmin.Pages
             if (cb_databases.SelectedIndex == 1)
             {
                 gumik = GumiModel.select();
-                DG_asd.ItemsSource = gumik;
+                DG_adatok.ItemsSource = gumik;
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Collapsed;
@@ -177,7 +177,7 @@ namespace CS_MyAdmin.Pages
             if (cb_databases.SelectedIndex == 2)
             {
                 infok = InfoModel.select();
-                DG_asd.ItemsSource = infok;
+                DG_adatok.ItemsSource = infok;
 
                 CB_autoAzon.Items.Clear();
                 foreach (var item in autok)
@@ -190,7 +190,7 @@ namespace CS_MyAdmin.Pages
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
                 SP_infokInsert.Visibility = Visibility.Visible;
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
         }
         private void BTN_insertAuto_Click(object sender, RoutedEventArgs e)
         {
@@ -199,9 +199,9 @@ namespace CS_MyAdmin.Pages
                 AutoModel.insert(TB_gyarto.Text, TB_tipus.Text, Convert.ToInt32(CB_megbizhatosag.SelectedItem), TB_tipushiba.Text);
 
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_adatok.ItemsSource = autok;
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_autokInsert);
 
         }
@@ -212,9 +212,9 @@ namespace CS_MyAdmin.Pages
                 GumiModel.insert(TB_GumiGyarto.Text, CB_GumiEvszak.SelectedItem.ToString(), Convert.ToInt32(CB_GumiKategoria.SelectedItem), int.Parse(TB_GumiAr.Text), Convert.ToInt32(TB_GumiAtmero.Text), Convert.ToInt32(TB_GumiOldalfal.Text), Convert.ToInt32(TB_GumiSzelesseg.Text));
 
                 gumik = GumiModel.select();
-                DG_asd.ItemsSource = gumik;
+                DG_adatok.ItemsSource = gumik;
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_gumikInsert);
         }
 
@@ -222,15 +222,14 @@ namespace CS_MyAdmin.Pages
         {
             string[] splittedText = CB_autoAzon.SelectedItem.ToString().Split(':');
             if (TB_Rendszam.Text != "" && TB_Alvazszam.Text != "" && TB_FutottKm.Text != "")
-            {                            
-                LB_InfouresMezo.IsEnabled = true;
+            {
                 InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
                     Convert.ToInt32(splittedText[0]), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
 
                 infok = InfoModel.select();
-                DG_asd.ItemsSource = infok;
+                DG_adatok.ItemsSource = infok;
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_infokInsert);
         }
 
@@ -238,23 +237,23 @@ namespace CS_MyAdmin.Pages
         {
             if (cb_databases.SelectedIndex == 0)
             {
-                AutoModel.delete(autok[DG_asd.SelectedIndex].aId);
+                AutoModel.delete(autok[DG_adatok.SelectedIndex].aId);
                 autok = AutoModel.select();
-                DG_asd.ItemsSource = autok;
+                DG_adatok.ItemsSource = autok;
             }
             else if (cb_databases.SelectedIndex == 1)
             {
-                GumiModel.delete(gumik[DG_asd.SelectedIndex].gId);
+                GumiModel.delete(gumik[DG_adatok.SelectedIndex].gId);
                 gumik = GumiModel.select();
-                DG_asd.ItemsSource = gumik;
+                DG_adatok.ItemsSource = gumik;
             }
             else if (cb_databases.SelectedIndex == 2)
             {
-                InfoModel.delete(infok[DG_asd.SelectedIndex].IID);    
+                InfoModel.delete(infok[DG_adatok.SelectedIndex].IID);    
                 infok = InfoModel.select();
-                DG_asd.ItemsSource = infok;
+                DG_adatok.ItemsSource = infok;
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
         }
 
         private void TB_searchbar_TextChanged(object sender, TextChangedEventArgs e)
@@ -263,16 +262,16 @@ namespace CS_MyAdmin.Pages
             {
                 if (TB_searchbar.Text != "")
                 {
-                    DG_asd.IsReadOnly = true;
+                    DG_adatok.IsReadOnly = true;
                     var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.tipus.ToLower().StartsWith(TB_searchbar.Text));
-                    DG_asd.ItemsSource = filteredList;
+                    DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
                 }
                 else
                 {
-                    DG_asd.IsReadOnly = false;
-                    DG_asd.ItemsSource = autok;
+                    DG_adatok.IsReadOnly = false;
+                    DG_adatok.ItemsSource = autok;
                     BTN_Delete.IsEnabled = true;
                     BTN_Save.IsEnabled = true;
                 }
@@ -281,16 +280,16 @@ namespace CS_MyAdmin.Pages
             {
                 if (TB_searchbar.Text != "")
                 {
-                    DG_asd.IsReadOnly = true;
+                    DG_adatok.IsReadOnly = true;
                     var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.evszak.ToLower().StartsWith(TB_searchbar.Text));
-                    DG_asd.ItemsSource = filteredList;
+                    DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
                 }
                 else
                 {
-                    DG_asd.IsReadOnly = false;
-                    DG_asd.ItemsSource = gumik;
+                    DG_adatok.IsReadOnly = false;
+                    DG_adatok.ItemsSource = gumik;
                     BTN_Delete.IsEnabled = true;
                     BTN_Save.IsEnabled = true;
                 }
@@ -299,21 +298,21 @@ namespace CS_MyAdmin.Pages
             {
                 if (TB_searchbar.Text != "")
                 {
-                    DG_asd.IsReadOnly = true;
+                    DG_adatok.IsReadOnly = true;
                     var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text) || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text));
-                    DG_asd.ItemsSource = filteredList;
+                    DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
                 }
                 else
                 {
-                    DG_asd.IsReadOnly = false;
-                    DG_asd.ItemsSource = infok;
+                    DG_adatok.IsReadOnly = false;
+                    DG_adatok.ItemsSource = infok;
                     BTN_Delete.IsEnabled = true;
                     BTN_Save.IsEnabled = true;
                 }
             }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_asd.Items.Count.ToString();
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -331,11 +330,6 @@ namespace CS_MyAdmin.Pages
                 ((TextBox)sender).Text = "";
                 return;
             }
-
-        }
-
-        private void TB_gyarto_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
         }
 
