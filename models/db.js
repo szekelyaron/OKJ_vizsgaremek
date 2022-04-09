@@ -15,7 +15,6 @@ DB.prototype.getConnection = function(pool,callback){
 	var self = this;
 	pool.getConnection(function(err, connection) {
 		if(err) {
-			//logging here
 			console.log(err);
 			callback(true);
 			return;
@@ -38,7 +37,6 @@ DB.prototype.createTransaction = function(pool,callback) {
 	var self = this;
 	self.getConnection(pool,function(err,connection){
 		if(err) {
-			//logging here
 			console.log(err);
 			callback(true);
 			return;

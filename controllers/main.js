@@ -173,7 +173,6 @@ exports.rendszamlekerdezes = (req, res, next) => {
     if (req.body.R == "True") {
         lekerdR.rendszamalapjan(req, res, function(err, data) {
             if (err || req.session.auto_adatai_rendsz == undefined) {
-                console.log("Nem jó");
                 res.render("fooldal", {
                     pageTitle: "CarScope - Főoldal",
                     path: "/fooldal",
