@@ -19,38 +19,6 @@ namespace CS_MyAdmin.Pages
         ObservableCollection<GumiModel> gumik = new ObservableCollection<GumiModel>();
         ObservableCollection<InfoModel> infok = new ObservableCollection<InfoModel>();
 
-        void resetSP(StackPanel Stackname)
-        {
-            List<Object> spanels = new List<Object>();
-
-            foreach (Object vizsgaltItem in Stackname.Children)
-            {
-                if (vizsgaltItem.GetType() == typeof(StackPanel))
-                {
-                    spanels.Add(vizsgaltItem);
-                }
-
-            }
-
-            foreach (StackPanel spanel in spanels)
-            {
-                foreach (Control item in spanel.Children)
-                {
-                    if (item.GetType() == typeof(TextBox))
-                    {
-                        ((TextBox)item).Text = string.Empty;
-                    }
-                    else if (item.GetType() == typeof(ComboBox))
-                    {
-                        ((ComboBox)item).SelectedIndex = 0;
-                    }
-                    else if (item.GetType() == typeof(DatePicker))
-                    {
-                        ((DatePicker)item).SelectedDate = DateTime.Now;
-                    }
-                }
-            }
-        }
 
         public MainPage()
         {
@@ -105,6 +73,39 @@ namespace CS_MyAdmin.Pages
             
         }
 
+        static void resetSP(StackPanel Stackname)
+        {
+            List<Object> spanels = new List<Object>();
+
+            foreach (Object vizsgaltItem in Stackname.Children)
+            {
+                if (vizsgaltItem.GetType() == typeof(StackPanel))
+                {
+                    spanels.Add(vizsgaltItem);
+                }
+
+            }
+
+            foreach (StackPanel spanel in spanels)
+            {
+                foreach (Control item in spanel.Children)
+                {
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        ((TextBox)item).Text = string.Empty;
+                    }
+                    else if (item.GetType() == typeof(ComboBox))
+                    {
+                        ((ComboBox)item).SelectedIndex = 0;
+                    }
+                    else if (item.GetType() == typeof(DatePicker))
+                    {
+                        ((DatePicker)item).SelectedDate = DateTime.Now;
+                    }
+                }
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (cb_databases.SelectedItem.ToString()=="Autók")
@@ -148,6 +149,7 @@ namespace CS_MyAdmin.Pages
             {
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
+                TB_searchbar.Text = "";
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
@@ -157,6 +159,7 @@ namespace CS_MyAdmin.Pages
             {
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
+                TB_searchbar.Text = "";
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Collapsed;
@@ -166,6 +169,7 @@ namespace CS_MyAdmin.Pages
             {
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
+                TB_searchbar.Text = "";
 
                 CB_autoAzon.Items.Clear();
                 foreach (var item in autok)
@@ -189,6 +193,10 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
             }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!","Helytelen kitöltés",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_autokInsert);
 
@@ -201,6 +209,10 @@ namespace CS_MyAdmin.Pages
 
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
+            }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_gumikInsert);
@@ -216,6 +228,10 @@ namespace CS_MyAdmin.Pages
 
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
+            }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_infokInsert);
