@@ -525,7 +525,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Width="100" Content="Futott Km:" Foreground="White"/>
-                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="11"/>
+                        <TextBox x:Name="TB_FutottKm" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="7"/>
                         <Label Width="120" Content="Évjárat:" Foreground="White"/>
                         <TextBox x:Name="TB_Evjarat" Margin="5" Width="120" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" MaxLength="4" LostFocus="TB_Evjarat_LostFocus"/>
                     </StackPanel>

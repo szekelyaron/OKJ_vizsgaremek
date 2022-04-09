@@ -189,6 +189,10 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
             }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!","Helytelen kitöltés",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_autokInsert);
 
@@ -201,6 +205,10 @@ namespace CS_MyAdmin.Pages
 
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
+            }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_gumikInsert);
@@ -216,6 +224,10 @@ namespace CS_MyAdmin.Pages
 
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
+            }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
             resetSP(SP_infokInsert);
