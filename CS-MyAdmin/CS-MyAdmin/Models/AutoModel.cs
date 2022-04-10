@@ -56,11 +56,6 @@ namespace CS_MyAdmin.Models
 
         }
 
-        public string cbItem(string aid, string gyarto, string tipus)
-        {
-            return (string.Format("{0}: {1} - {2}",aId,gyarto, tipus));
-        }
-
         public AutoModel(MySqlDataReader reader)
         {
             this.aId = Convert.ToInt32(reader["AID"]);
@@ -117,7 +112,8 @@ namespace CS_MyAdmin.Models
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
                 con.Open();
-                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALUES (@gyarto, @tipus, @megbizhatosag, @tipushiba)";
+                var sql = "INSERT INTO `auto`(`Gyarto`, `Tipus`, `Megbizhatosag`," +
+                    " `Tipushiba`) VALUES (@gyarto, @tipus, @megbizhatosag, @tipushiba)";
                 using (var cmd = new MySqlCommand(sql, con))
                 {
                     cmd.Parameters.AddWithValue("@gyarto", gyarto);
