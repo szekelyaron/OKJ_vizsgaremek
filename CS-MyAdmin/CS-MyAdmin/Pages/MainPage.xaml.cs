@@ -73,7 +73,7 @@ namespace CS_MyAdmin.Pages
             
         }
 
-        static void resetSP(StackPanel Stackname)
+        static void ResetSP(StackPanel Stackname)
         {
             List<Object> spanels = new List<Object>();
 
@@ -155,7 +155,7 @@ namespace CS_MyAdmin.Pages
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Visible;
             }
-            if (cb_databases.SelectedItem.ToString()=="Gumiabroncsok")
+            else if (cb_databases.SelectedItem.ToString()=="Gumiabroncsok")
             {
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
@@ -165,7 +165,7 @@ namespace CS_MyAdmin.Pages
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Visible;
             }
-            if (cb_databases.SelectedItem.ToString()=="Info")
+             else if (cb_databases.SelectedItem.ToString()=="Info")
             {
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
@@ -198,7 +198,7 @@ namespace CS_MyAdmin.Pages
                 MessageBox.Show("Egy vagy több mező nem lett kitöltve!","Helytelen kitöltés",MessageBoxButton.OK,MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_autokInsert);
+            ResetSP(SP_autokInsert);
 
         }
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
@@ -215,7 +215,7 @@ namespace CS_MyAdmin.Pages
                 MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_gumikInsert);
+            ResetSP(SP_gumikInsert);
         }
 
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
@@ -234,7 +234,7 @@ namespace CS_MyAdmin.Pages
                 MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_infokInsert);
+            ResetSP(SP_infokInsert);
         }
 
         private void BTN_Delete_Click(object sender, RoutedEventArgs e)
@@ -267,7 +267,8 @@ namespace CS_MyAdmin.Pages
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) || x.tipus.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
+                    var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.tipus.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
@@ -285,7 +286,8 @@ namespace CS_MyAdmin.Pages
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) || x.evszak.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
+                    var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.evszak.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
@@ -303,7 +305,8 @@ namespace CS_MyAdmin.Pages
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()) || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
+                    var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
