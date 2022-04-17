@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Már 21. 21:39
--- Kiszolgáló verziója: 10.4.17-MariaDB
--- PHP verzió: 8.0.2
+-- Létrehozás ideje: 2022. Ápr 17. 18:35
+-- Kiszolgáló verziója: 10.4.21-MariaDB
+-- PHP verzió: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,7 +51,19 @@ INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALU
 (14, 'Seat', 'Leon', 9, 'Ismeretlen'),
 (21, 'Volkswagen', 'Arteon', 5, 'Led fényszóró meghibásodása'),
 (23, 'Volkswagen', 'Beatle', 2, 'Csúnya'),
-(24, 'Audi', 'A6', 7, 'Ismeretlen');
+(24, 'Audi', 'A6', 7, 'Ismeretlen'),
+(26, 'Audi', 'A3', 8, 'TFSi motoroknál vezérműlánc megnyúlása'),
+(27, 'Audi', 'A4', 7, 'TFSi motornál a vezérműlánc megnyúlása'),
+(28, 'Ford', 'Mustang', 9, '2.3 Ecoboost motorok nem megbízhatóak'),
+(29, 'Ford', 'Mondeo', 5, 'ismeretlen'),
+(30, 'SsangYong', 'Rexton', 7, 'Szervízháttér hiánya'),
+(31, 'SsangYong', 'Korando', 8, 'Szervizháttér hiánya'),
+(32, 'Kia', 'EV6', 10, 'Jelenleg ismeretlen'),
+(33, 'Kia', 'Ceed', 7, 'Váltó kulissza kopása'),
+(34, 'Audi', '100', 10, 'Adagoló eltömődése'),
+(35, 'BMW', 'E36 230i', 7, 'Differenciálmű szimering'),
+(36, 'BMW', 'E92 330d', 6, 'EGR szelep eltömődés, gyulladás veszély'),
+(37, 'BMW', '5-ös sorozat', 6, 'Ismeretlen');
 
 -- --------------------------------------------------------
 
@@ -71,7 +83,6 @@ CREATE TABLE `felhasznalo` (
 --
 
 INSERT INTO `felhasznalo` (`FID`, `Felhasználónév`, `Jelszó`, `Email`) VALUES
-(6, 'asdasd', 'c329936d9323991c7e6039f3222082', 'asdasd@asdasd.asd'),
 (11, 'Admin1122', '9695476e054dcb63b752dc141702ff50', 'admin@admin.com'),
 (13, 'Proba1122', '6e5a4db2259e8a7779d9679ccea9511e', 'proba@proba.com');
 
@@ -134,8 +145,8 @@ CREATE TABLE `info` (
 
 INSERT INTO `info` (`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) VALUES
 (1, 'RPL-916', 'PRB12345678901234', 35000, 2019, '', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 'Sérülésmentes'),
-(2, 'SGA-030', 'FZ123456789123456', 145000, 2005, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-03-10 00:00:00', 'Nyári', 14, 'https://i3.infocar.ua/img/bazar2/733/732349/5581219_3.jpg', ''),
-(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', '');
+(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', ''),
+(22, 'HUF-314', 'VF1BZ1A0544763416', 460000, 2003, 'Használt', 0, 'Érvényes magyar okmányokkal', '2022-08-12 00:00:00', 'Nyári', 26, 'https://m.atcdn.co.uk/vms/media/%7Bresize%7D/8b47041aaeac4e20a7e8237988f912f0.jpg', 'Sérülésmentes');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -175,7 +186,7 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT a táblához `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalo`
@@ -193,7 +204,7 @@ ALTER TABLE `gumiabroncs`
 -- AUTO_INCREMENT a táblához `info`
 --
 ALTER TABLE `info`
-  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Megkötések a kiírt táblákhoz
