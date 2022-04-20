@@ -1,17 +1,3 @@
-/*function showImage(){
-    let cardBody = document.querySelector(".card-body");
-
-    if(cardBody.style.display === 'block'){
-        cardBody.style.display = 'none';
-        cardBody.addEventListener('click',showImage);
-        console.log("elrejtve")
-    }else{
-        cardBody.style.display = 'block';
-        cardBody.removeEventListener('click',showImage)
-        console.log("mutatva")
-    }
-}*/
-
 function showDetails() {
     let details = document.querySelector(".details")
     let button = document.querySelector(".details-button")

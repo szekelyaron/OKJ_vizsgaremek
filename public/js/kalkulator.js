@@ -9,56 +9,40 @@ const app = Vue.createApp({
             magassag_validate: false,
         };
     },
-    
+
     watch: {
-        szelesseg(value)
-        {
-          if(!/\D/.test(value) && Number(value) <=400 && Number(value) > 100)
-          {
-            this.szelesseg_validate = true;
-          console.log(value);
+        szelesseg(value) {
+            if (!/\D/.test(value) && Number(value) <= 400 && Number(value) > 100) {
+                this.szelesseg_validate = true;
+                console.log(value);
 
-          }
-          else
-          {
-            this.szelesseg_validate = false;
-          }
-        },
-  
-        oldalfal(value)
-        {
-
-            if(!/\D/.test(value) && Number(value) <=100 && Number(value) > 19)
-            {
-             console.log(value);
-
-              this.oldalfal_validate = true;
+            } else {
+                this.szelesseg_validate = false;
             }
-            else
-            {
+        },
+
+        oldalfal(value) {
+
+            if (!/\D/.test(value) && Number(value) <= 100 && Number(value) > 19) {
+                console.log(value);
+
+                this.oldalfal_validate = true;
+            } else {
                 this.oldalfal_validate = false;
             }
-          
+
         },
 
-        magassag(value)
-        {
+        magassag(value) {
 
-            if(!/\D/.test(value) && Number(value) <=24 && Number(value) > 12)
-            {
-              console.log(value);
+            if (!/\D/.test(value) && Number(value) <= 24 && Number(value) > 12) {
+                console.log(value);
 
-              this.magassag_validate = true;
-            }
-            else
-            {
+                this.magassag_validate = true;
+            } else {
                 this.magassag_validate = false;
             }
         }
     }
 });
-  app.mount('#kalkulator')
-  
-  var target = $('#target'),
-      val = target.val();
-  
+app.mount('#kalkulator')

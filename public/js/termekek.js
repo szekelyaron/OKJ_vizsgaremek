@@ -1,4 +1,4 @@
-function timer(obj){
+function timer(obj) {
     setTimeout(function() {
         $('#exampleModal').modal('hide');
     }, 800);
@@ -7,18 +7,9 @@ function timer(obj){
 const app = Vue.createApp({
     data() {
         return {
-            valasztottEvszak:  '',
-            valasztottMeret:  '',
+            valasztottEvszak: '',
+            valasztottMeret: '',
         };
-    },
-    methods: {
-      selectionChanged() {
-      }
-    },
-    
-  });
-  app.mount('#termekek')
-  
-  var target = $('#target'),
-      val = target.val();
-  
+    }
+});
+app.mount('#termekek')
