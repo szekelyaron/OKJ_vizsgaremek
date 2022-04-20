@@ -23,7 +23,7 @@ login.prototype.loginUser = function(req, res, callback){
             if(rows.length <= 0){
                 connection.release();
                 callback(true, "Hiba  a bejelentkezésben");
-                console.log("Hiba a bejelentkezesben")
+                //console.log("Hiba a bejelentkezesben")
             }else{
                 detailParams = [rows[0].id];
                 req.session.user = rows[0];

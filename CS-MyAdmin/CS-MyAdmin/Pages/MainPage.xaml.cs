@@ -1,23 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CS_MyAdmin.Pages;
 using System.Collections.ObjectModel;
 using CS_MyAdmin.Models;
 using System.Linq;
-using System.Globalization;
-using System.Configuration;
-using MySqlConnector;
-using System.ComponentModel;
 using System.Text.RegularExpressions;
 
 namespace CS_MyAdmin.Pages
@@ -31,38 +19,6 @@ namespace CS_MyAdmin.Pages
         ObservableCollection<GumiModel> gumik = new ObservableCollection<GumiModel>();
         ObservableCollection<InfoModel> infok = new ObservableCollection<InfoModel>();
 
-        void resetSP(StackPanel Stackname)
-        {
-            List<Object> spanels = new List<Object>();
-
-            foreach (Object vizsgaltItem in Stackname.Children)
-            {
-                if (vizsgaltItem.GetType() == typeof(StackPanel))
-                {
-                    spanels.Add(vizsgaltItem);
-                }
-
-            }
-
-            foreach (StackPanel spanel in spanels)
-            {
-                foreach (Control item in spanel.Children)
-                {
-                    if (item.GetType() == typeof(TextBox))
-                    {
-                        ((TextBox)item).Text = string.Empty;
-                    }
-                    else if (item.GetType() == typeof(ComboBox))
-                    {
-                        ((ComboBox)item).SelectedIndex = 0;
-                    }
-                    else if (item.GetType() == typeof(DatePicker))
-                    {
-                        ((DatePicker)item).SelectedDate = DateTime.Now;
-                    }
-                }
-            }
-        }
 
         public MainPage()
         {
@@ -75,7 +31,7 @@ namespace CS_MyAdmin.Pages
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
 
 
-            string[] dbItems = {"Autók", "Gumiabroncsok", "Info"};
+            string[] dbItems = {"Autók", "Info", "Gumiabroncsok" };
             string[] gumiItems = {"Nyári","Téli","Négyévszakos" };
             string[] allapotItems = {"Alig használt","Frissen felújított","Használt","Enyhén sérült","Sérült" };
             string[] okmanyItems = {"Érvényes magyar okmányokkal" ,"Lejárt magyar okmányokkal" ,"Külföldi okmányokkal" ,"Okmányok nélkül"};
@@ -117,9 +73,42 @@ namespace CS_MyAdmin.Pages
             
         }
 
+        static void ResetSP(StackPanel Stackname)
+        {
+            List<Object> spanels = new List<Object>();
+
+            foreach (Object vizsgaltItem in Stackname.Children)
+            {
+                if (vizsgaltItem.GetType() == typeof(StackPanel))
+                {
+                    spanels.Add(vizsgaltItem);
+                }
+
+            }
+
+            foreach (StackPanel spanel in spanels)
+            {
+                foreach (Control item in spanel.Children)
+                {
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        ((TextBox)item).Text = string.Empty;
+                    }
+                    else if (item.GetType() == typeof(ComboBox))
+                    {
+                        ((ComboBox)item).SelectedIndex = 0;
+                    }
+                    else if (item.GetType() == typeof(DatePicker))
+                    {
+                        ((DatePicker)item).SelectedDate = DateTime.Now;
+                    }
+                }
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (cb_databases.SelectedIndex == 0)
+            if (cb_databases.SelectedItem.ToString()=="Autók")
             {
                 foreach (var item in autok)
                 {
@@ -130,7 +119,7 @@ namespace CS_MyAdmin.Pages
                 DG_adatok.ItemsSource = autok;
 
             }
-            else if(cb_databases.SelectedIndex == 1)
+            else if(cb_databases.SelectedItem.ToString()=="Gumiabroncsok")
             {
                 foreach (var item in gumik)
                 {
@@ -139,7 +128,7 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
             }
-            else if (cb_databases.SelectedIndex == 2)
+            else if (cb_databases.SelectedItem.ToString()=="Info")
             {
                 foreach (var item in infok)
                 {
@@ -156,28 +145,31 @@ namespace CS_MyAdmin.Pages
 
         private void cb_databases_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cb_databases.SelectedIndex == 0)
+            if (cb_databases.SelectedItem.ToString()=="Autók")
             {
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
+                TB_searchbar.Text = "";
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Visible;
             }
-            if (cb_databases.SelectedIndex == 1)
+            else if (cb_databases.SelectedItem.ToString()=="Gumiabroncsok")
             {
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
+                TB_searchbar.Text = "";
 
                 SP_infokInsert.Visibility = Visibility.Collapsed;
                 SP_autokInsert.Visibility = Visibility.Collapsed;
                 SP_gumikInsert.Visibility = Visibility.Visible;
             }
-            if (cb_databases.SelectedIndex == 2)
+             else if (cb_databases.SelectedItem.ToString()=="Info")
             {
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
+                TB_searchbar.Text = "";
 
                 CB_autoAzon.Items.Clear();
                 foreach (var item in autok)
@@ -201,8 +193,12 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
             }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!","Helytelen kitöltés",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_autokInsert);
+            ResetSP(SP_autokInsert);
 
         }
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
@@ -214,8 +210,12 @@ namespace CS_MyAdmin.Pages
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
             }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_gumikInsert);
+            ResetSP(SP_gumikInsert);
         }
 
         private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
@@ -229,27 +229,31 @@ namespace CS_MyAdmin.Pages
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
             }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            resetSP(SP_infokInsert);
+            ResetSP(SP_infokInsert);
         }
 
         private void BTN_Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (cb_databases.SelectedIndex == 0)
+            if (cb_databases.SelectedItem.ToString()=="Autók")
             {
                 AutoModel.delete(autok[DG_adatok.SelectedIndex].aId);
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
             }
-            else if (cb_databases.SelectedIndex == 1)
+            else if (cb_databases.SelectedItem.ToString() == "Gumiabroncsok")
             {
                 GumiModel.delete(gumik[DG_adatok.SelectedIndex].gId);
                 gumik = GumiModel.select();
                 DG_adatok.ItemsSource = gumik;
             }
-            else if (cb_databases.SelectedIndex == 2)
+            else if (cb_databases.SelectedItem.ToString() == "Info")
             {
-                InfoModel.delete(infok[DG_adatok.SelectedIndex].IID);    
+                InfoModel.delete(infok[DG_adatok.SelectedIndex].IID);
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
             }
@@ -258,12 +262,13 @@ namespace CS_MyAdmin.Pages
 
         private void TB_searchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (cb_databases.SelectedIndex == 0)
+            if (cb_databases.SelectedItem.ToString() == "Autók")
             {
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.tipus.ToLower().StartsWith(TB_searchbar.Text));
+                    var filteredList = autok.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.tipus.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
@@ -276,12 +281,13 @@ namespace CS_MyAdmin.Pages
                     BTN_Save.IsEnabled = true;
                 }
             }
-            else if (cb_databases.SelectedIndex == 1)
+            else if (cb_databases.SelectedItem.ToString() == "Gumiabroncsok")
             {
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text) || x.evszak.ToLower().StartsWith(TB_searchbar.Text));
+                    var filteredList = gumik.Where(x => x.gyarto.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.evszak.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
@@ -294,12 +300,13 @@ namespace CS_MyAdmin.Pages
                     BTN_Save.IsEnabled = true;
                 }
             }
-            else if (cb_databases.SelectedIndex == 2)
+            else if (cb_databases.SelectedItem.ToString() == "Info")
             {
                 if (TB_searchbar.Text != "")
                 {
                     DG_adatok.IsReadOnly = true;
-                    var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text) || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text));
+                    var filteredList = infok.Where(x => x.rendszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()) 
+                    || x.alvazszam.ToLower().StartsWith(TB_searchbar.Text.ToLower()));
                     DG_adatok.ItemsSource = filteredList;
                     BTN_Delete.IsEnabled = false;
                     BTN_Save.IsEnabled = false;
