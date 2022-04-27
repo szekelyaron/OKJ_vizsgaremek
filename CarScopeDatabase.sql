@@ -1,21 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 27. 14:57
--- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 7.3.31
+-- Létrehozás ideje: 2022. Ápr 27. 18:14
+-- Kiszolgáló verziója: 10.4.24-MariaDB
+-- PHP verzió: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Adatbázis: `autok6`
@@ -63,7 +57,9 @@ INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALU
 (34, 'Audi', '100', 10, 'Adagoló eltömődése'),
 (35, 'BMW', 'E36 230i', 7, 'Differenciálmű szimering'),
 (36, 'BMW', 'E92 330d', 6, 'EGR szelep eltömődés, gyulladás veszély'),
-(37, 'BMW', '5-ös sorozat', 6, 'Ismeretlen');
+(37, 'BMW', '5-ös sorozat', 6, 'Ismeretlen'),
+(39, 'Fiat', '500L', 6, 'Olasz'),
+(40, 'Opel', 'Combo', 8, 'Műanyag utastér');
 
 -- --------------------------------------------------------
 
@@ -160,9 +156,13 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) VALUES
-(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, '', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 1, 'https://th.bing.com/th/id/OIP.mfGojkzSsAvX-qOiXZy9nwHaEK?pid=ImgDet&rs=1', 'Sérülésmentes'),
-(3, 'HKR-115', '2147grgrf47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://auto-database.com/image/opel-corsa-c-2001-pictures-116229.jpg', ''),
-(22, 'HUF-314', 'VF1BZ1A0544763416', 460000, 2003, 'Használt', 0, 'Érvényes magyar okmányokkal', '2022-08-12 00:00:00', 'Nyári', 26, 'https://m.atcdn.co.uk/vms/media/%7Bresize%7D/8b47041aaeac4e20a7e8237988f912f0.jpg', 'Sérülésmentes');
+(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, '', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 40, 'https://imgur.com/fbsAR9U', 'Sérülésmentes'),
+(3, 'HKR-115', '2147GRGRF47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://imgur.com/yyuLoJG', ''),
+(23, 'CIV-001', 'CIVIC001ABC123456', 42131, 2017, 'Használt', 1, 'Érvényes magyar okmányokkal', '2023-03-24', 'Nyári', 1, 'https://imgur.com/lDAYT5m', 'Apró sérülések'),
+(24, 'CIV-002', 'CIVIC002ABC123456', 3212, 2018, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2022-04-30', 'Téli', 1, 'https://imgur.com/JeQ5zNH', 'Sérülésmentes'),
+(26, 'WYQ1160', 'CIVIC003ABC123456', 301023, 2015, 'Alig használt', 1, 'Külföldi okmányokkal', '2022-09-17', 'Négyévszakos', 1, 'https://imgur.com/9wwSz0L', 'Hátulja sérült'),
+(27, 'GOL-401', 'GOLF4ABC123456789', 124253, 2005, 'Használt', 0, 'Lejárt magyar okmányokkal', '2021-12-23', 'Nyári', 2, 'https://imgur.com/k2l6LmY', 'Apró sérülések'),
+(28, 'SNH-405', 'FIA001ABC12345678', 27524, 2020, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2025-01-22', 'Nyári', 39, 'https://imgur.com/qyRuuSU', 'Apró sérülések');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -202,7 +202,7 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT a táblához `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalo`
@@ -220,7 +220,7 @@ ALTER TABLE `gumiabroncs`
 -- AUTO_INCREMENT a táblához `info`
 --
 ALTER TABLE `info`
-  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Megkötések a kiírt táblákhoz
@@ -232,7 +232,3 @@ ALTER TABLE `info`
 ALTER TABLE `info`
   ADD CONSTRAINT `Autó_Info` FOREIGN KEY (`Auto_AID`) REFERENCES `auto` (`AID`) ON DELETE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
