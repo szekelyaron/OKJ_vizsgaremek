@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 27. 18:14
+-- Létrehozás ideje: 2022. Ápr 28. 01:58
 -- Kiszolgáló verziója: 10.4.24-MariaDB
 -- PHP verzió: 8.1.4
 
@@ -40,7 +40,7 @@ INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALU
 (2, 'Volkswagen', 'Golf IV', 9, 'Korrózió'),
 (3, 'Volkswagen', 'Passat', 7, 'Fotengely csapágy'),
 (4, 'Ford', 'Focus', 5, 'Hengerfej'),
-(5, 'Opel', 'Corsa', 6, 'Futómu'),
+(5, 'Opel', 'Corsa', 6, 'Futómű'),
 (6, 'Mazda', '6', 8, 'EGR szelep'),
 (14, 'Seat', 'Leon', 9, 'Ismeretlen'),
 (21, 'Volkswagen', 'Arteon', 5, 'Led fényszóró meghibásodása'),
@@ -59,7 +59,9 @@ INSERT INTO `auto` (`AID`, `Gyarto`, `Tipus`, `Megbizhatosag`, `Tipushiba`) VALU
 (36, 'BMW', 'E92 330d', 6, 'EGR szelep eltömődés, gyulladás veszély'),
 (37, 'BMW', '5-ös sorozat', 6, 'Ismeretlen'),
 (39, 'Fiat', '500L', 6, 'Olasz'),
-(40, 'Opel', 'Combo', 8, 'Műanyag utastér');
+(40, 'Opel', 'Combo', 8, 'Műanyag utastér'),
+(41, 'Lamborghini', 'Countach', 10, 'Ennek nem lehet'),
+(42, 'BMW', 'E36 316i', 8, 'Lengőkar gömbfej');
 
 -- --------------------------------------------------------
 
@@ -80,7 +82,8 @@ CREATE TABLE `felhasznalo` (
 
 INSERT INTO `felhasznalo` (`FID`, `Felhasználónév`, `Jelszó`, `Email`) VALUES
 (11, 'Admin1122', '9695476e054dcb63b752dc141702ff50', 'admin@admin.com'),
-(13, 'Proba1122', '6e5a4db2259e8a7779d9679ccea9511e', 'proba@proba.com');
+(13, 'Proba1122', '6e5a4db2259e8a7779d9679ccea9511e', 'proba@proba.com'),
+(15, 'Guszti', 'adc8de6eb23474824419a8ac9e0899fd', 'aron20010103@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -156,13 +159,16 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`IID`, `Rendszam`, `Alvazszam`, `Futottkm`, `Evjarat`, `Allapot`, `VezetettSzervK`, `Okmanyok`, `Muszakierv`, `Gumiabroncs`, `Auto_AID`, `Kepcim`, `Torott`) VALUES
-(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, '', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 40, 'https://imgur.com/fbsAR9U', 'Sérülésmentes'),
-(3, 'HKR-115', '2147GRGRF47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://imgur.com/yyuLoJG', ''),
-(23, 'CIV-001', 'CIVIC001ABC123456', 42131, 2017, 'Használt', 1, 'Érvényes magyar okmányokkal', '2023-03-24', 'Nyári', 1, 'https://imgur.com/lDAYT5m', 'Apró sérülések'),
-(24, 'CIV-002', 'CIVIC002ABC123456', 3212, 2018, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2022-04-30', 'Téli', 1, 'https://imgur.com/JeQ5zNH', 'Sérülésmentes'),
-(26, 'WYQ1160', 'CIVIC003ABC123456', 301023, 2015, 'Alig használt', 1, 'Külföldi okmányokkal', '2022-09-17', 'Négyévszakos', 1, 'https://imgur.com/9wwSz0L', 'Hátulja sérült'),
-(27, 'GOL-401', 'GOLF4ABC123456789', 124253, 2005, 'Használt', 0, 'Lejárt magyar okmányokkal', '2021-12-23', 'Nyári', 2, 'https://imgur.com/k2l6LmY', 'Apró sérülések'),
-(28, 'SNH-405', 'FIA001ABC12345678', 27524, 2020, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2025-01-22', 'Nyári', 39, 'https://imgur.com/qyRuuSU', 'Apró sérülések');
+(1, 'RPL-916', 'PRB12345678901234', 35000, 2019, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2022-09-10 00:00:00', 'Téli', 40, 'https://i.imgur.com/fbsAR9U.jpg', 'Sérülésmentes'),
+(3, 'HKR-115', '2147GRGRF47845741', 451200, 2001, 'Használt', 0, 'Érvényes magyar okmányokkal', '2023-02-09 00:00:00', 'Négyévszakos', 5, 'https://i.imgur.com/yyuLoJG.png?1', 'Apró sérülések'),
+(23, 'CIV-001', 'CIVIC001ABC123456', 42131, 2017, 'Használt', 1, 'Érvényes magyar okmányokkal', '2023-03-24', 'Nyári', 1, 'https://i.imgur.com/lDAYT5m.png', 'Apró sérülések'),
+(24, 'CIV-002', 'CIVIC002ABC123456', 3212, 2018, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2022-04-30', 'Téli', 1, 'https://i.imgur.com/JeQ5zNH.jpg', 'Sérülésmentes'),
+(26, 'WYQ1160', 'CIVIC003ABC123456', 301023, 2015, 'Használt', 1, 'Külföldi okmányokkal', '2022-09-17', 'Négyévszakos', 1, 'https://i.imgur.com/9wwSz0L.jpg?1', 'Hátulja sérült'),
+(27, 'GOL-401', 'GOLF4ABC123456789', 124253, 2005, 'Használt', 0, 'Lejárt magyar okmányokkal', '2021-12-23', 'Nyári', 2, 'https://i.imgur.com/k2l6LmY.png', 'Apró sérülések'),
+(28, 'SNH-405', 'FIA001ABC12345678', 27524, 2020, 'Alig használt', 1, 'Érvényes magyar okmányokkal', '2025-01-22', 'Nyári', 39, 'https://i.imgur.com/qyRuuSU.png', 'Apró sérülések'),
+(29, 'KÖNS5000', 'LAMBO001FSTFSFS44', 167350, 1981, 'Használt', 1, 'Külföldi okmányokkal', '2023-03-04', 'Nyári', 41, 'https://i.imgur.com/ey9q7uE.png?1', 'Sérülésmentes'),
+(30, 'SGA-030', 'MUSTANG001PUS1234', 204423, 2005, 'Használt', 1, 'Érvényes magyar okmányokkal', '2023-08-18', 'Nyári', 28, 'https://i.imgur.com/N1poicB.png', 'Apró sérülések'),
+(31, 'PWJ-532', 'BMW001PUS255GHF32', 303295, 1995, 'Enyhén sérült', 0, 'Érvényes magyar okmányokkal', '2022-09-30', 'Téli', 42, 'https://i.imgur.com/EPx9u9E.jpg', 'Eleje sérült');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -202,13 +208,13 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT a táblához `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `AID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `FID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT a táblához `gumiabroncs`
@@ -220,7 +226,7 @@ ALTER TABLE `gumiabroncs`
 -- AUTO_INCREMENT a táblához `info`
 --
 ALTER TABLE `info`
-  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `IID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Megkötések a kiírt táblákhoz
