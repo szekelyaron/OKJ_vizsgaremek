@@ -201,6 +201,25 @@ namespace CS_MyAdmin.Pages
             ResetSP(SP_autokInsert);
 
         }
+        private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
+        {
+            string[] splittedText = CB_autoAzon.SelectedItem.ToString().Split(':');
+            string formatDate = DP_muszaki.SelectedDate.Value.ToString("yyyy-MM-dd");
+            if (TB_Rendszam.Text != "" && TB_Alvazszam.Text != "" && TB_FutottKm.Text != "")
+            {
+                InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), formatDate, CB_GumiInfo.SelectedItem.ToString(),
+                    Convert.ToInt32(splittedText[0]), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
+
+                infok = InfoModel.select();
+                DG_adatok.ItemsSource = infok;
+            }
+            else
+            {
+                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
+            ResetSP(SP_infokInsert);
+        }
         private void BTN_insertGumi_Click(object sender, RoutedEventArgs e)
         {
             if (TB_GumiGyarto.Text != "" && TB_GumiAr.Text != "" && TB_GumiAtmero.Text != "" && TB_GumiOldalfal.Text != "" && TB_GumiSzelesseg.Text != "")
@@ -218,25 +237,6 @@ namespace CS_MyAdmin.Pages
             ResetSP(SP_gumikInsert);
         }
 
-        private void BTN_insertInfo_Click(object sender, RoutedEventArgs e)
-        {
-            string[] splittedText = CB_autoAzon.SelectedItem.ToString().Split(':');
-            if (TB_Rendszam.Text != "" && TB_Alvazszam.Text != "" && TB_FutottKm.Text != "")
-            {
-                InfoModel.insert(TB_Rendszam.Text, TB_Alvazszam.Text, Convert.ToInt32(TB_FutottKm.Text), int.Parse(TB_Evjarat.Text), CB_allapot.SelectedItem.ToString(), CB_szervkönyv.SelectedIndex, CB_okmanyok.SelectedItem.ToString(), DP_muszaki.SelectedDate.Value, CB_GumiInfo.SelectedItem.ToString(),
-                    Convert.ToInt32(splittedText[0]), TB_kepCim.Text, CB_Torott.SelectedItem.ToString());
-
-                infok = InfoModel.select();
-                DG_adatok.ItemsSource = infok;
-            }
-            else
-            {
-                MessageBox.Show("Egy vagy több mező nem lett kitöltve!", "Helytelen kitöltés", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
-            ResetSP(SP_infokInsert);
-        }
-
         private void BTN_Delete_Click(object sender, RoutedEventArgs e)
         {
             if (cb_databases.SelectedItem.ToString()=="Autók")
@@ -245,17 +245,17 @@ namespace CS_MyAdmin.Pages
                 autok = AutoModel.select();
                 DG_adatok.ItemsSource = autok;
             }
-            else if (cb_databases.SelectedItem.ToString() == "Gumiabroncsok")
-            {
-                GumiModel.delete(gumik[DG_adatok.SelectedIndex].gId);
-                gumik = GumiModel.select();
-                DG_adatok.ItemsSource = gumik;
-            }
             else if (cb_databases.SelectedItem.ToString() == "Info")
             {
                 InfoModel.delete(infok[DG_adatok.SelectedIndex].IID);
                 infok = InfoModel.select();
                 DG_adatok.ItemsSource = infok;
+            }
+            else if (cb_databases.SelectedItem.ToString() == "Gumiabroncsok")
+            {
+                GumiModel.delete(gumik[DG_adatok.SelectedIndex].gId);
+                gumik = GumiModel.select();
+                DG_adatok.ItemsSource = gumik;
             }
             LBL_recordCount.Content = "Rekordok száma: " + DG_adatok.Items.Count.ToString();
         }

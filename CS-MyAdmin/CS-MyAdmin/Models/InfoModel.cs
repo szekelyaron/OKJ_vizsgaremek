@@ -73,9 +73,9 @@ namespace CS_MyAdmin.Models
             set { _okmanyok = value; }
         }
 
-        private DateTime _muszaki;
+        private string _muszaki;
 
-        public DateTime muszaki
+        public string muszaki
         {
             get { return _muszaki; }
             set { _muszaki = value; }
@@ -129,7 +129,7 @@ namespace CS_MyAdmin.Models
             this.allapot = reader["Allapot"].ToString();
             this.szervKonyv = Convert.ToInt32(reader["VezetettSzervK"]);
             this.okmanyok = reader["Okmanyok"].ToString();
-            this.muszaki = Convert.ToDateTime(reader["Muszakierv"]);
+            this.muszaki = reader["Muszakierv"].ToString();
             this.GumiAbroncs = reader["Gumiabroncs"].ToString();
             this.AutoID = Convert.ToInt32(reader["Auto_AID"]);
             this.kepcim = reader["Kepcim"].ToString();
@@ -161,7 +161,7 @@ namespace CS_MyAdmin.Models
         }
 
         public static void update(int id, string rendszam, string alvazszam, int futottKm, int evJarat, string allapot, int szervKonyv, string okmanyok,
-            DateTime muszaki, string Gumi, int autoId, string kep, string torott)
+            string muszaki, string Gumi, int autoId, string kep, string torott)
         {
 
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
@@ -192,7 +192,7 @@ namespace CS_MyAdmin.Models
         }
 
         public static void insert(string rendszam, string alvazszam, int futottKm, int evJarat, string allapot, int szervKonyv, string okmanyok,
-            DateTime muszaki, string Gumi, int autoId, string kep, string torott)
+            string muszaki, string Gumi, int autoId, string kep, string torott)
         {
             using (var con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString))
             {
