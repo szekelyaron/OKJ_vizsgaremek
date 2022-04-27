@@ -1,20 +1,20 @@
 ﻿CS-MyAdmin
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\aron2\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\
+c:\Users\aron2\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\obj\Debug\netcoreapp3.1\
 CS_MyAdmin
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\aron2\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\App.xaml
+c:\Users\aron2\Documents\GitHub\OKJ_vizsgaremek\CS-MyAdmin\CS-MyAdmin\App.xaml
 2-2016695974
 
-7875237510
+9113913582
 201322887469
 MainWindow.xaml;Pages\MainPage.xaml;
 
-False
+True
 
