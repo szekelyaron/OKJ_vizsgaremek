@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 17. 18:35
+-- Létrehozás ideje: 2022. Ápr 27. 14:57
 -- Kiszolgáló verziója: 10.4.21-MariaDB
--- PHP verzió: 8.0.12
+-- PHP verzió: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,7 +115,23 @@ INSERT INTO `gumiabroncs` (`GID`, `Gyarto`, `Evszak`, `Kategoria`, `Ar`, `Atmero
 (12, 'Michelin Pilot Sport', 'Nyári', '9', 48000, 19, 45, 265),
 (13, 'Toyo Proxess Sport 1', 'Nyári', '7', 38500, 18, 40, 225),
 (14, 'Continental Cross Contact', 'Téli', '6', 29000, 16, 60, 195),
-(15, 'Pirelli Scorpion A/T Plus', 'Négyévszakos', '5', 34990, 18, 55, 215);
+(15, 'Pirelli Scorpion A/T Plus', 'Négyévszakos', '5', 34990, 18, 55, 215),
+(16, 'Apollo Alnac 4G', 'Téli', '5', 20940, 15, 55, 195),
+(17, 'Apollo Alnac 4G', 'Nyári', '5', 19700, 14, 55, 195),
+(18, 'Debica Frigo', 'Nyári', '3', 15080, 13, 50, 185),
+(19, 'Debica Frigo', 'Négyévszakos', '3', 18990, 13, 55, 185),
+(20, 'Matador Nordicca MP93', 'Nyári', '6', 22590, 15, 55, 195),
+(21, 'Barum Polaris Star', 'Téli', '2', 22760, 16, 60, 195),
+(22, 'Royal Black Royal Winter', 'Téli', '1', 12000, 13, 80, 145),
+(23, 'Aplus Aur', 'Négyévszakos', '3', 17980, 16, 45, 215),
+(24, 'WinterPro2 GTRadial', 'Téli', '6', 2450, 16, 65, 215),
+(25, 'Hankook w452', 'Négyévszakos', '9', 25990, 17, 70, 195),
+(26, 'Toyo Tires Observe XL', 'Nyári', '8', 26520, 18, 55, 225),
+(27, 'Falken hs01', 'Téli', '9', 31500, 17, 65, 245),
+(28, 'Toyo Proxess Sport', 'Nyári', '10', 41700, 20, 45, 225),
+(29, 'Dunlop ALLStar', 'Négyévszakos', '7', 41200, 19, 45, 195),
+(30, 'GoodYear Performance+ W', 'Téli', '9', 41790, 19, 55, 255),
+(31, 'Kleber Klislap', 'Nyári', '7', 39100, 18, 50, 185);
 
 -- --------------------------------------------------------
 
@@ -198,7 +214,7 @@ ALTER TABLE `felhasznalo`
 -- AUTO_INCREMENT a táblához `gumiabroncs`
 --
 ALTER TABLE `gumiabroncs`
-  MODIFY `GID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `GID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT a táblához `info`
