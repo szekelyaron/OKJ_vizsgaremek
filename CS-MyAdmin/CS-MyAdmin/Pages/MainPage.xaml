@@ -579,9 +579,9 @@
                         <TextBox x:Name="TB_GumiAr" Margin="5" Width="100" MaxLength="6" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Width="100" Content="Átmérő (cm):" Foreground="White"/>
+                        <Label Width="100" Content="Átmérő (coll):" Foreground="White"/>
                         <TextBox x:Name="TB_GumiAtmero" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
-                        <Label Width="100" Content="Oldalfal:" Foreground="White"/>
+                        <Label Width="100" Content="Oldalfal arány:" Foreground="White"/>
                         <TextBox x:Name="TB_GumiOldalfal" MaxLength="11" Margin="5" Width="100" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

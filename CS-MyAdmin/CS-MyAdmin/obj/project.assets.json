@@ -932,19 +932,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aron2\\.nuget\\packages\\": {}
+    "C:\\Users\\pusom\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aron2\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+      "projectUniqueName": "C:\\Vizsgaremek\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
       "projectName": "CS-MyAdmin",
-      "projectPath": "C:\\Users\\aron2\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
-      "packagesPath": "C:\\Users\\aron2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aron2\\Documents\\GitHub\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
+      "projectPath": "C:\\Vizsgaremek\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\CS-MyAdmin.csproj",
+      "packagesPath": "C:\\Users\\pusom\\.nuget\\packages\\",
+      "outputPath": "C:\\Vizsgaremek\\OKJ_vizsgaremek\\CS-MyAdmin\\CS-MyAdmin\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\aron2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pusom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -989,6 +994,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.21, 3.1.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -997,7 +1020,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
