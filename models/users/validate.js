@@ -4,7 +4,7 @@ exports.form = [
 
   // username
   body('felhasznalonev').trim().notEmpty().withMessage('Felhasználónév szükséges')
-  .matches(/^[a-zA-Z0-9.]*$/).withMessage('Csak a karakterek elfogadottak szóköz nélkül')
+  .matches(/^[a-zA-Z0-9.]*$/).withMessage('Csak ékezet és szóköz nélküli karakterek elfogadottak')
   .isLength({min: 5}).withMessage('A felhasználónévnek legalább 5 karakter hosszúnak kell lennie'),
   // email
   body('email').notEmpty().withMessage('Email cím szükséges').normalizeEmail().isEmail().withMessage('Érvényes Email-nek kell lennie'),

@@ -55,7 +55,7 @@ register.prototype.registerUser = function(req, res, next) {
                          console.log(err);
                          connection.release();
                      }else{
-                         //console.log(req.body.email)
+                         console.log(req.body.email)
                         var mailOptions = {
                             to: req.body.email,
                             subject: 'SIKER! - CarScope',
@@ -64,12 +64,13 @@ register.prototype.registerUser = function(req, res, next) {
                         
                         transporter.sendMail(mailOptions, function(error, info){
                             if (error) {
-                                //console.log(error);
+                                console.log(error);
                             } else {
-                                //console.log('Email sent: ' + info.response);
+                                console.log('Email sent: ' + info.response);
+                                res.redirect('/bejelentkezes')
                                 connection.release();
                                 callback(null,null);
-                                res.redirect('/bejelentkezes')
+                                
                             }
                         });
                      }
